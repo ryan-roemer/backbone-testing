@@ -1,0 +1,55 @@
+{
+  "name": "backbone-testing",
+  "version": "0.0.1",
+  "description": "Backbone.js testing examples.",
+  "author": "Ryan Roemer <ryan@loose-bits.com>",
+  "homepage": "http://backbone-testing.com/",
+  "dependencies": {
+    "express": "3.1.0",
+    "mongoose": "3.5.7"
+  },
+  "devDependencies": {
+    "mocha-phantomjs": "2.0.0",
+    "jshint": "1.0.0",
+    "nodemon": "0.7.1",
+    "uglify-js": "2.2.3",
+    "jade": "0.28.1",
+    "markdown": "0.4.0",
+    "http-server": "0.5.3"
+  },
+  "engines": {
+    "node": ">0.8.x"
+  },
+  "scripts": {
+    "everything": "npm run-script check && npm run-script build",
+    "start": "nodemon notes-rest/server.js",
+
+    "mongo-wipe": "rm -rf ./mongodb_data && mkdir ./mongodb_data",
+    "mongo-start": "mkdir -p ./mongodb_data && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=./mongodb_data --logpath=./mongodb_data/mongodb.log",
+    "mongo-pids": "ps ax | egrep -v 'sh -c|grep' | grep 'mongod --port=27027' | egrep -o '^[0-9]+' || echo None.",
+
+    "todo": "grep -Rn 'TODO' README.md notes-rest/server.js notes/test/js/spec notes/app/js/app notes-rest/app/js-rest chapters/*/test/js/spec doc",
+
+    "check": "npm run-script style && npm run-script test",
+
+    "style": "npm run-script style-client && npm run-script style-server",
+    "style-server": "./node_modules/.bin/jshint --config=./dev/jshint-server.json notes-rest/server.js",
+    "style-client": "./node_modules/.bin/jshint --config=./dev/jshint-client.json notes/app/js/fixtures notes/test/js/spec notes/app/js/app notes-rest/app/js/app chapters/*/test/js/spec doc",
+
+    "test": "npm run-script test-app && npm run-script test-chaps-all && npm run-script test-chaps",
+    "test-app": "ls notes/test/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; mocha-phantomjs {}'",
+    "test-chaps": "ls chapters/*/test/test*.html | egrep -v \"failure|timing\" |  xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; mocha-phantomjs {}'",
+    "test-chaps-all": "ls chapters/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; mocha-phantomjs {}'",
+    "test-rest": "mocha-phantomjs http://127.0.0.1:4321/app/test.html",
+    "test-server": "http-server -p 4322",
+
+    "min-app": "uglifyjs $(cat notes/app/index.html | egrep -o 'js\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes/app/js/app.min.js",
+    "min-rest": "uglifyjs $(cat notes-rest/app/index.html | egrep -o '(js|js-rest)\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes-rest/app/js/app.min.js",
+
+    "docs": "./node_modules/.bin/jade -P --out ./ doc/index.jade doc/todo.jade",
+
+    "build": "npm run-script build-tmpl && npm run-script docs",
+    "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",
+    "build-chap": "CHAP=03 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} notes vendor LICENSE.txt README.md"
+  }
+}

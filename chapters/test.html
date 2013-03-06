@@ -1,0 +1,58 @@
+<html>
+  <meta charset="utf-8">
+  <head>
+    <title>Backbone.js Tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="../notes/test/js/lib/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <!-- JavaScript Test Libraries. -->
+    <script src="../notes/test/js/lib/mocha.js"></script>
+    <script src="../notes/test/js/lib/chai.js"></script>
+    <script src="../notes/test/js/lib/sinon.js"></script>
+
+    <!-- JavaScript Core Libraries -->
+    <script src="../notes/app/js/lib/underscore.js"></script>
+    <script src="../notes/app/js/lib/jquery.js"></script>
+    <script src="../notes/app/js/lib/json2.js"></script>
+    <script src="../notes/app/js/lib/backbone.js"></script>
+    <script src="../notes/app/js/lib/backbone.localStorage.js"></script>
+    <script src="../notes/app/js/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../notes/app/js/lib/showdown/showdown.js"></script>
+
+    <!-- JavaScript Application Libraries -->
+    <script src="../notes/app/js/app/namespace.js"></script>
+    <script src="../notes/app/js/app/models/note.js"></script>
+
+    <!-- Set up Mocha and Chai -->
+    <script>
+      var expect = chai.expect;
+      mocha.setup("bdd");
+
+      window.onload = function () {
+        (window.mochaPhantomJS || mocha).run();
+      };
+    </script>
+
+    <!-- Chapters -->
+    <script src="01/test/js/spec/hello.spec.js"></script>
+    <!-- SKIP <script src="01/test/js/spec/failure.spec.js"></script> -->
+    <!-- SKIP <script src="01/test/js/spec/timing.spec.js"></script> -->
+
+    <script src="02/test/js/spec/namespace.spec.js"></script>
+    <script src="02/test/js/spec/models/note.spec.js"></script>
+
+    <script src="03/test/js/spec/bdd.spec.js"></script>
+    <!-- SKIP <script src="03/test/js/spec/tdd.spec.js"></script> -->
+    <script src="03/test/js/spec/chai-chains.spec.js"></script>
+    <script src="03/test/js/spec/chai-values.spec.js"></script>
+    <script src="03/test/js/spec/chai-comparisons.spec.js"></script>
+    <script src="03/test/js/spec/chai-objects.spec.js"></script>
+    <script src="03/test/js/spec/chai-errors.spec.js"></script>
+    <!-- <script src="03/test/js/spec/mocha-only.spec.js"></script> -->
+    <script src="03/test/js/spec/mocha-skip.spec.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Backbone.js Tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="js/lib/mocha.css" />
+
+    <!-- Test libraries. -->
+    <script src="js/lib/mocha.js"></script>
+    <script src="js/lib/chai.js"></script>
+    <script src="js/lib/sinon.js"></script>
+
+    <!-- Test Setup -->
+    <script>
+      var expect = chai.expect;
+      mocha.setup({
+        ui: "bdd",          // BDD UI.
+        reporter: "html",   // HTML reporter.
+        timeout: 4000,      // 4s test timeout.
+        slow: 1000          // A "slow" test is > 1s
+      });
+
+      window.onload = function () {
+        (window.mochaPhantomJS || mocha).run();
+      };
+    </script>
+
+    <!-- Tests. -->
+    <script src="js/spec/bdd.spec.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>

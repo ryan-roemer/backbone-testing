@@ -1,0 +1,54 @@
+<!--
+  Templates
+  =========
+  For a small application, we would normally just include these faux-script
+  tags with template HTML directly into the single page application and refer
+  to by name.
+
+  However, for testing, we need the templates source available to both the
+  application file **and** the test web page driver. So, here we use this HTML
+  file as a starting point, then programmatically create a real JavaScript file
+  to include in both the application and test pages. This is really simulating
+  a developer creating a pure JavaScript file manually.
+
+  For large production applications, a good intermediate ground is to use a
+  server-side include of some sort (many, many options here) to include this
+  HTML file as a partial in both the application and test driver pages.
+  -->
+<script type="text/template" id="template-notes-item">
+  <td class="note-name">
+    <div class="note-title note-view"><%= title %></div>
+  </td>
+  <td class="note-action">
+    <div class="btn-group pull-right">
+      <div class="btn note-edit">
+        <i class="icon-pencil"></i>
+      </div>
+      <div class="btn note-delete">
+        <i class="icon-trash"></i>
+      </div>
+    </div>
+  </td>
+</script>
+
+<script type="text/template" id="template-note">
+  <div id="note-pane-view" class="pane">
+    <div id="note-pane-view-content"></div>
+  </div>
+  <div id="note-pane-edit" class="pane">
+    <form id="note-form-edit">
+      <input id="input-title" class="input-block-level"
+             type="text" placeholder="title"
+             value="<%= title %>">
+      <textarea id="input-text" class="input-block-level"
+                rows="15"><%= text %></textarea>
+    </form>
+  </div>
+</script>
+
+<script type="text/template" id="template-note-view">
+  <div class="well well-small">
+    <h2 id="pane-title"><%= title %></h1>
+  </div>
+  <div id="pane-text"><%= text %></div>
+</script>

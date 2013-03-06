@@ -1,0 +1,59 @@
+/* Nav bar */
+#note-nav a i {
+  opacity: 0.65;
+}
+
+/* Search Filter */
+@media (max-width: 320px) { /* iPhone Portrait */
+  .navbar-search .search-query {
+    width: 120px;
+  }
+  .hidden-phone-portrait {
+    display: none !important;
+  }
+}
+
+/* Notes View - Table Listing of Notes */
+table#notes-list {
+  width: 100%;
+}
+table#notes-list td {
+  padding: 0.5em;
+  vertical-align: middle;
+}
+table#notes-list td .note-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #3a3a3a;
+  cursor: pointer;
+}
+table#notes-list td.note-action {
+  border-left: none;
+}
+
+/* Notes View - "Add new note" input. */
+input#note-new-input {
+  width: 100%;
+  border: none;
+  background: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+input#note-new-input::-webkit-input-placeholder {
+  font-style: italic;
+}
+input#note-new-input:-moz-placeholder {
+  font-style: italic;
+  color: #a9a9a9;
+}
+
+input#input-title {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+textarea#input-text {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+

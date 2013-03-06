@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Notes</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap-responsive.css">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div id="nav" class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Notes</a>
+
+        <!-- Nav's for single note view -->
+        <ul id="note-nav" class="nav region region-note" style="display: none;">
+          <li class="note-view active">
+            <a href="#">
+              <i class="icon-file"></i>
+              <span class="hidden-phone">View</span>
+            </a>
+          </li>
+          <li class="note-edit">
+            <a href="#">
+              <i class="icon-pencil"></i>
+              <span class="hidden-phone">Edit</span>
+            </a>
+          </li>
+          <li class="note-delete">
+            <a href="#">
+              <i class="icon-trash"></i>
+              <span class="hidden-phone">Delete</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Nav's for notes view -->
+        <form class="navbar-search pull-right region region-notes" style="display: none;">
+          <input type="text" class="search-query" placeholder="Filter">
+        </form>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container-fluid">
+      <!-- Content: Notes -->
+      <div id="notes" class="region region-notes" style="display: none;">
+        <table id="notes-list" class="table table-bordered table-hover">
+          <tbody>
+            <tr class="notes-new">
+              <td class="note-name">
+                <input id="note-new-input"
+                       placeholder="Write a new note." autofocus>
+              </td>
+              <td class="note-action">
+                <div id="note-create" class="btn pull-right">
+                  <i class="icon-plus"></i>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Content: Single Note -->
+      <div id="note" class="region region-note" style="display: none;"></div>
+    </div>
+
+    <!-- JavaScript Core Libraries -->
+    <script src="js/lib/underscore.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/json2.js"></script>
+    <script src="js/lib/backbone.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/lib/showdown/showdown.js"></script>
+
+    <!-- JavaScript Application Libraries -->
+    <script src="js/app/namespace.js"></script>
+    <script src="js-rest/app/config.js"></script>
+    <script src="js-rest/app/models/note.js"></script>
+    <script src="js-rest/app/collections/notes.js"></script>
+    <script src="js/app/templates/templates.js"></script>
+    <script src="js/app/views/note-nav.js"></script>
+    <script src="js/app/views/note-view.js"></script>
+    <script src="js/app/views/note.js"></script>
+    <script src="js/app/views/notes-item.js"></script>
+    <script src="js/app/views/notes-filter.js"></script>
+    <script src="js/app/views/notes.js"></script>
+    <script src="js/app/routers/router.js"></script>
+
+    <!-- Bootstrap and start application. -->
+    <script src="js/app/app.js"></script>
+  </body>
+</html>
