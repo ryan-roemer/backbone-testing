@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "mocha-phantomjs": "2.0.0",
-    "jshint": "1.0.0",
+    "jshint": "1.1.0",
     "nodemon": "0.7.1",
     "uglify-js": "2.2.3",
     "jade": "0.28.1",
