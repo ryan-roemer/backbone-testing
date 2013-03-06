@@ -6,8 +6,8 @@ Sample apps, test suites, and ideas for Backbone.js.
 This site provides materials and resources for testing [Backbone.js][backbone]
 web applications. Created as a companion for the forthcoming
 "Backbone.js Testing" book, we provide tests and code snippets for each book
-chapter, as well as a a reference Backbone.js application
-- "[Notes][notes_demo]" - that is used in various testing exercises.
+chapter, as well as a a reference Backbone.js application -
+"[Notes][notes_demo]" - that is used in various testing exercises.
 
 The application technologies we cover include:
 
