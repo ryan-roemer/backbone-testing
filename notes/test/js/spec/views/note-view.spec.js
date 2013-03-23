@@ -3,10 +3,12 @@ describe("App.Views.NoteView", function () {
   before(function () {
     // Create test fixture and add to DOM placeholder.
     this.$fixture = $("<div id='note-view-fixture'></div>");
-    this.$fixture.appendTo($("#fixtures"));
   });
 
   beforeEach(function () {
+    // Empty out and rebind the fixture for each run.
+    this.$fixture.empty().appendTo($("#fixtures"));
+
     // New default model and view for each test.
     //
     // Creation actually calls `render()`, so in tests we have an
@@ -19,7 +21,6 @@ describe("App.Views.NoteView", function () {
 
   afterEach(function () {
     // Clean up view and model for next run.
-    this.$fixture.empty();
     this.view.model.destroy();
   });
 
@@ -29,16 +30,16 @@ describe("App.Views.NoteView", function () {
   });
 
   it("can render an empty note", function () {
-    var $title = this.$fixture.find("#pane-title"),
-      $text = this.$fixture.find("#pane-text");
+    var $title = $("#pane-title"),
+      $text = $("#pane-text");
 
     // Default to empty title in `h2` tag.
     expect($title.text()).to.equal("");
-    expect($title.prop("tagName").toLowerCase()).to.equal("h2");
+    expect($title.prop("tagName")).to.match(/h2/i);
 
-    // Have simple *bold* default message.
+    // Have simple default message.
     expect($text.text()).to.equal("Edit your note!");
-    expect($text.html()).to.contain("<em>Edit your note!</em>");
+    expect($text.html()).to.equal("<p><em>Edit your note!</em></p>");
   });
 
   it("can render more complicated markdown", function (done) {
@@ -48,7 +49,7 @@ describe("App.Views.NoteView", function () {
     // event. Because we set in tests, we will come **after** the
     // event listener in the view.
     //
-    // An alternate approach would be to set a spy on the view's
+    // An alternate approach would be to set a mock on the view's
     // `render()` method. This would be more robust as relying on
     // internal listener order is fairly brittle and risky in the
     // face of implementation changes.
@@ -57,17 +58,17 @@ describe("App.Views.NoteView", function () {
     // related event that we can listen on once rendering is done
     // and ensure that the DOM is updated before testing.
     this.view.model.once("change", function () {
-      var $title = $fixture.find("#pane-title"),
-        $text = $fixture.find("#pane-text");
+      var $title = $("#pane-title"),
+        $text = $("#pane-text");
 
       // Our new (changed) title.
       expect($title.text()).to.equal("My Title");
 
       // Rendered Markdown with headings, list.
       expect($text.html())
-        .to.contain("My Heading</h2>").and
-        .to.contain("<ul>").and
-        .to.contain("<li>List item 2</li>");
+        .to.include("My Heading</h2>").and
+        .to.include("<ul>").and
+        .to.include("<li>List item 2</li>");
 
       done();
     });

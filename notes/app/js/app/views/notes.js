@@ -8,13 +8,12 @@
   // Displays a list of notes.
   //
   // Contains:
-  // * App.Views.NotesVilter: Helper view for query filter.
+  // * App.Views.NotesFilter: Helper view for query filter.
   // * App.Views.NotesItem: Child view for single note listing.
+  //
   App.Views.Notes = Backbone.View.extend({
 
     el: "#notes",
-
-    collection: null,
 
     events: {
       "keypress #note-new-input": "createNoteOnEnter",
@@ -32,16 +31,18 @@
       // element first in its events. Brittle, but simpler for this
       // demonstration.
       //
-      this.listenTo(this.collection, "reset", this.addNotes);
-      this.listenTo(this.collection, "notes:add", this.addNote);
+      this.listenTo(this.collection, {
+        "reset": this.addNotes,
+        "notes:add": this.addNote
+      });
 
       // Create helper filter view.
       this.filterView = new App.Views.NotesFilter({
         collection: this.collection
       });
 
-      // Kick off the fetch.
-      this.collection.fetch();
+      // Kick off the sync.
+      this.collection.fetch({ reset: true });
     },
 
     render: function () {
@@ -89,16 +90,18 @@
     },
 
     create: function (title) {
+      var coll = this.collection;
+
       // Add new model to collection, and corresponding note
       // to DOM after model is saved.
       this.collection.create({ title: title }, {
-        success: _.bind(function (colData, modelData) {
+        success: function (colData, modelData) {
           // Accept various raw model `id` formats.
-          var id = modelData.id || modelData._id,
-            model = this.collection.get(id);
+          var id = modelData.id || modelData._id;
 
-          this.collection.trigger("notes:add", model);
-        }, this)
+          // Trigger event on model retrieved from collection.
+          coll.trigger("notes:add", coll.get(id));
+        }
       });
     }
 

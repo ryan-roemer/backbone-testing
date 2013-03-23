@@ -18,6 +18,25 @@ $(function () {
   }
 
   Transforms = {
+    background: function () {
+      // Tweak IE 10 to have no opacity.
+      if (IS_IE && IE_GTE_10) {
+        $("#page")
+          .removeClass("bg")
+          .addClass("bg-ie");
+      }
+
+      // Short circuit if no backstrech.
+      if (!$.backstretch) { return; }
+
+      // Backstretch images from http://www.public-domain-photos.com/
+      // - clouds: landscapes/sky/clouds-2-4.htm
+      // - sunrise: landscapes/sky/sunrise-3-4.htm
+      // - yosemite: travel/yosemite/yosemite-meadows-4.htm
+      $.backstretch("doc/img/bg/clouds.jpg");
+      $(".backstretch").addClass("hidden-phone");
+    },
+
     headingToHero: function () {
       // Get and detach header elements.
       var $h1 = $("h1").first(),
@@ -99,6 +118,17 @@ $(function () {
       $nav.find("li.nav-item").on("click", function () {
         $(this).scrollspy('refresh');
       });
+
+      // Nav bar scroll animation.
+      $("li.nav-item > a").click(function () {
+        $("html, body").animate({
+          scrollTop: $($(this).attr("href")).offset().top + "px"
+        }, {
+          duration: 400,
+          easing: "swing"
+        });
+        return false;
+      });
     },
 
     chapterExamples: function () {
@@ -141,6 +171,7 @@ $(function () {
 
   // Apply transforms.
   _.each([
+    Transforms.background,
     Transforms.headingToHero,
     Transforms.gridAndNav,
     Transforms.chapterExamples,

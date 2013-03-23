@@ -1,6 +1,28 @@
 /**
  * Custom styles.
  */
+
+#page.bg-ie,
+#page.bg {
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#page.bg {
+  opacity: 0.95;
+  filter: alpha(opacity=95);
+}
+
+#page img {
+  width: 80%;
+  max-width: 611px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #hero {
   padding: 40px 0;
   color: #fff;
@@ -8,10 +30,10 @@
   margin-bottom: 10px;
 }
 
-/*img.banner {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}*/
+img.banner {
+  opacity: 0.95;
+  filter: alpha(opacity=95);
+}
 
 h2 {
   padding-top: 10px;
@@ -73,20 +95,19 @@ a.examples-file {
   margin-right: -5px;
 }
 #sidenav > li.active > a {
-  /*background-color: #0066FF;*/
   color: #fff;
 }
 #sidenav {
   width: 200px;
   margin: 15px 0 0;
   padding: 0;
-  /*background-color: #fff;*/
+  background-color: #fff;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 2px 4px rgba(0,0,0,.065);
+          box-shadow: 0 2px 4px rgba(0,0,0,.065);
 }
 #sidenav > li > a {
   display: block;
@@ -151,7 +172,16 @@ a.examples-file {
 @media (max-width: 767px) {
   /* Remove any padding from the body */
   body {
+    background-color: #fff;
+    background-image: none;
     padding-top: 0;
+  }
+
+  #page.container {
+    background-color: #fff;
+    background-image: none;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   /* Widen masthead and social buttons to fill body padding */
@@ -178,4 +208,9 @@ a.examples-file {
     width: auto;
     top: 0;
   }
+}
+
+/* IE opacity fixes */
+#sidenav > li > a {
+  background-color: #fff;
 }

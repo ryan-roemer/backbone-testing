@@ -8,6 +8,7 @@
   // Contains:
   // * App.Views.NoteNav: Helper view for navigation events.
   // * App.Views.NoteView: Child view for rendering Markdown.
+  //
   App.Views.Note = Backbone.View.extend({
 
     id: "note-panes",
@@ -20,47 +21,51 @@
     },
 
     initialize: function (attrs, opts) {
-      var action = opts.action || "view";
+      // Default to empty options.
+      opts || (opts = {});
+
+      // Router can be set directly (e.g., tests), or use global.
+      this.router = opts.router || app.router;
 
       // Model controls view rendering and existence.
-      this.listenTo(this.model, "destroy", this.remove);
-      this.listenTo(this.model, "change", function () {
-        this.render();
-        this.model.save();
+      this.listenTo(this.model, {
+        "destroy": function () { this.remove(); },
+        "change":  function () { this.render().model.save(); }
       });
 
       // Navbar controls/responds to panes.
       this.nav = opts.nav;
-      this.listenTo(this.nav, "nav:view", this.viewNote);
-      this.listenTo(this.nav, "nav:edit", this.editNote);
-      this.listenTo(this.nav, "nav:delete", this.deleteNote);
+      this.listenTo(this.nav, {
+        "nav:view":   function () { this.viewNote(); },
+        "nav:edit":   function () { this.editNote(); },
+        "nav:delete": function () { this.deleteNote(); }
+      });
 
       // Respond to update events from router.
-      this.on("update:view", this.viewNote);
-      this.on("update:view", this.render);
-      this.on("update:edit", this.editNote);
-      this.on("update:edit", this.render);
+      this.on({
+        "update:view": function () { this.render().viewNote(); },
+        "update:edit": function () { this.render().editNote(); }
+      });
 
-      // Render template, add to DOM, stash references.
+      // Render template and add to DOM.
       this.$el.html(this.template(this.model.toJSON()));
-      this.$title = this.$("#input-title");
-      this.$text = this.$("#input-text");
 
-      // Set up action state, render, and add in child view.
-      this.action = null;
-      this.update(action);
+      // Set up action state and render.
+      this.update(opts.action || "view");
       this.render();
+
+      // Add in viewer child view (which auto-renders).
       this.noteView = new App.Views.NoteView({
         el: this.$("#note-pane-view-content"),
         model: this.model
       });
     },
 
+    // Rendering the note is simply showing the active pane.
+    // All HTML should already be rendered during initalize.
     render: function () {
-      // Show appropriate region.
       $(".region").not(".region-note").hide();
       $(".region-note").show();
-
       return this;
     },
 
@@ -73,56 +78,48 @@
     // Update internal "action" state (view or edit).
     update: function (action) {
       action = action || this.action || "view";
-      var oldAction = this.action,
-        paneEl = "#note-pane-" + action,
-        hash = null;
+      var paneEl = "#note-pane-" + action,
+        hash = "note/" + this.model.id + "/" + action;
 
-      // Ensure nav bar is updated.
+      // Ensure menu bar is updated.
       this.nav.trigger("nav:update:" + action);
 
       // Show active pane.
       this.$(".pane").not(paneEl).hide();
       this.$(paneEl).show();
 
-      // Store new action, trigger navbar and navigate.
-      if (action !== oldAction) {
+      // Store new action and navigate.
+      if (this.action !== action) {
         this.action = action;
-
-        hash = ["note", this.model.id, action].join("/");
-        app.router.navigate(hash, { replace: true });
+        this.router.navigate(hash, { replace: true });
       }
-
-      return false;
     },
 
     // Activate "view" note pane.
     viewNote: function () {
-      return this.update("view");
+      this.update("view");
     },
 
     // Activate "edit" note pane.
     editNote: function () {
-      return this.update("edit");
+      this.update("edit");
     },
 
-    // Delete model (propagating view removal).
+    // Delete model (causes view removal) and navigate to
+    // "all notes" list page.
     deleteNote: function () {
       if (confirm("Delete note?")) {
         this.model.destroy();
-        app.router.navigate("", { trigger: true, replace: true });
+        this.router.navigate("", { trigger: true, replace: true });
       }
-
-      return false;
     },
 
     // Save note (triggering model change).
     saveNote: function () {
       this.model.set({
-        title: this.$title.val().trim(),
-        text: this.$text.val().trim()
+        title: this.$("#input-title").val().trim(),
+        text: this.$("#input-text").val().trim()
       });
-
-      return false;
     }
 
   });

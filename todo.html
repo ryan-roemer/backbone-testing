@@ -10,15 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Backbone.js Testing</title>
     <meta name="description" content="Example applications and chapter samples for Backbone.js Testing.">
-    <meta name="keywords" content="backbone.js testings, backbone.js, backbone, javascript, underscore.js, jquery, testing, unit test">
+    <meta name="keywords" content="backbone.js testing, backbone.js, backbone, javascript, underscore.js, jquery, mocha, chai, sinon, sinon.js, testing, unit test, spies, mocks, stubs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="doc/site.css">
   </head>
-  <body><a href="https://github.com/ryan-roemer/backbone-testing" style="position: absolute; top: 0; right: 0; border: 0;" class="hidden-phone"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" class="banner"></a>
-    <header id="hero" class="hero-unit backing"></header>
-    <div class="container"><h1>Backbone.js Testing</h1>
+  <body>
+    <div id="page" class="bg container">
+      <header id="hero" class="hero-unit backing"></header>
+      <div class="container"><h1>Backbone.js Testing</h1>
 
 <p>Sample apps, test suites, and ideas for Backbone.js.</p>
 
@@ -28,7 +29,9 @@
 
 <h3>Current</h3>
 
-<ul><li><strong>Code Coverage</strong>: Integrate into phantom tests. (jscoverage) + install.</li><li><strong>Symlinks</strong>: Hone down to what&#39;s <em>actually</em> needed for chaps 02, 03, on.</li></ul>
+<ul><li><p><strong>App Tour</strong>: Actually add in the screenshots, etc. Also make sure renders
+images correctly on GitHub page.</p></li><li><p><strong>CSS</strong>: The sidenav has some extra white on IE10. Whited out in affix mode
+now, but there&#39;s still something wrong going on.</p></li><li><p><strong>Node v0.10.x</strong>: Test everything against this.</p></li><li><p><strong>Code Coverage</strong>: Integrate into phantom tests. (jscoverage) + install.</p></li><li><strong>Symlinks</strong>: Hone down to what&#39;s <em>actually</em> needed for chaps 02, 03, on.</li></ul>
 
 <h2>Notes</h2>
 
@@ -41,8 +44,8 @@
 <h3>Readme</h3>
 
 <ul><li><p><strong>Introduction</strong>: Add intro more tailored to book and with actual
-information.</p></li><li><p><strong>Libraries</strong>: Update various versions for:</p><ul><li>Public vendor libraries. Ch01 test libs, Ch02 app libs.</li><li><p>NPM package.json libraries.</p></li></ul></li><li><p><strong>Licenses</strong>: Review for any needed additions.</p></li><li><p><strong>Windows</strong>: Test out all code samples on a Windows machine.</p><ul><li>Zipball: Instruct to download from the Packt site (my zipball
-verified with real files).</li><li>Probably need polyfill libraries.</li></ul></li></ul>
+information.</p></li><li><p><strong>Libraries</strong>: Update various versions for:</p><ul><li>Public vendor libraries.</li><li><p>NPM package.json libraries.</p></li></ul></li><li><p><strong>Licenses</strong>: Review for any needed additions.</p></li><li><p><strong>Windows</strong>:</p><ul><li><strong>Downloads</strong>: Instruct to download from the Packt site (my zipball
+verified with real files).</li><li>Possiblyx need polyfill libraries.</li><li>Test out all code samples on a Windows machine.</li></ul></li></ul>
 
 <h3>Book Page</h3>
 
@@ -100,6 +103,7 @@ symlinks and use <em>actual</em> files instead.</li></ul>
     }
   }, 100);
 });</code></pre>
+      </div>
     </div>
     <div id="fixtures" style="display: none;" class="hidden">
       <div id="grid" class="row">
@@ -114,6 +118,7 @@ symlinks and use <em>actual</em> files instead.</li></ul>
       <li class="nav-item"><a><i class="icon-chevron-right"></i></a></li>
     </div>
     <script src="vendor-ln/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
     <script src="vendor-ln/underscore.min.js"></script>
     <script src="vendor-ln/bootstrap/js/bootstrap.min.js"></script>
     <script src="doc/site.js"></script>

@@ -15,6 +15,7 @@
     <!-- JavaScript Test Libraries. -->
     <script src="js/lib/mocha.js"></script>
     <script src="js/lib/chai.js"></script>
+    <script src="js/lib/sinon-chai.js"></script>
     <script src="js/lib/sinon.js"></script>
 
     <!-- JavaScript Core Libraries -->
@@ -49,7 +50,10 @@
     <!-- Set up Mocha and Chai -->
     <script>
       var expect = chai.expect;
-      mocha.setup("bdd");
+      mocha.setup({
+        ui: "bdd",
+        bail: false
+      });
 
       window.onload = function () {
         (window.mochaPhantomJS || mocha).run();
@@ -63,16 +67,13 @@
     <!-- Ch03 -->
     <script src="js/spec/collections/notes.spec.js"></script>
     <script src="js/spec/views/note-view.spec.js"></script>
+    <!-- Ch04 -->
+    <script src="js/spec/views/note-nav.spec.js"></script>
+    <script src="js/spec/views/note.spec.js"></script>
 
-    <!-- TODO :: NOT_IN (???) :: CH03 Specs :: --> <script src="js/spec/views/notes-filter.spec.js"></script>
-
-    <!-- AFTER: Plan chapters, or consider including in online form only. -->
-
-    <!-- TODO :: CH04 Spies (Simple, lots of stuff to listen to.) :: <script src="js/spec/views/note-nav.spec.js"></script> -->
-    <!-- TODO :: CH04 Spies (Router (replace). Add note in CH05 Mocks to mock out) :: <script src="js/spec/views/note.spec.js"></script> -->
-
+    <!-- TODO :: CH05 Mocks :: --> <script src="js/spec/views/notes-filter.spec.js"></script>
     <!-- TODO :: CH05 Mocks (simple, but router) :: <script src="js/spec/views/notes-item.spec.js"></script> -->
-    <!-- TODO :: NOT_IN (???) :: CH05 Mocks (contains everything) :: <script src="js/spec/views/notes.spec.js"></script> -->
+    <!-- TODO :: CH05 Mocks (contains everything) :: <script src="js/spec/views/notes.spec.js"></script> -->
     <!-- TODO :: CH05 Mocks :: <script src="js/spec/routers/router.spec.js"></script> -->
   </body>
 </html>

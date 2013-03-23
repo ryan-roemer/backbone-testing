@@ -9,7 +9,7 @@
     "mongoose": "3.5.7"
   },
   "devDependencies": {
-    "mocha-phantomjs": "2.0.0",
+    "mocha-phantomjs": "2.0.1",
     "jshint": "1.1.0",
     "nodemon": "0.7.1",
     "uglify-js": "2.2.3",
@@ -50,6 +50,6 @@
 
     "build": "npm run-script build-tmpl && npm run-script docs",
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",
-    "build-chap": "CHAP=03 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} notes vendor LICENSE.txt README.md"
+    "build-chap": "CHAP=04 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} notes vendor LICENSE.txt README.md"
   }
 }

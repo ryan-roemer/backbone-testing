@@ -1,1 +1,1 @@
-../vendor/backbone-0.9.10.js
+../vendor/backbone-1.0.0.js

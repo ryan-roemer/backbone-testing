@@ -3,27 +3,34 @@ Sample apps, test suites, and ideas for Backbone.js.
 
 
 ## Introduction
-This site provides materials and resources for testing [Backbone.js][backbone]
-web applications. Created as a companion for the forthcoming
-"Backbone.js Testing" book, we provide tests and code snippets for each book
-chapter, as well as a a reference Backbone.js application -
-"[Notes][notes_demo]" - that is used in various testing exercises.
+This site provides materials and resources for developing and testing
+[Backbone.js][backbone] web applications. This site provides tests and code
+samples for the chapters of a forthcoming "Backbone.js Testing" book.
+We also provide a reference Backbone.js application -
+"**[Notes][notes_demo]**" - for creating and viewing notes, which we use
+throughout the examples in the book.
 
-The application technologies we cover include:
+The core set of Backbone.js application technologies we cover includes:
 
 * **[jQuery](http://jquery.com/)**
 * **[Underscore.js](http://underscorejs.org/)**
 * **[Backbone.js](http://backbonejs.org/)**
 
-And the test stack is comprised of:
+We write a test infrastructure built on the following (fantastic) test
+libraries.
 
 * **[Mocha](http://visionmedia.github.com/mocha/)**
 * **[Chai](http://chaijs.com/)**
 * **[Sinon.JS](http://sinonjs.org/)**
 
-All of the content here is very much a work in progress, with lots of likely
-incidental errors and such. Bear with us as things evolve...
+The source code for all of the code examples and the Notes application is
+available on the project's [GitHub repository][gh].
 
+All of the site's content is very much a work in progress.
+There are lots of likely incidental errors and such, so please report any bugs
+and bear with us as this project evolves.
+
+[gh]: https://github.com/ryan-roemer/backbone-testing/
 
 ## Compatibility
 The application and test samples should work for the following browser /
@@ -40,14 +47,34 @@ prototype extension is not compatible with IE 9 and lower.
 
 
 ## Notes App
-"Notes" is a simple personal note manager, written in Backbone.js. We provide
-two versions -- a "quick and easy" `localStorage` based application that works
-in your browser with no additional setup, and a "classic" application with
-a full REST backend.
+**[Notes][notes_demo]** is a simple personal note manager, written in
+Backbone.js. We provide two versions - a "quick and easy" `localStorage` based
+application that works in your browser with no additional setup, and a
+"classic" application with a full REST backend.
 
 ### The Tour
+The Notes application home page lists existing notes (by creation date), and
+provides a form field to create a new note with a title. A filter field is
+available in the menu bar to limit the list of displayed notes by title.
 
-**TODO: Write up tour and add screenshots.**
+![Notes List](./doc/img/notes/notes-list.png "Notes List")
+
+Clicking on the edit icon brings us to the single note view, with a simple
+form editor for the title and text body fields of the note. The body of a
+note is written using [Markdown][markdown] formatting.
+
+![Edit Note](./doc/img/notes/note-edit.png "Edit Note")
+
+Clicking on the view menu tab switches us to the viewing pane, which renders
+the note's Markdown and produces our displayed note.
+
+![View Note](./doc/img/notes/note-view.png "View Note")
+
+The Notes application is written using [Bootstrap][bootstrap]'s responsive
+libraries and should render fine on mobile devices, tablets, and pretty much
+anything else.
+
+[markdown]: http://daringfireball.net/projects/markdown/
 
 ### LocalStorage App
 The directory "`notes/app`" contains the standalone application, which uses
@@ -172,10 +199,24 @@ separated by number. We also provide a driver page for (nearly) all of
     Tests the collection [`App.Collections.Notes`](./notes/app/js/app/collections/notes.js).
   * [views/note-view.spec.js](./chapters/03/test/js/spec/views/note-view.spec.js):
     Tests the view [`App.Views.NoteView`](./notes/app/js/app/views/note-view.js),
-    which renders model [Markdown](http://daringfireball.net/projects/markdown/)
+    which renders model [Markdown][markdown]
     data into HTML.
 
 ### Chapter 4: Test Spies
+
+* **[Sinon.JS Spies](./chapters/04/test/test-sinon.html)**: Various test uses
+  for Sinon.JS [spies](http://sinonjs.org/docs/#spies).
+  * [sinon.spec.js](./chapters/04/test/js/spec/sinon.spec.js)
+
+* **[Tests](./chapters/04/test/test.html)**:
+  View for the "Notes" Backbone.js application that use Sinon.js spies.
+  * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
+    Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
+    view, which mediates events for the single page navigation menu bar.
+  * [views/note.spec.js](./chapters/04/test/js/spec/views/note.spec.js):
+    Tests the [`App.Views.Note`](./notes/app/js/app/views/note.js)
+    view, which wraps all of the other single note views and model.
+
 
 **TODO: Update all chapters tests.**
 **TODO: Continue links to all chapter examples.**
@@ -211,34 +252,40 @@ Chai has a rich [plugin](http://chaijs.com/plugins) ecosystem, with libraries
 that enhance the core Chai assertion statement library, provide more specific
 failure messages, and make application behavior easier to express.
 
-* **[chai-backbone](http://chaijs.com/plugins/chai-backbone)**: Adds
-  Backbone.js specific assertions such as `expect(model).to.trigger()` and
-  `expect("hash/fragment").to.route.to()`.
+Plugins that are used in some examples:
+
+* **[sinon-chai](http://chaijs.com/plugins/sinon-chai)**: Allows Chai to make
+  Sinon.JS assertions like `expect(spy).to.have.been.calledWith(42)` instead
+  of the Sinon.JS native `sinon.assert.calledWith(spy, 42)`.
+
+Additional plugins not used in the examples:
+
 * **[chai-jquery](http://chaijs.com/plugins/chai-jquery)**: Adds
   assertions for jQuery functions and attributes like `data()`, `class()`,
   `id()`, and `hidden()`.
-* **[sinon-chai](http://chaijs.com/plugins/sinon-chai)**: Allows Chai to make
-  Sinon.JS assertions like `expect(spy).to.have.been.calledWith(42)` instead
-  of the Sinon.JS native `sinon.assertCalledWith(spy, 42)`.
+* **[chai-backbone](http://chaijs.com/plugins/chai-backbone)**: Adds
+  Backbone.js specific assertions such as `expect(model).to.trigger()` and
+  `expect("hash/fragment").to.route.to()`.
 
 
 ## Libraries & Versions
 All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the "vendor" directory.
 
-**TODO: Update all library versions.**
+**TODO: Update all library versions here.**
+**TODO: Update all package.json Node.js libraries.**
 
 The core Backbone.js components used are:
 
 * **[jQuery][jquery]**: `1.9.1`
 * **[Underscore.js][underscore]**: `1.4.4`
-* **[Backbone.js][backbone]**: `0.9.10`
+* **[Backbone.js][backbone]**: `1.0.0`
 * **[Backbone.localStorage][backbone-ls]**: `1.1.0`
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
 
-* **[Twitter Bootstrap][bootstrap]**: `2.3.0`
+* **[Twitter Bootstrap][bootstrap]**: `2.3.1`
 * **[Showdown][showdown]**: `0.3.1`
 
 The frontend test libraries we use are:
@@ -249,8 +296,8 @@ The frontend test libraries we use are:
 
 The test plugins include:
 
-* **[Mocha PhantomJS][mocha-phantom]**: `2.0.0`
-
+* **[Sinon-Chai][sinon-chai]**: `2.3.1`
+* **[Mocha PhantomJS][mocha-phantom]**: `2.0.1`
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
@@ -277,8 +324,13 @@ as follows:
 * [Mocha][mocha] is Copyright TJ Holowaychuk and licensed under the
   [MIT](https://github.com/visionmedia/mocha/blob/master/LICENSE) license.
 
-* [Chai][chai] is Copyright Jake Luer and licensed under the MIT license.
+* [Chai][chai] is Copyright Jake Luer and licensed under the
   [BSD](https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE) license.
+
+* [Sinon-Chai][sinon-chai] is Copyright Domenic Denicola and licensed under
+  what we will politely approximate to a
+  "[public domain](https://github.com/domenic/sinon-chai/blob/master/LICENSE.txt)"
+  license.
 
 * [Sinon.JS][sinon] is Copyright Christian Johansen and licensed under the
   [BSD](https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE) license.
@@ -302,6 +354,7 @@ as follows:
 [phantom]: http://phantomjs.org/
 [phantom-install]: http://phantomjs.org/download.html
 [chai]: https://github.com/chaijs/chai
+[sinon-chai]: https://github.com/domenic/sinon-chai
 [underscore]: https://github.com/documentcloud/underscore
 [backbone]: https://github.com/documentcloud/backbone
 [backbone-ls]: https://github.com/jeromegn/backbone.localStorage

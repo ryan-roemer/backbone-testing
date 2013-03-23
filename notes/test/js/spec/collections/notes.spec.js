@@ -34,7 +34,7 @@ describe("App.Collections.Notes", function () {
         done();
       });
 
-      notes.fetch();
+      notes.fetch({ reset: true });
     });
 
   });
@@ -71,7 +71,7 @@ describe("App.Collections.Notes", function () {
         done();
       });
 
-      notes.fetch();
+      notes.fetch({ reset: true });
     });
 
     it("can delete a note", function (done) {
@@ -108,7 +108,7 @@ describe("App.Collections.Notes", function () {
         done();
       });
 
-      notes.fetch();
+      notes.fetch({ reset: true });
     });
 
   });

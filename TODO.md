@@ -5,6 +5,14 @@ Sample apps, test suites, and ideas for Backbone.js.
 Things to do before going live.
 
 ### Current
+* **App Tour**: Actually add in the screenshots, etc. Also make sure renders
+  images correctly on GitHub page.
+
+* **CSS**: The sidenav has some extra white on IE10. Whited out in affix mode
+  now, but there's still something wrong going on.
+
+* **Node v0.10.x**: Test everything against this.
+
 * **Code Coverage**: Integrate into phantom tests. (jscoverage) + install.
 * **Symlinks**: Hone down to what's *actually* needed for chaps 02, 03, on.
 
@@ -21,15 +29,16 @@ Things to do before going live.
   information.
 
 * **Libraries**: Update various versions for:
-  * Public vendor libraries. Ch01 test libs, Ch02 app libs.
+  * Public vendor libraries.
   * NPM package.json libraries.
 
 * **Licenses**: Review for any needed additions.
 
-* **Windows**: Test out all code samples on a Windows machine.
-  * Zipball: Instruct to download from the Packt site (my zipball
+* **Windows**:
+  * **Downloads**: Instruct to download from the Packt site (my zipball
     verified with real files).
-  * Probably need polyfill libraries.
+  * Possiblyx need polyfill libraries.
+  * Test out all code samples on a Windows machine.
 
 ### Book Page
 * Create a "book.md" page with a TOC. Or, maybe just a link.

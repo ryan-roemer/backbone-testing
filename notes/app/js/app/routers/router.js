@@ -5,6 +5,7 @@
   // ------
   // The router translates hash routes in to views.
   App.Routers.Router = Backbone.Router.extend({
+
     routes: {
       "": "notes",
       "note/:id/:action": "note",
@@ -50,9 +51,9 @@
       // our collection, we must do an initial collection fetch, as
       // there is no server to bootstrap from.
       if (!coll.fetched) {
-        return coll.once("reset", function () {
+        return this.listenToOnce(coll, "reset", function () {
           this.note(noteId, action);
-        }, this);
+        });
       }
 
       // Try to find note in existing collection.

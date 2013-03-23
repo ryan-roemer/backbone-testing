@@ -10,36 +10,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Backbone.js Testing</title>
     <meta name="description" content="Example applications and chapter samples for Backbone.js Testing.">
-    <meta name="keywords" content="backbone.js testings, backbone.js, backbone, javascript, underscore.js, jquery, testing, unit test">
+    <meta name="keywords" content="backbone.js testing, backbone.js, backbone, javascript, underscore.js, jquery, mocha, chai, sinon, sinon.js, testing, unit test, spies, mocks, stubs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="doc/site.css">
   </head>
-  <body><a href="https://github.com/ryan-roemer/backbone-testing" style="position: absolute; top: 0; right: 0; border: 0;" class="hidden-phone"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" class="banner"></a>
-    <header id="hero" class="hero-unit backing"></header>
-    <div class="container"><h1>Backbone.js Testing</h1>
+  <body>
+    <div id="page" class="bg container">
+      <header id="hero" class="hero-unit backing"></header>
+      <div class="container"><h1>Backbone.js Testing</h1>
 
 <p>Sample apps, test suites, and ideas for Backbone.js.</p>
 
 <h2>Introduction</h2>
 
-<p>This site provides materials and resources for testing <a href="https://github.com/documentcloud/backbone">Backbone.js</a>
-web applications. Created as a companion for the forthcoming
-&quot;Backbone.js Testing&quot; book, we provide tests and code snippets for each book
-chapter, as well as a a reference Backbone.js application -
-&quot;<a href="./notes/app/index.html">Notes</a>&quot; - that is used in various testing exercises.</p>
+<p>This site provides materials and resources for developing and testing
+<a href="https://github.com/documentcloud/backbone">Backbone.js</a> web applications. This site provides tests and code
+samples for the chapters of a forthcoming &quot;Backbone.js Testing&quot; book.
+We also provide a reference Backbone.js application -
+&quot;<strong><a href="./notes/app/index.html">Notes</a></strong>&quot; - for creating and viewing notes, which we use
+throughout the examples in the book.</p>
 
-<p>The application technologies we cover include:</p>
+<p>The core set of Backbone.js application technologies we cover includes:</p>
 
 <ul><li><strong><a href="http://jquery.com/">jQuery</a></strong></li><li><strong><a href="http://underscorejs.org/">Underscore.js</a></strong></li><li><strong><a href="http://backbonejs.org/">Backbone.js</a></strong></li></ul>
 
-<p>And the test stack is comprised of:</p>
+<p>We write a test infrastructure built on the following (fantastic) test
+libraries.</p>
 
 <ul><li><strong><a href="http://visionmedia.github.com/mocha/">Mocha</a></strong></li><li><strong><a href="http://chaijs.com/">Chai</a></strong></li><li><strong><a href="http://sinonjs.org/">Sinon.JS</a></strong></li></ul>
 
-<p>All of the content here is very much a work in progress, with lots of likely
-incidental errors and such. Bear with us as things evolve...</p>
+<p>The source code for all of the code examples and the Notes application is
+available on the project&#39;s <a href="https://github.com/ryan-roemer/backbone-testing/">GitHub repository</a>.</p>
+
+<p>All of the site&#39;s content is very much a work in progress.
+There are lots of likely incidental errors and such, so please report any bugs
+and bear with us as this project evolves.</p>
 
 <h2>Compatibility</h2>
 
@@ -54,14 +61,33 @@ prototype extension is not compatible with IE 9 and lower.</p>
 
 <h2>Notes App</h2>
 
-<p>&quot;Notes&quot; is a simple personal note manager, written in Backbone.js. We provide
-two versions -- a &quot;quick and easy&quot; <code>localStorage</code> based application that works
-in your browser with no additional setup, and a &quot;classic&quot; application with
-a full REST backend.</p>
+<p><strong><a href="./notes/app/index.html">Notes</a></strong> is a simple personal note manager, written in
+Backbone.js. We provide two versions - a &quot;quick and easy&quot; <code>localStorage</code> based
+application that works in your browser with no additional setup, and a
+&quot;classic&quot; application with a full REST backend.</p>
 
 <h3>The Tour</h3>
 
-<p><strong>TODO: Write up tour and add screenshots.</strong></p>
+<p>The Notes application home page lists existing notes (by creation date), and
+provides a form field to create a new note with a title. A filter field is
+available in the menu bar to limit the list of displayed notes by title.</p>
+
+<p><img alt="Notes List" title="Notes List" src="./doc/img/notes/notes-list.png"/></p>
+
+<p>Clicking on the edit icon brings us to the single note view, with a simple
+form editor for the title and text body fields of the note. The body of a
+note is written using <a href="http://daringfireball.net/projects/markdown/">Markdown</a> formatting.</p>
+
+<p><img alt="Edit Note" title="Edit Note" src="./doc/img/notes/note-edit.png"/></p>
+
+<p>Clicking on the view menu tab switches us to the viewing pane, which renders
+the note&#39;s Markdown and produces our displayed note.</p>
+
+<p><img alt="View Note" title="View Note" src="./doc/img/notes/note-view.png"/></p>
+
+<p>The Notes application is written using <a href="https://github.com/twitter/bootstrap">Bootstrap</a>&#39;s responsive
+libraries and should render fine on mobile devices, tablets, and pretty much
+anything else.</p>
 
 <h3>LocalStorage App</h3>
 
@@ -156,6 +182,14 @@ data into HTML.</li></ul></li></ul>
 
 <h3>Chapter 4: Test Spies</h3>
 
+<ul><li><p><strong><a href="./chapters/04/test/test-sinon.html">Sinon.JS Spies</a></strong>: Various test uses
+for Sinon.JS <a href="http://sinonjs.org/docs/#spies">spies</a>.</p><ul><li><p><a href="./chapters/04/test/js/spec/sinon.spec.js">sinon.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/04/test/test.html">Tests</a></strong>:
+View for the &quot;Notes&quot; Backbone.js application that use Sinon.js spies.</p><ul><li><a href="./chapters/04/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
+Tests the <a href="./notes/app/js/app/views/note-nav.js"><code>App.Views.NoteNav</code></a>
+view, which mediates events for the single page navigation menu bar.</li><li><a href="./chapters/04/test/js/spec/views/note.spec.js">views/note.spec.js</a>:
+Tests the <a href="./notes/app/js/app/views/note.js"><code>App.Views.Note</code></a>
+view, which wraps all of the other single note views and model.</li></ul></li></ul>
+
 <p><strong>TODO: Update all chapters tests.</strong>
 <strong>TODO: Continue links to all chapter examples.</strong></p>
 
@@ -191,28 +225,35 @@ application and chapter examples above.</p>
 that enhance the core Chai assertion statement library, provide more specific
 failure messages, and make application behavior easier to express.</p>
 
-<ul><li><strong><a href="http://chaijs.com/plugins/chai-backbone">chai-backbone</a></strong>: Adds
-Backbone.js specific assertions such as <code>expect(model).to.trigger()</code> and
-<code>expect(&quot;hash/fragment&quot;).to.route.to()</code>.</li><li><strong><a href="http://chaijs.com/plugins/chai-jquery">chai-jquery</a></strong>: Adds
-assertions for jQuery functions and attributes like <code>data()</code>, <code>class()</code>,
-<code>id()</code>, and <code>hidden()</code>.</li><li><strong><a href="http://chaijs.com/plugins/sinon-chai">sinon-chai</a></strong>: Allows Chai to make
+<p>Plugins that are used in some examples:</p>
+
+<ul><li><strong><a href="http://chaijs.com/plugins/sinon-chai">sinon-chai</a></strong>: Allows Chai to make
 Sinon.JS assertions like <code>expect(spy).to.have.been.calledWith(42)</code> instead
-of the Sinon.JS native <code>sinon.assertCalledWith(spy, 42)</code>.</li></ul>
+of the Sinon.JS native <code>sinon.assert.calledWith(spy, 42)</code>.</li></ul>
+
+<p>Additional plugins not used in the examples:</p>
+
+<ul><li><strong><a href="http://chaijs.com/plugins/chai-jquery">chai-jquery</a></strong>: Adds
+assertions for jQuery functions and attributes like <code>data()</code>, <code>class()</code>,
+<code>id()</code>, and <code>hidden()</code>.</li><li><strong><a href="http://chaijs.com/plugins/chai-backbone">chai-backbone</a></strong>: Adds
+Backbone.js specific assertions such as <code>expect(model).to.trigger()</code> and
+<code>expect(&quot;hash/fragment&quot;).to.route.to()</code>.</li></ul>
 
 <h2>Libraries &amp; Versions</h2>
 
 <p>All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the &quot;vendor&quot; directory.</p>
 
-<p><strong>TODO: Update all library versions.</strong></p>
+<p><strong>TODO: Update all library versions here.</strong>
+<strong>TODO: Update all package.json Node.js libraries.</strong></p>
 
 <p>The core Backbone.js components used are:</p>
 
-<ul><li><strong><a href="https://github.com/jquery/jquery">jQuery</a></strong>: <code>1.9.1</code></li><li><strong><a href="https://github.com/documentcloud/underscore">Underscore.js</a></strong>: <code>1.4.4</code></li><li><strong><a href="https://github.com/documentcloud/backbone">Backbone.js</a></strong>: <code>0.9.10</code></li><li><strong><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a></strong>: <code>1.1.0</code></li><li><strong><a href="https://github.com/douglascrockford/JSON-js">JSON</a></strong>: <em>For older browsers</em></li></ul>
+<ul><li><strong><a href="https://github.com/jquery/jquery">jQuery</a></strong>: <code>1.9.1</code></li><li><strong><a href="https://github.com/documentcloud/underscore">Underscore.js</a></strong>: <code>1.4.4</code></li><li><strong><a href="https://github.com/documentcloud/backbone">Backbone.js</a></strong>: <code>1.0.0</code></li><li><strong><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a></strong>: <code>1.1.0</code></li><li><strong><a href="https://github.com/douglascrockford/JSON-js">JSON</a></strong>: <em>For older browsers</em></li></ul>
 
 <p>The sample Notes application also uses:</p>
 
-<ul><li><strong><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a></strong>: <code>2.3.0</code></li><li><strong><a href="https://github.com/coreyti/showdown">Showdown</a></strong>: <code>0.3.1</code></li></ul>
+<ul><li><strong><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a></strong>: <code>2.3.1</code></li><li><strong><a href="https://github.com/coreyti/showdown">Showdown</a></strong>: <code>0.3.1</code></li></ul>
 
 <p>The frontend test libraries we use are:</p>
 
@@ -220,7 +261,7 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 
 <p>The test plugins include:</p>
 
-<ul><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha PhantomJS</a></strong>: <code>2.0.0</code></li></ul>
+<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.3.1</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha PhantomJS</a></strong>: <code>2.0.1</code></li></ul>
 
 <h2>Licenses</h2>
 
@@ -236,8 +277,11 @@ the <a href="https://github.com/documentcloud/underscore/blob/master/LICENSE">MI
 license.</p></li><li><p><a href="https://github.com/jquery/jquery">jQuery</a> is Copyright jQuery Foundation and licensed under the
 <a href="https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt">MIT</a> license.</p></li><li><p><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a> is Copyright Jerome Gravel-Niquet and
 licensed under the MIT license.</p></li><li><p><a href="https://github.com/douglascrockford/JSON-js">JSON</a> is Public Domain software created by Douglas Crockford.</p></li><li><p><a href="https://github.com/visionmedia/mocha">Mocha</a> is Copyright TJ Holowaychuk and licensed under the
-<a href="https://github.com/visionmedia/mocha/blob/master/LICENSE">MIT</a> license.</p></li><li><p><a href="https://github.com/chaijs/chai">Chai</a> is Copyright Jake Luer and licensed under the MIT license.
-<a href="https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE">BSD</a> license.</p></li><li><p><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a> is Copyright Christian Johansen and licensed under the
+<a href="https://github.com/visionmedia/mocha/blob/master/LICENSE">MIT</a> license.</p></li><li><p><a href="https://github.com/chaijs/chai">Chai</a> is Copyright Jake Luer and licensed under the
+<a href="https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE">BSD</a> license.</p></li><li><p><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a> is Copyright Domenic Denicola and licensed under
+what we will politely approximate to a
+&quot;<a href="https://github.com/domenic/sinon-chai/blob/master/LICENSE.txt">public domain</a>&quot;
+license.</p></li><li><p><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a> is Copyright Christian Johansen and licensed under the
 <a href="https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE">BSD</a> license.</p></li><li><p><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a> is Copyright Twitter, Inc. and licensed under
 the <a href="https://github.com/twitter/bootstrap/blob/master/LICENSE">Apache v2.0</a>
 license.</p></li><li><p><a href="https://github.com/coreyti/showdown">Showdown</a> is Copyright Corey Innis and licensed under the
@@ -292,6 +336,7 @@ for any changes. Pull requests should be able to pass</p>
 <pre><code>$ npm run-script check</code></pre>
 
 <p>without any errors.</p>
+      </div>
     </div>
     <div id="fixtures" style="display: none;" class="hidden">
       <div id="grid" class="row">
@@ -306,6 +351,7 @@ for any changes. Pull requests should be able to pass</p>
       <li class="nav-item"><a><i class="icon-chevron-right"></i></a></li>
     </div>
     <script src="vendor-ln/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
     <script src="vendor-ln/underscore.min.js"></script>
     <script src="vendor-ln/bootstrap/js/bootstrap.min.js"></script>
     <script src="doc/site.js"></script>
