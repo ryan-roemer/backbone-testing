@@ -163,6 +163,10 @@ $(function () {
           $parent.before($("<p />").append($el.detach()));
         }
 
+        // Temp: Just hide.
+        $el.hide();
+        return;
+
         // Add brackets.
         $el.before("[").after("]");
       });
@@ -173,9 +177,9 @@ $(function () {
   _.each([
     Transforms.background,
     Transforms.headingToHero,
+    Transforms.todos,             // TODO REMOVE
     Transforms.gridAndNav,
-    Transforms.chapterExamples,
-    Transforms.todos
+    Transforms.chapterExamples
   ], function (fn) { fn(); });
 
 });

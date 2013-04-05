@@ -6,6 +6,7 @@
   // A single note within a list of notes.
   App.Views.NotesItem = Backbone.View.extend({
 
+    // Set rendered DOM element `id` property to the model's id.
     id: function () { return this.model.id; },
 
     tagName: "tr",
@@ -15,15 +16,20 @@
     template: _.template(App.Templates["template-notes-item"]),
 
     events: {
-      "click .note-view": "viewNote",
-      "click .note-edit": "editNote",
-      "click .note-delete": "deleteNote"
+      "click .note-view":   function () { this.viewNote(); },
+      "click .note-edit":   function () { this.editNote(); },
+      "click .note-delete": function () { this.deleteNote(); }
     },
 
-    initialize: function () {
+    initialize: function (attrs, opts) {
+      // Get router from options or app. Also allow to be empty
+      // so that tests can `render` without.
+      opts || (opts = {});
+      this.router = opts.router || app.router;
+
       this.listenTo(this.model, {
-        "change": this.render,
-        "destroy": this.remove
+        "change":   function () { this.render(); },
+        "destroy":  function () { this.remove(); }
       });
     },
 
@@ -34,12 +40,12 @@
 
     viewNote: function () {
       var hash = ["note", this.model.id, "view"].join("/");
-      app.router.navigate(hash, { trigger: true });
+      this.router.navigate(hash, { trigger: true });
     },
 
     editNote: function () {
       var hash = ["note", this.model.id, "edit"].join("/");
-      app.router.navigate(hash, { trigger: true });
+      this.router.navigate(hash, { trigger: true });
     },
 
     deleteNote: function () {

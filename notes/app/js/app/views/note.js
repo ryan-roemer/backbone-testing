@@ -25,7 +25,10 @@
       opts || (opts = {});
 
       // Router can be set directly (e.g., tests), or use global.
+      // The `app.router` object *does* exist at this point.
+      // (But we'll add an assert to verify).
       this.router = opts.router || app.router;
+      if (!this.router) { throw new Error("No router"); }
 
       // Model controls view rendering and existence.
       this.listenTo(this.model, {

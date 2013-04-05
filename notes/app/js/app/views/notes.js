@@ -16,8 +16,12 @@
     el: "#notes",
 
     events: {
-      "keypress #note-new-input": "createNoteOnEnter",
-      "click    #note-create": "createNote"
+      "click    #note-create": function () {
+        this.createNote();
+      },
+      "keypress #note-new-input": function (ev) {
+        this.enterNote(ev);
+      }
     },
 
     initialize: function () {
@@ -32,8 +36,8 @@
       // demonstration.
       //
       this.listenTo(this.collection, {
-        "reset": this.addNotes,
-        "notes:add": this.addNote
+        "reset":     function ()  { this.addNotes(); },
+        "notes:add": function (m) { this.addNote(m); }
       });
 
       // Create helper filter view.
@@ -41,8 +45,8 @@
         collection: this.collection
       });
 
-      // Kick off the sync.
-      this.collection.fetch({ reset: true });
+      // Need the collection to be fetched to kick off adding notes.
+      // This is currently done in "app.js"
     },
 
     render: function () {
@@ -73,7 +77,7 @@
     },
 
     // Create note on enter key.
-    createNoteOnEnter: function (ev) {
+    enterNote: function (ev) {
       if (ev.which === ENTER) {
         this.createNote();
       }
@@ -94,13 +98,10 @@
 
       // Add new model to collection, and corresponding note
       // to DOM after model is saved.
-      this.collection.create({ title: title }, {
+      coll.create({ title: title }, {
         success: function (colData, modelData) {
-          // Accept various raw model `id` formats.
-          var id = modelData.id || modelData._id;
-
           // Trigger event on model retrieved from collection.
-          coll.trigger("notes:add", coll.get(id));
+          coll.trigger("notes:add", coll.get(modelData.id));
         }
       });
     }

@@ -29,15 +29,10 @@
 
     <!-- JavaScript Application Libraries -->
     <script src="../app/js/app/namespace.js"></script>
-    <script src="../app/js/app/config.js"></script>
-    <script>
-      // Test overrides (before any app components).
-      App.Config = _.extend(App.Config, {
-        storeName: "notes-test" // localStorage for tests.
-      });
-    </script>
-    <script src="../app/js/app/models/note.js"></script>
-    <script src="../app/js/app/collections/notes.js"></script>
+    <!-- Use real configuration, which we fake with Sinon.JS -->
+    <script src="../app/js/app-rest/config.js"></script>
+    <script src="../app/js/app-rest/models/note.js"></script>
+    <script src="../app/js/app-rest/collections/notes.js"></script>
     <script src="../app/js/app/templates/templates.js"></script>
     <script src="../app/js/app/views/note-nav.js"></script>
     <script src="../app/js/app/views/note-view.js"></script>
@@ -65,7 +60,7 @@
     <script src="js/spec/namespace.spec.js"></script>
     <script src="js/spec/models/note.spec.js"></script>
     <!-- Ch03 -->
-    <script src="js/spec/collections/notes.spec.js"></script>
+    <script src="js/spec-rest/collections/notes.spec.js"></script>
     <script src="js/spec/views/note-view.spec.js"></script>
     <!-- Ch04 -->
     <script src="js/spec/views/note-nav.spec.js"></script>

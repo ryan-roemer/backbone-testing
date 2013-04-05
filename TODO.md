@@ -1,20 +1,8 @@
 # Backbone.js Testing
 Sample apps, test suites, and ideas for Backbone.js.
 
-## Tasks
+## Current Tasks
 Things to do before going live.
-
-### Current
-* **App Tour**: Actually add in the screenshots, etc. Also make sure renders
-  images correctly on GitHub page.
-
-* **CSS**: The sidenav has some extra white on IE10. Whited out in affix mode
-  now, but there's still something wrong going on.
-
-* **Node v0.10.x**: Test everything against this.
-
-* **Code Coverage**: Integrate into phantom tests. (jscoverage) + install.
-* **Symlinks**: Hone down to what's *actually* needed for chaps 02, 03, on.
 
 
 ## Notes
@@ -37,26 +25,36 @@ Things to do before going live.
 * **Windows**:
   * **Downloads**: Instruct to download from the Packt site (my zipball
     verified with real files).
-  * Possiblyx need polyfill libraries.
+  * Possibly need polyfill libraries.
   * Test out all code samples on a Windows machine.
 
 ### Book Page
 * Create a "book.md" page with a TOC. Or, maybe just a link.
 
 
-## Check / Retrofit
-* Auto-TODOs: Run and clear `npms todo`.
-* All TODOs in "notes/", "notes-rest/", "chapters/".
-* Replace `should()` with `expect()`...
-
-
-## Browser Compatibility
+## Before Final / Publication
 * **Browsers**: Test in:
   * Chrome
   * Safari
   * Firefox
-  * Win/IE
+  * Win/IE9
+  * Win/IE10
 
+* Clear all TODOs everywhere (code included, and especially in README.md).
+  And run: `npms todo`.
+
+* **Library Versions**: Review and upgrade everything.
+  * Frontend code.
+  * Backend Node.js libraries, "package.json".
+
+* **Package.json**:
+  * Prune unused libs.
+  * Move stuff to dev dependencies.
+
+## Final / Packaging
+* **Replace Symlinks**: Create script to push everything from "vendor"
+  to the actual location elsewhere (maybe based on name). Remove all
+  symlinks and use *actual* files instead.
 
 ## After Live
 * **Travis CI**: Hook up (w/ PhantomJS)
@@ -64,25 +62,7 @@ Things to do before going live.
 * **Absolute Links**: Retrofit relative links w/ "http://backbone-testing.com/"
   so that the GitHub README page works (sigh).
 
-## Before Final
-* Clear all TODOs everywhere (code included, and especially in README.md).
-* JSLint HTML JS code. (`npm run-script style`).
-
 * **UI Design**: Retrofit the UI design with something much better looking.
-* **Prettify**: Add prettify.js to the code samples in the index.html page.
-
-* **Library Versions**: Review and upgrade everything.
-
-* **Package.json**:
-  * Update all libraries.
-  * Prune unused libs.
-  * Move stuff to dev dependencies.
-
-
-## Final / Packaging
-* **Replace Symlinks**: Create script to push everything from "vendor"
-  to the actual location elsewhere (maybe based on name). Remove all
-  symlinks and use *actual* files instead.
 
 
 ## Future

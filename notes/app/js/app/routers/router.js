@@ -6,26 +6,35 @@
   // The router translates hash routes in to views.
   App.Routers.Router = Backbone.Router.extend({
 
+    // **Note**: Could wrap this up in functions to allow easier
+    // stubbing of the underlying methods. But, there are some
+    // definite Backbone.js efficiencies from using simple string
+    // method names instead (like name inference, etc).
     routes: {
       "": "notes",
       "note/:id/:action": "note",
     },
 
-    initialize: function () {
+    initialize: function (opts) {
+      opts || (opts = {});
+      this.notesView = opts.notesView || app.notesView;
+      this.noteNavView = opts.noteNavView || app.noteNavView;
+
+      // Validation.
+      if (!this.notesView) { throw new Error("No notesView"); }
+      if (!this.noteNavView) { throw new Error("No noteNavView"); }
+
       // Stash current note view for re-rendering.
       this.noteView = null;
     },
 
     // Show notes list.
     notes: function () {
-      app.notesView.render();
+      this.notesView.render();
     },
 
     // Common single note edit/view.
     note: function (noteId, action) {
-      var coll = app.notesView.collection,
-        model = null;
-
       // Check if we are already at currently active view.
       if (this.noteView) {
         if (this.noteView.model.id === noteId) {
@@ -37,37 +46,17 @@
         }
       }
 
-      // Wait for model to arrive if fetching, then recurse.
-      //
-      // The collection is fetched on app startup, and this route
-      // might fire *before* then, so we need to wait. An alternative
-      // to this waiting approach is to **bootstrap** the data from
-      // the server so that an initial collection fetch is
-      // unnecessary.
-      //
-      // See: http://backbonejs.org/#FAQ-bootstrap
-      //
-      // However, as we support a `localStorage`-based approach for
-      // our collection, we must do an initial collection fetch, as
-      // there is no server to bootstrap from.
-      if (!coll.fetched) {
-        return this.listenToOnce(coll, "reset", function () {
-          this.note(noteId, action);
-        });
-      }
-
       // Try to find note in existing collection.
-      model = coll.get(noteId);
+      var model = this.notesView.collection.get(noteId);
       if (!model) {
-        // Log error and go to home page on missing model.
-        console.log("Error: No model for id: " + noteId);
-        return app.router.navigate("", { trigger: true });
+        // Go to home page on missing model.
+        return this.navigate("", { trigger: true });
       }
 
       // Create note and add to DOM.
       this.noteView = new App.Views.Note({ model: model }, {
         action: action,
-        nav: app.noteNavView
+        nav: this.noteNavView
       });
       $("#note").html(this.noteView.render().$el);
     }

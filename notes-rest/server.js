@@ -33,6 +33,18 @@ Note.Schema = mongoose.Schema({
     type: Date,
     "default": new Date()
   }
+}, {
+  // Remove extra `id` attribute so we can make virtual.
+  // See: https://github.com/LearnBoost/mongoose/issues/1137
+  id: false,
+
+  // Add virtual fields to data here.
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+});
+
+Note.Schema.virtual("id").get(function () {
+  return this.get("_id");
 });
 
 Note.Model = mongoose.model("Note", Note.Schema);
@@ -47,6 +59,16 @@ function _handler(res, status) {
       return res.json({ err: err.toString() }, 500);
     }
 
+    // Translate to JSON.
+    if (Array.isArray(results)) {
+      results = results.map(function (m) {
+        return m.toJSON();
+      });
+    } else {
+      results = results.toJSON();
+    }
+
+    res.set("cache-control", "no-cache");
     res.json(results, status || 200);
   };
 }
@@ -79,6 +101,7 @@ app.use(function (req, res, next) {
 // Configurations and static server.
 app.use(express.bodyParser());
 app.use("/app", express.static(__dirname + "/app"));
+app.use("/test", express.static(__dirname + "/test"));
 app.use(_logRequest);
 
 // REST API

@@ -1,16 +1,9 @@
 <html>
-  <meta charset="utf-8">
   <head>
     <title>Backbone.js Tests</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="js/lib/mocha.css" />
-  </head>
-  <body>
-    <div id="mocha"></div>
-
-    <!-- Test Fixtures. -->
-    <div id="fixtures" style="display: none; visibility: hidden;"></div>
 
     <!-- JavaScript Test Libraries. -->
     <script src="js/lib/mocha.js"></script>
@@ -42,38 +35,32 @@
     <script src="../app/js/app/views/note-nav.js"></script>
     <script src="../app/js/app/views/note-view.js"></script>
     <script src="../app/js/app/views/note.js"></script>
-    <script src="../app/js/app/views/notes-item.js"></script>
-    <script src="../app/js/app/views/notes-filter.js"></script>
-    <script src="../app/js/app/views/notes.js"></script>
-    <script src="../app/js/app/routers/router.js"></script>
+    <script src="../app/js/app/views/notes-item.js"></script> <!-- NEW -->
+    <!-- SKIPPED <script src="../app/js/app/views/notes-filter.js"></script> -->
+    <!-- SKIPPED <script src="../app/js/app/views/notes.js"></script> -->
+    <!-- <script src="../app/js/app/routers/router.js"></script> NEW -->
+    <script src="js/spec/routers/router.js"></script> <!-- FAKED -->
 
-    <!-- Set up Mocha and Chai -->
+    <!-- Test Setup -->
     <script>
       var expect = chai.expect;
-      mocha.setup({
-        ui: "bdd",
-        bail: false
-      });
+      mocha.setup("bdd");
 
       window.onload = function () {
         (window.mochaPhantomJS || mocha).run();
       };
     </script>
 
-    <!-- Include our specs. -->
-    <!-- Ch02 -->
-    <script src="js/spec/namespace.spec.js"></script>
-    <script src="js/spec/models/note.spec.js"></script>
-    <!-- Ch03 -->
-    <script src="js/spec/collections/notes.spec.js"></script>
-    <script src="js/spec/views/note-view.spec.js"></script>
-    <!-- Ch04 -->
-    <script src="js/spec/views/note-nav.spec.js"></script>
-    <script src="js/spec/views/note.spec.js"></script>
-    <!-- Ch05 -->
+    <!-- Tests. -->
     <script src="js/spec/views/notes-item.spec.js"></script>
-    <script src="js/spec/views/notes-filter.spec.js"></script>
-    <script src="js/spec/views/notes.spec.js"></script>
     <script src="js/spec/routers/router.spec.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <!-- Test Fixtures. -->
+    <div id="fixtures"
+         style="display: none; visibility: hidden;"></div>
+
   </body>
 </html>

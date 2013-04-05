@@ -11,9 +11,7 @@
         text: "*Edit your note!*",
         createdAt: new Date()
       };
-    },
-
-    idAttribute: "_id"
+    }
 
   });
 }());

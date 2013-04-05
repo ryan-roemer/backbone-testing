@@ -78,15 +78,21 @@ anything else.
 
 ### LocalStorage App
 The directory "`notes/app`" contains the standalone application, which uses
-HTML5 [localStorage][ls] as a backing store. The application has a working
-**[online demo][notes_demo]** as well as a full suite of
-**[tests][notes_test]** that you can try out from this page.
+HTML5 [localStorage][ls] as a backing store. Some useful links to get you
+started:
 
-*Note* that because the application uses `localStorage`, data is only persisted
-to the specific browser and computer that you use with the application.
+* **[App demo][notes_demo]**: Online demo for you to try out. Because the app
+  saves to local storage, your notes will be preserved across browser sessions
+  (for the same browser).
+* **[Test Suite][notes_test]**: The full Mocha / Chai / Sinon.JS test suite run
+  in a single driver page.
+* **[Code Coverage][notes_cov]**: Runs the above test suite with full
+  browser-side code coverage thanks to the awesome
+  [Blanket.js](http://blanketjs.org) coverage library.
 
 [notes_demo]: ./notes/app/index.html
 [notes_test]: ./notes/test/test.html
+[notes_cov]: ./notes/test/coverage.html
 [ls]: https://developer.mozilla.org/en-US/docs/DOM/Storage#localStorage
 
 ### Server-Backed App
@@ -96,7 +102,16 @@ can be found in the "`notes-rest`" directory. The application is
 served via a [Node.js](http://nodejs.org/)/[Express](http://expressjs.com/)
 application located in "[notes-rest/server.js](./notes-rest/server.js)".
 
-The server application requires [Node.js](http://nodejs.org/download/) and
+Although we don't provide an online demo application, the full application
+**[test suite][notes_rest_test]** is available online using Sinon.JS
+[fake servers](http://sinonjs.org/docs/#server) to fake out the requirement
+of having a real backend MongoDB server for the `App.Collections.Notes`
+tests. The test suite is nearly identical to the localStorage application tests
+for all of the other tests.
+
+[notes_rest_test]: ./notes-rest/test/test.html
+
+The server requires [Node.js](http://nodejs.org/download/) and
 [MongoDB](http://docs.mongodb.org/manual/installation/) installations.
 Once you have these installed, you can change into the root of this repository
 and install all of the project libraries:
@@ -209,7 +224,7 @@ separated by number. We also provide a driver page for (nearly) all of
   * [sinon.spec.js](./chapters/04/test/js/spec/sinon.spec.js)
 
 * **[Tests](./chapters/04/test/test.html)**:
-  View for the "Notes" Backbone.js application that use Sinon.js spies.
+  Tests for the "Notes" Backbone.js application that use Sinon.js spies.
   * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
     Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
     view, which mediates events for the single page navigation menu bar.
@@ -217,8 +232,30 @@ separated by number. We also provide a driver page for (nearly) all of
     Tests the [`App.Views.Note`](./notes/app/js/app/views/note.js)
     view, which wraps all of the other single note views and model.
 
+### Chapter 5: Test Stubs and Mocks
 
-**TODO: Update all chapters tests.**
+* **[Sinon.JS Stubs](./chapters/05/test/test-stubs.html)**: Tests using
+  Sinon.JS [stubs](http://sinonjs.org/docs/#stubs).
+  * [stubs.spec.js](./chapters/05/test/js/spec/stubs.spec.js)
+
+* **[Sinon.JS Mocks](./chapters/05/test/test-mocks.html)**: Tests using
+  Sinon.JS [mocks](http://sinonjs.org/docs/#mocks).
+  * [mocks.spec.js](./chapters/05/test/js/spec/mocks.spec.js)
+
+* **[Tests](./chapters/05/test/test.html)**:
+  Tests for the "Notes" Backbone.js application with Sinon.JS spies and
+  mocks.
+
+**TODO: Insert app tests**
+**TODO: Note that the router is actually fake / shortened.**
+
+**TODO: Ch05 - Add chapter tests to all chapters tests.**
+**TODO: Ch05 - Add Notes tests and spec links.**
+
+**TODO: Update (1) All chapters links.**
+**TODO: Update (2) notes coverage.html.**
+**TODO: Update (3) notes-rest test.html.**
+
 **TODO: Continue links to all chapter examples.**
 
 
@@ -346,6 +383,10 @@ as follows:
   [MIT](https://github.com/metaskills/mocha-phantomjs/blob/master/MIT-LICENSE)
   license.
 
+* [Blanket.js][blanket] is Copyright Alex Seville and licensed under the
+  [MIT](https://github.com/alex-seville/blanket/blob/master/LICENSE-MIT)
+  license.
+
 [bootstrap]: https://github.com/twitter/bootstrap
 [jquery]: https://github.com/jquery/jquery
 [json_js]: https://github.com/douglascrockford/JSON-js
@@ -360,6 +401,7 @@ as follows:
 [backbone-ls]: https://github.com/jeromegn/backbone.localStorage
 [sinon]: https://github.com/cjohansen/Sinon.JS
 [showdown]: https://github.com/coreyti/showdown
+[blanket]: https://github.com/alex-seville/blanket
 
 
 ## Development
@@ -383,6 +425,7 @@ From there, there are various NPM script helpers for style checking and tests:
     # Run headless tests for the application, individual chapters, all chapters
     # as one big test, and all of these together.
     $ npm run-script test-app
+    $ npm run-script test-rest
     $ npm run-script test-chaps
     $ npm run-script test-chaps-all
     $ npm run-script test

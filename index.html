@@ -92,12 +92,15 @@ anything else.</p>
 <h3>LocalStorage App</h3>
 
 <p>The directory &quot;<code>notes/app</code>&quot; contains the standalone application, which uses
-HTML5 <a href="https://developer.mozilla.org/en-US/docs/DOM/Storage#localStorage">localStorage</a> as a backing store. The application has a working
-<strong><a href="./notes/app/index.html">online demo</a></strong> as well as a full suite of
-<strong><a href="./notes/test/test.html">tests</a></strong> that you can try out from this page.</p>
+HTML5 <a href="https://developer.mozilla.org/en-US/docs/DOM/Storage#localStorage">localStorage</a> as a backing store. Some useful links to get you
+started:</p>
 
-<p><em>Note</em> that because the application uses <code>localStorage</code>, data is only persisted
-to the specific browser and computer that you use with the application.</p>
+<ul><li><strong><a href="./notes/app/index.html">App demo</a></strong>: Online demo for you to try out. Because the app
+saves to local storage, your notes will be preserved across browser sessions
+(for the same browser).</li><li><strong><a href="./notes/test/test.html">Test Suite</a></strong>: The full Mocha / Chai / Sinon.JS test suite run
+in a single driver page.</li><li><strong><a href="./notes/test/coverage.html">Code Coverage</a></strong>: Runs the above test suite with full
+browser-side code coverage thanks to the awesome
+<a href="http://blanketjs.org">Blanket.js</a> coverage library.</li></ul>
 
 <h3>Server-Backed App</h3>
 
@@ -107,7 +110,14 @@ can be found in the &quot;<code>notes-rest</code>&quot; directory. The applicati
 served via a <a href="http://nodejs.org/">Node.js</a>/<a href="http://expressjs.com/">Express</a>
 application located in &quot;<a href="./notes-rest/server.js">notes-rest/server.js</a>&quot;.</p>
 
-<p>The server application requires <a href="http://nodejs.org/download/">Node.js</a> and
+<p>Although we don&#39;t provide an online demo application, the full application
+<strong><a href="./notes-rest/test/test.html">test suite</a></strong> is available online using Sinon.JS
+<a href="http://sinonjs.org/docs/#server">fake servers</a> to fake out the requirement
+of having a real backend MongoDB server for the <code>App.Collections.Notes</code>
+tests. The test suite is nearly identical to the localStorage application tests
+for all of the other tests.</p>
+
+<p>The server requires <a href="http://nodejs.org/download/">Node.js</a> and
 <a href="http://docs.mongodb.org/manual/installation/">MongoDB</a> installations.
 Once you have these installed, you can change into the root of this repository
 and install all of the project libraries:</p>
@@ -184,14 +194,31 @@ data into HTML.</li></ul></li></ul>
 
 <ul><li><p><strong><a href="./chapters/04/test/test-sinon.html">Sinon.JS Spies</a></strong>: Various test uses
 for Sinon.JS <a href="http://sinonjs.org/docs/#spies">spies</a>.</p><ul><li><p><a href="./chapters/04/test/js/spec/sinon.spec.js">sinon.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/04/test/test.html">Tests</a></strong>:
-View for the &quot;Notes&quot; Backbone.js application that use Sinon.js spies.</p><ul><li><a href="./chapters/04/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
+Tests for the &quot;Notes&quot; Backbone.js application that use Sinon.js spies.</p><ul><li><a href="./chapters/04/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/note-nav.js"><code>App.Views.NoteNav</code></a>
 view, which mediates events for the single page navigation menu bar.</li><li><a href="./chapters/04/test/js/spec/views/note.spec.js">views/note.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/note.js"><code>App.Views.Note</code></a>
 view, which wraps all of the other single note views and model.</li></ul></li></ul>
 
-<p><strong>TODO: Update all chapters tests.</strong>
-<strong>TODO: Continue links to all chapter examples.</strong></p>
+<h3>Chapter 5: Test Stubs and Mocks</h3>
+
+<ul><li><p><strong><a href="./chapters/05/test/test-stubs.html">Sinon.JS Stubs</a></strong>: Tests using
+Sinon.JS <a href="http://sinonjs.org/docs/#stubs">stubs</a>.</p><ul><li><p><a href="./chapters/05/test/js/spec/stubs.spec.js">stubs.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/05/test/test-mocks.html">Sinon.JS Mocks</a></strong>: Tests using
+Sinon.JS <a href="http://sinonjs.org/docs/#mocks">mocks</a>.</p><ul><li><p><a href="./chapters/05/test/js/spec/mocks.spec.js">mocks.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/05/test/test.html">Tests</a></strong>:
+Tests for the &quot;Notes&quot; Backbone.js application with Sinon.JS spies and
+mocks.</p></li></ul>
+
+<p><strong>TODO: Insert app tests</strong>
+<strong>TODO: Note that the router is actually fake / shortened.</strong></p>
+
+<p><strong>TODO: Ch05 - Add chapter tests to all chapters tests.</strong>
+<strong>TODO: Ch05 - Add Notes tests and spec links.</strong></p>
+
+<p><strong>TODO: Update (1) All chapters links.</strong>
+<strong>TODO: Update (2) notes coverage.html.</strong>
+<strong>TODO: Update (3) notes-rest test.html.</strong></p>
+
+<p><strong>TODO: Continue links to all chapter examples.</strong></p>
 
 <h2>Automated Tests</h2>
 
@@ -287,6 +314,8 @@ the <a href="https://github.com/twitter/bootstrap/blob/master/LICENSE">Apache v2
 license.</p></li><li><p><a href="https://github.com/coreyti/showdown">Showdown</a> is Copyright Corey Innis and licensed under the
 <a href="https://github.com/coreyti/showdown/blob/master/license.txt">BSD</a> license.</p></li><li><p><a href="https://github.com/metaskills/mocha-phantomjs">Mocha PhantomJS</a> is Copyright Ken Collins and licensed under the
 <a href="https://github.com/metaskills/mocha-phantomjs/blob/master/MIT-LICENSE">MIT</a>
+license.</p></li><li><p><a href="https://github.com/alex-seville/blanket">Blanket.js</a> is Copyright Alex Seville and licensed under the
+<a href="https://github.com/alex-seville/blanket/blob/master/LICENSE-MIT">MIT</a>
 license.</p></li></ul>
 
 <h2>Development</h2>
@@ -312,6 +341,7 @@ $ npm run-script style
 # Run headless tests for the application, individual chapters, all chapters
 # as one big test, and all of these together.
 $ npm run-script test-app
+$ npm run-script test-rest
 $ npm run-script test-chaps
 $ npm run-script test-chaps-all
 $ npm run-script test
