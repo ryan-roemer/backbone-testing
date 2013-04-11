@@ -3,7 +3,7 @@
 
   // Router
   // ------
-  // The router translates hash routes in to views.
+  // The router translates routes in to views.
   App.Routers.Router = Backbone.Router.extend({
 
     // **Note**: Could wrap this up in functions to allow easier

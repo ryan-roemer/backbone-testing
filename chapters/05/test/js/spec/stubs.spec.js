@@ -81,7 +81,8 @@ describe("Sinon.JS Stubs", function () {
         errbackSpy = sinon.spy();
 
       // "1" is the index of the `errback` parameter.
-      sinon.stub(obj, "async").callsArgWith(1, 1, 2);
+      // "2, 3" are the callback arguments.
+      sinon.stub(obj, "async").callsArgWith(1, 2, 3);
 
       // Call on object with callback and errback spies.
       obj.async(callbackSpy, errbackSpy);
@@ -89,7 +90,7 @@ describe("Sinon.JS Stubs", function () {
       expect(callbackSpy).to.have.not.have.been.called;
       expect(errbackSpy)
         .to.have.been.calledOnce.and
-        .to.have.been.calledWith(1, 2);
+        .to.have.been.calledWith(2, 3);
     });
 
   });

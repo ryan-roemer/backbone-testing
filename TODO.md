@@ -18,7 +18,10 @@ Things to do before going live.
 
 * **Libraries**: Update various versions for:
   * Public vendor libraries.
+    * Mocha: 1.9.0
+
   * NPM package.json libraries.
+    * ???
 
 * **Licenses**: Review for any needed additions.
 

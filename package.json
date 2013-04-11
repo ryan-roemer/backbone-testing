@@ -13,7 +13,7 @@
     "jshint": "1.1.0",
     "nodemon": "0.7.1",
     "uglify-js": "2.2.3",
-    "jade": "0.28.1",
+    "jade": "0.28.2",
     "markdown": "0.4.0",
     "http-server": "0.5.3"
   },
@@ -50,6 +50,6 @@
 
     "build": "npm run-script build-tmpl && npm run-script docs",
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",
-    "build-chap": "CHAP=04 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} notes vendor LICENSE.txt README.md"
+    "build-chap": "CHAP=05 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} notes vendor LICENSE.txt README.md"
   }
 }

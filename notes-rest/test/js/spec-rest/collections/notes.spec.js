@@ -16,16 +16,17 @@ describe("App.Collections.Notes", function () {
   afterEach(function () {
     // Stop fake server.
     this.server.restore();
-    this.notes = null;
   });
 
   describe("retrieval", function () {
 
+    // -- Omitted in Book. --
     it("has default values", function () {
       expect(this.notes).to.be.ok;
       expect(this.notes).to.have.length(0);
     });
 
+    // -- Omitted in Book. --
     it("should be empty on fetch", function (done) {
       // Stash reference to save context.
       var notes = this.notes;
@@ -57,11 +58,11 @@ describe("App.Collections.Notes", function () {
       this.server.respondWith("GET", "/api/notes", [
         200,
         { "Content-Type": "application/json" },
-        JSON.stringify({
+        JSON.stringify([{
           id: 1,
           title: "Test note #1",
           text: "A pre-existing note from beforeEach."
-        })
+        }])
       ]);
 
       // After fetch.
@@ -82,6 +83,7 @@ describe("App.Collections.Notes", function () {
 
   });
 
+  // -- Omitted in Book. --
   describe("modification", function () {
 
     beforeEach(function () {

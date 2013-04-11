@@ -184,7 +184,7 @@ Object and array assertions.</li><li><p><a href="./chapters/03/test/js/spec/chai
 Exception handling.</p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-only.html">Mocha <code>only</code></a></strong>: Tests using the Mocha
 <code>only</code> test modifier to run a single spec.</p><ul><li><p><a href="./chapters/03/test/js/spec/mocha-only.spec.js">mocha-only.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-skip.html">Mocha <code>skip</code></a></strong>: Tests using the Mocha
 <code>skip</code> test modifier to skip one or more specs.</p><ul><li><p><a href="./chapters/03/test/js/spec/mocha-skip.spec.js">mocha-skip.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test.html">Tests</a></strong>:
-Continue tests for the &quot;Notes&quot; Backbone.js application.</p><ul><li><a href="./chapters/03/test/js/spec/collections/notes.spec.js">collections/notes.spec.js</a>:
+Continue tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application.</p><ul><li><a href="./chapters/03/test/js/spec/collections/notes.spec.js">collections/notes.spec.js</a>:
 Tests the collection <a href="./notes/app/js/app/collections/notes.js"><code>App.Collections.Notes</code></a>.</li><li><a href="./chapters/03/test/js/spec/views/note-view.spec.js">views/note-view.spec.js</a>:
 Tests the view <a href="./notes/app/js/app/views/note-view.js"><code>App.Views.NoteView</code></a>,
 which renders model <a href="http://daringfireball.net/projects/markdown/">Markdown</a>
@@ -194,7 +194,8 @@ data into HTML.</li></ul></li></ul>
 
 <ul><li><p><strong><a href="./chapters/04/test/test-sinon.html">Sinon.JS Spies</a></strong>: Various test uses
 for Sinon.JS <a href="http://sinonjs.org/docs/#spies">spies</a>.</p><ul><li><p><a href="./chapters/04/test/js/spec/sinon.spec.js">sinon.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/04/test/test.html">Tests</a></strong>:
-Tests for the &quot;Notes&quot; Backbone.js application that use Sinon.js spies.</p><ul><li><a href="./chapters/04/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
+Tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application that use
+Sinon.JS spies.</p><ul><li><a href="./chapters/04/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/note-nav.js"><code>App.Views.NoteNav</code></a>
 view, which mediates events for the single page navigation menu bar.</li><li><a href="./chapters/04/test/js/spec/views/note.spec.js">views/note.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/note.js"><code>App.Views.Note</code></a>
@@ -205,20 +206,23 @@ view, which wraps all of the other single note views and model.</li></ul></li></
 <ul><li><p><strong><a href="./chapters/05/test/test-stubs.html">Sinon.JS Stubs</a></strong>: Tests using
 Sinon.JS <a href="http://sinonjs.org/docs/#stubs">stubs</a>.</p><ul><li><p><a href="./chapters/05/test/js/spec/stubs.spec.js">stubs.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/05/test/test-mocks.html">Sinon.JS Mocks</a></strong>: Tests using
 Sinon.JS <a href="http://sinonjs.org/docs/#mocks">mocks</a>.</p><ul><li><p><a href="./chapters/05/test/js/spec/mocks.spec.js">mocks.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/05/test/test.html">Tests</a></strong>:
-Tests for the &quot;Notes&quot; Backbone.js application with Sinon.JS spies and
-mocks.</p></li></ul>
+Tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application with Sinon.JS
+stubs and mocks.</p><ul><li><a href="./chapters/05/test/js/spec/views/notes-item.spec.js">views/notes-item.spec.js</a>:
+Tests the <a href="./notes/app/js/app/views/notes-item.js"><code>App.Views.NotesItem</code></a>
+view, which displays a table row for a single note in the &quot;all notes&quot;
+list.</li><li><a href="./chapters/05/test/js/spec/routers/router.spec.js">routers/router.spec.js</a>:
+Tests an <strong>abbreviated</strong> version of the
+<a href="./chapters/05/test/js/spec/routers/router.js"><code>App.Routers.Router</code></a>
+router, implementing the route matching logic, but omitting the actual
+view creation and display. The tests that we create a good starting point
+for testing routers, but please see the Notes application source
+for the
+<a href="./notes/app/js/app/routers/router.js">real <code>App.Routers.Router</code> source</a>
+and <a href="./notes/test/js/spec/routers/router.spec.js">full &quot;routers/router.spec.js&quot;</a>
+file.</li></ul></li></ul>
 
-<p><strong>TODO: Insert app tests</strong>
-<strong>TODO: Note that the router is actually fake / shortened.</strong></p>
-
-<p><strong>TODO: Ch05 - Add chapter tests to all chapters tests.</strong>
-<strong>TODO: Ch05 - Add Notes tests and spec links.</strong></p>
-
-<p><strong>TODO: Update (1) All chapters links.</strong>
-<strong>TODO: Update (2) notes coverage.html.</strong>
-<strong>TODO: Update (3) notes-rest test.html.</strong></p>
-
-<p><strong>TODO: Continue links to all chapter examples.</strong></p>
+<p><strong>TODO: Chapter 6.</strong>
+<strong>TODO: Update (1) All chapters links.</strong></p>
 
 <h2>Automated Tests</h2>
 
@@ -284,7 +288,7 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 
 <p>The frontend test libraries we use are:</p>
 
-<ul><li><strong><a href="https://github.com/visionmedia/mocha">Mocha</a></strong>: <code>1.8.1</code></li><li><strong><a href="https://github.com/chaijs/chai">Chai</a></strong>: <code>1.5.0</code></li><li><strong><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a></strong>: <code>1.6.0</code></li></ul>
+<ul><li><strong><a href="https://github.com/visionmedia/mocha">Mocha</a></strong>: <code>1.9.0</code></li><li><strong><a href="https://github.com/chaijs/chai">Chai</a></strong>: <code>1.5.0</code></li><li><strong><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a></strong>: <code>1.6.0</code></li></ul>
 
 <p>The test plugins include:</p>
 
@@ -344,7 +348,7 @@ $ npm run-script test-app
 $ npm run-script test-rest
 $ npm run-script test-chaps
 $ npm run-script test-chaps-all
-$ npm run-script test
+$ npm test
 
 # Run all style checks and headless tests.
 $ npm run-script check</code></pre>

@@ -209,7 +209,7 @@ separated by number. We also provide a driver page for (nearly) all of
   * [mocha-skip.spec.js](./chapters/03/test/js/spec/mocha-skip.spec.js)
 
 * **[Tests](./chapters/03/test/test.html)**:
-  Continue tests for the "Notes" Backbone.js application.
+  Continue tests for the **[Notes][notes_demo]** Backbone.js application.
   * [collections/notes.spec.js](./chapters/03/test/js/spec/collections/notes.spec.js):
     Tests the collection [`App.Collections.Notes`](./notes/app/js/app/collections/notes.js).
   * [views/note-view.spec.js](./chapters/03/test/js/spec/views/note-view.spec.js):
@@ -224,7 +224,8 @@ separated by number. We also provide a driver page for (nearly) all of
   * [sinon.spec.js](./chapters/04/test/js/spec/sinon.spec.js)
 
 * **[Tests](./chapters/04/test/test.html)**:
-  Tests for the "Notes" Backbone.js application that use Sinon.js spies.
+  Tests for the **[Notes][notes_demo]** Backbone.js application that use
+  Sinon.JS spies.
   * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
     Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
     view, which mediates events for the single page navigation menu bar.
@@ -243,20 +244,25 @@ separated by number. We also provide a driver page for (nearly) all of
   * [mocks.spec.js](./chapters/05/test/js/spec/mocks.spec.js)
 
 * **[Tests](./chapters/05/test/test.html)**:
-  Tests for the "Notes" Backbone.js application with Sinon.JS spies and
-  mocks.
+  Tests for the **[Notes][notes_demo]** Backbone.js application with Sinon.JS
+  stubs and mocks.
+  * [views/notes-item.spec.js](./chapters/05/test/js/spec/views/notes-item.spec.js):
+    Tests the [`App.Views.NotesItem`](./notes/app/js/app/views/notes-item.js)
+    view, which displays a table row for a single note in the "all notes"
+    list.
+  * [routers/router.spec.js](./chapters/05/test/js/spec/routers/router.spec.js):
+    Tests an **abbreviated** version of the
+    [`App.Routers.Router`](./chapters/05/test/js/spec/routers/router.js)
+    router, implementing the route matching logic, but omitting the actual
+    view creation and display. The tests that we create a good starting point
+    for testing routers, but please see the Notes application source
+    for the
+    [real `App.Routers.Router` source](./notes/app/js/app/routers/router.js)
+    and [full "routers/router.spec.js"](./notes/test/js/spec/routers/router.spec.js)
+    file.
 
-**TODO: Insert app tests**
-**TODO: Note that the router is actually fake / shortened.**
-
-**TODO: Ch05 - Add chapter tests to all chapters tests.**
-**TODO: Ch05 - Add Notes tests and spec links.**
-
+**TODO: Chapter 6.**
 **TODO: Update (1) All chapters links.**
-**TODO: Update (2) notes coverage.html.**
-**TODO: Update (3) notes-rest test.html.**
-
-**TODO: Continue links to all chapter examples.**
 
 
 ## Automated Tests
@@ -327,7 +333,7 @@ The sample Notes application also uses:
 
 The frontend test libraries we use are:
 
-* **[Mocha][mocha]**: `1.8.1`
+* **[Mocha][mocha]**: `1.9.0`
 * **[Chai][chai]**: `1.5.0`
 * **[Sinon.JS][sinon]**: `1.6.0`
 
@@ -428,7 +434,7 @@ From there, there are various NPM script helpers for style checking and tests:
     $ npm run-script test-rest
     $ npm run-script test-chaps
     $ npm run-script test-chaps-all
-    $ npm run-script test
+    $ npm test
 
     # Run all style checks and headless tests.
     $ npm run-script check

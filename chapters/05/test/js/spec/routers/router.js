@@ -4,6 +4,9 @@
   // Router
   // ------
   // An abbreviated version of the real router.
+  //
+  // The real implementation of the Notes router is available at:
+  // "notes/app/js/app/routers/router.js"
   App.Routers.Router = Backbone.Router.extend({
 
     routes: {

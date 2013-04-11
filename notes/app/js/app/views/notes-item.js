@@ -39,13 +39,13 @@
     },
 
     viewNote: function () {
-      var hash = ["note", this.model.id, "view"].join("/");
-      this.router.navigate(hash, { trigger: true });
+      var loc = ["note", this.model.id, "view"].join("/");
+      this.router.navigate(loc, { trigger: true });
     },
 
     editNote: function () {
-      var hash = ["note", this.model.id, "edit"].join("/");
-      this.router.navigate(hash, { trigger: true });
+      var loc = ["note", this.model.id, "edit"].join("/");
+      this.router.navigate(loc, { trigger: true });
     },
 
     deleteNote: function () {

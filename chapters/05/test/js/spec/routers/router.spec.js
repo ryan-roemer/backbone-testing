@@ -1,3 +1,9 @@
+// **Note**: These tests are for the Chapter 5 "abbreviated" router
+// that omits most of the real `App.Routers.Router` implementation
+// and keeps just the routing logic.
+//
+// To review the spec for the *real* Notes router, see:
+// "notes/test/js/spec/routers/router.spec.js"
 describe("App.Routers.Router", function () {
 
   // Default option: Trigger and replace history.

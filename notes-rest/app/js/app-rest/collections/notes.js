@@ -7,7 +7,7 @@
 
     model: App.Models.Note,
 
-    url: App.Config.notesUrl
+    url: "/api/notes"
 
   });
 }());

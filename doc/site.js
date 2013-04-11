@@ -163,12 +163,9 @@ $(function () {
           $parent.before($("<p />").append($el.detach()));
         }
 
-        // Temp: Just hide.
-        $el.hide();
-        return;
-
         // Add brackets.
-        $el.before("[").after("]");
+        $el.hide(); // TODO REMOVE (temporarily hiding).
+        // TODO REENABLE $el.before("[").after("]");
       });
     }
   };

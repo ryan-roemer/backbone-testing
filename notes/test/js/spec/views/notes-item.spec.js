@@ -32,7 +32,7 @@ describe("App.Views.NotesItem", function () {
   describe("render", function () {
     // One way to verify is with a stub.
     it("renders on model change w/ stub", sinon.test(function () {
-      var exp = this.stub(this.view);
+      this.stub(this.view);
       this.view.model.trigger("change");
       expect(this.view.render).to.have.been.calledOnce;
     }));
