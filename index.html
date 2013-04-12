@@ -242,7 +242,30 @@ driver page from the command line, e.g.:</p>
 <p>As a helper, the following script command will run nearly all of the
 Notes application and chapter unit tests:</p>
 
-<pre><code>$ npm run-script test</code></pre>
+<pre><code>$ npm test</code></pre>
+
+<p>We run all of these tests automatically using (the awesome) <a href="https://travis-ci.org/">Travis CI</a>
+continuous integration service. Travis watches the GitHub repository containing
+this project and when it detects the code has changed, launches new builds
+and invokes the PhantomJS tests above.</p>
+
+<p>Travis even provides a convenient image status indicator, that we display
+below, so that we can display the <em>always current</em> build status of our code:</p>
+
+<p><a href="https://travis-ci.org/ryan-roemer/backbone-testing"><img alt="Build Status" src="https://travis-ci.org/ryan-roemer/backbone-testing.png"/></a></p>
+
+<p>Setting all of this up is as simple as adding a Travis configuration file
+&quot;<a href="./.travis.yml">.travis.yml</a>&quot; as follows:</p>
+
+<pre><code>language: node_js
+node_js:
+  - 0.8
+  - 0.10</code></pre>
+
+<p>This instructs Travis to test out the latest Node.js versions for v0.8 and
+v0.10. By default, Travis already has PhantomJS installed and will run
+<code>npm install</code> and <code>npm test</code> on any Node.js project, which conveniently
+sets up and invokes all of our PhantomJS tests.</p>
 
 <h2>Additional Tools</h2>
 

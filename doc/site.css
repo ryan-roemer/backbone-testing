@@ -14,7 +14,7 @@
   filter: alpha(opacity=95);
 }
 
-#page img {
+#page #notes-app img {
   width: 90%;
   max-width: 611px;
   display: block;
