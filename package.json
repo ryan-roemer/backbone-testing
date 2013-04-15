@@ -37,10 +37,10 @@
     "style-client": "./node_modules/.bin/jshint --config=./dev/jshint-client.json notes/app/js/fixtures notes/test/js/spec notes/app/js/app notes-rest/test/js/spec-rest  notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
 
     "test": "npm run-script test-app && npm run-script test-rest && npm run-script test-chaps-all && npm run-script test-chaps",
-    "test-app": "ls notes/test/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; mocha-phantomjs {}'",
-    "test-chaps": "ls chapters/*/test/test*.html | egrep -v \"failure|timing\" |  xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; mocha-phantomjs {}'",
-    "test-chaps-all": "ls chapters/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; mocha-phantomjs {}'",
-    "test-rest": "mocha-phantomjs notes-rest/test/test.html",
+    "test-app": "ls notes/test/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
+    "test-chaps": "ls chapters/*/test/test*.html | egrep -v \"failure|timing\" |  xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
+    "test-chaps-all": "ls chapters/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
+    "test-rest": "node_modules/.bin/mocha-phantomjs notes-rest/test/test.html",
     "test-server": "http-server -p 4322",
 
     "min-app": "uglifyjs $(cat notes/app/index.html | egrep -o 'js\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes/app/js/app.min.js",
