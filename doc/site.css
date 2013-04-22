@@ -138,7 +138,7 @@ a.examples-file {
   bottom: 270px;
 }
 
-/* Desktop */
+/* Up to desktop */
 @media (max-width: 980px) {
   #sidenav {
     top: 0;

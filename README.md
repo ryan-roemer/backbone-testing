@@ -261,8 +261,12 @@ separated by number. We also provide a driver page for (nearly) all of
     and [full "routers/router.spec.js"](./notes/test/js/spec/routers/router.spec.js)
     file.
 
-**TODO: Chapter 6.**
-**TODO: Update (1) All chapters links.**
+
+### Chapter 6: Automated Web Testing
+We don't introduce any new tests in Chapter 6, instead focusing on automating
+all of the application and chapter tests we have provided in this respository.
+See the next section for a discussion of test automation with
+[PhantomJS][phantom].
 
 
 ## Automated Tests
@@ -367,7 +371,7 @@ The frontend test libraries we use are:
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.3.1`
-* **[Mocha PhantomJS][mocha-phantom]**: `2.0.1`
+* **[Mocha-PhantomJS][mocha-phantom]**: `2.0.1`
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
@@ -412,7 +416,7 @@ as follows:
 * [Showdown][showdown] is Copyright Corey Innis and licensed under the
   [BSD](https://github.com/coreyti/showdown/blob/master/license.txt) license.
 
-* [Mocha PhantomJS][mocha-phantom] is Copyright Ken Collins and licensed under the
+* [Mocha-PhantomJS][mocha-phantom] is Copyright Ken Collins and licensed under the
   [MIT](https://github.com/metaskills/mocha-phantomjs/blob/master/MIT-LICENSE)
   license.
 

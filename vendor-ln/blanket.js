@@ -1,1 +1,1 @@
-../vendor/blanket-1.1.0.js
+../vendor/blanket-1.1.2.js

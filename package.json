@@ -50,6 +50,8 @@
 
     "build": "npm run-script build-tmpl && npm run-script docs",
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",
-    "build-chap": "CHAP=05 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} notes vendor LICENSE.txt README.md"
+
+    "build-chap": "CHAP=06 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} dev notes notes-rest vendor vendor-ln LICENSE.txt README.md",
+    "build-book": "CHAP=06 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters dev notes notes-rest vendor vendor-ln LICENSE.txt README.md package.json"
   }
 }

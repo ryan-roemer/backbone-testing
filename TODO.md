@@ -19,6 +19,7 @@ Things to do before going live.
 * **Libraries**: Update various versions for:
   * Public vendor libraries.
     * Mocha: 1.9.0
+    * jQuery: 2.0.0 (once Sinon.JS issues resolved)
 
   * NPM package.json libraries.
     * ???
@@ -60,13 +61,12 @@ Things to do before going live.
   symlinks and use *actual* files instead.
 
 ## After Live
-* **Travis CI**: Hook up (w/ PhantomJS)
-* **Google Analytics**: Verify working. (Maybe post-publish).
-* **Absolute Links**: Retrofit relative links w/ "http://backbone-testing.com/"
-  so that the GitHub README page works (sigh).
+* **Readme UI Design**: Retrofit the UI design with something much better
+  looking.
+  * Maybe a navbar instead of sidenav.
+  * Separate out into more pages.
 
-* **UI Design**: Retrofit the UI design with something much better looking.
-
+* **Windows PhantomJS**: Add examples for Windows.
 
 ## Future
 * **component.json**: Consider switching to this for all libs.
