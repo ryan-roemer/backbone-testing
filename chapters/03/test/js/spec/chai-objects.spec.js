@@ -27,6 +27,11 @@ describe("Chai objects, arrays", function () {
     expect({foo: "bar"}).to.have.ownProperty("foo");
   });
 
+  it("checks `contain` - object or array presence", function () {
+    expect(["bar", "baz"]).to.have.contain("bar");
+    expect("foo").to.have.contain("f");
+  });
+
   it("checks `length` - object or array length", function () {
     expect(["bar", "baz"]).to.have.length(2);
     expect("foo").to.have.length(3);

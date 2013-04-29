@@ -37,7 +37,7 @@ describe("Sinon.JS Stubs", function () {
 
       sinon.stub(obj, "async").yields(1, 2);
 
-      // Verify stub calls with (1, 2), not *real* ("a", "b").
+      // Verify stub calls with (1, 2), *not* ("a", "b").
       //
       // **Note**: We stick the assertion code *in* the callback
       // here, but we could just as easily use a Sinon.JS spy

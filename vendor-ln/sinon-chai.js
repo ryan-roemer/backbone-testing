@@ -1,1 +1,1 @@
-../vendor/sinon-chai-2.3.1.js
+../vendor/sinon-chai-2.4.0.js

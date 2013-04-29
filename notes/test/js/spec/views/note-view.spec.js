@@ -1,7 +1,7 @@
 describe("App.Views.NoteView", function () {
 
   before(function () {
-    // Create test fixture and add to DOM placeholder.
+    // Create test fixture.
     this.$fixture = $("<div id='note-view-fixture'></div>");
   });
 
@@ -20,7 +20,7 @@ describe("App.Views.NoteView", function () {
   });
 
   afterEach(function () {
-    // Clean up view and model for next run.
+    // Destroying the model also destroys the view.
     this.view.model.destroy();
   });
 
@@ -43,8 +43,6 @@ describe("App.Views.NoteView", function () {
   });
 
   it("can render more complicated markdown", function (done) {
-    var $fixture = this.$fixture;
-
     // Model updates will cause a re-render. Set our tests on that
     // event. Because we set in tests, we will come **after** the
     // event listener in the view.
@@ -65,10 +63,14 @@ describe("App.Views.NoteView", function () {
       expect($title.text()).to.equal("My Title");
 
       // Rendered Markdown with headings, list.
+      //
+      // **Note**: The start `<h2>` tag also has a generated `id`
+      // field, so for simplicity we only assert on
+      // `"My Heading</h2>"`.
       expect($text.html())
-        .to.include("My Heading</h2>").and
-        .to.include("<ul>").and
-        .to.include("<li>List item 2</li>");
+        .to.contain("My Heading</h2>").and
+        .to.contain("<ul>").and
+        .to.contain("<li>List item 2</li>");
 
       done();
     });

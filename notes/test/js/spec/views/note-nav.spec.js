@@ -44,9 +44,9 @@ describe("App.Views.NoteNav", function () {
 
       this.$fixture.find(".note-view").click();
 
-      expect(navSpy).to.be.calledOnce;
-      expect(updateSpy).to.be.calledOnce;
-      expect(otherSpy).to.not.be.called;
+      expect(navSpy).to.have.been.calledOnce;
+      expect(updateSpy).to.have.been.calledOnce;
+      expect(otherSpy).to.not.have.been.called;
     });
 
   });
@@ -54,11 +54,13 @@ describe("App.Views.NoteNav", function () {
   describe("menu bar display", function () {
     it("has no active navs by default", function () {
       // Check no list items are active.
-      expect(this.view.$("li.active")).to.have.lengthOf(0);
+      expect(this.view.$("li.active")).to.have.length(0);
 
       // Another way - manually check each list nav.
-      expect($(".note-view").attr("class")).to.not.include("active");
-      expect($(".note-edit").attr("class")).to.not.include("active");
+      expect($(".note-view")
+        .attr("class")).to.not.include("active");
+      expect($(".note-edit")
+        .attr("class")).to.not.include("active");
       expect($(".note-delete")
         .attr("class")).to.not.include("active");
     });

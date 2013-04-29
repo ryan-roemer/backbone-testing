@@ -24,12 +24,34 @@
       // Default to empty options.
       opts || (opts = {});
 
+      // Add member variables.
+      //
       // Router can be set directly (e.g., tests), or use global.
       // The `app.router` object *does* exist at this point.
-      // (But we'll add an assert to verify).
+      this.nav = opts.nav;
       this.router = opts.router || app.router;
+
+      // Verification.
+      // -- Line Omitted in Book. --
       if (!this.router) { throw new Error("No router"); }
 
+      // Add our custom listeners.
+      this._addListeners();
+
+      // Render HTML, update to action, and show note.
+      this.$el.html(this.template(this.model.toJSON()));
+      this.update(opts.action || "view");
+      this.render();
+
+      // Add in viewer child view (which auto-renders).
+      this.noteView = new App.Views.NoteView({
+        el: this.$("#note-pane-view-content"),
+        model: this.model
+      });
+    },
+
+    // Helper listener initialization method.
+    _addListeners: function () {
       // Model controls view rendering and existence.
       this.listenTo(this.model, {
         "destroy": function () { this.remove(); },
@@ -37,7 +59,6 @@
       });
 
       // Navbar controls/responds to panes.
-      this.nav = opts.nav;
       this.listenTo(this.nav, {
         "nav:view":   function () { this.viewNote(); },
         "nav:edit":   function () { this.editNote(); },
@@ -48,19 +69,6 @@
       this.on({
         "update:view": function () { this.render().viewNote(); },
         "update:edit": function () { this.render().editNote(); }
-      });
-
-      // Render template and add to DOM.
-      this.$el.html(this.template(this.model.toJSON()));
-
-      // Set up action state and render.
-      this.update(opts.action || "view");
-      this.render();
-
-      // Add in viewer child view (which auto-renders).
-      this.noteView = new App.Views.NoteView({
-        el: this.$("#note-pane-view-content"),
-        model: this.model
       });
     },
 
@@ -82,7 +90,7 @@
     update: function (action) {
       action = action || this.action || "view";
       var paneEl = "#note-pane-" + action,
-        hash = "note/" + this.model.id + "/" + action;
+        loc = "note/" + this.model.id + "/" + action;
 
       // Ensure menu bar is updated.
       this.nav.trigger("nav:update:" + action);
@@ -94,16 +102,14 @@
       // Store new action and navigate.
       if (this.action !== action) {
         this.action = action;
-        this.router.navigate(hash, { replace: true });
+        this.router.navigate(loc, { replace: true });
       }
     },
 
-    // Activate "view" note pane.
+    // Activate "view" or "edit" note panes.
     viewNote: function () {
       this.update("view");
     },
-
-    // Activate "edit" note pane.
     editNote: function () {
       this.update("edit");
     },

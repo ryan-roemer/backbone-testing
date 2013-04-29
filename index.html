@@ -175,7 +175,7 @@ Tests the application model
 <a href="http://visionmedia.github.com/mocha/#bdd-interface">Mocha</a>
 and <a href="http://chaijs.com/api/bdd/">Chai</a> <strong>BDD</strong> styles.</p><ul><li><p><a href="./chapters/03/test/js/spec/bdd.spec.js">bdd.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-tdd.html">TDD Interface</a></strong>: Tests using Mocha
 <strong><a href="http://visionmedia.github.com/mocha/#tdd-interface">TDD</a></strong> and
-Chai <a href="http://chaijs.com/api/assert/"><code>assert</code></a> styles.</p><ul><li><p><a href="./chapters/03/test/js/spec/tdd.spec.js">tdd.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-chai.html">Chai Assertions</a></strong>: Tests using
+Chai <a href="http://chaijs.com/api/assert/"><code>assert</code></a> styles.</p><ul><li><p><a href="./chapters/03/test/js/test/tdd.js">tdd.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-chai.html">Chai Assertions</a></strong>: Tests using
 a variety of <a href="http://chaijs.com/api/bdd/">Chai BDD</a> assertions.</p><ul><li><a href="./chapters/03/test/js/spec/chai-chains.spec.js">chai-chains.spec.js</a>:
 Language chains.</li><li><a href="./chapters/03/test/js/spec/chai-values.spec.js">chai-values.spec.js</a>:
 Value properties.</li><li><a href="./chapters/03/test/js/spec/chai-comparisons.spec.js">chai-comparisons.spec.js</a>:
@@ -183,7 +183,13 @@ Comparison functions.</li><li><a href="./chapters/03/test/js/spec/chai-objects.s
 Object and array assertions.</li><li><p><a href="./chapters/03/test/js/spec/chai-errors.spec.js">chai-errors.spec.js</a>:
 Exception handling.</p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-only.html">Mocha <code>only</code></a></strong>: Tests using the Mocha
 <code>only</code> test modifier to run a single spec.</p><ul><li><p><a href="./chapters/03/test/js/spec/mocha-only.spec.js">mocha-only.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-skip.html">Mocha <code>skip</code></a></strong>: Tests using the Mocha
-<code>skip</code> test modifier to skip one or more specs.</p><ul><li><p><a href="./chapters/03/test/js/spec/mocha-skip.spec.js">mocha-skip.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test.html">Tests</a></strong>:
+<code>skip</code> test modifier to skip one or more specs.</p><ul><li><p><a href="./chapters/03/test/js/spec/mocha-skip.spec.js">mocha-skip.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test-pending.html">Mocha Pending Tests</a></strong>: A basic
+skeleton suite with empty specs (e.g., no test callback), which are all in
+&quot;pending&quot; state during a test run. A great test development practice is to
+declare specs describing behavior without functions during the initial
+design phanse. The specs can later be implemented in parallel with the
+underlying application components, ensuring that the desired behavior is
+correctly implemented.</p><ul><li><p><a href="./chapters/03/test/js/spec/collections/notes-pending.spec.js">notes-pending.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test.html">Tests</a></strong>:
 Continue tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application.</p><ul><li><a href="./chapters/03/test/js/spec/collections/notes.spec.js">collections/notes.spec.js</a>:
 Tests the collection <a href="./notes/app/js/app/collections/notes.js"><code>App.Collections.Notes</code></a>.</li><li><a href="./chapters/03/test/js/spec/views/note-view.spec.js">views/note-view.spec.js</a>:
 Tests the view <a href="./notes/app/js/app/views/note-view.js"><code>App.Views.NoteView</code></a>,
@@ -319,7 +325,7 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 
 <p>The test plugins include:</p>
 
-<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.3.1</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>2.0.1</code></li></ul>
+<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>2.0.1</code></li></ul>
 
 <h2>Licenses</h2>
 

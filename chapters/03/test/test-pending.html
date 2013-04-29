@@ -12,8 +12,8 @@
 
     <!-- Test Setup -->
     <script>
-      var assert = chai.assert;
-      mocha.setup("tdd");
+      var expect = chai.expect;
+      mocha.setup("bdd");
 
       window.onload = function () {
         (window.mochaPhantomJS || mocha).run();
@@ -21,7 +21,7 @@
     </script>
 
     <!-- Tests. -->
-    <script src="js/test/tdd.js"></script>
+    <script src="js/spec/collections/notes-pending.spec.js"></script>
   </head>
   <body>
     <div id="mocha"></div>

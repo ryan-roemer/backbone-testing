@@ -17,12 +17,10 @@
 
     el: "#note-nav",
 
-    events: function () {
-      return {
-        "click .note-view":   this.clicked("view"),
-        "click .note-edit":   this.clicked("edit"),
-        "click .note-delete": this.clicked("delete"),
-      };
+    events: {
+      "click .note-view":   "clickView",
+      "click .note-edit":   "clickEdit",
+      "click .note-delete": "clickDelete",
     },
 
     initialize: function () {
@@ -31,27 +29,33 @@
 
       // Update the navbar UI for view/edit (not delete).
       this.on({
-        "nav:update:view": this.update("view"),
-        "nav:update:edit": this.update("edit")
+        "nav:update:view": this.updateView,
+        "nav:update:edit": this.updateEdit
       });
     },
 
-    // Create handler to update nav bar UI.
-    update: function (action) {
-      return function () {
-        var navEl = ".note-" + action;
-        this.$("li").not(navEl).removeClass("active");
-        this.$(navEl).addClass("active");
-      };
+    // Handlers for updating nav bar UI.
+    updateView: function () {
+      this.$("li").not(".note-view").removeClass("active");
+      this.$(".note-view").addClass("active");
+    },
+    updateEdit: function () {
+      this.$("li").not(".note-edit").removeClass("active");
+      this.$(".note-edit").addClass("active");
     },
 
-    // Create handler for emitting nav events.
-    clicked: function (action) {
-      return function () {
-        this.trigger("nav:update:" + action);
-        this.trigger("nav:" + action);
-        return false;
-      };
+    // Handlers for emitting nav events.
+    clickView: function () {
+      this.trigger("nav:update:view nav:view");
+      return false;
+    },
+    clickEdit: function () {
+      this.trigger("nav:update:edit nav:edit");
+      return false;
+    },
+    clickDelete: function () {
+      this.trigger("nav:update:delete nav:delete");
+      return false;
     }
 
   });

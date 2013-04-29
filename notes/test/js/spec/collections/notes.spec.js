@@ -20,6 +20,7 @@ describe("App.Collections.Notes", function () {
       expect(this.notes).to.have.length(0);
     });
 
+    // -- Omitted in Book. --
     it("should be empty on fetch", function (done) {
       // Stash reference to save context.
       var notes = this.notes;
@@ -88,6 +89,7 @@ describe("App.Collections.Notes", function () {
       expect(note).to.be.ok;
     });
 
+    // -- Omitted in Book. --
     it("can create a second note", function (done) {
       var notes = this.notes,
         note = notes.create({

@@ -48,7 +48,7 @@ describe("Chai assertion chains", function () {
     expect("foo")
       .to.be.a("string").and
       .to.equal("foo").and
-      .to.have.lengthOf(3).and
+      .to.have.length(3).and
       .to.match(/f[o]{2}/);
   });
 });

@@ -82,7 +82,7 @@ describe("App.Views.Notes", function () {
       this.view.addNotes();
 
       expect(this.view.addNote).to.not.be.called;
-      expect($("tr.notes-item")).to.have.lengthOf(0);
+      expect($("tr.notes-item")).to.have.length(0);
     }));
 
     // Replace collection `chain()` with our data, so that we can
@@ -100,7 +100,7 @@ describe("App.Views.Notes", function () {
       this.view.addNotes();
 
       expect(this.view.addNote.callCount).to.equal(4);
-      expect($("tr.notes-item")).to.have.lengthOf(4);
+      expect($("tr.notes-item")).to.have.length(4);
     }));
 
   });
@@ -162,7 +162,7 @@ describe("App.Views.Notes", function () {
         .to.have.been.calledWith(note);
 
       // Check the note was added to the DOM.
-      expect($("tr.notes-item")).to.have.lengthOf(1);
+      expect($("tr.notes-item")).to.have.length(1);
 
       // Stop listeners on collection. We want to do this here
       // because we persist the collection object across tests in

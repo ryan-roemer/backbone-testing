@@ -22,7 +22,7 @@ describe("App.Views.NotesItem", function () {
 
   describe("remove", function () {
     it("is removed on model destroy", sinon.test(function () {
-      // Empty stubs for view removal to prevent side effects.
+      // Empty stub for view removal to prevent side effects.
       this.stub(this.view, "remove");
       this.view.model.trigger("destroy");
       expect(this.view.remove).to.be.calledOnce;
@@ -57,36 +57,29 @@ describe("App.Views.NotesItem", function () {
   });
 
   describe("actions", function () {
-    it("views on click", sinon.test(function () {
-      this.spy(this.view, "viewNote");
+    it("views on click", function () {
       this.view.$(".note-view").click();
 
-      expect(this.view.viewNote).to.be.calledOnce;
       expect(this.navigate)
         .to.be.calledOnce.and
         .to.be.calledWith("note/0/view");
-    }));
+    });
 
-    it("edits on click", sinon.test(function () {
-      this.spy(this.view, "editNote");
+    it("edits on click", function () {
       this.view.$(".note-edit").click();
 
-      expect(this.view.editNote).to.be.calledOnce;
       expect(this.navigate)
         .to.be.calledOnce.and
         .to.be.calledWith("note/0/edit");
-    }));
+    });
 
     it("deletes on click", sinon.test(function () {
-      // Spy the edit, but stub the model destroy to avoid.
-      this.spy(this.view, "deleteNote");
+      // Empty stub for model destroy to prevent side effects.
       this.stub(this.view.model, "destroy");
       this.view.$(".note-delete").click();
 
-      expect(this.view.deleteNote).to.be.calledOnce;
       expect(this.view.model.destroy).to.be.calledOnce;
     }));
-
   });
 
 });

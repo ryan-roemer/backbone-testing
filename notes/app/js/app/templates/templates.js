@@ -7,12 +7,12 @@ App.Templates["template-notes-item"] =
   "</td>" +
   "<td class=\"note-action\">" +
   "  <div class=\"btn-group pull-right\">" +
-  "    <div class=\"btn note-edit\">" +
+  "    <button class=\"btn note-edit\">" +
   "      <i class=\"icon-pencil\"></i>" +
-  "    </div>" +
-  "    <div class=\"btn note-delete\">" +
+  "    </button>" +
+  "    <button class=\"btn note-delete\">" +
   "      <i class=\"icon-trash\"></i>" +
-  "    </div>" +
+  "    </button>" +
   "  </div>" +
   "</td>";
 

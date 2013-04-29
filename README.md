@@ -185,7 +185,7 @@ separated by number. We also provide a driver page for (nearly) all of
 * **[TDD Interface](./chapters/03/test/test-tdd.html)**: Tests using Mocha
   **[TDD](http://visionmedia.github.com/mocha/#tdd-interface)** and
   Chai [`assert`](http://chaijs.com/api/assert/) styles.
-  * [tdd.spec.js](./chapters/03/test/js/spec/tdd.spec.js)
+  * [tdd.js](./chapters/03/test/js/test/tdd.js)
 
 * **[Chai Assertions](./chapters/03/test/test-chai.html)**: Tests using
   a variety of [Chai BDD](http://chaijs.com/api/bdd/) assertions.
@@ -207,6 +207,15 @@ separated by number. We also provide a driver page for (nearly) all of
 * **[Mocha `skip`](./chapters/03/test/test-skip.html)**: Tests using the Mocha
   `skip` test modifier to skip one or more specs.
   * [mocha-skip.spec.js](./chapters/03/test/js/spec/mocha-skip.spec.js)
+
+* **[Mocha Pending Tests](./chapters/03/test/test-pending.html)**: A basic
+  skeleton suite with empty specs (e.g., no test callback), which are all in
+  "pending" state during a test run. A great test development practice is to
+  declare specs describing behavior without functions during the initial
+  design phanse. The specs can later be implemented in parallel with the
+  underlying application components, ensuring that the desired behavior is
+  correctly implemented.
+  * [notes-pending.spec.js](./chapters/03/test/js/spec/collections/notes-pending.spec.js)
 
 * **[Tests](./chapters/03/test/test.html)**:
   Continue tests for the **[Notes][notes_demo]** Backbone.js application.
@@ -370,7 +379,7 @@ The frontend test libraries we use are:
 
 The test plugins include:
 
-* **[Sinon-Chai][sinon-chai]**: `2.3.1`
+* **[Sinon-Chai][sinon-chai]**: `2.4.0`
 * **[Mocha-PhantomJS][mocha-phantom]**: `2.0.1`
 
 ## Licenses

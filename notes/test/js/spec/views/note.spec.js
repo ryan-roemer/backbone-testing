@@ -7,6 +7,13 @@
 describe("App.Views.Note", function () {
 
   before(function () {
+    // Regions for different views.
+    $("#fixtures").append($(
+      "<div class='region-note' style='display: none;'></div>" +
+      "<div class='region-notes' style='display: none;'></div>"
+    ));
+
+    // App.Views.Note fixture.
     this.$fixture = $(
       "<div id='note-fixture'>" +
         "<div id='#note-pane-view-content'></div>" +
@@ -93,35 +100,31 @@ describe("App.Views.Note", function () {
     // It is a good habit to check that views are actually
     // disposed of when expected. Here, we bind view removal to
     // the destruction of a model.
-    it("is removed when model is destroyed", function (done) {
-      var viewSpy = sinon.spy(this.view, "remove"),
-        childSpy = sinon.spy(this.view.noteView, "remove");
-
-      // Check view and contained child `noteView` are removed.
-      this.view.model.once("destroy", function () {
-        expect(viewSpy).to.be.calledOnce;
-        expect(childSpy).to.be.calledOnce;
-
-        viewSpy.restore();
-        childSpy.restore();
-
-        done();
-      });
+    it("is removed on destroyed model", sinon.test(function () {
+      this.spy(this.view, "remove"),
+      this.spy(this.view.noteView, "remove");
 
       this.view.model.trigger("destroy");
-    });
+
+      expect(this.view.remove).to.be.calledOnce;
+      expect(this.view.noteView.remove).to.be.calledOnce;
+    }));
   });
 
   describe("note rendering", function () {
 
-    // The following tests are somewhat "partial integration" tests
-    // in that they use the `App.Views.NoteView` child view object
-    // to render the markdown, which some tests verify.
-    //
-    // And, the first spec here simply borrows a `NoteView` spec
-    // verbatim to make sure that the overall view code renders
-    // correctly.
+    it("can render a note", function () {
+      // Don't explicitly call `render()` because
+      // `initialize()` already called it.
+      expect($(".region-note")
+        .css("display")).to.not.equal("none");
+      expect($(".region-notes")
+        .css("display")).to.equal("none");
+    });
 
+    // Borrows a `NoteView` spec verbatim to make sure that the
+    // overall view code renders correctly.
+    // -- Omitted in Book. --
     it("can render a default note view", function () {
       var $title = $("#pane-title"),
         $text = $("#pane-text");
@@ -136,7 +139,7 @@ describe("App.Views.Note", function () {
         .to.equal("<p><em>Edit your note!</em></p>");
     });
 
-    it("renders on model events", sinon.test(function () {
+    it("calls render on model events", sinon.test(function () {
       // Spy on `render` and check call/return value.
       this.spy(this.view, "render");
 
@@ -147,7 +150,7 @@ describe("App.Views.Note", function () {
         .to.have.returned(this.view);
     }));
 
-    it("renders on changed data", sinon.test(function () {
+    it("calls render on changed data", sinon.test(function () {
       this.spy(this.view, "render");
 
       // Replace form value and blur to force changes.
