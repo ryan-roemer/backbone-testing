@@ -1,13 +1,14 @@
 # Backbone.js Testing
-Sample apps, test suites, and ideas for Backbone.js.
+Apps, suites, and examples for Backbone.js test development.
 
 
 ## Introduction
 This site provides materials and resources for developing and testing
-[Backbone.js][backbone] web applications. This site provides tests and code
-samples for the chapters of a forthcoming "Backbone.js Testing" book.
+[Backbone.js][backbone] web applications. All of the application and test
+examples for the forthcoming book *Backbone.js Testing* can be found here,
+grouped by chapter.
 We also provide a reference Backbone.js application -
-"**[Notes][notes_demo]**" - for creating and viewing notes, which we use
+**[Notes][notes_demo]** - for creating and viewing notes, which we use
 throughout the examples in the book.
 
 The core set of Backbone.js application technologies we cover includes:
@@ -23,14 +24,15 @@ libraries.
 * **[Chai](http://chaijs.com/)**
 * **[Sinon.JS](http://sinonjs.org/)**
 
-The source code for all of the code examples and the Notes application is
-available on the project's [GitHub repository][gh].
-
-All of the site's content is very much a work in progress.
-There are lots of likely incidental errors and such, so please report any bugs
-and bear with us as this project evolves.
+The source code for everything is available from the project's
+[GitHub repository][gh]. If you find any errors or issues in content or
+code, please file a [bug report][gh_bugs] and we'll fix things up in short
+order. For those interested in extending our testing examples or helping
+out, please see our [contribution and development guide][contrib].
 
 [gh]: https://github.com/ryan-roemer/backbone-testing/
+[gh_bugs]: https://github.com/ryan-roemer/backbone-testing/issues
+[contrib]: #development
 
 ## Compatibility
 The application and test samples should work for the following browser /
@@ -308,7 +310,7 @@ below, so that we can display the *always current* build status of our code:
 [![Build Status][trav_img]][trav_site]
 
 Setting all of this up is as simple as adding a Travis configuration file
-"[.travis.yml](./.travis.yml)" as follows:
+".travis.yml" as follows:
 
     language: node_js
     node_js:
@@ -319,6 +321,10 @@ This instructs Travis to test out the latest Node.js versions for v0.8 and
 v0.10. By default, Travis already has PhantomJS installed and will run
 `npm install` and `npm test` on any Node.js project, which conveniently
 sets up and invokes all of our PhantomJS tests.
+
+Our actual "[.travis.yml](./.travis.yml)" file runs different commands than
+the default `npm test` to add things like style checking. But, the overall
+Travis configuration is essentially the same.
 
 [trav]: https://travis-ci.org/
 [trav_img]: https://travis-ci.org/ryan-roemer/backbone-testing.png

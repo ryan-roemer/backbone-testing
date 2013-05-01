@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Backbone.js Testing</title>
-    <meta name="description" content="Example applications and chapter samples for Backbone.js Testing.">
+    <meta name="description" content="Apps, suites, and examples for Backbone.js Testing.">
     <meta name="keywords" content="backbone.js testing, backbone.js, backbone, javascript, underscore.js, jquery, mocha, chai, sinon, sinon.js, testing, unit test, spies, mocks, stubs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap.min.css">
@@ -21,15 +21,16 @@
       <header id="hero" class="hero-unit backing"></header>
       <div class="container"><h1>Backbone.js Testing</h1>
 
-<p>Sample apps, test suites, and ideas for Backbone.js.</p>
+<p>Apps, suites, and examples for Backbone.js test development.</p>
 
 <h2>Introduction</h2>
 
 <p>This site provides materials and resources for developing and testing
-<a href="https://github.com/documentcloud/backbone">Backbone.js</a> web applications. This site provides tests and code
-samples for the chapters of a forthcoming &quot;Backbone.js Testing&quot; book.
+<a href="https://github.com/documentcloud/backbone">Backbone.js</a> web applications. All of the application and test
+examples for the forthcoming book <em>Backbone.js Testing</em> can be found here,
+grouped by chapter.
 We also provide a reference Backbone.js application -
-&quot;<strong><a href="./notes/app/index.html">Notes</a></strong>&quot; - for creating and viewing notes, which we use
+<strong><a href="./notes/app/index.html">Notes</a></strong> - for creating and viewing notes, which we use
 throughout the examples in the book.</p>
 
 <p>The core set of Backbone.js application technologies we cover includes:</p>
@@ -41,12 +42,11 @@ libraries.</p>
 
 <ul><li><strong><a href="http://visionmedia.github.com/mocha/">Mocha</a></strong></li><li><strong><a href="http://chaijs.com/">Chai</a></strong></li><li><strong><a href="http://sinonjs.org/">Sinon.JS</a></strong></li></ul>
 
-<p>The source code for all of the code examples and the Notes application is
-available on the project&#39;s <a href="https://github.com/ryan-roemer/backbone-testing/">GitHub repository</a>.</p>
-
-<p>All of the site&#39;s content is very much a work in progress.
-There are lots of likely incidental errors and such, so please report any bugs
-and bear with us as this project evolves.</p>
+<p>The source code for everything is available from the project&#39;s
+<a href="https://github.com/ryan-roemer/backbone-testing/">GitHub repository</a>. If you find any errors or issues in content or
+code, please file a <a href="https://github.com/ryan-roemer/backbone-testing/issues">bug report</a> and we&#39;ll fix things up in short
+order. For those interested in extending our testing examples or helping
+out, please see our <a href="#development">contribution and development guide</a>.</p>
 
 <h2>Compatibility</h2>
 
@@ -265,7 +265,7 @@ below, so that we can display the <em>always current</em> build status of our co
 <p><a href="https://travis-ci.org/ryan-roemer/backbone-testing"><img alt="Build Status" src="https://travis-ci.org/ryan-roemer/backbone-testing.png"/></a></p>
 
 <p>Setting all of this up is as simple as adding a Travis configuration file
-&quot;<a href="./.travis.yml">.travis.yml</a>&quot; as follows:</p>
+&quot;.travis.yml&quot; as follows:</p>
 
 <pre><code>language: node_js
 node_js:
@@ -276,6 +276,10 @@ node_js:
 v0.10. By default, Travis already has PhantomJS installed and will run
 <code>npm install</code> and <code>npm test</code> on any Node.js project, which conveniently
 sets up and invokes all of our PhantomJS tests.</p>
+
+<p>Our actual &quot;<a href="./.travis.yml">.travis.yml</a>&quot; file runs different commands than
+the default <code>npm test</code> to add things like style checking. But, the overall
+Travis configuration is essentially the same.</p>
 
 <h2>Additional Tools</h2>
 
