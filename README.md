@@ -366,7 +366,7 @@ examples are provided in the "vendor" directory.
 
 The core Backbone.js components used are:
 
-* **[jQuery][jquery]**: `1.9.1`
+* **[jQuery][jquery]**: `2.0.0`
 * **[Underscore.js][underscore]**: `1.4.4`
 * **[Backbone.js][backbone]**: `1.0.0`
 * **[Backbone.localStorage][backbone-ls]**: `1.1.0`
@@ -380,8 +380,8 @@ The sample Notes application also uses:
 The frontend test libraries we use are:
 
 * **[Mocha][mocha]**: `1.9.0`
-* **[Chai][chai]**: `1.5.0`
-* **[Sinon.JS][sinon]**: `1.6.0`
+* **[Chai][chai]**: `1.6.0`
+* **[Sinon.JS][sinon]**: `1.7.1`
 
 The test plugins include:
 

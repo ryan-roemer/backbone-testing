@@ -13,6 +13,14 @@
     <!-- Test Fixtures. -->
     <div id="fixtures" style="display: none; visibility: hidden;"></div>
 
+    <!-- console.log -->
+    <script>
+      // Patch console.log in if not found. (IE9)
+      // See: http://stackoverflow.com/questions/5472938
+      window.console || (window.console = {});
+      window.console.log || (window.console.log = function () {});
+    </script>
+
     <!-- JavaScript Test Libraries. -->
     <script src="js/lib/mocha.js"></script>
     <script src="js/lib/chai.js"></script>

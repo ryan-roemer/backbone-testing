@@ -1,1 +1,1 @@
-../vendor/jquery-1.9.1.js
+../vendor/jquery-2.0.0.js
