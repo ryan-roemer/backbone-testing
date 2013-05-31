@@ -101,7 +101,7 @@ describe("App.Views.Note", function () {
     // disposed of when expected. Here, we bind view removal to
     // the destruction of a model.
     it("is removed on destroyed model", sinon.test(function () {
-      this.spy(this.view, "remove"),
+      this.spy(this.view, "remove");
       this.spy(this.view.noteView, "remove");
 
       this.view.model.trigger("destroy");

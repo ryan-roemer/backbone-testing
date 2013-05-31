@@ -29,11 +29,13 @@ $(function () {
       // Short circuit if no backstrech.
       if (!$.backstretch) { return; }
 
-      // Backstretch images from http://www.public-domain-photos.com/
+      // Backstretch images:
+      // - ivy
+      // (http://www.public-domain-photos.com/)
       // - clouds: landscapes/sky/clouds-2-4.htm
       // - sunrise: landscapes/sky/sunrise-3-4.htm
       // - yosemite: travel/yosemite/yosemite-meadows-4.htm
-      $.backstretch("doc/img/bg/clouds.jpg");
+      $.backstretch("doc/img/bg/ivy.jpg");
       $(".backstretch").addClass("hidden-phone");
     },
 

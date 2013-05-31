@@ -1,8 +1,14 @@
 # Backbone.js Testing
 Sample apps, test suites, and ideas for Backbone.js.
 
-## Current Tasks
+## Current Tasks / Issues
 Things to do before going live.
+
+* **Mocha 1.10.0 + Mocha-PhantomJS**: Mocha 1.10.0 removes `window.process`,
+  which causes mocha-phantomjs to spectacularly die.
+  Current branch: `upgrade-mocha-1.10.0`
+  See: https://github.com/metaskills/mocha-phantomjs/issues/58,
+  https://github.com/visionmedia/mocha/commit/dac0b29e8da9a1242c8c7d4cb7c4837cfb82bec5
 
 
 ## Notes
@@ -15,15 +21,7 @@ Things to do before going live.
 ### Readme
 * **Introduction**: Add intro more tailored to book and with actual
   information.
-
-* **Libraries**: Update various versions for:
-  * Public vendor libraries.
-    * Mocha: 1.9.0
-    * jQuery: 2.0.0 (once Sinon.JS issues resolved)
-
-  * NPM package.json libraries.
-    * ???
-
+* **Libraries**: Update various versions client and server.
 * **Licenses**: Review for any needed additions.
 
 * **Windows**:
@@ -35,38 +33,19 @@ Things to do before going live.
 ### Book Page
 * Create a "book.md" page with a TOC. Or, maybe just a link.
 
-
-## Before Final / Publication
-* **Browsers**: Test in:
-  * Chrome
-  * Safari
-  * Firefox
-  * Win/IE9
-  * Win/IE10
-
-* Clear all TODOs everywhere (code included, and especially in README.md).
-  And run: `npms todo`.
-
-* **Library Versions**: Review and upgrade everything.
-  * Frontend code.
-  * Backend Node.js libraries, "package.json".
-
-* **Package.json**:
-  * Prune unused libs.
-  * Move stuff to dev dependencies.
-
 ## Final / Packaging
 * **Replace Symlinks**: Create script to push everything from "vendor"
   to the actual location elsewhere (maybe based on name). Remove all
   symlinks and use *actual* files instead.
 
 ## After Live
-* **Readme UI Design**: Retrofit the UI design with something much better
-  looking.
-  * Maybe a navbar instead of sidenav.
-  * Separate out into more pages.
+* (docs) **Top Navbar**: Maybe a navbar instead of sidenav.
+* (docs) **Split Pages**: Separate out into more pages.
+* (docs) **Fluid Gutters**: Consistent margins.
 
-* **Windows PhantomJS**: Add examples for Windows.
+## Bugs for After Live
+* **IE9 Placeholders**: Placeholder text doesn't show up. Need to manually
+  hack in.
 
 ## Future
 * **component.json**: Consider switching to this for all libs.

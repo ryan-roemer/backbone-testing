@@ -4,16 +4,20 @@
   "description": "Backbone.js testing examples.",
   "author": "Ryan Roemer <ryan@loose-bits.com>",
   "homepage": "http://backbone-testing.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryan-roemer/backbone-testing/"
+  },
   "dependencies": {
-    "express": "3.1.0",
-    "mongoose": "3.5.7"
+    "express": "3.2.5",
+    "mongoose": "3.6.11"
   },
   "devDependencies": {
-    "mocha-phantomjs": "2.0.1",
-    "jshint": "1.1.0",
-    "nodemon": "0.7.1",
-    "uglify-js": "2.2.3",
-    "jade": "0.28.2",
+    "mocha-phantomjs": "2.0.2",
+    "jshint": "2.1.2",
+    "nodemon": "0.7.8",
+    "uglify-js": "2.3.6",
+    "jade": "0.31.0",
     "markdown": "0.4.0",
     "http-server": "0.5.3"
   },
@@ -46,7 +50,7 @@
     "min-app": "uglifyjs $(cat notes/app/index.html | egrep -o 'js\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes/app/js/app.min.js",
     "min-rest": "uglifyjs $(cat notes-rest/app/index.html | egrep -o '(js|js-rest)\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes-rest/app/js/app.min.js",
 
-    "docs": "./node_modules/.bin/jade -P --out ./ doc/index.jade doc/todo.jade",
+    "docs": "node ./node_modules/.bin/jade -P --out ./ doc/index.jade doc/todo.jade",
 
     "build": "npm run-script build-tmpl && npm run-script docs",
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",

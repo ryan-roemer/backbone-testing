@@ -23,9 +23,15 @@
 
 <p>Sample apps, test suites, and ideas for Backbone.js.</p>
 
-<h2>Current Tasks</h2>
+<h2>Current Tasks / Issues</h2>
 
 <p>Things to do before going live.</p>
+
+<ul><li><strong>Mocha 1.10.0 + Mocha-PhantomJS</strong>: Mocha 1.10.0 removes <code>window.process</code>,
+which causes mocha-phantomjs to spectacularly die.
+Current branch: <code>upgrade-mocha-1.10.0</code>
+See: https://github.com/metaskills/mocha-phantomjs/issues/58,
+https://github.com/visionmedia/mocha/commit/dac0b29e8da9a1242c8c7d4cb7c4837cfb82bec5</li></ul>
 
 <h2>Notes</h2>
 
@@ -37,18 +43,13 @@
 
 <h3>Readme</h3>
 
-<ul><li><p><strong>Introduction</strong>: Add intro more tailored to book and with actual
-information.</p></li><li><p><strong>Libraries</strong>: Update various versions for:</p><ul><li><p>Public vendor libraries.</p><ul><li>Mocha: 1.9.0</li><li><p>jQuery: 2.0.0 (once Sinon.JS issues resolved)</p></li></ul></li><li><p>NPM package.json libraries.</p><ul><li><p>???</p></li></ul></li></ul></li><li><p><strong>Licenses</strong>: Review for any needed additions.</p></li><li><p><strong>Windows</strong>:</p><ul><li><strong>Downloads</strong>: Instruct to download from the Packt site (my zipball
+<ul><li><strong>Introduction</strong>: Add intro more tailored to book and with actual
+information.</li><li><strong>Libraries</strong>: Update various versions client and server.</li><li><p><strong>Licenses</strong>: Review for any needed additions.</p></li><li><p><strong>Windows</strong>:</p><ul><li><strong>Downloads</strong>: Instruct to download from the Packt site (my zipball
 verified with real files).</li><li>Possibly need polyfill libraries.</li><li>Test out all code samples on a Windows machine.</li></ul></li></ul>
 
 <h3>Book Page</h3>
 
 <ul><li>Create a &quot;book.md&quot; page with a TOC. Or, maybe just a link.</li></ul>
-
-<h2>Before Final / Publication</h2>
-
-<ul><li><p><strong>Browsers</strong>: Test in:</p><ul><li>Chrome</li><li>Safari</li><li>Firefox</li><li>Win/IE9</li><li><p>Win/IE10</p></li></ul></li><li><p>Clear all TODOs everywhere (code included, and especially in README.md).
-And run: <code>npms todo</code>.</p></li><li><p><strong>Library Versions</strong>: Review and upgrade everything.</p><ul><li>Frontend code.</li><li><p>Backend Node.js libraries, &quot;package.json&quot;.</p></li></ul></li><li><p><strong>Package.json</strong>:</p><ul><li>Prune unused libs.</li><li>Move stuff to dev dependencies.</li></ul></li></ul>
 
 <h2>Final / Packaging</h2>
 
@@ -58,8 +59,12 @@ symlinks and use <em>actual</em> files instead.</li></ul>
 
 <h2>After Live</h2>
 
-<ul><li><p><strong>Readme UI Design</strong>: Retrofit the UI design with something much better
-looking.</p><ul><li>Maybe a navbar instead of sidenav.</li><li><p>Separate out into more pages.</p></li></ul></li><li><p><strong>Windows PhantomJS</strong>: Add examples for Windows.</p></li></ul>
+<ul><li>(docs) <strong>Top Navbar</strong>: Maybe a navbar instead of sidenav.</li><li>(docs) <strong>Split Pages</strong>: Separate out into more pages.</li><li>(docs) <strong>Fluid Gutters</strong>: Consistent margins.</li></ul>
+
+<h2>Bugs for After Live</h2>
+
+<ul><li><strong>IE9 Placeholders</strong>: Placeholder text doesn&#39;t show up. Need to manually
+hack in.</li></ul>
 
 <h2>Future</h2>
 

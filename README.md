@@ -366,15 +366,15 @@ examples are provided in the "vendor" directory.
 
 The core Backbone.js components used are:
 
-* **[jQuery][jquery]**: `2.0.0`
+* **[jQuery][jquery]**: `2.0.2`
 * **[Underscore.js][underscore]**: `1.4.4`
 * **[Backbone.js][backbone]**: `1.0.0`
-* **[Backbone.localStorage][backbone-ls]**: `1.1.0`
+* **[Backbone.localStorage][backbone-ls]**: `1.1.4`
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
 
-* **[Twitter Bootstrap][bootstrap]**: `2.3.1`
+* **[Twitter Bootstrap][bootstrap]**: `2.3.2`
 * **[Showdown][showdown]**: `0.3.1`
 
 The frontend test libraries we use are:
@@ -386,7 +386,7 @@ The frontend test libraries we use are:
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
-* **[Mocha-PhantomJS][mocha-phantom]**: `2.0.1`
+* **[Mocha-PhantomJS][mocha-phantom]**: `2.0.2`
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
