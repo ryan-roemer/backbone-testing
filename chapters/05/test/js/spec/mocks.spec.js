@@ -21,7 +21,7 @@ describe("Sinon.JS mocks", function () {
     obj.multiply(2, 2);
     obj.multiply(2, 3);
 
-    // Verify **all** of the expectations set above.
+    // Verify **all** of the previous expectations.
     mock.verify();
 
     // Restore the object.

@@ -104,13 +104,13 @@ describe("Sinon.JS spies", function () {
     this.spy(obj, "multiply");
 
     obj.multiply(5, 2);
-    expect(obj.multiply.firstCall).to
-      .eql(obj.multiply.lastCall).and
-      .eql(obj.multiply.getCall(0));
+    expect(obj.multiply.firstCall)
+      .to.eql(obj.multiply.lastCall).and
+      .to.eql(obj.multiply.getCall(0));
 
     obj.multiply(4, 2);
-    expect(obj.multiply.secondCall).to
-      .eql(obj.multiply.lastCall).and
-      .eql(obj.multiply.getCall(1));
+    expect(obj.multiply.secondCall)
+      .to.eql(obj.multiply.lastCall).and
+      .to.eql(obj.multiply.getCall(1));
   }));
 });

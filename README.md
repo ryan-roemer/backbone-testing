@@ -388,6 +388,18 @@ The test plugins include:
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
 * **[Mocha-PhantomJS][mocha-phantom]**: `2.0.2`
 
+### Mocha Version Note
+
+The current version of Mocha is 1.10.0. Unfortunately, this version is
+incompatible with the Mocha-PhantomJS automation tool. You can watch this
+issue on GitHub in the following tickets for both projects:
+
+* [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
+* [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
+
+In the meantime, if you do **not** use Mocha-PhantomJS, you should feel free to
+upgrade to Mocha v1.10.0
+
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
 Released under the [MIT](./LICENSE.txt) License.

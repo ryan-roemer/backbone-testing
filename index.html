@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="doc/site.css">
   </head>
   <body>
-    <div id="page" class="bg container">
+    <div id="page" class="bg container"><a href="https://github.com/ryan-roemer/backbone-testing" style="position: absolute; top: 0; right: 0; border: 0;" class="hidden-phone"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" class="banner"></a>
       <header id="hero" class="hero-unit backing"></header>
       <div class="container"><h1>Backbone.js Testing</h1>
 
@@ -330,6 +330,17 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 <p>The test plugins include:</p>
 
 <ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>2.0.2</code></li></ul>
+
+<h3>Mocha Version Note</h3>
+
+<p>The current version of Mocha is 1.10.0. Unfortunately, this version is
+incompatible with the Mocha-PhantomJS automation tool. You can watch this
+issue on GitHub in the following tickets for both projects:</p>
+
+<ul><li><a href="https://github.com/visionmedia/mocha/issues/770">Mocha #770</a></li><li><a href="https://github.com/metaskills/mocha-phantomjs/issues/58">Mocha-PhantomJS #58</a></li></ul>
+
+<p>In the meantime, if you do <strong>not</strong> use Mocha-PhantomJS, you should feel free to
+upgrade to Mocha v1.10.0</p>
 
 <h2>Licenses</h2>
 

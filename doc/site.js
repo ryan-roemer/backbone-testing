@@ -114,11 +114,8 @@ $(function () {
 
       // Nav bar scrollspy.
       $("body").scrollspy({ target: "#nav" });
-      $('[data-spy="scroll"]').each(function () {
-        $(this).scrollspy('refresh');
-      });
       $nav.find("li.nav-item").on("click", function () {
-        $(this).scrollspy('refresh');
+        $(this).scrollspy("refresh");
       });
 
       // Nav bar scroll animation.
@@ -149,25 +146,10 @@ $(function () {
       });
     },
 
-    todos: function () { // TODO: Find all TODOs and remove.
-      $("strong").each(function () {
-        var $el = $(this),
-          $parent = $el.parent("p");
-
-        // Only process TODOs.
-        if (!/^TODO/.test($el.text())) { return; }
-
-        // Add highlight class.
-        $el.addClass("TODO");
-
-        // Separate p's for different elements.
-        if ($el.prev("strong")) {
-          $parent.before($("<p />").append($el.detach()));
-        }
-
-        // Add brackets.
-        $el.hide(); // TODO REMOVE (temporarily hiding).
-        // TODO REENABLE $el.before("[").after("]");
+    scrollRefresh: function () {
+      // Refresh as last thing to do.
+      $("[data-spy='scroll']").each(function () {
+        $(this).scrollspy("refresh");
       });
     }
   };
@@ -176,9 +158,9 @@ $(function () {
   _.each([
     Transforms.background,
     Transforms.headingToHero,
-    Transforms.todos,             // TODO REMOVE
     Transforms.gridAndNav,
-    Transforms.chapterExamples
+    Transforms.chapterExamples,
+    Transforms.scrollRefresh
   ], function (fn) { fn(); });
 
 });

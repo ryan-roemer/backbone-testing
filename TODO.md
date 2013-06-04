@@ -8,6 +8,7 @@ Things to do before going live.
   which causes mocha-phantomjs to spectacularly die.
   Current branch: `upgrade-mocha-1.10.0`
   See: https://github.com/metaskills/mocha-phantomjs/issues/58,
+  https://github.com/visionmedia/mocha/issues/770,
   https://github.com/visionmedia/mocha/commit/dac0b29e8da9a1242c8c7d4cb7c4837cfb82bec5
 
 
