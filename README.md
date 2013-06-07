@@ -400,9 +400,6 @@ Additional plugins not used in the examples:
 All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the "vendor" directory.
 
-**TODO: Update all library versions here.**
-**TODO: Update all package.json Node.js libraries.**
-
 The core Backbone.js components used are:
 
 * **[jQuery][jquery]**: `2.0.2`
