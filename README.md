@@ -5,7 +5,7 @@ Apps, suites, and examples for Backbone.js test development.
 ## Introduction
 This site provides materials and resources for developing and testing
 [Backbone.js][backbone] web applications. All of the application and test
-examples for the book ***[Backbone.js Testing][packt]*** can be found here,
+examples for the book **[Backbone.js Testing][packt]** can be found here,
 grouped by chapter.
 We also provide a reference Backbone.js application -
 **[Notes][notes_demo]** - for creating and viewing notes, which we use
