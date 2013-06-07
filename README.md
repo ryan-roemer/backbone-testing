@@ -5,7 +5,7 @@ Apps, suites, and examples for Backbone.js test development.
 ## Introduction
 This site provides materials and resources for developing and testing
 [Backbone.js][backbone] web applications. All of the application and test
-examples for the forthcoming book *Backbone.js Testing* can be found here,
+examples for the book ***[Backbone.js Testing][packt]*** can be found here,
 grouped by chapter.
 We also provide a reference Backbone.js application -
 **[Notes][notes_demo]** - for creating and viewing notes, which we use
@@ -33,6 +33,45 @@ out, please see our [contribution and development guide][contrib].
 [gh]: https://github.com/ryan-roemer/backbone-testing/
 [gh_bugs]: https://github.com/ryan-roemer/backbone-testing/issues
 [contrib]: #development
+
+## Book
+**[Backbone.js Testing][packt]** by [Ryan Roemer][roemer] walks through the
+fundamentals of test-driven development for Backbone.js applications. All of
+the code samples are directly used in the book - it is essentially your
+narrative guide to this repository.
+
+[![Book Cover](./doc/img/book/book-cover.jpg "Book Cover")][packt]
+
+A short description of the book from the [Packt Publishing][packtpub]
+[website][packt]:
+
+> Frontend web applications are soaring in popularity and the
+> Backbone.js library is leading this charge with a modular,
+> lightweight approach for organizing JavaScript web applications. At
+> the same time, testing client-side JavaScript and Backbone.js
+> programs remains a difficult and tedious undertaking.
+>
+> Backbone.js Testing brings sensible practices and current techniques
+> to the challenges of Backbone.js test development. The book
+> introduces fundamental testing concepts, comprehensive test
+> infrastructure design, and practical exercises to easily and
+> systematically test modern JavaScript web applications.
+>
+> The book progresses from Mocha test suites and Chai assertions to
+> advanced test mocks and stubs with Sinon.JS. The requisite libraries
+> and utilities are introduced with in-depth examples and best
+> practices for integration with your applications. The book guides
+> you through the test planning and implementation processes for your
+> application models, views, routers, and other Backbone.js
+> components.
+>
+> Backbone.js Testing gives you the tools, examples, and assistance to
+> test your Backbone.js web applications thoroughly, quickly, and with
+> confidence.
+
+[roemer]: http://loose-bits.com/about.html
+[packtpub]: http://www.packtpub.com/
+[packt]: http://www.packtpub.com/backbonejs-testing/book
 
 ## Compatibility
 The application and test samples should work for the following browser /
@@ -380,7 +419,7 @@ The sample Notes application also uses:
 The frontend test libraries we use are:
 
 * **[Mocha][mocha]**: `1.9.0`
-* **[Chai][chai]**: `1.6.0`
+* **[Chai][chai]**: `1.6.1`
 * **[Sinon.JS][sinon]**: `1.7.1`
 
 The test plugins include:

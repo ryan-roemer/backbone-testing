@@ -14,19 +14,39 @@
   filter: alpha(opacity=95);
 }
 
-#page #notes-app img {
+#page img.picture,
+#page img.book {
   width: 90%;
   max-width: 611px;
   display: block;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
-#hero {
+#page img.book {
+  width: 80%;
+  max-width: 300px;
+  margin-right: auto;
+  -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+     -moz-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+          box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+}
+
+blockquote p {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#hero,
+#hero h1 a,
+#hero h1 a:hover {
   padding: 40px 0;
   color: #fff;
   text-align: center;
+  text-decoration: none;
   margin-bottom: 10px;
 }
 

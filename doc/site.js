@@ -39,6 +39,37 @@ $(function () {
       $(".backstretch").addClass("hidden-phone");
     },
 
+    heading: function () {
+      var $heading = $("h1").first(),
+        text = $heading.text();
+
+      // Wrap in a link around the heading.
+      $heading
+        .empty()
+        .append($("<a href='./index.html' />").text(text));
+    },
+
+    images: function () {
+      var pictureClass = [
+          "Notes List",
+          "Edit Note",
+          "View Note"
+        ],
+        bookClass = [
+          "Book Cover"
+        ];
+
+      // Add special picture classes to known titles.
+      $("#page img").each(function () {
+        if (_.indexOf(pictureClass, $(this).prop("title")) !== -1) {
+          $(this).addClass("picture");
+        }
+        if (_.indexOf(bookClass, $(this).prop("title")) !== -1) {
+          $(this).addClass("book");
+        }
+      });
+    },
+
     headingToHero: function () {
       // Get and detach header elements.
       var $h1 = $("h1").first(),
@@ -157,6 +188,8 @@ $(function () {
   // Apply transforms.
   _.each([
     Transforms.background,
+    Transforms.heading,
+    Transforms.images,
     Transforms.headingToHero,
     Transforms.gridAndNav,
     Transforms.chapterExamples,

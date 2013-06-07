@@ -1,5 +1,5 @@
 # Backbone.js Testing
-Sample apps, test suites, and ideas for Backbone.js.
+Apps, suites, and examples for Backbone.js test development.
 
 ## Current Tasks / Issues
 Things to do before going live.
