@@ -273,7 +273,9 @@ engine. Simply install the Node.js dependencies:</p>
 <pre><code>$ npm install</code></pre>
 
 <p>and <a href="http://phantomjs.org/download.html">install PhantomJS</a> on your development machine.
-Note that as of v3.0.0, <code>mocha-phantomjs</code> requires PhantomJS v1.9.1 or above.</p>
+Note that as of v3.0.0, <code>mocha-phantomjs</code> requires PhantomJS v1.9.1 or above.
+We presently use the v2.x.x branch to maintain compatibility with earlier
+PhantomJS versions used by Travis CI.</p>
 
 <p>From there, you can use the <code>mocha-phantomjs</code> binary to run any HTML test
 driver page from the command line, e.g.:</p>
@@ -357,7 +359,7 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 
 <p>The test plugins include:</p>
 
-<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>3.0.0</code></li></ul>
+<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>2.0.3</code></li></ul>
 
 <h3>Mocha Version Note</h3>
 
