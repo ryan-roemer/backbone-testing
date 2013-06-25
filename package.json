@@ -56,6 +56,6 @@
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",
 
     "build-chap": "CHAP=03 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} dev notes notes-rest vendor vendor-ln LICENSE.txt README.md",
-    "build-book": "NAME=Edit02 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${NAME}_Examples.zip chapters dev notes notes-rest vendor vendor-ln LICENSE.txt README.md package.json"
+    "build-book": "NAME=Prefinal01 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${NAME}_Examples.zip chapters dev notes notes-rest vendor vendor-ln LICENSE.txt README.md package.json"
   }
 }

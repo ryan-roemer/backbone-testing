@@ -1,1 +1,1 @@
-../vendor/sinon-1.7.1.js
+../vendor/sinon-1.7.3.js

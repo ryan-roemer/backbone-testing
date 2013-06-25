@@ -1,1 +1,1 @@
-../vendor/backbone.localStorage-1.1.4.js
+../vendor/backbone.localStorage-1.1.5.js

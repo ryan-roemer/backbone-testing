@@ -408,7 +408,7 @@ The core Backbone.js components used are:
 * **[jQuery][jquery]**: `2.0.2`
 * **[Underscore.js][underscore]**: `1.4.4`
 * **[Backbone.js][backbone]**: `1.0.0`
-* **[Backbone.localStorage][backbone-ls]**: `1.1.4`
+* **[Backbone.localStorage][backbone-ls]**: `1.1.5`
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
@@ -419,8 +419,8 @@ The sample Notes application also uses:
 The frontend test libraries we use are:
 
 * **[Mocha][mocha]**: `1.9.0`
-* **[Chai][chai]**: `1.6.1`
-* **[Sinon.JS][sinon]**: `1.7.1`
+* **[Chai][chai]**: `1.7.1`
+* **[Sinon.JS][sinon]**: `1.7.3`
 
 The test plugins include:
 
