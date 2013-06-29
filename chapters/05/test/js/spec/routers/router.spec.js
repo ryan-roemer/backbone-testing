@@ -26,7 +26,6 @@ describe("App.Routers.Router", function () {
   });
 
   afterEach(function () {
-    // Navigate to home page and stop history.
     Backbone.history.stop();
 
     App.Routers.Router.prototype.note.restore();

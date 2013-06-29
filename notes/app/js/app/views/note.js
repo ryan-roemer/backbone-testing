@@ -73,7 +73,7 @@
     },
 
     // Rendering the note is simply showing the active pane.
-    // All HTML should already be rendered during initalize.
+    // All HTML should already be rendered during initialize.
     render: function () {
       $(".region").not(".region-note").hide();
       $(".region-note").show();

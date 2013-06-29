@@ -1,57 +1,42 @@
 # Backbone.js Testing
 Apps, suites, and examples for Backbone.js test development.
 
-## Current Tasks / Issues
-Things to do before going live.
 
-* **Mocha 1.10.0 + Mocha-PhantomJS**: Mocha 1.10.0 removes `window.process`,
-  which causes mocha-phantomjs to spectacularly die.
-  See: https://github.com/metaskills/mocha-phantomjs/issues/58,
-  https://github.com/visionmedia/mocha/issues/770,
-  https://github.com/visionmedia/mocha/commit/dac0b29e8da9a1242c8c7d4cb7c4837cfb82bec5
+## Post-Publication
+### Repo
+* **Tag Publication**: With verbose tag. Then add a note about getting those
+  samples.
 
-
-## Notes
-### Guidelines
-* **Code Width**: Let's go for 70 chars (72 looks available in some books).
-* **VirtualBox**: Host OS is at: 10.0.2.2:4321 (app), 10.0.2.2:4322 (site).
-
-
-## Content
 ### Readme
-* **Introduction**: Add intro more tailored to book and with actual
-  information.
-* **Libraries**: Update various versions client and server.
-* **Licenses**: Review for any needed additions.
-
 * **Windows**:
   * **Downloads**: Instruct to download from the Packt site (my zipball
     verified with real files).
-  * Possibly need polyfill libraries.
-  * Test out all code samples on a Windows machine.
 
 ### Book Page
 * Create a "book.md" page with a TOC. Or, maybe just a link.
 
-## Final / Packaging
-* **Replace Symlinks**: Create script to push everything from "vendor"
-  to the actual location elsewhere (maybe based on name). Remove all
-  symlinks and use *actual* files instead.
+### Upgrades
+* Chai: 1.7.2
+* Mocha: 1.11.0+ (pending Mocha-PhantomJS bug)
 
-## After Live
+### Docs
 * (docs) **Top Navbar**: Maybe a navbar instead of sidenav.
 * (docs) **Split Pages**: Separate out into more pages.
 * (docs) **Fluid Gutters**: Consistent margins.
 
-## Bugs for After Live
+### Bugs
 * **IE9 Placeholders**: Placeholder text doesn't show up. Need to manually
   hack in.
 
-## Future
+### Future
 * **component.json**: Consider switching to this for all libs.
 * **iPhone**: Speed up click actions (delayed).
 
+
 ## Other Notes
+### Guidelines
+* **Code Width**: Let's go for 70 chars (72 looks available in some books).
+* **VirtualBox**: Host OS is at: 10.0.2.2:4321 (app), 10.0.2.2:4322 (site).
 
 ### Chai Async Failures
 Have to come back to this.

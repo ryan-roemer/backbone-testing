@@ -27,7 +27,6 @@ describe("Sinon.JS Stubs", function () {
     }));
   });
 
-
   describe("asynchronous", function () {
 
     it("stubs with yields", function (done) {
