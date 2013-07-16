@@ -403,6 +403,17 @@ Additional plugins not used in the examples:
 All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the "vendor" directory.
 
+Note that this repository has been updated since the publication of
+"Backbone.js Testing" on July 12, 2013. The samples that correspond directly
+to those shipped with the book are available at the git tag `published-1.0`.
+To checkout the published version in this repository, type:
+
+    $ git checkout tags/published-1.0
+
+The enumerated versions of all third party libraries are indicated by the
+most current version in the repository with the published version optionally
+provided in parenthesis when different.
+
 The core Backbone.js components used are:
 
 * **[jQuery][jquery]**: `2.0.2`
