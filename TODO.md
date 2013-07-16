@@ -16,8 +16,11 @@ Apps, suites, and examples for Backbone.js test development.
 * Create a "book.md" page with a TOC. Or, maybe just a link.
 
 ### Upgrades
+* jQuery: 2.0.3
 * Chai: 1.7.2
-* Mocha: 1.11.0+ (pending Mocha-PhantomJS bug)
+* Mocha: 1.12.0 (Fixes Mocha-PhantomJS issues).
+* Mocha-PhantomJS: 3.x series.
+* Backbone.localStorage: 1.1.16
 
 ### Docs
 * (docs) **Top Navbar**: Maybe a navbar instead of sidenav.
