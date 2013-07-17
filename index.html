@@ -373,16 +373,25 @@ provided in parenthesis when different.</p>
 <ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>3.1.0</code> (<em>2.0.3</em>) (<em>Note</em>: v3.x.x+
 requires PhantomJS v1.9.1 or higher).</li></ul>
 
-<h3>Mocha Version Note</h3>
+<h3>Notes</h3>
 
-<p>The current Mocha versions 1.10.0 and above are incompatible with the
-Mocha-PhantomJS automation tool. You can watch this issue on GitHub in the
-following tickets for both projects:</p>
+<h4>Mocha-PhantomJS and PhantomJS</h4>
+
+<p>As of v3.x.x and higher, Mocha-PhantomJS requires PhantomJS v1.9.1 or higher.</p>
+
+<h4>Mocha-PhantomJS and Mocha Compatibility</h4>
+
+<p>Mocha version 1.10.0 and 1.11.0 introduced incompatibilities with
+Mocha-PhantomJS. Modern versions of both libraries are now compatible, e.g.,
+Mocha v1.12.0+ and Mocha-PhantomJS v3.1.0+.</p>
+
+<p>For this historically minded, the evolution of this issue is documented in the
+following tickets:</p>
 
 <ul><li><a href="https://github.com/visionmedia/mocha/issues/770">Mocha #770</a></li><li><a href="https://github.com/metaskills/mocha-phantomjs/issues/58">Mocha-PhantomJS #58</a></li></ul>
 
-<p>In the meantime, if you do <strong>not</strong> use Mocha-PhantomJS, you should feel free to
-upgrade to Mocha v1.10.0+.</p>
+<p>&quot;Backbone.js Testing&quot; shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
+avoid the issue.</p>
 
 <h2>Licenses</h2>
 

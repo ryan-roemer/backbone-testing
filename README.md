@@ -439,17 +439,26 @@ The test plugins include:
 * **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*) (*Note*: v3.x.x+
   requires PhantomJS v1.9.1 or higher).
 
-### Mocha Version Note
+### Notes
 
-The current Mocha versions 1.10.0 and above are incompatible with the
-Mocha-PhantomJS automation tool. You can watch this issue on GitHub in the
-following tickets for both projects:
+#### Mocha-PhantomJS and PhantomJS
+
+As of v3.x.x and higher, Mocha-PhantomJS requires PhantomJS v1.9.1 or higher.
+
+#### Mocha-PhantomJS and Mocha Compatibility
+
+Mocha version 1.10.0 and 1.11.0 introduced incompatibilities with
+Mocha-PhantomJS. Modern versions of both libraries are now compatible, e.g.,
+Mocha v1.12.0+ and Mocha-PhantomJS v3.1.0+.
+
+For this historically minded, the evolution of this issue is documented in the
+following tickets:
 
 * [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
 * [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
 
-In the meantime, if you do **not** use Mocha-PhantomJS, you should feel free to
-upgrade to Mocha v1.10.0+.
+"Backbone.js Testing" shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
+avoid the issue.
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
