@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="js/lib/mocha.css" />
   </head>
   <body>
-    <div id="blanket-main" class="hidden"></div>
+    <div id="blanket-main" class="hidden" style="display: none;"></div>
     <div id="mocha"></div>
 
     <!-- Test Fixtures. -->
@@ -82,7 +82,7 @@
           });
           runner.on("end",    function () {
             blanket.onTestsDone();
-            $("#blanket-main").removeClass("hidden");
+            $("#blanket-main").removeClass("hidden").show("fast");
             $("html, body").animate({ scrollTop: 0 });
           });
 
@@ -116,7 +116,9 @@
     <!-- Coverage style helpers -->
     <style type="text/css">
       #blanket-main {
-        margin-top: 20px;
+        margin-top: 65px;
+        margin-right: 20px;
+        margin-left: 20px;
         border-radius: 5px;
         border: 1px solid #666;
       }

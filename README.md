@@ -328,8 +328,6 @@ engine. Simply install the Node.js dependencies:
 
 and [install PhantomJS][phantom-install] on your development machine.
 Note that as of v3.0.0, `mocha-phantomjs` requires PhantomJS v1.9.1 or above.
-We presently use the v2.x.x branch to maintain compatibility with earlier
-PhantomJS versions used by Travis CI.
 
 From there, you can use the `mocha-phantomjs` binary to run any HTML test
 driver page from the command line, e.g.:
@@ -403,12 +401,18 @@ Additional plugins not used in the examples:
 All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the "vendor" directory.
 
+Note that this repository has been updated since the publication of
+**[Backbone.js Testing][packt]** on July 12, 2013. The enumerated versions of
+all third party libraries are indicated by the most current version in the
+repository with the published version optionally provided in parenthesis when
+different.
+
 The core Backbone.js components used are:
 
-* **[jQuery][jquery]**: `2.0.2`
-* **[Underscore.js][underscore]**: `1.4.4`
+* **[jQuery][jquery]**: `2.0.3` (*2.0.2*)
+* **[Underscore.js][underscore]**: `1.5.1` (*1.4.4*)
 * **[Backbone.js][backbone]**: `1.0.0`
-* **[Backbone.localStorage][backbone-ls]**: `1.1.5`
+* **[Backbone.localStorage][backbone-ls]**: `1.1.6` (*1.1.5*)
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
@@ -418,26 +422,46 @@ The sample Notes application also uses:
 
 The frontend test libraries we use are:
 
-* **[Mocha][mocha]**: `1.9.0`
-* **[Chai][chai]**: `1.7.1`
+* **[Mocha][mocha]**: `1.12.0` (*1.9.0*)
+* **[Chai][chai]**: `1.7.2` (*1.7.1*)
 * **[Sinon.JS][sinon]**: `1.7.3`
 
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
-* **[Mocha-PhantomJS][mocha-phantom]**: `2.0.3`
+* **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*)
 
-### Mocha Version Note
+### Notes
 
-The current Mocha versions 1.10.0 and above are incompatible with the
-Mocha-PhantomJS automation tool. You can watch this issue on GitHub in the
-following tickets for both projects:
+#### Published Versions and Code
+
+The repository was tagged with git as `published-1.0` for the code samples
+that are shipped with the book as it went to press. To check out the published
+version in this repository, type:
+
+    $ git checkout tags/published-1.0
+
+This will all libraries, application code, and tests to the version that
+directly matches the book.
+
+#### Mocha-PhantomJS and PhantomJS
+
+As of v3.x.x and higher, Mocha-PhantomJS requires PhantomJS v1.9.1 or higher.
+
+#### Mocha-PhantomJS and Mocha Compatibility
+
+Mocha version 1.10.0 and 1.11.0 introduced incompatibilities with
+Mocha-PhantomJS. Modern versions of both libraries are now compatible, e.g.,
+Mocha v1.12.0+ and Mocha-PhantomJS v3.1.0+.
+
+For this historically minded, the evolution of this issue is documented in the
+following tickets:
 
 * [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
 * [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
 
-In the meantime, if you do **not** use Mocha-PhantomJS, you should feel free to
-upgrade to Mocha v1.10.0+.
+**[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
+avoid the issue.
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
