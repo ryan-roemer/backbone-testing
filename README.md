@@ -328,8 +328,6 @@ engine. Simply install the Node.js dependencies:
 
 and [install PhantomJS][phantom-install] on your development machine.
 Note that as of v3.0.0, `mocha-phantomjs` requires PhantomJS v1.9.1 or above.
-We presently use the v2.x.x branch to maintain compatibility with earlier
-PhantomJS versions used by Travis CI.
 
 From there, you can use the `mocha-phantomjs` binary to run any HTML test
 driver page from the command line, e.g.:
@@ -404,15 +402,10 @@ All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the "vendor" directory.
 
 Note that this repository has been updated since the publication of
-"Backbone.js Testing" on July 12, 2013. The samples that correspond directly
-to those shipped with the book are available at the git tag `published-1.0`.
-To checkout the published version in this repository, type:
-
-    $ git checkout tags/published-1.0
-
-The enumerated versions of all third party libraries are indicated by the
-most current version in the repository with the published version optionally
-provided in parenthesis when different.
+**[Backbone.js Testing][packt]** on July 12, 2013. The enumerated versions of
+all third party libraries are indicated by the most current version in the
+repository with the published version optionally provided in parenthesis when
+different.
 
 The core Backbone.js components used are:
 
@@ -436,10 +429,20 @@ The frontend test libraries we use are:
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
-* **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*) (*Note*: v3.x.x+
-  requires PhantomJS v1.9.1 or higher).
+* **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*)
 
 ### Notes
+
+#### Published Versions and Code
+
+The repository was tagged with git as `published-1.0` for the code samples
+that are shipped with the book as it went to press. To check out the published
+version in this repository, type:
+
+    $ git checkout tags/published-1.0
+
+This will all libraries, application code, and tests to the version that
+directly matches the book.
 
 #### Mocha-PhantomJS and PhantomJS
 
@@ -457,7 +460,7 @@ following tickets:
 * [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
 * [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
 
-"Backbone.js Testing" shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
+**[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
 avoid the issue.
 
 ## Licenses
