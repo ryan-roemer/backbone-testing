@@ -1,11 +1,11 @@
 /**
  * Backbone localStorage Adapter
- * Version 1.1.5
+ * Version 1.1.6
  *
  * https://github.com/jeromegn/Backbone.localStorage
  */
 (function (root, factory) {
-   if (typeof exports === 'object') {
+   if (typeof exports === 'object' && root.require) {
      module.exports = factory(require("underscore"), require("backbone"));
    } else if (typeof define === "function" && define.amd) {
       // AMD. Register as an anonymous module.
@@ -125,6 +125,8 @@ _.extend(Backbone.LocalStorage.prototype, {
     (_.chain || _)(local).keys()
       .filter(function (k) { return itemRe.test(k); })
       .each(function (k) { local.removeItem(k); });
+
+    this.records.length = 0;
   },
 
   // Size of localStorage.

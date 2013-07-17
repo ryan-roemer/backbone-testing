@@ -273,9 +273,7 @@ engine. Simply install the Node.js dependencies:</p>
 <pre><code>$ npm install</code></pre>
 
 <p>and <a href="http://phantomjs.org/download.html">install PhantomJS</a> on your development machine.
-Note that as of v3.0.0, <code>mocha-phantomjs</code> requires PhantomJS v1.9.1 or above.
-We presently use the v2.x.x branch to maintain compatibility with earlier
-PhantomJS versions used by Travis CI.</p>
+Note that as of v3.0.0, <code>mocha-phantomjs</code> requires PhantomJS v1.9.1 or above.</p>
 
 <p>From there, you can use the <code>mocha-phantomjs</code> binary to run any HTML test
 driver page from the command line, e.g.:</p>
@@ -345,9 +343,15 @@ Backbone.js specific assertions such as <code>expect(model).to.trigger()</code> 
 <p>All frontend libraries used in this repository for the sample apps and chapter
 examples are provided in the &quot;vendor&quot; directory.</p>
 
+<p>Note that this repository has been updated since the publication of
+<strong><a href="http://www.packtpub.com/backbonejs-testing/book">Backbone.js Testing</a></strong> on July 12, 2013. The enumerated versions of
+all third party libraries are indicated by the most current version in the
+repository with the published version optionally provided in parenthesis when
+different.</p>
+
 <p>The core Backbone.js components used are:</p>
 
-<ul><li><strong><a href="https://github.com/jquery/jquery">jQuery</a></strong>: <code>2.0.2</code></li><li><strong><a href="https://github.com/documentcloud/underscore">Underscore.js</a></strong>: <code>1.4.4</code></li><li><strong><a href="https://github.com/documentcloud/backbone">Backbone.js</a></strong>: <code>1.0.0</code></li><li><strong><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a></strong>: <code>1.1.5</code></li><li><strong><a href="https://github.com/douglascrockford/JSON-js">JSON</a></strong>: <em>For older browsers</em></li></ul>
+<ul><li><strong><a href="https://github.com/jquery/jquery">jQuery</a></strong>: <code>2.0.3</code> (<em>2.0.2</em>)</li><li><strong><a href="https://github.com/documentcloud/underscore">Underscore.js</a></strong>: <code>1.5.1</code> (<em>1.4.4</em>)</li><li><strong><a href="https://github.com/documentcloud/backbone">Backbone.js</a></strong>: <code>1.0.0</code></li><li><strong><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a></strong>: <code>1.1.6</code> (<em>1.1.5</em>)</li><li><strong><a href="https://github.com/douglascrockford/JSON-js">JSON</a></strong>: <em>For older browsers</em></li></ul>
 
 <p>The sample Notes application also uses:</p>
 
@@ -355,22 +359,42 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 
 <p>The frontend test libraries we use are:</p>
 
-<ul><li><strong><a href="https://github.com/visionmedia/mocha">Mocha</a></strong>: <code>1.9.0</code></li><li><strong><a href="https://github.com/chaijs/chai">Chai</a></strong>: <code>1.7.1</code></li><li><strong><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a></strong>: <code>1.7.3</code></li></ul>
+<ul><li><strong><a href="https://github.com/visionmedia/mocha">Mocha</a></strong>: <code>1.12.0</code> (<em>1.9.0</em>)</li><li><strong><a href="https://github.com/chaijs/chai">Chai</a></strong>: <code>1.7.2</code> (<em>1.7.1</em>)</li><li><strong><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a></strong>: <code>1.7.3</code></li></ul>
 
 <p>The test plugins include:</p>
 
-<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>2.0.3</code></li></ul>
+<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>3.1.0</code> (<em>2.0.3</em>)</li></ul>
 
-<h3>Mocha Version Note</h3>
+<h3>Notes</h3>
 
-<p>The current Mocha versions 1.10.0 and above are incompatible with the
-Mocha-PhantomJS automation tool. You can watch this issue on GitHub in the
-following tickets for both projects:</p>
+<h4>Published Versions and Code</h4>
+
+<p>The repository was tagged with git as <code>published-1.0</code> for the code samples
+that are shipped with the book as it went to press. To check out the published
+version in this repository, type:</p>
+
+<pre><code>$ git checkout tags/published-1.0</code></pre>
+
+<p>This will all libraries, application code, and tests to the version that
+directly matches the book.</p>
+
+<h4>Mocha-PhantomJS and PhantomJS</h4>
+
+<p>As of v3.x.x and higher, Mocha-PhantomJS requires PhantomJS v1.9.1 or higher.</p>
+
+<h4>Mocha-PhantomJS and Mocha Compatibility</h4>
+
+<p>Mocha version 1.10.0 and 1.11.0 introduced incompatibilities with
+Mocha-PhantomJS. Modern versions of both libraries are now compatible, e.g.,
+Mocha v1.12.0+ and Mocha-PhantomJS v3.1.0+.</p>
+
+<p>For this historically minded, the evolution of this issue is documented in the
+following tickets:</p>
 
 <ul><li><a href="https://github.com/visionmedia/mocha/issues/770">Mocha #770</a></li><li><a href="https://github.com/metaskills/mocha-phantomjs/issues/58">Mocha-PhantomJS #58</a></li></ul>
 
-<p>In the meantime, if you do <strong>not</strong> use Mocha-PhantomJS, you should feel free to
-upgrade to Mocha v1.10.0+.</p>
+<p><strong><a href="http://www.packtpub.com/backbonejs-testing/book">Backbone.js Testing</a></strong> shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
+avoid the issue.</p>
 
 <h2>Licenses</h2>
 

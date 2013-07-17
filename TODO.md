@@ -3,10 +3,6 @@ Apps, suites, and examples for Backbone.js test development.
 
 
 ## Post-Publication
-### Repo
-* **Tag Publication**: With verbose tag. Then add a note about getting those
-  samples.
-
 ### Readme
 * **Windows**:
   * **Downloads**: Instruct to download from the Packt site (my zipball
@@ -15,14 +11,8 @@ Apps, suites, and examples for Backbone.js test development.
 ### Book Page
 * Create a "book.md" page with a TOC. Or, maybe just a link.
 
-### Upgrades
-* jQuery: 2.0.3
-* Chai: 1.7.2
-* Mocha: 1.12.0 (Fixes Mocha-PhantomJS issues).
-* Mocha-PhantomJS: 3.x series.
-* Backbone.localStorage: 1.1.16
-
 ### Docs
+* (docs) **iPhone**: Get rid of extra padding at the top.
 * (docs) **Top Navbar**: Maybe a navbar instead of sidenav.
 * (docs) **Split Pages**: Separate out into more pages.
 * (docs) **Fluid Gutters**: Consistent margins.
