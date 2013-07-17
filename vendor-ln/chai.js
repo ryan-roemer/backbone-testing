@@ -1,1 +1,1 @@
-../vendor/chai-1.7.1.js
+../vendor/chai-1.7.2.js

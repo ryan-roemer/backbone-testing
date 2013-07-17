@@ -423,7 +423,7 @@ The sample Notes application also uses:
 The frontend test libraries we use are:
 
 * **[Mocha][mocha]**: `1.12.0` (*1.9.0*)
-* **[Chai][chai]**: `1.7.1`
+* **[Chai][chai]**: `1.7.2` (*1.7.1*)
 * **[Sinon.JS][sinon]**: `1.7.3`
 
 The test plugins include:
