@@ -441,7 +441,7 @@ version in this repository, type:
 
     $ git checkout tags/published-1.0
 
-This will all libraries, application code, and tests to the version that
+This will switch all libraries, application code, and tests to the version that
 directly matches the book.
 
 #### Mocha-PhantomJS and PhantomJS
