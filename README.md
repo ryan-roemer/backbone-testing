@@ -429,14 +429,15 @@ The sample Notes application also uses:
 
 The frontend test libraries we use are:
 
-* **[Mocha][mocha]**: `1.9.0`
+* **[Mocha][mocha]**: `1.12.0` (*1.9.0*)
 * **[Chai][chai]**: `1.7.1`
 * **[Sinon.JS][sinon]**: `1.7.3`
 
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
-* **[Mocha-PhantomJS][mocha-phantom]**: `2.0.3`
+* **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*) (*Note*: v3.x.x+
+  requires PhantomJS v1.9.1 or higher).
 
 ### Mocha Version Note
 
