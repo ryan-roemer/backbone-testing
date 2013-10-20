@@ -17,9 +17,10 @@
     "jshint": "2.1.2",
     "nodemon": "0.7.8",
     "uglify-js": "2.3.6",
-    "jade": "0.31.0",
+    "jade": "0.35.0",
     "markdown": "0.4.0",
-    "http-server": "0.5.3"
+    "http-server": "0.5.3",
+    "bower": "~1.2.7"
   },
   "engines": {
     "node": ">0.8.x"
@@ -27,34 +28,25 @@
   "scripts": {
     "everything": "npm run-script check && npm run-script build",
     "start": "nodemon notes-rest/server.js",
-
     "mongo-wipe": "rm -rf ./mongodb_data && mkdir ./mongodb_data",
     "mongo-start": "mkdir -p ./mongodb_data && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=./mongodb_data --logpath=./mongodb_data/mongodb.log",
     "mongo-pids": "ps ax | egrep -v 'sh -c|grep' | grep 'mongod --port=27027' | egrep -o '^[0-9]+' || echo None.",
-
     "todo": "grep -Rn 'TODO' README.md notes-rest/server.js notes/test/js/spec notes/app/js/app notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
-
     "check": "npm run-script style && npm run-script test",
-
     "style": "npm run-script style-client && npm run-script style-server",
     "style-server": "./node_modules/.bin/jshint --config=./dev/jshint-server.json notes-rest/server.js",
     "style-client": "./node_modules/.bin/jshint --config=./dev/jshint-client.json notes/app/js/fixtures notes/test/js/spec notes/app/js/app notes-rest/test/js/spec-rest  notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
-
     "test": "npm run-script test-app && npm run-script test-rest && npm run-script test-chaps-all && npm run-script test-chaps",
     "test-app": "ls notes/test/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
     "test-chaps": "ls chapters/*/test/test*.html | egrep -v \"failure|timing\" |  xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
     "test-chaps-all": "ls chapters/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
     "test-rest": "node_modules/.bin/mocha-phantomjs notes-rest/test/test.html",
     "test-server": "http-server -p 4322",
-
-    "min-app": "uglifyjs $(cat notes/app/index.html | egrep -o 'js\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes/app/js/app.min.js",
-    "min-rest": "uglifyjs $(cat notes-rest/app/index.html | egrep -o '(js|js-rest)\/app\/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes-rest/app/js/app.min.js",
-
+    "min-app": "uglifyjs $(cat notes/app/index.html | egrep -o 'js/app/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes/app/js/app.min.js",
+    "min-rest": "uglifyjs $(cat notes-rest/app/index.html | egrep -o '(js|js-rest)/app/.*?\\.js' | xargs -I {} echo 'notes-rest/app/{}') -m -c -o notes-rest/app/js/app.min.js",
     "docs": "node ./node_modules/.bin/jade -P --out ./ doc/index.jade doc/todo.jade",
-
     "build": "npm run-script build-tmpl && npm run-script docs",
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js",
-
     "build-chap": "CHAP=03 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${CHAP}_Examples.zip chapters/${CHAP} dev notes notes-rest vendor vendor-ln LICENSE.txt README.md",
     "build-book": "NAME=PreFinal_20130629_151727 && zip -X -x \"*.DS_Store\" -r ${HOME}/Desktop/5248_${NAME}_Examples.zip chapters dev notes notes-rest vendor vendor-ln LICENSE.txt README.md package.json"
   }
