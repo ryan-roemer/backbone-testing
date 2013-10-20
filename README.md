@@ -503,6 +503,10 @@ as follows:
   the [Apache v2.0](https://github.com/twitter/bootstrap/blob/master/LICENSE)
   license.
 
+* [jQuery Backstretch][backstretch] is Copyright Scott Robbin and licensed under
+  the [MIT](https://github.com/srobbin/jquery-backstretch/blob/master/LICENSE-MIT)
+  license.
+
 * [Showdown][showdown] is Copyright Corey Innis and licensed under the
   [BSD](https://github.com/coreyti/showdown/blob/master/license.txt) license.
 
@@ -529,6 +533,7 @@ as follows:
 [sinon]: https://github.com/cjohansen/Sinon.JS
 [showdown]: https://github.com/coreyti/showdown
 [blanket]: https://github.com/alex-seville/blanket
+[backstretch]: https://github.com/srobbin/jquery-backstretch
 
 
 ## Development

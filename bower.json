@@ -36,6 +36,10 @@
     "mocha": "1.12.0",
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js",
     "sinon-chai": "2.4.0",
-    "underscore": "1.5.1"
+    "underscore": "1.5.1",
+    "jquery-backstretch": "2.0.4"
+  },
+  "resolutions": {
+    "jquery": "2.0.3"
   }
 }
