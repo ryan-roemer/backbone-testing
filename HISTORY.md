@@ -1,5 +1,8 @@
 ## History
 
+### Current
+* **Bower**: Switch to Bower for all existing client-side libraries.
+
 ### v0.0.2
 * *BUG*: Fix `src` attribute link to TDD example test file. The Chapter 3 file
   "tdd.spec.js" in the samples should have been named "tdd.js". The text of
