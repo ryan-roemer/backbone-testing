@@ -24,6 +24,14 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "2.3.2"
+  },
+  "devDependencies": {
+    "bootstrap": "2.3.2",
+    "backbone": "1.0.0",
+    "showdown": "0.3.1",
+    "backbone.localStorage": "1.1.6",
+    "blanket": "1.1.4",
+    "chai": "1.7.2",
+    "jquery": "2.0.3"
   }
 }
