@@ -1,3 +1,5 @@
+var buildTmpl = require("./dev/build-templates");
+
 module.exports = function (grunt) {
 
   // Strip comments from JsHint JSON files.
@@ -69,7 +71,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-jade");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
-  // Tasks.
+  // Internal Tasks.
+  grunt.registerTask("build:tmpl", function () {
+    var tmpl = buildTmpl("./notes/app/templates.html");
+    grunt.file.write(
+      "./notes/app/js/app/templates/templates.js",
+      tmpl);
+  });
+
+  // Wrapper Tasks.
   grunt.registerTask("build",   ["jade:docs"]);
   grunt.registerTask("check",   ["jshint"]);
   grunt.registerTask("default", ["build", "check"]);

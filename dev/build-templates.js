@@ -13,7 +13,7 @@ var TMPL_SRC_PATH = "./notes/app/templates.html",
   SCRIPT_ESCAPES_RE = /\"/g;
 
 // Builder function.
-var _build = module.exports = function (srcPath, outPath) {
+var _build = module.exports = function (srcPath, callback) {
   // Read into string.
   var tmplSrc = fs.readFileSync(srcPath).toString(),
     templates = [],
@@ -24,11 +24,8 @@ var _build = module.exports = function (srcPath, outPath) {
 
   // Writer encapsulation.
   var _write = function (out) {
-    if (outPath) {
-      buffer.push(out);
-    } else {
-      console.log(out);
-    }
+    if (callback) { callback(out); }
+    buffer.push(out);
   };
 
   // Parse into array of id, text.
@@ -59,9 +56,11 @@ var _build = module.exports = function (srcPath, outPath) {
 
     _write(out);
   });
+
+  return buffer.join("\n") + "\n";
 };
 
 // Script
 if (require.main === module) {
-  _build(TMPL_SRC_PATH);
+  _build(TMPL_SRC_PATH, console.log);
 }
