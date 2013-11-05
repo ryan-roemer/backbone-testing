@@ -445,7 +445,8 @@ the development NPM dependencies:</p>
 
 <pre><code>$ npm install</code></pre>
 
-<p>From there, there are various Grunt script helpers for style checking and tests:</p>
+<p>From there, there are various <a href="http://gruntjs.com/">Grunt</a> script helpers for style checking
+and tests:</p>
 
 <pre><code># Run style checks for server, client, and both.
 $ ./node_modules/.bin/grunt jshint:server
@@ -454,11 +455,11 @@ $ ./node_modules/.bin/grunt jshint
 
 # Run headless tests for the application, individual chapters, all chapters
 # as one big test, and all of these together.
-$ npm run-script test-app
-$ npm run-script test-rest
-$ npm run-script test-chaps
-$ npm run-script test-chaps-all
-$ npm test
+$ ./node_modules/.bin/grunt test:app
+$ ./node_modules/.bin/grunt test:rest
+$ ./node_modules/.bin/grunt test:chaps
+$ ./node_modules/.bin/grunt test:chaps-all
+$ ./node_modules/.bin/grunt test
 
 # Run all style checks and headless tests.
 $ ./node_modules/.bin/grunt check</code></pre>
@@ -477,7 +478,7 @@ most welcome. Please file a GitHub
 <a href="https://github.com/ryan-roemer/backbone-testing/issues">issue</a> or pull request
 for any changes. Pull requests should be able to pass</p>
 
-<pre><code>$ npm run-script check</code></pre>
+<pre><code>$ ./node_modules/.bin/grunt check</code></pre>
 
 <p>without any errors.</p><h2>History</h2>
 

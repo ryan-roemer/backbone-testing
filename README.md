@@ -521,6 +521,7 @@ as follows:
 [bootstrap]: https://github.com/twitter/bootstrap
 [jquery]: https://github.com/jquery/jquery
 [json_js]: https://github.com/douglascrockford/JSON-js
+[grunt]: http://gruntjs.com/
 [mocha]: https://github.com/visionmedia/mocha
 [mocha-phantom]: https://github.com/metaskills/mocha-phantomjs
 [phantom]: http://phantomjs.org/
@@ -547,7 +548,8 @@ the development NPM dependencies:
 
     $ npm install
 
-From there, there are various Grunt script helpers for style checking and tests:
+From there, there are various [Grunt][grunt] script helpers for style checking
+and tests:
 
     # Run style checks for server, client, and both.
     $ ./node_modules/.bin/grunt jshint:server
@@ -556,11 +558,11 @@ From there, there are various Grunt script helpers for style checking and tests:
 
     # Run headless tests for the application, individual chapters, all chapters
     # as one big test, and all of these together.
-    $ npm run-script test-app
-    $ npm run-script test-rest
-    $ npm run-script test-chaps
-    $ npm run-script test-chaps-all
-    $ npm test
+    $ ./node_modules/.bin/grunt test:app
+    $ ./node_modules/.bin/grunt test:rest
+    $ ./node_modules/.bin/grunt test:chaps
+    $ ./node_modules/.bin/grunt test:chaps-all
+    $ ./node_modules/.bin/grunt test
 
     # Run all style checks and headless tests.
     $ ./node_modules/.bin/grunt check
@@ -578,6 +580,6 @@ most welcome. Please file a GitHub
 [issue](https://github.com/ryan-roemer/backbone-testing/issues) or pull request
 for any changes. Pull requests should be able to pass
 
-    $ npm run-script check
+    $ ./node_modules/.bin/grunt check
 
 without any errors.
