@@ -50,18 +50,22 @@ module.exports = function (grunt) {
     },
 
     watch: {
+      options: {
+        spawn: false,
+        atBegin: true
+      },
+      tmpl: {
+        files: [
+          "./notes/app/templates.html"
+        ],
+        tasks: ["build:tmpl"]
+      },
       docs: {
         files: [
           "doc/**/*.jade",
           "**/*.md"
         ],
-        tasks: [
-          "jade"
-        ],
-        options: {
-          spawn: false,
-          atBegin: true
-        }
+        tasks: ["jade"]
       }
     }
   });
@@ -80,7 +84,7 @@ module.exports = function (grunt) {
   });
 
   // Wrapper Tasks.
-  grunt.registerTask("build",   ["jade:docs"]);
+  grunt.registerTask("build",   ["build:tmpl", "jade:docs"]);
   grunt.registerTask("check",   ["jshint"]);
   grunt.registerTask("default", ["build", "check"]);
 };
