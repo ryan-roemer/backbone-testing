@@ -17,9 +17,19 @@ var _build = module.exports = function (srcPath, outPath) {
   // Read into string.
   var tmplSrc = fs.readFileSync(srcPath).toString(),
     templates = [],
+    buffer = [],
     results,
     scriptPart,
     scriptId;
+
+  // Writer encapsulation.
+  var _write = function (out) {
+    if (outPath) {
+      buffer.push(out);
+    } else {
+      console.log(out);
+    }
+  };
 
   // Parse into array of id, text.
   while ((results = SCRIPT_RE.exec(tmplSrc)) !== null) {
@@ -33,8 +43,8 @@ var _build = module.exports = function (srcPath, outPath) {
   }
 
   // Output as a JS file.
-  console.log("/*jslint maxlen: 200 */");
-  console.log("// Underscore Templates\n");
+  _write("/*jslint maxlen: 200 */");
+  _write("// Underscore Templates\n");
 
   templates.forEach(function (tmpl) {
     var out = "",
@@ -47,7 +57,7 @@ var _build = module.exports = function (srcPath, outPath) {
       .join("\" +\n  \"");
     out += "\";\n"
 
-    console.log(out);
+    _write(out);
   });
 };
 
