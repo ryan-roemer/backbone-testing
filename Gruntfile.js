@@ -33,11 +33,24 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+
+    jade: {
+      compile: {
+        options: {
+          pretty: true
+        },
+        files: {
+          "index.html": ["doc/index.jade"],
+          "todo.html":  ["doc/todo.jade"]
+        }
+      }
     }
   });
 
   // Dependencies
   grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-contrib-jade");
 
   // Default task
   grunt.registerTask("default", ["jshint"]);
