@@ -21,7 +21,8 @@
     "grunt-cli": "0.1.10",
     "grunt": "0.4.1",
     "grunt-contrib-jshint": "~0.7.1",
-    "grunt-contrib-jade": "~0.8.0"
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3"
   },
   "engines": {
     "node": ">0.8.x"
@@ -43,7 +44,7 @@
     "test-chaps-all": "ls chapters/test*.html | xargs -I{} bash -c 'printf \"== \\e[1;35m{}\\e[0m ==\"; node_modules/.bin/mocha-phantomjs {}'",
     "test-rest": "node_modules/.bin/mocha-phantomjs notes-rest/test/test.html",
     "test-server": "http-server -p 4322",
-    "docs": "node ./node_modules/.bin/jade -P --out ./ doc/index.jade doc/todo.jade",
+    "docs": "./node_modules/.bin/grunt jade",
     "build": "npm run-script build-tmpl && npm run-script docs",
     "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js"
   }

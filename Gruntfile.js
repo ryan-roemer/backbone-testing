@@ -36,7 +36,7 @@ module.exports = function (grunt) {
     },
 
     jade: {
-      compile: {
+      docs: {
         options: {
           pretty: true
         },
@@ -45,13 +45,32 @@ module.exports = function (grunt) {
           "todo.html":  ["doc/todo.jade"]
         }
       }
+    },
+
+    watch: {
+      docs: {
+        files: [
+          "doc/**/*.jade",
+          "**/*.md"
+        ],
+        tasks: [
+          "jade"
+        ],
+        options: {
+          spawn: false,
+          atBegin: true
+        }
+      }
     }
   });
 
   // Dependencies
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-jade");
+  grunt.loadNpmTasks("grunt-contrib-watch");
 
-  // Default task
-  grunt.registerTask("default", ["jshint"]);
+  // Tasks.
+  grunt.registerTask("build",   ["jade:docs"]);
+  grunt.registerTask("check",   ["jshint"]);
+  grunt.registerTask("default", ["build", "check"]);
 };

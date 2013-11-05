@@ -547,12 +547,12 @@ the development NPM dependencies:
 
     $ npm install
 
-From there, there are various NPM script helpers for style checking and tests:
+From there, there are various Grunt script helpers for style checking and tests:
 
     # Run style checks for server, client, and both.
-    $ npm run-script style-server
-    $ npm run-script style-client
-    $ npm run-script style
+    $ ./node_modules/.bin/grunt jshint:server
+    $ ./node_modules/.bin/grunt jshint:client
+    $ ./node_modules/.bin/grunt jshint
 
     # Run headless tests for the application, individual chapters, all chapters
     # as one big test, and all of these together.
@@ -563,14 +563,14 @@ From there, there are various NPM script helpers for style checking and tests:
     $ npm test
 
     # Run all style checks and headless tests.
-    $ npm run-script check
+    $ ./node_modules/.bin/grunt check
 
 The file "README.md" is transformed from markdown into the HTML page
 "index.html", and can be compiled once, or watched for changes with the
 following commands.
 
-    $ npm run-script docs
-    $ npm run-script docs-watch
+    $ ./node_modules/.bin/grunt jade:docs
+    $ ./node_modules/.bin/grunt watch:docs
 
 ### Contributions
 Bugs, issues and fixes for any of the application or test code examples are
