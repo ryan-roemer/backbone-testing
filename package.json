@@ -13,16 +13,18 @@
     "mongoose": "3.6.11"
   },
   "devDependencies": {
-    "mocha-phantomjs": "3.1.0",
+    "mocha-phantomjs": "~3.1.5",
     "nodemon": "0.7.8",
     "markdown": "0.4.0",
     "http-server": "0.5.3",
     "bower": "1.2.7",
     "grunt-cli": "0.1.10",
     "grunt": "0.4.1",
-    "grunt-contrib-jshint": "~0.7.1",
-    "grunt-contrib-jade": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt-contrib-jshint": "0.7.1",
+    "grunt-contrib-jade": "0.8.0",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-mocha-phantomjs": "0.3.1",
+    "phantomjs": "1.9.2-2"
   },
   "engines": {
     "node": ">0.8.x"

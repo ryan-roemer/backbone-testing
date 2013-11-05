@@ -49,6 +49,17 @@ module.exports = function (grunt) {
       }
     },
 
+    mocha_phantomjs: {
+      app:          ["notes/test/test*.html"],
+      rest:         ["notes-rest/test/test.html"],
+      "chaps-all":  ["chapters/test*.html"],
+      chaps: [
+        "chapters/*/test/test*.html",
+        "!chapters/*/test/test*failure.html",
+        "!chapters/*/test/test*timing.html"
+      ]
+    },
+
     watch: {
       options: {
         spawn: false,
@@ -73,6 +84,7 @@ module.exports = function (grunt) {
   // Dependencies
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-jade");
+  grunt.loadNpmTasks("grunt-mocha-phantomjs");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
   // Internal Tasks.
@@ -84,7 +96,14 @@ module.exports = function (grunt) {
   });
 
   // Wrapper Tasks.
+  grunt.registerTask("test:app",        ["mocha_phantomjs:app"]);
+  grunt.registerTask("test:rest",       ["mocha_phantomjs:rest"]);
+  grunt.registerTask("test:chaps-all",
+                     ["mocha_phantomjs:chaps-all"]);
+  grunt.registerTask("test:chaps",      ["mocha_phantomjs:chaps"]);
+  grunt.registerTask("test",            ["mocha_phantomjs"]);
+  grunt.registerTask("check",           ["jshint", "test"]);
+
   grunt.registerTask("build",   ["build:tmpl", "jade:docs"]);
-  grunt.registerTask("check",   ["jshint"]);
   grunt.registerTask("default", ["build", "check"]);
 };
