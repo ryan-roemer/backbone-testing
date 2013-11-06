@@ -1,1 +1,1 @@
-../../../../vendor-ln/blanket.js
+../../../../vendor/blanket.js

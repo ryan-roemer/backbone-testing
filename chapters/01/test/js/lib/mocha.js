@@ -1,1 +1,1 @@
-../../../../../vendor-ln/mocha.js
+../../../../../vendor/mocha.js

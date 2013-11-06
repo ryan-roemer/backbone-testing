@@ -1,1 +1,1 @@
-../../../../vendor-ln/jquery.js
+../../../../vendor/jquery.js

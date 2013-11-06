@@ -1,4 +1,4 @@
-/*! blanket - v1.1.4 */
+/*! blanket - v1.1.4 */ 
 
 if (typeof QUnit !== 'undefined'){ QUnit.config.autostart = false; }
 (function(define){
@@ -3933,22 +3933,22 @@ module.exports = function (src, opts, fn) {
     src = src === undefined ? opts.source : src;
     opts.range = true;
     if (typeof src !== 'string') src = String(src);
-
+    
     var ast = parse(src, opts);
-
+    
     var result = {
         chunks : src.split(''),
         toString : function () { return result.chunks.join('') },
         inspect : function () { return result.toString() }
     };
     var index = 0;
-
+    
     (function walk (node, parent) {
         insertHelpers(node, parent, result.chunks);
-
+        
         forEach(objectKeys(node), function (key) {
             if (key === 'parent') return;
-
+            
             var child = node[key];
             if (isArray(child)) {
                 forEach(child, function (c) {
@@ -3964,21 +3964,21 @@ module.exports = function (src, opts, fn) {
         });
         fn(node);
     })(ast, undefined);
-
+    
     return result;
 };
-
+ 
 function insertHelpers (node, parent, chunks) {
     if (!node.range) return;
-
+    
     node.parent = parent;
-
+    
     node.source = function () {
         return chunks.slice(
             node.range[0], node.range[1]
         ).join('');
     };
-
+    
     if (node.update && typeof node.update === 'object') {
         var prev = node.update;
         forEach(objectKeys(prev), function (key) {
@@ -3989,7 +3989,7 @@ function insertHelpers (node, parent, chunks) {
     else {
         node.update = update;
     }
-
+    
     function update (s) {
         chunks[node.range[0]] = s;
         for (var i = node.range[0] + 1; i < node.range[1]; i++) {
@@ -4051,11 +4051,11 @@ var parseAndModify = (inBrowser ? window.falafel : require("falafel"));
         commonJS:false,
         instrumentCache:false
     };
-
+    
     if (inBrowser && typeof window.blanket !== 'undefined'){
         __blanket = window.blanket.noConflict();
     }
-
+    
     _blanket = {
         noConflict: function(){
             if (__blanket){
@@ -6720,7 +6720,7 @@ blanket.defaultReporter = function(coverage){
       }
       var thisline = cols[colsIndex];
       //consequent
-
+      
       var cons = thisline.consequent;
       if (cons.start.line > lineNum){
         branchStack.unshift([thisline.alternate,thisline]);
@@ -6729,7 +6729,7 @@ blanket.defaultReporter = function(coverage){
       }else{
         var style = "<span class='" + (isBranchFollowed(thisline,true) ? 'branchOkay' : 'branchWarning') + "'>";
         newsrc += escapeInvalidXmlChars(src.slice(0,cons.start.column-offset)) + style;
-
+        
         if (cols.length > colsIndex+1 &&
           cols[colsIndex+1].consequent.start.line === lineNum &&
           cols[colsIndex+1].consequent.start.column-offset < cols[colsIndex].consequent.end.column-offset)
@@ -6792,12 +6792,12 @@ blanket.defaultReporter = function(coverage){
             numberOfFilesCovered = 0,
             code = [],
             i;
-
+        
 
         var end = [];
         for(i = 0; i < statsForFile.source.length; i +=1){
             var src = statsForFile.source[i];
-
+            
             if (branchStack.length > 0 ||
                 typeof statsForFile.branchData !== 'undefined')
             {
@@ -6805,10 +6805,10 @@ blanket.defaultReporter = function(coverage){
                 {
                   var cols = statsForFile.branchData[i+1].filter(isUndefined);
                   var colsIndex=0;
-
-
+                  
+                    
                   src = branchReport(colsIndex,src,cols,0,i+1).src;
-
+                  
                 }else if (branchStack.length){
                   src = branchReport(0,src,null,0,i+1).src;
                 }else{
@@ -7173,7 +7173,7 @@ _blanket.extend({
 
                 xhr.onreadystatechange = function (evt) {
                     var status, err;
-
+                    
                     //Do not explicitly handle errors, those should be
                     //visible via console output in the browser.
                     if (xhr.readyState === 4) {
@@ -7220,7 +7220,7 @@ if (typeof QUnit !== 'undefined'){
         QUnit.begin=function(){
             blanket.noConflict().setupCoverage();
         };
-
+        
         QUnit.done=function(failures, total) {
             blanket.noConflict().onTestsDone();
         };
@@ -7243,12 +7243,12 @@ if (typeof QUnit !== 'undefined'){
             label: "Enable coverage",
             tooltip: "Enable code coverage."
         });
-
+    
         if ( QUnit.urlParams.coverage || blanket.options("autoStart") ) {
             QUnit.begin(function(){
                 blanket.noConflict().setupCoverage();
             });
-
+            
             QUnit.done(function(failures, total) {
                 blanket.noConflict().onTestsDone();
             });

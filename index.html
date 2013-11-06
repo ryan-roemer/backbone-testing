@@ -1,7 +1,13 @@
-<!DOCTYPE html><!--[if lt IE 7]>
-<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"></html><![endif]--><!--[if IE 7]>
-<html lang="en" class="no-js lt-ie9 lt-ie8"></html><![endif]--><!--[if IE 8]>
-<html lang="en" class="no-js lt-ie9"></html><![endif]-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"></html>
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8"></html>
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9"></html>
+<![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="en" class="no-js">
   <!--<![endif]-->
@@ -12,8 +18,8 @@
     <meta name="description" content="Apps, suites, and examples for Backbone.js Testing.">
     <meta name="keywords" content="backbone.js testing, backbone.js, backbone, javascript, underscore.js, jquery, mocha, chai, sinon, sinon.js, testing, unit test, spies, mocks, stubs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor-ln/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="doc/site.css">
   </head>
   <body>
@@ -417,6 +423,8 @@ what we will politely approximate to a
 license.</p></li><li><p><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a> is Copyright Christian Johansen and licensed under the
 <a href="https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE">BSD</a> license.</p></li><li><p><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a> is Copyright Twitter, Inc. and licensed under
 the <a href="https://github.com/twitter/bootstrap/blob/master/LICENSE">Apache v2.0</a>
+license.</p></li><li><p><a href="https://github.com/srobbin/jquery-backstretch">jQuery Backstretch</a> is Copyright Scott Robbin and licensed under
+the <a href="https://github.com/srobbin/jquery-backstretch/blob/master/LICENSE-MIT">MIT</a>
 license.</p></li><li><p><a href="https://github.com/coreyti/showdown">Showdown</a> is Copyright Corey Innis and licensed under the
 <a href="https://github.com/coreyti/showdown/blob/master/license.txt">BSD</a> license.</p></li><li><p><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a> is Copyright Ken Collins and licensed under the
 <a href="https://github.com/metaskills/mocha-phantomjs/blob/master/MIT-LICENSE">MIT</a>
@@ -437,30 +445,31 @@ the development NPM dependencies:</p>
 
 <pre><code>$ npm install</code></pre>
 
-<p>From there, there are various NPM script helpers for style checking and tests:</p>
+<p>From there, there are various <a href="http://gruntjs.com/">Grunt</a> script helpers for style checking
+and tests:</p>
 
 <pre><code># Run style checks for server, client, and both.
-$ npm run-script style-server
-$ npm run-script style-client
-$ npm run-script style
+$ ./node_modules/.bin/grunt jshint:server
+$ ./node_modules/.bin/grunt jshint:client
+$ ./node_modules/.bin/grunt jshint
 
 # Run headless tests for the application, individual chapters, all chapters
 # as one big test, and all of these together.
-$ npm run-script test-app
-$ npm run-script test-rest
-$ npm run-script test-chaps
-$ npm run-script test-chaps-all
-$ npm test
+$ ./node_modules/.bin/grunt test:app
+$ ./node_modules/.bin/grunt test:rest
+$ ./node_modules/.bin/grunt test:chaps
+$ ./node_modules/.bin/grunt test:chaps-all
+$ ./node_modules/.bin/grunt test
 
 # Run all style checks and headless tests.
-$ npm run-script check</code></pre>
+$ ./node_modules/.bin/grunt check</code></pre>
 
 <p>The file &quot;README.md&quot; is transformed from markdown into the HTML page
 &quot;index.html&quot;, and can be compiled once, or watched for changes with the
 following commands.</p>
 
-<pre><code>$ npm run-script docs
-$ npm run-script docs-watch</code></pre>
+<pre><code>$ ./node_modules/.bin/grunt jade:docs
+$ ./node_modules/.bin/grunt watch:docs</code></pre>
 
 <h3>Contributions</h3>
 
@@ -469,9 +478,13 @@ most welcome. Please file a GitHub
 <a href="https://github.com/ryan-roemer/backbone-testing/issues">issue</a> or pull request
 for any changes. Pull requests should be able to pass</p>
 
-<pre><code>$ npm run-script check</code></pre>
+<pre><code>$ ./node_modules/.bin/grunt check</code></pre>
 
 <p>without any errors.</p><h2>History</h2>
+
+<h3>Current</h3>
+
+<ul><li><strong>Bower</strong>: Switch to Bower for all existing client-side libraries.</li></ul>
 
 <h3>v0.0.2</h3>
 
@@ -497,10 +510,10 @@ the book remains correct - only the code sample has been updated.
       </div>
       <li class="nav-item"><a><i class="icon-chevron-right"></i></a></li>
     </div>
-    <script src="vendor-ln/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script src="vendor-ln/underscore.min.js"></script>
-    <script src="vendor-ln/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/jquery.backstretch.min.js"></script>
+    <script src="vendor/underscore.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="doc/site.js"></script>
     <script>
       var _gaq = _gaq || [];

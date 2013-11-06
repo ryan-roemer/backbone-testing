@@ -1,1 +1,0 @@
-../vendor/json2.js

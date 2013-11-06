@@ -1,1 +1,1 @@
-../../../../../vendor-ln/chai.js
+../../../../../vendor/chai.js

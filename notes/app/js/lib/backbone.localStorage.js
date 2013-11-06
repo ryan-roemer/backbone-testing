@@ -1,1 +1,1 @@
-../../../../vendor-ln/backbone.localStorage.js
+../../../../vendor/backbone.localStorage.js

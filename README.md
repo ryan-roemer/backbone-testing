@@ -503,6 +503,10 @@ as follows:
   the [Apache v2.0](https://github.com/twitter/bootstrap/blob/master/LICENSE)
   license.
 
+* [jQuery Backstretch][backstretch] is Copyright Scott Robbin and licensed under
+  the [MIT](https://github.com/srobbin/jquery-backstretch/blob/master/LICENSE-MIT)
+  license.
+
 * [Showdown][showdown] is Copyright Corey Innis and licensed under the
   [BSD](https://github.com/coreyti/showdown/blob/master/license.txt) license.
 
@@ -517,6 +521,7 @@ as follows:
 [bootstrap]: https://github.com/twitter/bootstrap
 [jquery]: https://github.com/jquery/jquery
 [json_js]: https://github.com/douglascrockford/JSON-js
+[grunt]: http://gruntjs.com/
 [mocha]: https://github.com/visionmedia/mocha
 [mocha-phantom]: https://github.com/metaskills/mocha-phantomjs
 [phantom]: http://phantomjs.org/
@@ -529,6 +534,7 @@ as follows:
 [sinon]: https://github.com/cjohansen/Sinon.JS
 [showdown]: https://github.com/coreyti/showdown
 [blanket]: https://github.com/alex-seville/blanket
+[backstretch]: https://github.com/srobbin/jquery-backstretch
 
 
 ## Development
@@ -542,30 +548,31 @@ the development NPM dependencies:
 
     $ npm install
 
-From there, there are various NPM script helpers for style checking and tests:
+From there, there are various [Grunt][grunt] script helpers for style checking
+and tests:
 
     # Run style checks for server, client, and both.
-    $ npm run-script style-server
-    $ npm run-script style-client
-    $ npm run-script style
+    $ ./node_modules/.bin/grunt jshint:server
+    $ ./node_modules/.bin/grunt jshint:client
+    $ ./node_modules/.bin/grunt jshint
 
     # Run headless tests for the application, individual chapters, all chapters
     # as one big test, and all of these together.
-    $ npm run-script test-app
-    $ npm run-script test-rest
-    $ npm run-script test-chaps
-    $ npm run-script test-chaps-all
-    $ npm test
+    $ ./node_modules/.bin/grunt test:app
+    $ ./node_modules/.bin/grunt test:rest
+    $ ./node_modules/.bin/grunt test:chaps
+    $ ./node_modules/.bin/grunt test:chaps-all
+    $ ./node_modules/.bin/grunt test
 
     # Run all style checks and headless tests.
-    $ npm run-script check
+    $ ./node_modules/.bin/grunt check
 
 The file "README.md" is transformed from markdown into the HTML page
 "index.html", and can be compiled once, or watched for changes with the
 following commands.
 
-    $ npm run-script docs
-    $ npm run-script docs-watch
+    $ ./node_modules/.bin/grunt jade:docs
+    $ ./node_modules/.bin/grunt watch:docs
 
 ### Contributions
 Bugs, issues and fixes for any of the application or test code examples are
@@ -573,6 +580,6 @@ most welcome. Please file a GitHub
 [issue](https://github.com/ryan-roemer/backbone-testing/issues) or pull request
 for any changes. Pull requests should be able to pass
 
-    $ npm run-script check
+    $ ./node_modules/.bin/grunt check
 
 without any errors.

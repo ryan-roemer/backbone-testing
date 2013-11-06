@@ -1,1 +1,1 @@
-../../../../vendor-ln/backbone.js
+../../../../vendor/backbone.js
