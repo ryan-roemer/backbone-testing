@@ -68,6 +68,6 @@
   "sub"           : false,  // Tolerate all forms of subscript notation.
   "trailing"      : true,   // Prohibit trailing whitespaces.
   "white"         : true,   // Check against strict whitespace / indent rules.
-  "maxlen"        : 70,     // Line length.
+  "maxlen"        : 80,     // Line length.
   "indent"        : 2       // Specify indentation spacing
 }

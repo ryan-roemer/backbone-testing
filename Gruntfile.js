@@ -11,6 +11,90 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
 
+    bowerPath: "bower_components",
+    vendorPath: "vendor-ln",
+
+    jade: {
+      docs: {
+        options: {
+          pretty: true
+        },
+        files: {
+          "index.html": ["doc/index.jade"],
+          "todo.html":  ["doc/todo.jade"]
+        }
+      }
+    },
+
+    copy: {
+      vendor: {
+        files: [
+          {
+            dest: "<%= vendorPath %>",
+            expand: true,
+            flatten: true,
+            src: [
+              "<%= bowerPath %>/mocha/mocha.js",
+              "<%= bowerPath %>/mocha/mocha.css",
+              "<%= bowerPath %>/chai/chai.js",
+              "<%= bowerPath %>/sinon-chai/lib/sinon-chai.js",
+              "<%= bowerPath %>/blanket/dist/qunit/blanket.js",
+              "<%= bowerPath %>/blanket/dist/qunit/blanket.min.js",
+              "<%= bowerPath %>/jquery/jquery.js",
+              "<%= bowerPath %>/json2/json2.js",
+              "<%= bowerPath %>/jquery/jquery.min.js",
+              "<%= bowerPath %>/underscore/underscore.js",
+              "<%= bowerPath %>/backbone/backbone.js",
+              "<%= bowerPath %>/backbone.localStorage/backbone.localStorage.js"
+            ]
+          },
+          {
+            dest: "<%= vendorPath %>/bootstrap",
+            cwd: "<%= bowerPath %>/bootstrap",
+            expand: true,
+            src: [
+              "css/**",
+              "img/**",
+              "js/**"
+            ]
+          },
+          {
+            dest: "<%= vendorPath %>/sinon.js",
+            src: "<%= bowerPath %>/sinon/index.js"
+          },
+          {
+            dest: "<%= vendorPath %>/underscore.min.js",
+            src: "<%= bowerPath %>/underscore/underscore-min.js"
+          },
+          {
+            dest: "<%= vendorPath %>/backbone.min.js",
+            src: "<%= bowerPath %>/backbone/backbone-min.js"
+          },
+          {
+            dest: "<%= vendorPath %>/backbone.localStorage.min.js",
+            src: "<%= bowerPath %>/backbone.localStorage/" +
+                 "backbone.localStorage-min.js"
+          },
+          {
+            dest: "<%= vendorPath %>/showdown",
+            cwd: "<%= bowerPath %>/showdown/src",
+            expand: true,
+            src: ["**"]
+          }
+        ]
+      }
+    },
+
+    uglify: {
+      vendor: {
+        files: {
+          "<%= vendorPath %>/json2.min.js": [
+            "<%= vendorPath %>/json2.js"
+          ]
+        }
+      }
+    },
+
     jshint: {
       client: {
         options: _jshint("dev/jshint-client.json"),
@@ -33,18 +117,6 @@ module.exports = function (grunt) {
             "Gruntfile.js",
             "notes-rest/server.js"
           ]
-        }
-      }
-    },
-
-    jade: {
-      docs: {
-        options: {
-          pretty: true
-        },
-        files: {
-          "index.html": ["doc/index.jade"],
-          "todo.html":  ["doc/todo.jade"]
         }
       }
     },
@@ -86,6 +158,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-jade");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   // Internal Tasks.
   grunt.registerTask("build:tmpl", function () {
@@ -94,16 +168,16 @@ module.exports = function (grunt) {
       "./notes/app/js/app/templates/templates.js",
       tmpl);
   });
+  grunt.registerTask("build:vendor",    ["copy:vendor", "uglify:vendor"]);
 
   // Wrapper Tasks.
   grunt.registerTask("test:app",        ["mocha_phantomjs:app"]);
   grunt.registerTask("test:rest",       ["mocha_phantomjs:rest"]);
-  grunt.registerTask("test:chaps-all",
-                     ["mocha_phantomjs:chaps-all"]);
+  grunt.registerTask("test:chaps-all",  ["mocha_phantomjs:chaps-all"]);
   grunt.registerTask("test:chaps",      ["mocha_phantomjs:chaps"]);
   grunt.registerTask("test",            ["mocha_phantomjs"]);
   grunt.registerTask("check",           ["jshint", "test"]);
 
-  grunt.registerTask("build",   ["build:tmpl", "jade:docs"]);
+  grunt.registerTask("build",   ["build:tmpl", "jade:docs", "build:vendor"]);
   grunt.registerTask("default", ["build", "check"]);
 };
