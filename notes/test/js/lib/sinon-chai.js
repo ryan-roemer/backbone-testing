@@ -1,1 +1,1 @@
-../../../../vendor-ln/sinon-chai.js
+../../../../vendor/sinon-chai.js

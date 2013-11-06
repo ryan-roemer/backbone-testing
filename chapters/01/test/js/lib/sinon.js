@@ -1,1 +1,1 @@
-../../../../../vendor-ln/sinon.js
+../../../../../vendor/sinon.js

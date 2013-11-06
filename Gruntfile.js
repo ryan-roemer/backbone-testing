@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON("package.json"),
 
     bowerPath: "bower_components",
-    vendorPath: "vendor-ln",
+    vendorPath: "vendor",
 
     jade: {
       docs: {
