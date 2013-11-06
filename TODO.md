@@ -8,9 +8,6 @@ Apps, suites, and examples for Backbone.js test development.
   * **Downloads**: Instruct to download from the Packt site (my zipball
     verified with real files).
 
-### Book Page
-* Create a "book.md" page with a TOC. Or, maybe just a link.
-
 ### Docs
 * (docs) **iPhone**: Get rid of extra padding at the top.
 * (docs) **Top Navbar**: Maybe a navbar instead of sidenav.
@@ -22,7 +19,6 @@ Apps, suites, and examples for Backbone.js test development.
   hack in.
 
 ### Future
-* **component.json**: Consider switching to this for all libs.
 * **iPhone**: Speed up click actions (delayed).
 
 

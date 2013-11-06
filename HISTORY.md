@@ -1,6 +1,6 @@
 ## History
 
-### Current
+### v0.0.3
 * **Bower**: Switch to Bower for all existing client-side libraries.
 
 ### v0.0.2
