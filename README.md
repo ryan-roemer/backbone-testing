@@ -169,9 +169,14 @@ In the second window, start up the Express server:
     $ npm start
 
 And from there you can navigate a browser to:
-[http://127.0.0.1:4321/app/](http://127.0.0.1:4321/app/)
-and see the application running. Note that you can control several application
-options by setting console environment variables:
+
+* [http://127.0.0.1:4321/app/](http://127.0.0.1:4321/app/):
+  Use the MongoDB-backed application.
+* [http://127.0.0.1:4321/test/test.html](http://127.0.0.1:4321/test/test.html)
+  Run the tests from the live server.
+
+Note that you can control several application options by setting
+console environment variables:
 
 * `MONGO_ADDR`: MongoDB host address (default `127.0.0.1`).
 * `MONGO_PORT`: MongoDB port (default `27027`).

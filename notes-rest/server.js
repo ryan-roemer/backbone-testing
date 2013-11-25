@@ -100,8 +100,16 @@ app.use(function (req, res, next) {
 
 // Configurations and static server.
 app.use(express.bodyParser());
-app.use("/app", express.static(__dirname + "/app"));
-app.use("/test", express.static(__dirname + "/test"));
+app.enable("strict routing");
+
+// Application.
+app.all(/^(|\/|\/app)$/, function(req, res) { res.redirect('/app/'); });
+app.use("/app/", express.static(__dirname + "/app"));
+
+// Tests.
+app.all("/test", function(req, res) { res.redirect('/test/'); });
+app.use("/test/", express.static(__dirname + "/test"));
+
 app.use(_logRequest);
 
 // REST API
