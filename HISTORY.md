@@ -1,5 +1,8 @@
 ## History
 
+### Current
+* **Notes Rest**: Add more permissive routing and better README.md notes.
+
 ### v0.0.3
 * **Bower**: Switch to Bower for all existing client-side libraries.
 
