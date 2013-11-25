@@ -114,8 +114,10 @@ app.all(/^(|\/|\/app)$/, _redirect("/app/"));
 app.use("/app/", express.static(__dirname + "/app"));
 
 // Tests.
-app.all("/test", _redirect("/test/"));
-app.use("/test/", express.static(__dirname + "/test"));
+app.all(/^\/test(|\/)$/, _redirect("/test/test.html"));
+app.use("/test/", express.static(__dirname + "/test", {
+  redirect : false
+}));
 
 app.use(_logRequest);
 
