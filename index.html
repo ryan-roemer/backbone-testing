@@ -169,10 +169,14 @@ In the first window, start up MongoDB:</p>
 
 <pre><code>$ npm start</code></pre>
 
-<p>And from there you can navigate a browser to:
-<a href="http://127.0.0.1:4321/app/">http://127.0.0.1:4321/app/</a>
-and see the application running. Note that you can control several application
-options by setting console environment variables:</p>
+<p>And from there you can navigate a browser to:</p>
+
+<ul><li><a href="http://127.0.0.1:4321/app/">http://127.0.0.1:4321/app/</a>:
+Use the MongoDB-backed application.</li><li><a href="http://127.0.0.1:4321/test/test.html">http://127.0.0.1:4321/test/test.html</a>
+Run the tests from the live server.</li></ul>
+
+<p>Note that you can control several application options by setting
+console environment variables:</p>
 
 <ul><li><code>MONGO_ADDR</code>: MongoDB host address (default <code>127.0.0.1</code>).</li><li><code>MONGO_PORT</code>: MongoDB port (default <code>27027</code>).</li><li><code>ADDR</code>: Express server host address (default <code>127.0.0.1</code>).</li><li><code>PORT</code>: Express server port (default <code>4321</code>).</li></ul>
 

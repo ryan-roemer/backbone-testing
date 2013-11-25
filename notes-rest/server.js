@@ -84,6 +84,13 @@ function _logRequest(req, res, next) {
   return next();
 }
 
+// Redirects.
+function _redirect(dest) {
+  return function (req, res) {
+    res.redirect(dest);
+  };
+}
+
 // -----------------------
 // Application server
 // -----------------------
@@ -103,11 +110,11 @@ app.use(express.bodyParser());
 app.enable("strict routing");
 
 // Application.
-app.all(/^(|\/|\/app)$/, function(req, res) { res.redirect('/app/'); });
+app.all(/^(|\/|\/app)$/, _redirect("/app/"));
 app.use("/app/", express.static(__dirname + "/app"));
 
 // Tests.
-app.all("/test", function(req, res) { res.redirect('/test/'); });
+app.all("/test", _redirect("/test/"));
 app.use("/test/", express.static(__dirname + "/test"));
 
 app.use(_logRequest);
