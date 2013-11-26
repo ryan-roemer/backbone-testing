@@ -172,7 +172,7 @@ And from there you can navigate a browser to:
 
 * [http://127.0.0.1:4321/app/](http://127.0.0.1:4321/app/):
   Use the MongoDB-backed application.
-* [http://127.0.0.1:4321/test/test.html](http://127.0.0.1:4321/test/test.html)
+* [http://127.0.0.1:4321/test/test.html](http://127.0.0.1:4321/test/test.html):
   Run the tests from the live server.
 
 Note that you can control several application options by setting
