@@ -11,16 +11,25 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap-theme.css">
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <div id="nav" class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="#">Notes</a>
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-target">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Notes</a>
+      </div>
 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="nav-target">
         <!-- Nav's for single note view -->
-        <ul id="note-nav" class="nav region region-note" style="display: none;">
+        <ul id="note-nav" class="nav navbar-nav region region-note" style="display: none;">
           <li class="note-view active">
             <a href="#">
               <i class="icon-file"></i>
@@ -42,16 +51,16 @@
         </ul>
 
         <!-- Nav's for notes filter view -->
-        <form class="navbar-search pull-right region region-notes"
-              style="display: none;">
-          <input type="text" class="search-query"
+        <form class="navbar-form navbar-right navbar-search region region-notes"
+              role="search" style="display: none;">
+          <input type="text" class="search-query form-control"
                  placeholder="Filter">
         </form>
-      </div>
-    </div>
+      </div><!-- /.navbar-collapse -->
+    </nav>
 
     <!-- Content -->
-    <div class="container-fluid">
+    <div class="container">
       <!-- Content: Notes -->
       <div id="notes" class="region region-notes" style="display: none;">
         <table id="notes-list" class="table table-bordered table-hover">
@@ -59,11 +68,14 @@
             <tr class="notes-new">
               <td class="note-name">
                 <input id="note-new-input"
+                       class="form-control"
                        placeholder="Write a new note." autofocus>
               </td>
               <td class="note-action">
-                <button id="note-create" class="btn pull-right">
-                  <i class="icon-plus"></i>
+                <button id="note-create"
+                        type="button"
+                        class="btn btn-default btn-sm pull-right">
+                  <span class="glyphicon glyphicon-plus"></span>
                 </button>
               </td>
             </tr>

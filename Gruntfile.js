@@ -52,11 +52,11 @@ module.exports = function (grunt) {
           },
           {
             dest: "<%= vendorPath %>/bootstrap",
-            cwd: "<%= bowerPath %>/bootstrap",
+            cwd: "<%= bowerPath %>/bootstrap/dist",
             expand: true,
             src: [
               "css/**",
-              "img/**",
+              "fonts/**",
               "js/**"
             ]
           },

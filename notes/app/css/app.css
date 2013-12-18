@@ -1,12 +1,12 @@
 /* Nav bar */
-#note-nav a i {
-  opacity: 0.65;
+#note-nav a span {
+  opacity: 0.75;
 }
 
 /* (Sort-of) iPhone Portrait (usually 320px). */
 @media (max-width: 390px) {
   .navbar-search .search-query {
-    width: 120px;
+    width: 110px;
   }
   .hidden-phone-portrait {
     display: none !important;
@@ -20,6 +20,8 @@ table#notes-list {
 table#notes-list td {
   padding: 0.5em;
   vertical-align: middle;
+  border-right: none;
+  border-left: none;
 }
 table#notes-list td .note-title {
   font-weight: bold;
@@ -28,7 +30,7 @@ table#notes-list td .note-title {
   cursor: pointer;
 }
 table#notes-list td.note-action {
-  border-left: none;
+  width: 95px;
 }
 
 /* Notes View - "Add new note" input. */
