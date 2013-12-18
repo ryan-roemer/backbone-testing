@@ -33,6 +33,38 @@ table#notes-list td.note-action {
   width: 95px;
 }
 
+/* From: http://stackoverflow.com/questions/18729638 */
+.table-curved {
+  border-collapse: separate;
+}
+.table-curved {
+  border: solid #dddddd 1px;
+  border-radius: 6px;
+}
+.table-curved td, .table-curved th {
+  border-left: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.table-curved th,
+table#notes-list tr.notes-new td {
+  border-top: none;
+}
+.table-curved th:first-child {
+  border-radius: 6px 0 0 0;
+}
+.table-curved th:last-child {
+  border-radius: 0 6px 0 0;
+}
+.table-curved th:only-child{
+  border-radius: 6px 6px 0 0;
+}
+.table-curved tr:last-child td:first-child {
+  border-radius: 0 0 0 6px;
+}
+.table-curved tr:last-child td:last-child {
+  border-radius: 0 0 6px 0;
+}
+
 /* Notes View - "Add new note" input. */
 input#note-new-input {
   width: 100%;

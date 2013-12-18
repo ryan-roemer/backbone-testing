@@ -21,12 +21,16 @@ App.Templates["template-note"] =
   "  <div id=\"note-pane-view-content\"></div>" +
   "</div>" +
   "<div id=\"note-pane-edit\" class=\"pane\">" +
-  "  <form id=\"note-form-edit\">" +
-  "    <input id=\"input-title\" class=\"input-block-level form-control\"" +
-  "           type=\"text\" placeholder=\"title\"" +
-  "           value=\"<%= title %>\">" +
-  "    <textarea id=\"input-text\" class=\"input-block-level form-control\"" +
-  "              rows=\"15\"><%= text %></textarea>" +
+  "  <form id=\"note-form-edit\" role=\"form\">" +
+  "    <div class=\"form-group\">" +
+  "      <input id=\"input-title\" class=\"form-control\"" +
+  "             type=\"text\" placeholder=\"title\"" +
+  "             value=\"<%= title %>\">" +
+  "    </div>" +
+  "    <div class=\"form-group\">" +
+  "      <textarea id=\"input-text\" class=\"form-control\"" +
+  "                rows=\"15\"><%= text %></textarea>" +
+  "    </div>" +
   "  </form>" +
   "</div>";
 
