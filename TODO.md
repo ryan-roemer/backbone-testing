@@ -8,19 +8,12 @@ Apps, suites, and examples for Backbone.js test development.
   * **Downloads**: Instruct to download from the Packt site (my zipball
     verified with real files).
 
-### Docs
-* (docs) **iPhone**: Get rid of extra padding at the top.
-* (docs) **Top Navbar**: Maybe a navbar instead of sidenav.
-* (docs) **Split Pages**: Separate out into more pages.
-* (docs) **Fluid Gutters**: Consistent margins.
-
 ### Bugs
 * **IE9 Placeholders**: Placeholder text doesn't show up. Need to manually
   hack in.
 
 ### Future
 * **iPhone**: Speed up click actions (delayed).
-
 
 ## Other Notes
 ### Guidelines
