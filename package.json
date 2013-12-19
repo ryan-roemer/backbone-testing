@@ -13,7 +13,7 @@
     "mongoose": "3.6.11"
   },
   "devDependencies": {
-    "mocha-phantomjs": "~3.1.5",
+    "mocha-phantomjs": "3.2.0",
     "nodemon": "0.7.8",
     "markdown": "0.4.0",
     "http-server": "0.5.3",

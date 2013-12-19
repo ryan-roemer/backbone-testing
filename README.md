@@ -394,8 +394,11 @@ Plugins that are used in some examples:
 
 Additional plugins not used in the examples:
 
-* **[chai-jquery](http://chaijs.com/plugins/chai-jquery)**: Adds
-  assertions for jQuery functions and attributes like `data()`, `class()`,
+* **[chai-jq](http://formidablelabs.github.io/chai-jq/)**: Adds
+  assertions for jQuery functions and properties like `$class()`,
+  `$attr()`, and `$hidden`.
+* **[chai-jquery](http://chaijs.com/plugins/chai-jquery)**: An alternate
+  jQuery assertion library with methods including `data()`, `class()`,
   `id()`, and `hidden()`.
 * **[chai-backbone](http://chaijs.com/plugins/chai-backbone)**: Adds
   Backbone.js specific assertions such as `expect(model).to.trigger()` and
@@ -409,32 +412,31 @@ examples are provided in the "vendor" directory.
 Note that this repository has been updated since the publication of
 **[Backbone.js Testing][packt]** on July 12, 2013. The enumerated versions of
 all third party libraries are indicated by the most current version in the
-repository with the published version optionally provided in parenthesis when
-different.
+repository with the published version noted in parenthesis when different.
 
 The core Backbone.js components used are:
 
 * **[jQuery][jquery]**: `2.0.3` (*2.0.2*)
-* **[Underscore.js][underscore]**: `1.5.1` (*1.4.4*)
-* **[Backbone.js][backbone]**: `1.0.0`
-* **[Backbone.localStorage][backbone-ls]**: `1.1.6` (*1.1.5*)
+* **[Underscore.js][underscore]**: `1.5.2` (*1.4.4*)
+* **[Backbone.js][backbone]**: `1.1.0` (*1.0.0*)
+* **[Backbone.localStorage][backbone-ls]**: `1.1.7` (*1.1.5*)
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
 
-* **[Twitter Bootstrap][bootstrap]**: `3.0.3`
+* **[Twitter Bootstrap][bootstrap]**: `3.0.3` (*2.3.2*)
 * **[Showdown][showdown]**: `0.3.1`
 
 The frontend test libraries we use are:
 
-* **[Mocha][mocha]**: `1.12.0` (*1.9.0*)
-* **[Chai][chai]**: `1.7.2` (*1.7.1*)
+* **[Mocha][mocha]**: `1.15.1` (*1.9.0*)
+* **[Chai][chai]**: `1.8.1` (*1.7.1*)
 * **[Sinon.JS][sinon]**: `1.7.3`
 
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
-* **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*)
+* **[Mocha-PhantomJS][mocha-phantom]**: `3.2.0` (*2.0.3*)
 
 ### Notes
 
@@ -465,8 +467,8 @@ following tickets:
 * [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
 * [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
 
-**[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
-avoid the issue.
+**[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS
+v2.0.3 to avoid the issue.
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.

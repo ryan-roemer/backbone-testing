@@ -356,8 +356,10 @@ of the Sinon.JS native <code>sinon.assert.calledWith(spy, 42)</code>.</li></ul>
 
 <p>Additional plugins not used in the examples:</p>
 
-<ul><li><strong><a href="http://chaijs.com/plugins/chai-jquery">chai-jquery</a></strong>: Adds
-assertions for jQuery functions and attributes like <code>data()</code>, <code>class()</code>,
+<ul><li><strong><a href="http://formidablelabs.github.io/chai-jq/">chai-jq</a></strong>: Adds
+assertions for jQuery functions and properties like <code>$class()</code>,
+<code>$attr()</code>, and <code>$hidden</code>.</li><li><strong><a href="http://chaijs.com/plugins/chai-jquery">chai-jquery</a></strong>: An alternate
+jQuery assertion library with methods including <code>data()</code>, <code>class()</code>,
 <code>id()</code>, and <code>hidden()</code>.</li><li><strong><a href="http://chaijs.com/plugins/chai-backbone">chai-backbone</a></strong>: Adds
 Backbone.js specific assertions such as <code>expect(model).to.trigger()</code> and
 <code>expect(&quot;hash/fragment&quot;).to.route.to()</code>.</li></ul>
@@ -370,24 +372,23 @@ examples are provided in the &quot;vendor&quot; directory.</p>
 <p>Note that this repository has been updated since the publication of
 <strong><a href="http://www.packtpub.com/backbonejs-testing/book">Backbone.js Testing</a></strong> on July 12, 2013. The enumerated versions of
 all third party libraries are indicated by the most current version in the
-repository with the published version optionally provided in parenthesis when
-different.</p>
+repository with the published version noted in parenthesis when different.</p>
 
 <p>The core Backbone.js components used are:</p>
 
-<ul><li><strong><a href="https://github.com/jquery/jquery">jQuery</a></strong>: <code>2.0.3</code> (<em>2.0.2</em>)</li><li><strong><a href="https://github.com/documentcloud/underscore">Underscore.js</a></strong>: <code>1.5.1</code> (<em>1.4.4</em>)</li><li><strong><a href="https://github.com/documentcloud/backbone">Backbone.js</a></strong>: <code>1.0.0</code></li><li><strong><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a></strong>: <code>1.1.6</code> (<em>1.1.5</em>)</li><li><strong><a href="https://github.com/douglascrockford/JSON-js">JSON</a></strong>: <em>For older browsers</em></li></ul>
+<ul><li><strong><a href="https://github.com/jquery/jquery">jQuery</a></strong>: <code>2.0.3</code> (<em>2.0.2</em>)</li><li><strong><a href="https://github.com/documentcloud/underscore">Underscore.js</a></strong>: <code>1.5.2</code> (<em>1.4.4</em>)</li><li><strong><a href="https://github.com/documentcloud/backbone">Backbone.js</a></strong>: <code>1.1.0</code> (<em>1.0.0</em>)</li><li><strong><a href="https://github.com/jeromegn/backbone.localStorage">Backbone.localStorage</a></strong>: <code>1.1.7</code> (<em>1.1.5</em>)</li><li><strong><a href="https://github.com/douglascrockford/JSON-js">JSON</a></strong>: <em>For older browsers</em></li></ul>
 
 <p>The sample Notes application also uses:</p>
 
-<ul><li><strong><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a></strong>: <code>3.0.3</code></li><li><strong><a href="https://github.com/coreyti/showdown">Showdown</a></strong>: <code>0.3.1</code></li></ul>
+<ul><li><strong><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a></strong>: <code>3.0.3</code> (<em>2.3.2</em>)</li><li><strong><a href="https://github.com/coreyti/showdown">Showdown</a></strong>: <code>0.3.1</code></li></ul>
 
 <p>The frontend test libraries we use are:</p>
 
-<ul><li><strong><a href="https://github.com/visionmedia/mocha">Mocha</a></strong>: <code>1.12.0</code> (<em>1.9.0</em>)</li><li><strong><a href="https://github.com/chaijs/chai">Chai</a></strong>: <code>1.7.2</code> (<em>1.7.1</em>)</li><li><strong><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a></strong>: <code>1.7.3</code></li></ul>
+<ul><li><strong><a href="https://github.com/visionmedia/mocha">Mocha</a></strong>: <code>1.15.1</code> (<em>1.9.0</em>)</li><li><strong><a href="https://github.com/chaijs/chai">Chai</a></strong>: <code>1.8.1</code> (<em>1.7.1</em>)</li><li><strong><a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a></strong>: <code>1.7.3</code></li></ul>
 
 <p>The test plugins include:</p>
 
-<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>3.1.0</code> (<em>2.0.3</em>)</li></ul>
+<ul><li><strong><a href="https://github.com/domenic/sinon-chai">Sinon-Chai</a></strong>: <code>2.4.0</code></li><li><strong><a href="https://github.com/metaskills/mocha-phantomjs">Mocha-PhantomJS</a></strong>: <code>3.2.0</code> (<em>2.0.3</em>)</li></ul>
 
 <h3>Notes</h3>
 
@@ -417,8 +418,8 @@ following tickets:</p>
 
 <ul><li><a href="https://github.com/visionmedia/mocha/issues/770">Mocha #770</a></li><li><a href="https://github.com/metaskills/mocha-phantomjs/issues/58">Mocha-PhantomJS #58</a></li></ul>
 
-<p><strong><a href="http://www.packtpub.com/backbonejs-testing/book">Backbone.js Testing</a></strong> shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
-avoid the issue.</p>
+<p><strong><a href="http://www.packtpub.com/backbonejs-testing/book">Backbone.js Testing</a></strong> shipped with Mocha v1.9.0 and Mocha-PhantomJS
+v2.0.3 to avoid the issue.</p>
 
 <h2>Licenses</h2>
 
@@ -502,7 +503,9 @@ for any changes. Pull requests should be able to pass</p>
 
 <h3>Current</h3>
 
-<ul><li><strong>Libraries</strong>: Upgrade to Bootstrap v3.0.3.</li><li><strong>Notes Rest</strong>: Add more permissive routing and better README.md notes.</li></ul>
+<ul><li><strong>Libraries</strong>: Upgrade to Bootstrap v3.0.3, Backbone v1.1.0,
+Backbone.localStorage v1.1.7, Blanket.js v1.1.5, Chai v1.8.1,
+Mocha 1.15.1, Underscore.js 1.5.2.</li><li><strong>Notes Rest</strong>: Add more permissive routing and better README.md notes.</li></ul>
 
 <h3>v0.0.3</h3>
 
