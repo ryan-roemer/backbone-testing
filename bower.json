@@ -25,7 +25,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "backbone": "1.0.0",
+    "backbone": "1.1.0",
     "showdown": "0.3.1",
     "backbone.localStorage": "1.1.6",
     "blanket": "1.1.4",

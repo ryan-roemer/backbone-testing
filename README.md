@@ -416,13 +416,13 @@ The core Backbone.js components used are:
 
 * **[jQuery][jquery]**: `2.0.3` (*2.0.2*)
 * **[Underscore.js][underscore]**: `1.5.1` (*1.4.4*)
-* **[Backbone.js][backbone]**: `1.0.0`
+* **[Backbone.js][backbone]**: `1.1.0` (*1.0.0*)
 * **[Backbone.localStorage][backbone-ls]**: `1.1.6` (*1.1.5*)
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
 
-* **[Twitter Bootstrap][bootstrap]**: `3.0.3`
+* **[Twitter Bootstrap][bootstrap]**: `3.0.3` (*2.3.2*)
 * **[Showdown][showdown]**: `0.3.1`
 
 The frontend test libraries we use are:
