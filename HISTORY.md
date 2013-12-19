@@ -1,6 +1,7 @@
 ## History
 
 ### Current
+* **Libraries**: Upgrade to Bootstrap v3.0.3.
 * **Notes Rest**: Add more permissive routing and better README.md notes.
 
 ### v0.0.3
