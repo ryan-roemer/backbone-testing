@@ -18,25 +18,42 @@ $(function () {
   }
 
   Transforms = {
-    background: function () {
-      // Tweak IE 10 to have no opacity.
-      if (IS_IE && IE_GTE_10) {
-        $("#page")
-          .removeClass("bg")
-          .addClass("bg-ie");
-      }
+    headingToHero: function () {
+      // Get and detach header elements.
+      var $h1 = $("h1").first(),
+        $parent = $h1.parent(),
+        $p = $h1.next("p").detach();
 
-      // Short circuit if no backstrech.
-      if (!$.backstretch) { return; }
+      // Replace with hero.
+      $("#hero")
+        .detach()
+        .append($h1.detach(), $p)
+        .prependTo($parent);
+    },
 
-      // Backstretch images:
-      // - ivy
-      // (http://www.public-domain-photos.com/)
-      // - clouds: landscapes/sky/clouds-2-4.htm
-      // - sunrise: landscapes/sky/sunrise-3-4.htm
-      // - yosemite: travel/yosemite/yosemite-meadows-4.htm
-      $.backstretch("doc/img/bg/ivy.jpg");
-      $(".backstretch").addClass("hidden-phone");
+    navAffix: function () {
+      // http://stackoverflow.com/a/13151016/741892
+      var $hero = $("#hero"),
+        $nav = $("#nav"),
+        top = $nav.offset().top,
+        resize = function () {
+          $nav.width($hero.width());
+        };
+
+      $nav.affix({
+        offset: {
+          top: function () {
+            resize();
+            return top;
+          }
+        }
+      });
+
+      // Always resize to hero width.
+      $(window).resize(resize);
+
+      // Position better.
+      $("#nav-wrapper").height($("#nav").height());
     },
 
     heading: function () {
@@ -60,7 +77,7 @@ $(function () {
         ];
 
       // Add special picture classes to known titles.
-      $("#page img").each(function () {
+      $("img").each(function () {
         if (_.indexOf(pictureClass, $(this).prop("title")) !== -1) {
           $(this).addClass("picture");
         }
@@ -70,50 +87,17 @@ $(function () {
       });
     },
 
-    headingToHero: function () {
-      // Get and detach header elements.
-      var $h1 = $("h1").first(),
-        $parent = $h1.parent(),
-        $p = $h1.next("p").detach();
-
-      // Replace with hero.
-      $("#hero")
-        .detach()
-        .append($h1.detach(), $p)
-        .prependTo($parent);
-    },
-
-    // Select old or modern grid and nav.
-    gridAndNav: function () {
-      IS_IE && !IE_GTE_10 ?
-        Transforms.gridAndNavOldIe() :
-        Transforms.gridAndNavModern();
-    },
-
-    gridAndNavOldIe: function () {
+    navSections: function () {
       var $window = $(window),
         $hero = $("#hero"),
-        $content = $hero.nextAll().detach(),
-        $grid = $("#grid-old-ie").detach(),
-        $page = $grid.find("#page-old-ie").append($content);
-
-      // Attach grid to DOM.
-      $hero.after($grid);
-    },
-
-    gridAndNavModern: function () {
-      var $window = $(window),
-        $hero = $("#hero"),
-        $content = $hero.nextAll().detach(),
+        $content = $hero.nextAll(),
         $headings = $content.filter("h2"),
-        $grid = $("#grid").detach(),
-        $nav = $grid.find("#sidenav"),
-        $page = $grid.find("#page").append($content);
+        $nav = $content.find("#nav-sections");
 
       // Add headings to nav.
       $headings.each(function () {
         var $heading = $(this),
-          $item = $(".nav-item").clone(),
+          $item = $("#fixtures .nav-item").clone(),
           slug = slugify($heading.text());
 
         // Add id to heading.
@@ -126,22 +110,6 @@ $(function () {
             .attr("href", "#" + slug)
             .append($heading.text());
       });
-
-      // Attach grid to DOM.
-      $hero.after($grid);
-
-      // Nav bar affix.
-      // See: http://stackoverflow.com/a/14545840/741892
-      $nav
-        .affix({
-          offset: {
-            top: function () {
-              return $window.width() <= 980 ? 290 : 210;
-            },
-            bottom: 270
-          }
-        })
-        .show();
 
       // Nav bar scrollspy.
       $("body").scrollspy({ target: "#nav" });
@@ -175,25 +143,17 @@ $(function () {
 
         $files.addClass("examples-file");
       });
-    },
-
-    scrollRefresh: function () {
-      // Refresh as last thing to do.
-      $("[data-spy='scroll']").each(function () {
-        $(this).scrollspy("refresh");
-      });
     }
   };
 
   // Apply transforms.
   _.each([
-    Transforms.background,
-    Transforms.heading,
-    Transforms.images,
-    Transforms.headingToHero,
-    Transforms.gridAndNav,
-    Transforms.chapterExamples,
-    Transforms.scrollRefresh
-  ], function (fn) { fn(); });
+    "headingToHero",
+    "navAffix",
+    "heading",
+    "images",
+    "navSections",
+    "chapterExamples"
+  ], function (fn) { Transforms[fn](); });
 
 });

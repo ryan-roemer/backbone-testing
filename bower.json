@@ -37,7 +37,7 @@
     "sinon-chai": "2.4.0",
     "underscore": "1.5.1",
     "jquery-backstretch": "2.0.4",
-    "bootstrap": "bowerjs/bootstrap#2.3.2"
+    "bootstrap": "3.0.3"
   },
   "resolutions": {
     "jquery": "2.0.3"

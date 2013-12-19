@@ -21,7 +21,7 @@ html.no-js(lang='en')
 
     //- Stylesheets
     link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap.min.css")
-    link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap-responsive.min.css")
+    link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap-theme.min.css")
     //-link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css")
     link(rel="stylesheet", href="doc/site.css")
 
@@ -33,7 +33,7 @@ html.no-js(lang='en')
       //- * forkme_right_gray_6d6d6d
       //- * forkme_right_white_ffffff
       //- * forkme_right_darkblue_121621
-      a.hidden-phone(
+      a.hidden-xs(
         href="https://github.com/ryan-roemer/backbone-testing"
         style="position: absolute; top: 0; right: 0; border: 0;")
         img.banner(
@@ -41,30 +41,39 @@ html.no-js(lang='en')
           alt="Fork me on GitHub")
 
       //- Header.
-      header#hero.hero-unit.backing
+      header#hero.jumbotron.backing-img
 
       //- Content
       .container
+        block nav
+          .nav-wrapper
+            nav#nav.navbar.navbar-default.navbar-static(role="navigation")
+              .navbar-header
+                button.navbar-toggle(type="button", data-toggle="collapse", data-target="#nav-expand")
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand(href="#") Home
+
+              div#nav-expand.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  li.dropdown
+                    a.dropdown-toggle(href="#", data-toggle="dropdown")
+                        | Sections
+                        b.caret
+                      ul#nav-sections.dropdown-menu
+
         block content
 
-    //- Fixtures (for adding into DOM).
-    #fixtures.hidden(style="display: none;")
-      //- Modern browser grid and page.
-      #grid.row
-        #nav.span3.hidden-phone
-          ul#sidenav.nav.nav-list
-        #page.span9
-      //- Old IE page.
-      #grid-old-ie.row
-        #page-old-ie.span12
-
-      li.nav-item
-        a
-          i.icon-chevron-right
+      //- Fixtures (for adding into DOM).
+      #fixtures.hidden(style="display: none;")
+        li.nav-item
+          a
 
     //- JavaScript
     script(src="vendor/jquery.min.js")
-    script(src="vendor/jquery.backstretch.min.js")
+    //- script(src="vendor/jquery.backstretch.min.js")
     script(src="vendor/underscore.min.js")
     script(src="vendor/bootstrap/js/bootstrap.min.js")
     script(src="doc/site.js")

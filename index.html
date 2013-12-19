@@ -19,13 +19,27 @@
     <meta name="keywords" content="backbone.js testing, backbone.js, backbone, javascript, underscore.js, jquery, mocha, chai, sinon, sinon.js, testing, unit test, spies, mocks, stubs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="doc/site.css">
   </head>
   <body>
-    <div id="page" class="bg container"><a href="https://github.com/ryan-roemer/backbone-testing" style="position: absolute; top: 0; right: 0; border: 0;" class="hidden-phone"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" class="banner"></a>
-      <header id="hero" class="hero-unit backing"></header>
-      <div class="container"><h1>Backbone.js Testing</h1>
+    <div id="page" class="bg container"><a href="https://github.com/ryan-roemer/backbone-testing" style="position: absolute; top: 0; right: 0; border: 0;" class="hidden-xs"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" class="banner"></a>
+      <header id="hero" class="jumbotron backing-img"></header>
+      <div class="container">
+        <div class="nav-wrapper">
+          <nav id="nav" role="navigation" class="navbar navbar-default navbar-static">
+            <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target="#nav-expand" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Home</a>
+            </div>
+            <div id="nav-expand" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sections<b class="caret"></b></a>
+                  <ul id="nav-sections" class="dropdown-menu"></ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div><h1>Backbone.js Testing</h1>
 
 <p>Apps, suites, and examples for Backbone.js test development.</p>
 
@@ -365,7 +379,7 @@ different.</p>
 
 <p>The sample Notes application also uses:</p>
 
-<ul><li><strong><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a></strong>: <code>2.3.2</code></li><li><strong><a href="https://github.com/coreyti/showdown">Showdown</a></strong>: <code>0.3.1</code></li></ul>
+<ul><li><strong><a href="https://github.com/twitter/bootstrap">Twitter Bootstrap</a></strong>: <code>3.0.3</code></li><li><strong><a href="https://github.com/coreyti/showdown">Showdown</a></strong>: <code>0.3.1</code></li></ul>
 
 <p>The frontend test libraries we use are:</p>
 
@@ -488,7 +502,7 @@ for any changes. Pull requests should be able to pass</p>
 
 <h3>Current</h3>
 
-<ul><li><strong>Notes Rest</strong>: Add more permissive routing and better README.md notes.</li></ul>
+<ul><li><strong>Libraries</strong>: Upgrade to Bootstrap v3.0.3.</li><li><strong>Notes Rest</strong>: Add more permissive routing and better README.md notes.</li></ul>
 
 <h3>v0.0.3</h3>
 
@@ -505,21 +519,11 @@ the book remains correct - only the code sample has been updated.
 
 <ul><li>Update all libraries to current as of 20130717.</li><li>Original code up to Book&#39;s publication (tagged with: <code>published-1.0</code>)</li></ul>
       </div>
-    </div>
-    <div id="fixtures" style="display: none;" class="hidden">
-      <div id="grid" class="row">
-        <div id="nav" class="span3 hidden-phone">
-          <ul id="sidenav" class="nav nav-list"></ul>
-        </div>
-        <div id="page" class="span9"></div>
+      <div id="fixtures" style="display: none;" class="hidden">
+        <li class="nav-item"><a></a></li>
       </div>
-      <div id="grid-old-ie" class="row">
-        <div id="page-old-ie" class="span12"></div>
-      </div>
-      <li class="nav-item"><a><i class="icon-chevron-right"></i></a></li>
     </div>
     <script src="vendor/jquery.min.js"></script>
-    <script src="vendor/jquery.backstretch.min.js"></script>
     <script src="vendor/underscore.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="doc/site.js"></script>
