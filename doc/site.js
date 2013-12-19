@@ -116,7 +116,18 @@ $(function () {
       $("#home, li.nav-item > a").click(function () {
         // Selector id uses HREF for all headings except top.
         var sel = $(this).attr("href"),
-          top = sel === "#" ? "0px" : $(sel).offset().top - 60 + "px";
+          $affixTop = $("#nav.affix-top"),
+          // Padding to get under nav.
+          navPad = 60,
+          // Padding if not switched to sticky nav yet.
+          affixPad = $affixTop.length ? $affixTop.height() + 10 : 0,
+          // Default (top).
+          top = "0px";
+
+        // Calculate top if appropriate.
+        if (sel !== "#") {
+          top = $(sel).offset().top - (navPad + affixPad) + "px";
+        }
 
         $("html, body").animate({
           scrollTop: top
