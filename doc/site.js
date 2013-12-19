@@ -93,7 +93,8 @@ $(function () {
         $hero = $("#hero"),
         $content = $hero.nextAll(),
         $headings = $content.filter("h2"),
-        $nav = $content.find("#nav-sections");
+        $nav = $content.find("#nav-sections"),
+        $sectionsMenu = $content.find("#nav-sections-menu");
 
       // Add headings to nav.
       $headings.each(function () {
@@ -141,6 +142,15 @@ $(function () {
           $("#nav-expand").collapse("hide");
         }
       });
+
+      // Expand sections dropdown if collapsed.
+      var _open = function () {
+        $sectionsMenu.addClass("open");
+      };
+
+      $("#nav-expand")
+        .on("show.bs.collapse", _open)
+        .on("shown.bs.collapse", _open);
     },
 
     chapterExamples: function () {
