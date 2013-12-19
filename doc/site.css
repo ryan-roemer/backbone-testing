@@ -57,3 +57,26 @@
   position: fixed;
   top: 0px;
 }
+
+/* ------------------------------------------------------------------
+ * Page
+ * --------------------------------------------------------------- */
+img.picture,
+img.book {
+  width: 90%;
+  max-width: 611px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+img.book {
+  width: 80%;
+  max-width: 300px;
+  margin-right: auto;
+  -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+     -moz-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+          box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+}

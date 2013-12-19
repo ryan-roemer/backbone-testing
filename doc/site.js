@@ -56,26 +56,26 @@ $(function () {
       $("#nav-wrapper").height($("#nav").height());
     },
 
-    background: function () {
-      // Tweak IE 10 to have no opacity.
-      if (IS_IE && IE_GTE_10) {
-        $("#page")
-          .removeClass("bg")
-          .addClass("bg-ie");
-      }
+    // background: function () {
+    //   // Tweak IE 10 to have no opacity.
+    //   if (IS_IE && IE_GTE_10) {
+    //     $("#page")
+    //       .removeClass("bg")
+    //       .addClass("bg-ie");
+    //   }
 
-      // Short circuit if no backstrech.
-      if (!$.backstretch) { return; }
+    //   // Short circuit if no backstrech.
+    //   if (!$.backstretch) { return; }
 
-      // Backstretch images:
-      // - ivy
-      // (http://www.public-domain-photos.com/)
-      // - clouds: landscapes/sky/clouds-2-4.htm
-      // - sunrise: landscapes/sky/sunrise-3-4.htm
-      // - yosemite: travel/yosemite/yosemite-meadows-4.htm
-      $.backstretch("doc/img/bg/ivy.jpg");
-      $(".backstretch").addClass("hidden-phone");
-    },
+    //   // Backstretch images:
+    //   // - ivy
+    //   // (http://www.public-domain-photos.com/)
+    //   // - clouds: landscapes/sky/clouds-2-4.htm
+    //   // - sunrise: landscapes/sky/sunrise-3-4.htm
+    //   // - yosemite: travel/yosemite/yosemite-meadows-4.htm
+    //   $.backstretch("doc/img/bg/ivy.jpg");
+    //   $(".backstretch").addClass("hidden-phone");
+    // },
 
     heading: function () {
       var $heading = $("h1").first(),
@@ -98,7 +98,7 @@ $(function () {
         ];
 
       // Add special picture classes to known titles.
-      $("#page img").each(function () {
+      $("img").each(function () {
         if (_.indexOf(pictureClass, $(this).prop("title")) !== -1) {
           $(this).addClass("picture");
         }
@@ -108,32 +108,32 @@ $(function () {
       });
     },
 
-    // Select old or modern grid and nav.
-    gridAndNav: function () {
-      IS_IE && !IE_GTE_10 ?
-        Transforms.gridAndNavOldIe() :
-        Transforms.gridAndNavModern();
-    },
+    // // Select old or modern grid and nav.
+    // gridAndNav: function () {
+    //   IS_IE && !IE_GTE_10 ?
+    //     Transforms.gridAndNavOldIe() :
+    //     Transforms.gridAndNavModern();
+    // },
 
-    gridAndNavOldIe: function () {
-      var $window = $(window),
-        $hero = $("#hero"),
-        $content = $hero.nextAll().detach(),
-        $grid = $("#grid-old-ie").detach(),
-        $page = $grid.find("#page-old-ie").append($content);
+    // gridAndNavOldIe: function () {
+    //   var $window = $(window),
+    //     $hero = $("#hero"),
+    //     $content = $hero.nextAll().detach(),
+    //     $grid = $("#grid-old-ie").detach(),
+    //     $page = $grid.find("#page-old-ie").append($content);
 
-      // Attach grid to DOM.
-      $hero.after($grid);
-    },
+    //   // Attach grid to DOM.
+    //   $hero.after($grid);
+    // },
 
-    gridAndNavModern: function () {
+    navSections: function () {
+      return;
       var $window = $(window),
         $hero = $("#hero"),
         $content = $hero.nextAll().detach(),
         $headings = $content.filter("h2"),
         $grid = $("#grid").detach(),
-        $nav = $grid.find("#sidenav"),
-        $page = $grid.find("#page").append($content);
+        $nav = $grid.find("#nav-sections");
 
       // Add headings to nav.
       $headings.each(function () {
@@ -200,20 +200,24 @@ $(function () {
 
         $files.addClass("examples-file");
       });
-    },
-
-    scrollRefresh: function () {
-      // Refresh as last thing to do.
-      $("[data-spy='scroll']").each(function () {
-        $(this).scrollspy("refresh");
-      });
     }
+
+    // scrollRefresh: function () {
+    //   // Refresh as last thing to do.
+    //   $("[data-spy='scroll']").each(function () {
+    //     $(this).scrollspy("refresh");
+    //   });
+    // }
   };
 
   // Apply transforms.
   _.each([
     "headingToHero",
     "navAffix",
+    "heading",
+    "images",
+    "navSections",
+    "chapterExamples"
     // Transforms.background,
     // Transforms.heading,
     // Transforms.images,
