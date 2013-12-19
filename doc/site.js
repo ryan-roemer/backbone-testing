@@ -89,12 +89,14 @@ $(function () {
     },
 
     navSections: function () {
-      var $window = $(window),
-        $hero = $("#hero"),
+      var $hero = $("#hero"),
         $content = $hero.nextAll(),
         $headings = $content.filter("h2"),
         $nav = $content.find("#nav-sections"),
-        $sectionsMenu = $content.find("#nav-sections-menu");
+        $sectionsMenu = $content.find("#nav-sections-menu"),
+        _openSectionsMenu = function () {
+          $sectionsMenu.addClass("open");
+        };
 
       // Add headings to nav.
       $headings.each(function () {
@@ -144,13 +146,9 @@ $(function () {
       });
 
       // Expand sections dropdown if collapsed.
-      var _open = function () {
-        $sectionsMenu.addClass("open");
-      };
-
       $("#nav-expand")
-        .on("show.bs.collapse", _open)
-        .on("shown.bs.collapse", _open);
+        .on("show.bs.collapse", _openSectionsMenu)
+        .on("shown.bs.collapse", _openSectionsMenu);
     },
 
     chapterExamples: function () {
