@@ -49,7 +49,7 @@ html.no-js(lang='en')
           .nav-wrapper
             nav#nav.navbar.navbar-default.navbar-static(role="navigation")
               .navbar-header
-                button.navbar-toggle(type="button", data-toggle="collapse", data-target="#nav-expand")
+                button#nav-collapse.navbar-toggle(type="button", data-toggle="collapse", data-target="#nav-expand")
                   span.sr-only Toggle navigation
                   span.icon-bar
                   span.icon-bar
@@ -59,7 +59,7 @@ html.no-js(lang='en')
               div#nav-expand.collapse.navbar-collapse
                 ul.nav.navbar-nav
                   li.dropdown
-                    a.dropdown-toggle(href="#", data-toggle="dropdown")
+                    a#nav-sections-menu.dropdown-toggle(href="#", data-toggle="dropdown")
                         | Sections
                         b.caret
                       ul#nav-sections.dropdown-menu

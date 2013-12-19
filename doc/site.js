@@ -135,6 +135,11 @@ $(function () {
           duration: 400,
           easing: "swing"
         });
+
+        // Close navbar if collapsed.
+        if ($("#nav-collapse").is(":visible")) {
+          $("#nav-expand").collapse("hide");
+        }
       });
     },
 
