@@ -187,13 +187,13 @@ $(function () {
 
   // Apply transforms.
   _.each([
-    Transforms.background,
-    Transforms.heading,
-    Transforms.images,
+    // Transforms.background,
+    // Transforms.heading,
+    // Transforms.images,
     Transforms.headingToHero,
-    Transforms.gridAndNav,
-    Transforms.chapterExamples,
-    Transforms.scrollRefresh
+    // Transforms.gridAndNav,
+    // Transforms.chapterExamples,
+    // Transforms.scrollRefresh
   ], function (fn) { fn(); });
 
 });
