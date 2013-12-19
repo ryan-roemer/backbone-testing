@@ -86,3 +86,19 @@ blockquote p {
   font-size: 14px;
   margin-bottom: 10px;
 }
+
+a,
+a:hover {
+  color: #006633;
+}
+
+h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px #ccc solid;
+}
+
+h3, h4 {
+  /*color: #666;*/
+  margin-left: 10px;
+}
