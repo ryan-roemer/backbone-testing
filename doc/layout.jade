@@ -21,7 +21,7 @@ html.no-js(lang='en')
 
     //- Stylesheets
     link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap.min.css")
-    link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap-responsive.min.css")
+    link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap-theme.min.css")
     //-link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css")
     link(rel="stylesheet", href="doc/site.css")
 
@@ -45,6 +45,17 @@ html.no-js(lang='en')
 
       //- Content
       .container
+        block nav
+          .nav-wrapper
+            nav#nav.navbar.navbar-default.navbar-static(role="navigation")
+              .navbar-header
+                button.navbar-toggle(type="button", data-toggle="collapse", data-target="#nav-expand")
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand(href="#") Home
+
         block content
 
     //- Fixtures (for adding into DOM).

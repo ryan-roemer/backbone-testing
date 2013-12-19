@@ -18,6 +18,44 @@ $(function () {
   }
 
   Transforms = {
+    headingToHero: function () {
+      // Get and detach header elements.
+      var $h1 = $("h1").first(),
+        $parent = $h1.parent(),
+        $p = $h1.next("p").detach();
+
+      // Replace with hero.
+      $("#hero")
+        .detach()
+        .append($h1.detach(), $p)
+        .prependTo($parent);
+    },
+
+    navAffix: function () {
+      // http://stackoverflow.com/a/13151016/741892
+      var $hero = $("#hero"),
+        $nav = $("#nav"),
+        top = $nav.offset().top,
+        resize = function () {
+          $nav.width($hero.width());
+        };
+
+      $nav.affix({
+        offset: {
+          top: function () {
+            resize();
+            return top;
+          }
+        }
+      });
+
+      // Always resize to hero width.
+      $(window).resize(resize);
+
+      // Position better.
+      $("#nav-wrapper").height($("#nav").height());
+    },
+
     background: function () {
       // Tweak IE 10 to have no opacity.
       if (IS_IE && IE_GTE_10) {
@@ -68,19 +106,6 @@ $(function () {
           $(this).addClass("book");
         }
       });
-    },
-
-    headingToHero: function () {
-      // Get and detach header elements.
-      var $h1 = $("h1").first(),
-        $parent = $h1.parent(),
-        $p = $h1.next("p").detach();
-
-      // Replace with hero.
-      $("#hero")
-        .detach()
-        .append($h1.detach(), $p)
-        .prependTo($parent);
     },
 
     // Select old or modern grid and nav.
@@ -187,13 +212,14 @@ $(function () {
 
   // Apply transforms.
   _.each([
+    "headingToHero",
+    "navAffix",
     // Transforms.background,
     // Transforms.heading,
     // Transforms.images,
-    Transforms.headingToHero,
     // Transforms.gridAndNav,
     // Transforms.chapterExamples,
     // Transforms.scrollRefresh
-  ], function (fn) { fn(); });
+  ], function (fn) { Transforms[fn](); });
 
 });
