@@ -120,7 +120,7 @@ $(function () {
       // Nav bar scroll animation.
       $("li.nav-item > a").click(function () {
         $("html, body").animate({
-          scrollTop: $($(this).attr("href")).offset().top + "px"
+          scrollTop: $($(this).attr("href")).offset().top - 60 + "px"
         }, {
           duration: 400,
           easing: "swing"
