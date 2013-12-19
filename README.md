@@ -394,8 +394,11 @@ Plugins that are used in some examples:
 
 Additional plugins not used in the examples:
 
-* **[chai-jquery](http://chaijs.com/plugins/chai-jquery)**: Adds
-  assertions for jQuery functions and attributes like `data()`, `class()`,
+* **[chai-jq](http://formidablelabs.github.io/chai-jq/)**: Adds
+  assertions for jQuery functions and properties like `$class()`,
+  `$attr()`, and `$hidden`.
+* **[chai-jquery](http://chaijs.com/plugins/chai-jquery)**: An alternate
+  jQuery assertion library with methods including `data()`, `class()`,
   `id()`, and `hidden()`.
 * **[chai-backbone](http://chaijs.com/plugins/chai-backbone)**: Adds
   Backbone.js specific assertions such as `expect(model).to.trigger()` and
@@ -434,7 +437,7 @@ The frontend test libraries we use are:
 The test plugins include:
 
 * **[Sinon-Chai][sinon-chai]**: `2.4.0`
-* **[Mocha-PhantomJS][mocha-phantom]**: `3.1.0` (*2.0.3*)
+* **[Mocha-PhantomJS][mocha-phantom]**: `3.2.0` (*2.0.3*)
 
 ### Notes
 
@@ -465,8 +468,8 @@ following tickets:
 * [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
 * [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
 
-**[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS v2.0.3 to
-avoid the issue.
+**[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS
+v2.0.3 to avoid the issue.
 
 ## Licenses
 All code not otherwise specified is Copyright 2013 Ryan Roemer.
