@@ -70,8 +70,10 @@
       });
 
       // Set up Mocha with custom Blanket.js reporter.
-      (function (_reporter) {
-        mocha.reporter(function (runner) {
+      mocha.reporter(function (_reporter) {
+        // Updated for Mocha 1.15.1 integration.
+        // See: https://github.com/alex-seville/blanket/pull/356
+        var blanketReporter = function (runner) {
           // Listeners.
           runner.on("start",  function () { blanket.setupCoverage(); });
           runner.on("suite",  function () { blanket.onModuleStart(); });
@@ -86,8 +88,12 @@
             $("html, body").animate({ scrollTop: 0 });
           });
 
-          _reporter(runner);
-        });
+          _reporter.call(this, runner);
+        };
+
+        blanketReporter.prototype = _reporter.prototype;
+
+        return blanketReporter;
       }(mocha._reporter));
 
       blanket.beforeStartTestRunner({
