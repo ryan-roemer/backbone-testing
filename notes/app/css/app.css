@@ -1,3 +1,8 @@
+/* Body */
+body {
+  min-width: 320px;
+}
+
 /* Nav bar */
 #note-nav a span {
   opacity: 0.85;
