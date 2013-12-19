@@ -417,7 +417,7 @@ The core Backbone.js components used are:
 * **[jQuery][jquery]**: `2.0.3` (*2.0.2*)
 * **[Underscore.js][underscore]**: `1.5.1` (*1.4.4*)
 * **[Backbone.js][backbone]**: `1.1.0` (*1.0.0*)
-* **[Backbone.localStorage][backbone-ls]**: `1.1.6` (*1.1.5*)
+* **[Backbone.localStorage][backbone-ls]**: `1.1.7` (*1.1.5*)
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:

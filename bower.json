@@ -27,7 +27,7 @@
   "devDependencies": {
     "backbone": "1.1.0",
     "showdown": "0.3.1",
-    "backbone.localStorage": "1.1.6",
+    "backbone.localStorage": "1.1.7",
     "blanket": "1.1.4",
     "chai": "1.7.2",
     "jquery": "2.0.3",
