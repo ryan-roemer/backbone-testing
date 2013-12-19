@@ -36,21 +36,22 @@ $(function () {
       var $hero = $("#hero"),
         $nav = $("#nav"),
         top = $nav.offset().top,
-        resize = function () {
-          $nav.width($hero.width());
-        };
+        heroWidth = $hero.width();
 
       $nav.affix({
         offset: {
           top: function () {
-            resize();
+            $nav.width(heroWidth);
             return top;
           }
         }
       });
 
       // Always resize to hero width.
-      $(window).resize(resize);
+      $(window).resize(function () {
+        heroWidth = $hero.width();
+        $nav.width(heroWidth);
+      });
 
       // Position better.
       $("#nav-wrapper").height($("#nav").height());
@@ -111,21 +112,18 @@ $(function () {
             .append($heading.text());
       });
 
-      // Nav bar scrollspy.
-      $("body").scrollspy({ target: "#nav" });
-      $nav.find("li.nav-item").on("click", function () {
-        $(this).scrollspy("refresh");
-      });
-
       // Nav bar scroll animation.
-      $("li.nav-item > a").click(function () {
+      $("#home, li.nav-item > a").click(function () {
+        // Selector id uses HREF for all headings except top.
+        var sel = $(this).attr("href"),
+          top = sel === "#" ? "0px" : $(sel).offset().top - 60 + "px";
+
         $("html, body").animate({
-          scrollTop: $($(this).attr("href")).offset().top - 60 + "px"
+          scrollTop: top
         }, {
           duration: 400,
           easing: "swing"
         });
-        return false;
       });
     },
 
