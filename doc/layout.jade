@@ -62,13 +62,18 @@ html.no-js(lang='en')
                     a.dropdown-toggle(href="#", data-toggle="dropdown")
                         | Sections
                         b.caret
-                      ul.dropdown-menu
+                      ul#nav-sections.dropdown-menu
 
         block content
 
+      //- Fixtures (for adding into DOM).
+      #fixtures.hidden(style="display: none;")
+        li.nav-item
+          a
+
     //- JavaScript
     script(src="vendor/jquery.min.js")
-    script(src="vendor/jquery.backstretch.min.js")
+    //- script(src="vendor/jquery.backstretch.min.js")
     script(src="vendor/underscore.min.js")
     script(src="vendor/bootstrap/js/bootstrap.min.js")
     script(src="doc/site.js")

@@ -127,22 +127,22 @@ $(function () {
     // },
 
     navSections: function () {
-      return;
       var $window = $(window),
         $hero = $("#hero"),
-        $content = $hero.nextAll().detach(),
+        $content = $hero.nextAll(),
         $headings = $content.filter("h2"),
-        $grid = $("#grid").detach(),
-        $nav = $grid.find("#nav-sections");
+        $nav = $content.find("#nav-sections");
 
       // Add headings to nav.
       $headings.each(function () {
         var $heading = $(this),
-          $item = $(".nav-item").clone(),
+          $item = $("#fixtures .nav-item").clone(),
           slug = slugify($heading.text());
 
         // Add id to heading.
         $heading.attr("id", slug);
+
+        console.log("TODO HERE", $heading.text(), slug, $item[0].outerHTML);
 
         // Append list item with attributes.
         $item
@@ -152,21 +152,7 @@ $(function () {
             .append($heading.text());
       });
 
-      // Attach grid to DOM.
-      $hero.after($grid);
-
-      // Nav bar affix.
-      // See: http://stackoverflow.com/a/14545840/741892
-      $nav
-        .affix({
-          offset: {
-            top: function () {
-              return $window.width() <= 980 ? 290 : 210;
-            },
-            bottom: 270
-          }
-        })
-        .show();
+      return;
 
       // Nav bar scrollspy.
       $("body").scrollspy({ target: "#nav" });
