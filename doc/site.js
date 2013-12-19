@@ -56,27 +56,6 @@ $(function () {
       $("#nav-wrapper").height($("#nav").height());
     },
 
-    // background: function () {
-    //   // Tweak IE 10 to have no opacity.
-    //   if (IS_IE && IE_GTE_10) {
-    //     $("#page")
-    //       .removeClass("bg")
-    //       .addClass("bg-ie");
-    //   }
-
-    //   // Short circuit if no backstrech.
-    //   if (!$.backstretch) { return; }
-
-    //   // Backstretch images:
-    //   // - ivy
-    //   // (http://www.public-domain-photos.com/)
-    //   // - clouds: landscapes/sky/clouds-2-4.htm
-    //   // - sunrise: landscapes/sky/sunrise-3-4.htm
-    //   // - yosemite: travel/yosemite/yosemite-meadows-4.htm
-    //   $.backstretch("doc/img/bg/ivy.jpg");
-    //   $(".backstretch").addClass("hidden-phone");
-    // },
-
     heading: function () {
       var $heading = $("h1").first(),
         text = $heading.text();
@@ -108,24 +87,6 @@ $(function () {
       });
     },
 
-    // // Select old or modern grid and nav.
-    // gridAndNav: function () {
-    //   IS_IE && !IE_GTE_10 ?
-    //     Transforms.gridAndNavOldIe() :
-    //     Transforms.gridAndNavModern();
-    // },
-
-    // gridAndNavOldIe: function () {
-    //   var $window = $(window),
-    //     $hero = $("#hero"),
-    //     $content = $hero.nextAll().detach(),
-    //     $grid = $("#grid-old-ie").detach(),
-    //     $page = $grid.find("#page-old-ie").append($content);
-
-    //   // Attach grid to DOM.
-    //   $hero.after($grid);
-    // },
-
     navSections: function () {
       var $window = $(window),
         $hero = $("#hero"),
@@ -142,8 +103,6 @@ $(function () {
         // Add id to heading.
         $heading.attr("id", slug);
 
-        console.log("TODO HERE", $heading.text(), slug, $item[0].outerHTML);
-
         // Append list item with attributes.
         $item
           .appendTo($nav)
@@ -151,8 +110,6 @@ $(function () {
             .attr("href", "#" + slug)
             .append($heading.text());
       });
-
-      return;
 
       // Nav bar scrollspy.
       $("body").scrollspy({ target: "#nav" });
@@ -187,13 +144,6 @@ $(function () {
         $files.addClass("examples-file");
       });
     }
-
-    // scrollRefresh: function () {
-    //   // Refresh as last thing to do.
-    //   $("[data-spy='scroll']").each(function () {
-    //     $(this).scrollspy("refresh");
-    //   });
-    // }
   };
 
   // Apply transforms.
@@ -204,12 +154,6 @@ $(function () {
     "images",
     "navSections",
     "chapterExamples"
-    // Transforms.background,
-    // Transforms.heading,
-    // Transforms.images,
-    // Transforms.gridAndNav,
-    // Transforms.chapterExamples,
-    // Transforms.scrollRefresh
   ], function (fn) { Transforms[fn](); });
 
 });
