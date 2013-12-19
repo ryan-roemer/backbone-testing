@@ -412,8 +412,7 @@ examples are provided in the "vendor" directory.
 Note that this repository has been updated since the publication of
 **[Backbone.js Testing][packt]** on July 12, 2013. The enumerated versions of
 all third party libraries are indicated by the most current version in the
-repository with the published version optionally provided in parenthesis when
-different.
+repository with the published version noted in parenthesis when different.
 
 The core Backbone.js components used are:
 
