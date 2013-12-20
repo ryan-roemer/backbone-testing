@@ -103,3 +103,7 @@ h3, h4 {
   /*color: #666;*/
   margin-left: 10px;
 }
+
+code {
+  color: #08c;
+}
