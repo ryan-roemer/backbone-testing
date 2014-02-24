@@ -87,14 +87,18 @@ describe("App.Routers.Router", function () {
       this.router.navigate("", opts);
       expect(App.Routers.Router.prototype.notes)
         .to.have.been.calledOnce.and
-        .to.have.been.calledWithExactly();
+        // Updated for Backbone.js v1.1.2. Was:
+        // .to.have.been.calledWithExactly();
+        .to.have.been.calledWithExactly(null);
     });
 
     it("can route to note", function () {
       this.router.navigate("note/1/edit", opts);
       expect(App.Routers.Router.prototype.note)
         .to.have.been.calledOnce.and
-        .to.have.been.calledWithExactly("1", "edit");
+        // Updated for Backbone.js v1.1.2. Was:
+        // .to.have.been.calledWithExactly("1", "edit");
+        .to.have.been.calledWithExactly("1", "edit", null);
     });
 
   });
@@ -121,7 +125,9 @@ describe("App.Routers.Router", function () {
 
       expect(this.routerSpy)
         .to.have.been.calledOnce.and
-        .to.have.been.calledWith("note", ["1", "edit"]);
+        // Updated for Backbone.js v1.1.2. Was:
+        // .to.have.been.calledWith("note", ["1", "edit"]);
+        .to.have.been.calledWith("note", ["1", "edit", null]);
     }));
 
     it("can navigate to same note", sinon.test(function () {
@@ -131,7 +137,9 @@ describe("App.Routers.Router", function () {
       this.router.navigate("note/1/edit", opts);
       expect(this.routerSpy)
         .to.have.been.calledOnce.and
-        .to.have.been.calledWith("note", ["1", "edit"]);
+        // Updated for Backbone.js v1.1.2. Was:
+        // .to.have.been.calledWith("note", ["1", "edit"]);
+        .to.have.been.calledWith("note", ["1", "edit", null]);
 
       // Manually patch in model property (b/c stubbed).
       this.router.noteView.model = { id: "1" };
@@ -140,7 +148,9 @@ describe("App.Routers.Router", function () {
       this.router.navigate("note/1/view", opts);
       expect(this.routerSpy)
         .to.have.been.calledTwice.and
-        .to.have.been.calledWith("note", ["1", "view"]);
+        // Updated for Backbone.js v1.1.2. Was:
+        // .to.have.been.calledWith("note", ["1", "view"]);
+        .to.have.been.calledWith("note", ["1", "view", null]);
 
       // Even with error, should still `remove` existing.
       this.router.navigate("note/2/view", opts);
@@ -158,7 +168,9 @@ describe("App.Routers.Router", function () {
       // the re-navigation to "notes" happens **first**.
       expect(this.routerSpy)
         .to.have.been.calledTwice.and
-        .to.have.been.calledWith("note", ["2", "edit"]).and
+        // Updated for Backbone.js v1.1.2. Was:
+        // .to.have.been.calledWith("note", ["2", "edit"]).and
+        .to.have.been.calledWith("note", ["2", "edit", null]).and
         .to.have.been.calledWith("notes");
     }));
 

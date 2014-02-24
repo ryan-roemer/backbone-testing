@@ -38,12 +38,16 @@ describe("App.Routers.Router", function () {
     // Check router method.
     expect(App.Routers.Router.prototype.note)
       .to.have.been.calledOnce.and
-      .to.have.been.calledWithExactly("1", "edit");
+      // Updated for Backbone.js v1.1.2. Was:
+      // .to.have.been.calledWithExactly("1", "edit");
+      .to.have.been.calledWithExactly("1", "edit", null);
 
     // Check route event.
     expect(this.routerSpy)
       .to.have.been.calledOnce.and
-      .to.have.been.calledWith("note", ["1", "edit"]);
+      // Updated for Backbone.js v1.1.2. Was:
+      // .to.have.been.calledWith("note", ["1", "edit"]);
+      .to.have.been.calledWith("note", ["1", "edit", null]);
   });
 
   it("can route around", function () {
@@ -55,7 +59,9 @@ describe("App.Routers.Router", function () {
     // Check router method.
     expect(App.Routers.Router.prototype.notes)
       .to.have.been.calledTwice.and
-      .to.have.been.calledWithExactly();
+      // Updated for Backbone.js v1.1.2. Was:
+      // .to.have.been.calledWithExactly();
+      .to.have.been.calledWithExactly(null);
 
     // Check route event.
     expect(this.routerSpy)
