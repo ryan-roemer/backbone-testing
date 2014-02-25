@@ -29,7 +29,7 @@
     "showdown": "0.3.1",
     "backbone.localStorage": "1.1.7",
     "blanket": "1.1.5",
-    "chai": "1.8.1",
+    "chai": "1.9.0",
     "jquery": "2.1.0",
     "json2": "*",
     "mocha": "1.17.1",
