@@ -34,7 +34,7 @@
     "json2": "*",
     "mocha": "1.15.1",
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js",
-    "sinon-chai": "2.4.0",
+    "sinon-chai": "2.5.0",
     "underscore": "1.5.2",
     "jquery-backstretch": "2.0.4",
     "bootstrap": "3.0.3"
