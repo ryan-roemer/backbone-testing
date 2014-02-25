@@ -30,7 +30,7 @@
     "backbone.localStorage": "1.1.7",
     "blanket": "1.1.5",
     "chai": "1.8.1",
-    "jquery": "2.0.3",
+    "jquery": "2.1.0",
     "json2": "*",
     "mocha": "1.15.1",
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js",
@@ -40,6 +40,6 @@
     "bootstrap": "3.0.3"
   },
   "resolutions": {
-    "jquery": "2.0.3"
+    "jquery": "2.1.0"
   }
 }
