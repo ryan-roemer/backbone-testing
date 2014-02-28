@@ -25,21 +25,21 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "backbone": "1.1.0",
+    "backbone": "1.1.2",
     "showdown": "0.3.1",
     "backbone.localStorage": "1.1.7",
     "blanket": "1.1.5",
-    "chai": "1.8.1",
-    "jquery": "2.0.3",
+    "chai": "1.9.0",
+    "jquery": "2.1.0",
     "json2": "*",
-    "mocha": "1.15.1",
+    "mocha": "1.17.1",
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js",
-    "sinon-chai": "2.4.0",
-    "underscore": "1.5.2",
+    "sinon-chai": "2.5.0",
+    "underscore": "1.6.0",
     "jquery-backstretch": "2.0.4",
-    "bootstrap": "3.0.3"
+    "bootstrap": "3.1.1"
   },
   "resolutions": {
-    "jquery": "2.0.3"
+    "jquery": "2.1.0"
   }
 }

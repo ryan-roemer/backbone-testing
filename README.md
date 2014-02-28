@@ -416,21 +416,21 @@ repository with the published version noted in parenthesis when different.
 
 The core Backbone.js components used are:
 
-* **[jQuery][jquery]**: `2.0.3` (*2.0.2*)
-* **[Underscore.js][underscore]**: `1.5.2` (*1.4.4*)
-* **[Backbone.js][backbone]**: `1.1.0` (*1.0.0*)
+* **[jQuery][jquery]**: `2.1.0` (*2.0.2*)
+* **[Underscore.js][underscore]**: `1.6.0` (*1.4.4*)
+* **[Backbone.js][backbone]**: `1.1.2` (*1.0.0*)
 * **[Backbone.localStorage][backbone-ls]**: `1.1.7` (*1.1.5*)
 * **[JSON][json_js]**: *For older browsers*
 
 The sample Notes application also uses:
 
-* **[Twitter Bootstrap][bootstrap]**: `3.0.3` (*2.3.2*)
+* **[Twitter Bootstrap][bootstrap]**: `3.1.1` (*2.3.2*)
 * **[Showdown][showdown]**: `0.3.1`
 
 The frontend test libraries we use are:
 
-* **[Mocha][mocha]**: `1.15.1` (*1.9.0*)
-* **[Chai][chai]**: `1.8.1` (*1.7.1*)
+* **[Mocha][mocha]**: `1.17.1` (*1.9.0*)
+* **[Chai][chai]**: `1.9.0` (*1.7.1*)
 * **[Sinon.JS][sinon]**: `1.7.3`
 
 The test plugins include:
