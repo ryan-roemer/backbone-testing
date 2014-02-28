@@ -424,7 +424,7 @@ The core Backbone.js components used are:
 
 The sample Notes application also uses:
 
-* **[Twitter Bootstrap][bootstrap]**: `3.0.3` (*2.3.2*)
+* **[Twitter Bootstrap][bootstrap]**: `3.1.1` (*2.3.2*)
 * **[Showdown][showdown]**: `0.3.1`
 
 The frontend test libraries we use are:
