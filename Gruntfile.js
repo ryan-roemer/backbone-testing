@@ -134,37 +134,6 @@ module.exports = function (grunt) {
       ]
     },
 
-
-    // <!-- JavaScript Core Libraries -->
-    // <script src="../app/js/lib/underscore.js"></script>
-    // <script src="../app/js/lib/jquery.js"></script>
-    // <script src="../app/js/lib/json2.js"></script>
-    // <script src="../app/js/lib/backbone.js"></script>
-    // <script src="../app/js/lib/backbone.localStorage.js"></script>
-    // <script src="../app/js/lib/bootstrap/js/bootstrap.js"></script>
-    // <script src="../app/js/lib/showdown/showdown.js"></script>
-
-    // <!-- JavaScript Application Libraries -->
-    // <script src="../app/js/app/namespace.js"></script>
-    // <script src="../app/js/app/config.js"></script>
-    // <script>
-    //   // Test overrides (before any app components).
-    //   App.Config = _.extend(App.Config, {
-    //     storeName: "notes-test" // localStorage for tests.
-    //   });
-    // </script>
-    // <script src="../app/js/app/models/note.js"></script>
-    // <script src="../app/js/app/collections/notes.js"></script>
-    // <script src="../app/js/app/templates/templates.js"></script>
-    // <script src="../app/js/app/views/note-nav.js"></script>
-    // <script src="../app/js/app/views/note-view.js"></script>
-    // <script src="../app/js/app/views/note.js"></script>
-    // <script src="../app/js/app/views/notes-item.js"></script>
-    // <script src="../app/js/app/views/notes-filter.js"></script>
-    // <script src="../app/js/app/views/notes.js"></script>
-    // <script src="../app/js/app/routers/router.js"></script>
-
-
     karma: {
       options: {
         frameworks: ["mocha"],
@@ -185,11 +154,23 @@ module.exports = function (grunt) {
           "notes/app/js/lib/bootstrap/js/bootstrap.js",
           "notes/app/js/lib/showdown/showdown.js",
 
-          //"notes/app/js/lib/XXXXX.js",
+          // Application Libraries
+          "notes/app/js/app/namespace.js",
+          "notes/app/js/app/config.js",
+          "dev/karma-setup.js", // Setup and App.Config patch.
+          "notes/app/js/app/models/note.js",
+          "notes/app/js/app/collections/notes.js",
+          "notes/app/js/app/templates/templates.js",
+          "notes/app/js/app/views/note-nav.js",
+          "notes/app/js/app/views/note-view.js",
+          "notes/app/js/app/views/note.js",
+          "notes/app/js/app/views/notes-item.js",
+          "notes/app/js/app/views/notes-filter.js",
+          "notes/app/js/app/views/notes.js",
+          "notes/app/js/app/routers/router.js",
 
-          "dev/karma-setup.js",
-
-          "chapters/01/test/js/spec/hello.spec.js"
+          // Tests.
+          "notes/test/js/spec/**/*.js"
         ],
         client: {
           mocha: {

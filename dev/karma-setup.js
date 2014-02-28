@@ -13,3 +13,12 @@ if (window.App) {
 
 // Chai
 window.expect = chai.expect;
+
+// Add test fixture.
+$("<div />")
+  .attr("id", "fixtures")
+  .css({
+    display: "none",
+    visibility: "hidden"
+  })
+  .prependTo($("body"));
