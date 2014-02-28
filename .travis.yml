@@ -3,7 +3,7 @@ node_js:
   - 0.8
   - 0.10
 
-before_script:
+before_install:
   # http://blog.npmjs.org/post/78085451721/npms-self-signed-certificate-is-no-more
   - npm install -g npm
 
