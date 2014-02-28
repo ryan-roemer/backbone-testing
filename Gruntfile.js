@@ -134,6 +134,10 @@ module.exports = function (grunt) {
       ]
     },
 
+    // TODO: add tests for:
+    // - app/js/app-rest/collections/notes.js
+    // - js/spec-rest/collections/notes.spec.js
+    // which currently have a different setup.
     karma: {
       options: {
         frameworks: ["mocha"],

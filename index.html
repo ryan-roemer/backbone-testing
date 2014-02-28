@@ -292,22 +292,58 @@ See the next section for a discussion of test automation with
 
 <p>All of the tests for the Notes application and the chapter
 samples can be run in the <a href="http://phantomjs.org/">PhantomJS</a> headless WebKit
-engine. Simply install the Node.js dependencies:</p>
+engine and/or any local browsers.</p>
+
+<p>Simply install the Node.js dependencies:</p>
 
 <pre><code>$ npm install</code></pre>
 
-<p>and <a href="http://phantomjs.org/download.html">install PhantomJS</a> on your development machine.
-Note that as of v3.0.0, <code>mocha-phantomjs</code> requires PhantomJS v1.9.1 or above.</p>
+<p>which will place an internal PhantomJS binary in
+&quot;./node_modules/.bin/phantomjs&quot; as well as all other necessary libraries.</p>
+
+<h3>Mocha-PhantomJS</h3>
 
 <p>From there, you can use the <code>mocha-phantomjs</code> binary to run any HTML test
 driver page from the command line, e.g.:</p>
 
-<pre><code>$ mocha-phantomjs notes/test/test.html</code></pre>
+<pre><code>$ ./node_modules/.bin/mocha-phantomjs notes/test/test.html</code></pre>
 
 <p>As a helper, the following script command will run nearly all of the
 Notes application and chapter unit tests:</p>
 
 <pre><code>$ npm test</code></pre>
+
+<h3>Karma</h3>
+
+<p><a href="http://karma-runner.github.io/">Karma</a> is a multi-browser command-line test runner. It can run tests
+from any combination of PhantomJS and any locally installed browsers (that
+have a Karma test runner implemented) -- like Chrome and Firefox.</p>
+
+<h4>Single Invocation</h4>
+
+<p>We use a Grunt plugin <code>grunt-karma</code> to help configure Karma for the tests in
+this project. You can run all of the tests using PhantomJS alone in Karma
+with the following command:</p>
+
+<pre><code>$ ./node_modules/.bin/grunt karma:fast</code></pre>
+
+<h4>Development Mode</h4>
+
+<p>Alternately, you can switch to &quot;development mode&quot; which keeps the Karma test
+engine running (which we&#39;ve configured to use PhantomJS, Chrome and Firefox)
+with:</p>
+
+<pre><code>$ ./node_modules/.bin/grunt karma:dev</code></pre>
+
+<p>This process then waits for test invocations, which you can do by opening a
+<em>second terminal</em> in the same directory and typing:</p>
+
+<pre><code>$ ./node_modules/.bin/karma run</code></pre>
+
+<p>This two-terminal approach saves you the overhead of firing up all of the
+browser environments in which to run the test suites.</p>
+
+<h3>Travis Continuous Integration</h3>
 
 <p>We run all of these tests automatically using (the awesome) <a href="https://travis-ci.org/">Travis CI</a>
 continuous integration service. Travis watches the GitHub repository containing
@@ -458,8 +494,7 @@ application or test examples.</p>
 
 <h3>Scripts, Commands</h3>
 
-<p>For pretty much everything, you will need to install
-<a href="http://phantomjs.org/download.html">PhantomJS</a>, a Node.js environment, and
+<p>For pretty much everything, you will need to install a Node.js environment, and
 the development NPM dependencies:</p>
 
 <pre><code>$ npm install</code></pre>
