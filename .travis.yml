@@ -5,7 +5,7 @@ node_js:
 
 before_install:
   # http://blog.npmjs.org/post/78085451721/npms-self-signed-certificate-is-no-more
-  - npm install -g npm
+  - npm config set ca ""
 
 script:
   - npm run-script check
