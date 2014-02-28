@@ -170,10 +170,20 @@ module.exports = function (grunt) {
         frameworks: ["mocha"],
         runnerPort: 9999,
         files: [
+          // Test Libraries
           // From karma-mocha: "notes/test/js/lib/mocha.js",
           "notes/test/js/lib/chai.js",
           "notes/test/js/lib/sinon-chai.js",
           "notes/test/js/lib/sinon.js",
+
+          // Core Libraries
+          "notes/app/js/lib/underscore.js",
+          "notes/app/js/lib/jquery.js",
+          "notes/app/js/lib/json2.js",
+          "notes/app/js/lib/backbone.js",
+          "notes/app/js/lib/backbone.localStorage.js",
+          "notes/app/js/lib/bootstrap/js/bootstrap.js",
+          "notes/app/js/lib/showdown/showdown.js",
 
           //"notes/app/js/lib/XXXXX.js",
 
@@ -193,7 +203,8 @@ module.exports = function (grunt) {
         reporters: "mocha"
       },
       dev: {
-        browsers: ["Chrome", "Firefox"],
+        // Invoke with `karma run` in another terminal.
+        browsers: ["PhantomJS", "Chrome", "Firefox"],
         reporters: "mocha"
      }
     },
