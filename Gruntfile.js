@@ -170,7 +170,14 @@ module.exports = function (grunt) {
           "notes/app/js/app/routers/router.js",
 
           // Tests.
-          "notes/test/js/spec/**/*.js"
+          "notes/test/js/spec/**/*.js",
+          "chapters/*/test/js/spec/**/*.js"
+        ],
+        exclude: [
+          // Tests we **don't** want to run.
+          "chapters/01/test/js/spec/failure.spec.js",
+          "chapters/01/test/js/spec/timing.spec.js",
+          "chapters/03/test/js/spec/mocha-only.spec.js"
         ],
         client: {
           mocha: {
@@ -187,7 +194,7 @@ module.exports = function (grunt) {
         // Invoke with `karma run` in another terminal.
         browsers: ["PhantomJS", "Chrome", "Firefox"],
         reporters: "mocha"
-     }
+      }
     },
 
     watch: {
