@@ -1,5 +1,10 @@
 ## History
 
+### Current
+* **Libraries**: Upgrade to Backbone.js v1.1.2, jQuery to v2.1.0,
+  Sinon-Chai v2.5.0, Mocha v1.17.1, Underscore.js v1.6.0, Chai v1.9.0,
+  Bootstrap v3.1.1.
+
 ### v0.0.4
 * **Libraries**: Upgrade to Bootstrap v3.0.3, Backbone v1.1.0,
   Backbone.localStorage v1.1.7, Blanket.js v1.1.5, Chai v1.8.1,
