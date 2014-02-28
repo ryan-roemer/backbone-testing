@@ -185,9 +185,14 @@ module.exports = function (grunt) {
           }
         }
       },
-      ci: {
+      fast: {
         singleRun: true,
         browsers: ["PhantomJS"],
+        reporters: "mocha"
+      },
+      ci: {
+        singleRun: true,
+        browsers: ["PhantomJS", "Firefox"],
         reporters: "mocha"
       },
       dev: {
@@ -242,7 +247,8 @@ module.exports = function (grunt) {
   grunt.registerTask("test:chaps-all",  ["mocha_phantomjs:chaps-all"]);
   grunt.registerTask("test:chaps",      ["mocha_phantomjs:chaps"]);
   grunt.registerTask("test",            ["mocha_phantomjs"]);
-  grunt.registerTask("check",           ["jshint", "test"]);
+  grunt.registerTask("check",           ["jshint", "test", "karma:fast"]);
+  grunt.registerTask("check:fast",      ["jshint", "karma:fast"]);
 
   grunt.registerTask("build",   ["build:tmpl", "jade:docs", "build:vendor"]);
   grunt.registerTask("default", ["build", "check"]);
