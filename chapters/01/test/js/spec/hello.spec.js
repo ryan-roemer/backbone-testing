@@ -6,6 +6,10 @@ window.hello = function () {
 };
 
 describe("Trying out the test libraries", function () {
+  it.only("should be removed TODO", function () {
+
+  });
+
   describe("Chai", function () {
     it("should be equal using 'expect'", function () {
       expect(hello()).to.equal("Hello World");

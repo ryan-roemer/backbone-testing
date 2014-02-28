@@ -134,6 +134,30 @@ module.exports = function (grunt) {
       ]
     },
 
+    karma: {
+      options: {
+        frameworks: ["mocha"],
+        runnerPort: 9999,
+        files: [
+          "chapters/01/test/js/spec/hello.spec.js"
+        ],
+        client: {
+          mocha: {
+            ui: "bdd"
+          }
+        }
+      },
+      ci: {
+        singleRun: true,
+        browsers: ["PhantomJS"],
+        reporters: "mocha"
+      },
+      dev: {
+        browsers: ["Chrome", "Firefox"],
+        reporters: "mocha"
+     }
+    },
+
     watch: {
       options: {
         spawn: false,
@@ -159,6 +183,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-jade");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
+  grunt.loadNpmTasks("grunt-karma");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-uglify");
