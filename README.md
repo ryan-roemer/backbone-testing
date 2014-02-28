@@ -327,23 +327,54 @@ See the next section for a discussion of test automation with
 ## Automated Tests
 All of the tests for the Notes application and the chapter
 samples can be run in the [PhantomJS][phantom] headless WebKit
-engine. Simply install the Node.js dependencies:
+engine and/or any local browsers.
+
+Simply install the Node.js dependencies:
 
     $ npm install
 
-and [install PhantomJS][phantom-install] on your development machine.
-Note that as of v3.0.0, `mocha-phantomjs` requires PhantomJS v1.9.1 or above.
+which will place an internal PhantomJS binary in
+"./node_modules/.bin/phantomjs" as well as all other necessary libraries.
 
+### Mocha-PhantomJS
 From there, you can use the `mocha-phantomjs` binary to run any HTML test
 driver page from the command line, e.g.:
 
-    $ mocha-phantomjs notes/test/test.html
+    $ ./node_modules/.bin/mocha-phantomjs notes/test/test.html
 
 As a helper, the following script command will run nearly all of the
 Notes application and chapter unit tests:
 
     $ npm test
 
+### Karma
+[Karma][karma] is a multi-browser command-line test runner. It can run tests
+from any combination of PhantomJS and any locally installed browsers (that
+have a Karma test runner implemented) -- like Chrome and Firefox.
+
+#### Single Invocation
+We use a Grunt plugin `grunt-karma` to help configure Karma for the tests in
+this project. You can run all of the tests using PhantomJS alone in Karma
+with the following command:
+
+    $ ./node_modules/.bin/grunt karma:fast
+
+#### Development Mode
+Alternately, you can switch to "development mode" which keeps the Karma test
+engine running (which we've configured to use PhantomJS, Chrome and Firefox)
+with:
+
+    $ ./node_modules/.bin/grunt karma:dev
+
+This process then waits for test invocations, which you can do by opening a
+*second terminal* in the same directory and typing:
+
+    $ ./node_modules/.bin/karma run
+
+This two-terminal approach saves you the overhead of firing up all of the
+browser environments in which to run the test suites.
+
+### Travis Continuous Integration
 We run all of these tests automatically using (the awesome) [Travis CI][trav]
 continuous integration service. Travis watches the GitHub repository containing
 this project and when it detects the code has changed, launches new builds
@@ -375,6 +406,7 @@ Travis configuration is essentially the same.
 [trav_img]: https://travis-ci.org/ryan-roemer/backbone-testing.png
 [trav_site]: https://travis-ci.org/ryan-roemer/backbone-testing
 [trav_cfg]: ./.travis.yml
+
 
 ## Additional Tools
 There are many additional testing libraries and plugins specifically suited
@@ -532,7 +564,7 @@ as follows:
 [mocha]: https://github.com/visionmedia/mocha
 [mocha-phantom]: https://github.com/metaskills/mocha-phantomjs
 [phantom]: http://phantomjs.org/
-[phantom-install]: http://phantomjs.org/download.html
+[karma]: http://karma-runner.github.io/
 [chai]: https://github.com/chaijs/chai
 [sinon-chai]: https://github.com/domenic/sinon-chai
 [underscore]: https://github.com/documentcloud/underscore
@@ -549,8 +581,7 @@ For those who would like to get under the hood, or help out with the
 application or test examples.
 
 ### Scripts, Commands
-For pretty much everything, you will need to install
-[PhantomJS][phantom-install], a Node.js environment, and
+For pretty much everything, you will need to install a Node.js environment, and
 the development NPM dependencies:
 
     $ npm install

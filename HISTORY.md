@@ -1,6 +1,7 @@
 ## History
 
 ### Current
+* **Karma**: Add Karma test driver support with Travis CI integration.
 * **Libraries**: Upgrade to Backbone.js v1.1.2, jQuery to v2.1.0,
   Sinon-Chai v2.5.0, Mocha v1.17.1, Underscore.js v1.6.0, Chai v1.9.0,
   Bootstrap v3.1.1.

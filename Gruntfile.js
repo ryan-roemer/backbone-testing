@@ -134,6 +134,78 @@ module.exports = function (grunt) {
       ]
     },
 
+    // TODO: add tests for:
+    // - app/js/app-rest/collections/notes.js
+    // - js/spec-rest/collections/notes.spec.js
+    // which currently have a different setup.
+    karma: {
+      options: {
+        frameworks: ["mocha"],
+        runnerPort: 9999,
+        files: [
+          // Test Libraries
+          // From karma-mocha: "notes/test/js/lib/mocha.js",
+          "notes/test/js/lib/chai.js",
+          "notes/test/js/lib/sinon-chai.js",
+          "notes/test/js/lib/sinon.js",
+
+          // Core Libraries
+          "notes/app/js/lib/underscore.js",
+          "notes/app/js/lib/jquery.js",
+          "notes/app/js/lib/json2.js",
+          "notes/app/js/lib/backbone.js",
+          "notes/app/js/lib/backbone.localStorage.js",
+          "notes/app/js/lib/bootstrap/js/bootstrap.js",
+          "notes/app/js/lib/showdown/showdown.js",
+
+          // Application Libraries
+          "notes/app/js/app/namespace.js",
+          "notes/app/js/app/config.js",
+          "dev/karma-setup.js", // Setup and App.Config patch.
+          "notes/app/js/app/models/note.js",
+          "notes/app/js/app/collections/notes.js",
+          "notes/app/js/app/templates/templates.js",
+          "notes/app/js/app/views/note-nav.js",
+          "notes/app/js/app/views/note-view.js",
+          "notes/app/js/app/views/note.js",
+          "notes/app/js/app/views/notes-item.js",
+          "notes/app/js/app/views/notes-filter.js",
+          "notes/app/js/app/views/notes.js",
+          "notes/app/js/app/routers/router.js",
+
+          // Tests.
+          "notes/test/js/spec/**/*.js",
+          "chapters/*/test/js/spec/**/*.js"
+        ],
+        exclude: [
+          // Tests we **don't** want to run.
+          "chapters/01/test/js/spec/failure.spec.js",
+          "chapters/01/test/js/spec/timing.spec.js",
+          "chapters/03/test/js/spec/mocha-only.spec.js"
+        ],
+        client: {
+          mocha: {
+            ui: "bdd"
+          }
+        }
+      },
+      fast: {
+        singleRun: true,
+        browsers: ["PhantomJS"],
+        reporters: "mocha"
+      },
+      ci: {
+        singleRun: true,
+        browsers: ["PhantomJS", "Firefox"],
+        reporters: "mocha"
+      },
+      dev: {
+        // Invoke with `karma run` in another terminal.
+        browsers: ["PhantomJS", "Chrome", "Firefox"],
+        reporters: "mocha"
+      }
+    },
+
     watch: {
       options: {
         spawn: false,
@@ -159,6 +231,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-jade");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
+  grunt.loadNpmTasks("grunt-karma");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-uglify");
@@ -177,8 +250,9 @@ module.exports = function (grunt) {
   grunt.registerTask("test:rest",       ["mocha_phantomjs:rest"]);
   grunt.registerTask("test:chaps-all",  ["mocha_phantomjs:chaps-all"]);
   grunt.registerTask("test:chaps",      ["mocha_phantomjs:chaps"]);
-  grunt.registerTask("test",            ["mocha_phantomjs"]);
+  grunt.registerTask("test",            ["mocha_phantomjs", "karma:fast"]);
   grunt.registerTask("check",           ["jshint", "test"]);
+  grunt.registerTask("check:fast",      ["jshint", "karma:fast"]);
 
   grunt.registerTask("build",   ["build:tmpl", "jade:docs", "build:vendor"]);
   grunt.registerTask("default", ["build", "check"]);
