@@ -1,6 +1,6 @@
 ## History
 
-### Current
+### v0.0.4
 * **Libraries**: Upgrade to Bootstrap v3.0.3, Backbone v1.1.0,
   Backbone.localStorage v1.1.7, Blanket.js v1.1.5, Chai v1.8.1,
   Mocha 1.15.1, Underscore.js 1.5.2.
