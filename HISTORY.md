@@ -1,5 +1,9 @@
 ## History
 
+### Current
+* **Karma**: Add Safari test driver.
+* **Libraries**: Upgrade JSON2 to 3d7767b6b1f3da363c625ff54e63bbf20e9e83ac.
+
 ### v0.0.5
 * **Karma**: Add Karma test driver support with Travis CI integration.
 * **Libraries**: Upgrade to Backbone.js v1.1.2, jQuery to v2.1.0,
