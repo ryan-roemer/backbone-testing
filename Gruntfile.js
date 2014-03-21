@@ -196,9 +196,14 @@ module.exports = function (grunt) {
         browsers: ["PhantomJS", "Firefox"],
         reporters: "mocha"
       },
+      all: {
+        singleRun: true,
+        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"],
+        reporters: "mocha"
+      },
       dev: {
         // Invoke with `karma run` in another terminal.
-        browsers: ["PhantomJS", "Chrome", "Firefox"],
+        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"],
         reporters: "mocha"
       }
     },
