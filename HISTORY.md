@@ -2,11 +2,12 @@
 
 ### Current
 * **Karma**: Add Safari test driver.
-* **Libraries**: Upgrade JSON2 to 3d7767b6b1f3da363c625ff54e63bbf20e9e83ac.
+* **Libraries**: Upgrade to JSON2 3d7767b6b1f3da363c625ff54e63bbf20e9e83ac,
+  Sinon.JS v1.9.0.
 
 ### v0.0.5
 * **Karma**: Add Karma test driver support with Travis CI integration.
-* **Libraries**: Upgrade to Backbone.js v1.1.2, jQuery to v2.1.0,
+* **Libraries**: Upgrade to Backbone.js v1.1.2, jQuery v2.1.0,
   Sinon-Chai v2.5.0, Mocha v1.17.1, Underscore.js v1.6.0, Chai v1.9.0,
   Bootstrap v3.1.1.
 

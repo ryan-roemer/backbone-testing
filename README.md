@@ -463,7 +463,7 @@ The frontend test libraries we use are:
 
 * **[Mocha][mocha]**: `1.17.1` (*1.9.0*)
 * **[Chai][chai]**: `1.9.0` (*1.7.1*)
-* **[Sinon.JS][sinon]**: `1.7.3`
+* **[Sinon.JS][sinon]**: `1.9.0` (*1.7.3*)
 
 The test plugins include:
 
