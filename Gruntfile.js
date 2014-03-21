@@ -26,6 +26,10 @@ module.exports = function (grunt) {
       }
     },
 
+    clean: {
+      vendor: "<%= vendorPath %>"
+    },
+
     copy: {
       vendor: {
         files: [
@@ -231,6 +235,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
   grunt.loadNpmTasks("grunt-karma");
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-uglify");
 
@@ -241,7 +246,11 @@ module.exports = function (grunt) {
       "./notes/app/js/app/templates/templates.js",
       tmpl);
   });
-  grunt.registerTask("build:vendor",    ["copy:vendor", "uglify:vendor"]);
+  grunt.registerTask("build:vendor", [
+    "clean:vendor",
+    "copy:vendor",
+    "uglify:vendor"
+  ]);
 
   // Wrapper Tasks.
   grunt.registerTask("test:app",        ["mocha_phantomjs:app"]);
