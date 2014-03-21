@@ -1,5 +1,10 @@
 ## History
 
+### v0.0.7
+* **Libraries**: Remove Backstretch.
+* Clean up the bower library copy Grunt tasks and manually minify Underscore
+  and Backbone now.
+
 ### v0.0.6
 * **Karma**: Add Safari test driver.
 * **Libraries**: Upgrade to JSON2 3d7767b6b1f3da363c625ff54e63bbf20e9e83ac,

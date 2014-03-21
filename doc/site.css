@@ -30,7 +30,7 @@
  * --------------------------------------------------------------- */
 .backing-img {
   text-shadow: 0 3px 5px rgba(0,0,0,.8), 0 0 30px rgba(0,0,0,.375);
-  background: url("/doc/img/bg/ivy.jpg");
+  background: url("./img/bg/ivy.jpg");
   background-size: cover;
 }
 

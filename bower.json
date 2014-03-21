@@ -1,6 +1,6 @@
 {
   "name": "backbone-testing",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/ryan-roemer/backbone-testing",
   "authors": [
     "Ryan Roemer <ryan@loose-bits.com>"
@@ -36,7 +36,6 @@
     "sinonjs": "1.9.0",
     "sinon-chai": "2.5.0",
     "underscore": "1.6.0",
-    "jquery-backstretch": "2.0.4",
     "bootstrap": "3.1.1"
   },
   "resolutions": {

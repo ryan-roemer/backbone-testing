@@ -44,8 +44,6 @@ module.exports = function (grunt) {
               "<%= bowerPath %>/jquery/dist/jquery.js",
               "<%= bowerPath %>/jquery/dist/jquery.min.js",
               "<%= bowerPath %>/json2/json2.js",
-              "<%= bowerPath %>/jquery-backstretch/jquery.backstretch.js",
-              "<%= bowerPath %>/jquery-backstretch/jquery.backstretch.min.js",
               "<%= bowerPath %>/underscore/underscore.js",
               "<%= bowerPath %>/backbone/backbone.js",
               "<%= bowerPath %>/backbone.localStorage/backbone.localStorage.js"
@@ -60,14 +58,6 @@ module.exports = function (grunt) {
               "fonts/**",
               "js/**"
             ]
-          },
-          {
-            dest: "<%= vendorPath %>/underscore.min.js",
-            src: "<%= bowerPath %>/underscore/underscore-min.js"
-          },
-          {
-            dest: "<%= vendorPath %>/backbone.min.js",
-            src: "<%= bowerPath %>/backbone/backbone-min.js"
           },
           {
             dest: "<%= vendorPath %>/backbone.localStorage.min.js",
@@ -89,6 +79,12 @@ module.exports = function (grunt) {
         files: {
           "<%= vendorPath %>/json2.min.js": [
             "<%= vendorPath %>/json2.js"
+          ],
+          "<%= vendorPath %>/underscore.min.js": [
+            "<%= vendorPath %>/underscore.js"
+          ],
+          "<%= vendorPath %>/backbone.min.js": [
+            "<%= vendorPath %>/backbone.js"
           ]
         }
       }
