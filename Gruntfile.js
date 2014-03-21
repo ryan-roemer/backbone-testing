@@ -37,6 +37,7 @@ module.exports = function (grunt) {
               "<%= bowerPath %>/mocha/mocha.js",
               "<%= bowerPath %>/mocha/mocha.css",
               "<%= bowerPath %>/chai/chai.js",
+              "<%= bowerPath %>/sinonjs/sinon.js",
               "<%= bowerPath %>/sinon-chai/lib/sinon-chai.js",
               "<%= bowerPath %>/blanket/dist/qunit/blanket.js",
               "<%= bowerPath %>/blanket/dist/qunit/blanket.min.js",
@@ -59,10 +60,6 @@ module.exports = function (grunt) {
               "fonts/**",
               "js/**"
             ]
-          },
-          {
-            dest: "<%= vendorPath %>/sinon.js",
-            src: "<%= bowerPath %>/sinon/index.js"
           },
           {
             dest: "<%= vendorPath %>/underscore.min.js",

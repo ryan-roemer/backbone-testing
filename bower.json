@@ -33,7 +33,7 @@
     "jquery": "2.1.0",
     "json2": "*",
     "mocha": "1.17.1",
-    "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js",
+    "sinonjs": "1.7.3",
     "sinon-chai": "2.5.0",
     "underscore": "1.6.0",
     "jquery-backstretch": "2.0.4",
