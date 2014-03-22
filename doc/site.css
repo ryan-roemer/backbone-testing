@@ -59,9 +59,14 @@
   top: 0px;
 }
 
+.navmenu {
+  width: 200px;
+}
+
 .navbar-toggle {
   float: left;
   margin-left: 15px;
+  background-color: #fff;
 }
 
 @media (min-width: 0) {
