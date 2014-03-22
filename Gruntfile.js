@@ -63,6 +63,8 @@ module.exports = function (grunt) {
               "js/**"
             ]
           },
+          // TODO: Exclude Jasny until this is fixed.
+          // See: https://github.com/jasny/bootstrap/issues/192
           {
             dest: "<%= vendorPath %>/bootstrap-jasny",
             cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
