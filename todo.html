@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-jasny/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="doc/site.css">
   </head>
   <body>
@@ -27,18 +28,16 @@
       <header id="hero" class="jumbotron backing-img"></header>
       <div class="container">
         <div class="nav-wrapper">
-          <nav id="nav" role="navigation" class="navbar navbar-default navbar-static">
-            <div class="navbar-header">
-              <button id="nav-collapse" type="button" data-toggle="collapse" data-target="#nav-expand" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a id="home" href="#" class="navbar-brand">Home</a>
-            </div>
-            <div id="nav-expand" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li id="nav-sections-menu" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sections<b class="caret"></b></a>
-                  <ul id="nav-sections" class="dropdown-menu"></ul>
-                </li>
-              </ul>
-            </div>
+          <nav id="nav" role="navigation" class="navmenu navmenu-default navmenu-fixed-left offcanvas"><a id="home" href="#" class="navmenu-brand">Home</a>
+            <ul class="nav navmenu-nav">
+              <li id="nav-sections-menu" class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sections<b class="caret"></b></a>
+                <ul id="nav-sections" class="dropdown-menu"></ul>
+              </li>
+            </ul>
           </nav>
+          <div class="navbar navbar-default navbar-fixed-top">
+            <button id="nav-collapse" type="button" data-toggle="offcanvas" data-target="#nav" data-canvas="body" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          </div>
         </div><h1>Backbone.js Testing</h1>
 
 <p>Apps, suites, and examples for Backbone.js test development.</p>
@@ -96,6 +95,7 @@ hack in.</li></ul>
     <script src="vendor/jquery.min.js"></script>
     <script src="vendor/underscore.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-jasny/js/jasny-bootstrap.min.js"></script>
     <script src="doc/site.js"></script>
     <script>
       var _gaq = _gaq || [];

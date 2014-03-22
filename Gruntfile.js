@@ -64,6 +64,12 @@ module.exports = function (grunt) {
             ]
           },
           {
+            dest: "<%= vendorPath %>/bootstrap-jasny",
+            cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
+            expand: true,
+            src: ["**"]
+          },
+          {
             dest: "<%= vendorPath %>/backbone.localStorage.min.js",
             src: "<%= bowerPath %>/backbone.localStorage/" +
                  "backbone.localStorage-min.js"

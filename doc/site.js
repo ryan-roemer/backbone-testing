@@ -31,31 +31,31 @@ $(function () {
         .prependTo($parent);
     },
 
-    navAffix: function () {
-      // http://stackoverflow.com/a/13151016/741892
-      var $hero = $("#hero"),
-        $nav = $("#nav"),
-        top = $nav.offset().top,
-        heroWidth = $hero.width();
+    // navAffix: function () {
+    //   // http://stackoverflow.com/a/13151016/741892
+    //   var $hero = $("#hero"),
+    //     $nav = $("#nav"),
+    //     top = $nav.offset().top,
+    //     heroWidth = $hero.width();
 
-      $nav.affix({
-        offset: {
-          top: function () {
-            $nav.width(heroWidth);
-            return top;
-          }
-        }
-      });
+    //   $nav.affix({
+    //     offset: {
+    //       top: function () {
+    //         $nav.width(heroWidth);
+    //         return top;
+    //       }
+    //     }
+    //   });
 
-      // Always resize to hero width.
-      $(window).resize(function () {
-        heroWidth = $hero.width();
-        $nav.width(heroWidth);
-      });
+    //   // Always resize to hero width.
+    //   $(window).resize(function () {
+    //     heroWidth = $hero.width();
+    //     $nav.width(heroWidth);
+    //   });
 
-      // Position better.
-      $("#nav-wrapper").height($("#nav").height());
-    },
+    //   // Position better.
+    //   $("#nav-wrapper").height($("#nav").height());
+    // },
 
     heading: function () {
       var $heading = $("h1").first(),
@@ -139,7 +139,7 @@ $(function () {
           easing: "swing"
         });
 
-        // Close navbar if collapsed.
+        Close navbar if collapsed.
         if ($("#nav-collapse").is(":visible")) {
           $("#nav-expand").collapse("hide");
         }
@@ -171,7 +171,7 @@ $(function () {
   // Apply transforms.
   _.each([
     "headingToHero",
-    "navAffix",
+    //"navAffix",
     "heading",
     "images",
     "navSections",

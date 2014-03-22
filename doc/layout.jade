@@ -22,6 +22,7 @@ html.no-js(lang='en')
     //- Stylesheets
     link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap.min.css")
     link(rel="stylesheet", href="vendor/bootstrap/css/bootstrap-theme.min.css")
+    link(rel="stylesheet", href="vendor/bootstrap-jasny/css/jasny-bootstrap.min.css")
     link(rel="stylesheet", href="doc/site.css")
 
   body
@@ -46,22 +47,21 @@ html.no-js(lang='en')
       .container
         block nav
           .nav-wrapper
-            nav#nav.navbar.navbar-default.navbar-static(role="navigation")
-              .navbar-header
-                button#nav-collapse.navbar-toggle(type="button", data-toggle="collapse", data-target="#nav-expand")
-                  span.sr-only Toggle navigation
-                  span.icon-bar
-                  span.icon-bar
-                  span.icon-bar
-                a#home.navbar-brand(href="#") Home
+            nav#nav.navmenu.navmenu-default.navmenu-fixed-left.offcanvas(role="navigation")
+              a#home.navmenu-brand(href="#") Home
+              ul.nav.navmenu-nav
+                li#nav-sections-menu.dropdown
+                  a.dropdown-toggle(href="#", data-toggle="dropdown")
+                      | Sections
+                      b.caret
+                    ul#nav-sections.dropdown-menu
 
-              div#nav-expand.collapse.navbar-collapse
-                ul.nav.navbar-nav
-                  li#nav-sections-menu.dropdown
-                    a.dropdown-toggle(href="#", data-toggle="dropdown")
-                        | Sections
-                        b.caret
-                      ul#nav-sections.dropdown-menu
+            .navbar.navbar-default.navbar-fixed-top
+              button#nav-collapse.navbar-toggle(type="button", data-toggle="offcanvas", data-target="#nav", data-canvas="body")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
 
         block content
 
@@ -74,6 +74,7 @@ html.no-js(lang='en')
     script(src="vendor/jquery.min.js")
     script(src="vendor/underscore.min.js")
     script(src="vendor/bootstrap/js/bootstrap.min.js")
+    script(src="vendor/bootstrap-jasny/js/jasny-bootstrap.min.js")
     script(src="doc/site.js")
 
     //- Google Analytics
