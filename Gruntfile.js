@@ -255,7 +255,9 @@ module.exports = function (grunt) {
       tmpl);
   });
   grunt.registerTask("build:vendor", [
-    "clean:vendor",
+    // TODO: Exclude Jasny until this is fixed.
+    // See: https://github.com/jasny/bootstrap/issues/192
+    //"clean:vendor",
     "copy:vendor",
     "uglify:vendor"
   ]);
