@@ -65,12 +65,12 @@ module.exports = function (grunt) {
           },
           // TODO: Exclude Jasny until this is fixed.
           // See: https://github.com/jasny/bootstrap/issues/192
-          {
-            dest: "<%= vendorPath %>/bootstrap-jasny",
-            cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
-            expand: true,
-            src: ["**"]
-          },
+          // {
+          //   dest: "<%= vendorPath %>/bootstrap-jasny",
+          //   cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
+          //   expand: true,
+          //   src: ["**"]
+          // },
           {
             dest: "<%= vendorPath %>/backbone.localStorage.min.js",
             src: "<%= bowerPath %>/backbone.localStorage/" +
