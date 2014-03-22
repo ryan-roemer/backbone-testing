@@ -110,9 +110,7 @@ $(function () {
         });
 
         // Close navbar if collapsed.
-        if ($("#nav-collapse").is(":visible")) {
-          $("#nav-expand").collapse("hide");
-        }
+        $("#nav").offcanvas("hide");
       });
     },
 
