@@ -1,5 +1,8 @@
 ## History
 
+### Current
+* **Docs**: Added Jasny Bootstrap for offcanvas menu.
+
 ### v0.0.7
 * **Libraries**: Remove Backstretch.
 * Clean up the bower library copy Grunt tasks and manually minify Underscore

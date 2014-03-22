@@ -31,32 +31,6 @@ $(function () {
         .prependTo($parent);
     },
 
-    navAffix: function () {
-      // http://stackoverflow.com/a/13151016/741892
-      var $hero = $("#hero"),
-        $nav = $("#nav"),
-        top = $nav.offset().top,
-        heroWidth = $hero.width();
-
-      $nav.affix({
-        offset: {
-          top: function () {
-            $nav.width(heroWidth);
-            return top;
-          }
-        }
-      });
-
-      // Always resize to hero width.
-      $(window).resize(function () {
-        heroWidth = $hero.width();
-        $nav.width(heroWidth);
-      });
-
-      // Position better.
-      $("#nav-wrapper").height($("#nav").height());
-    },
-
     heading: function () {
       var $heading = $("h1").first(),
         text = $heading.text();
@@ -92,11 +66,7 @@ $(function () {
       var $hero = $("#hero"),
         $content = $hero.nextAll(),
         $headings = $content.filter("h2"),
-        $nav = $content.find("#nav-sections"),
-        $sectionsMenu = $content.find("#nav-sections-menu"),
-        _openSectionsMenu = function () {
-          $sectionsMenu.addClass("open");
-        };
+        $nav = $content.find("#nav-sections");
 
       // Add headings to nav.
       $headings.each(function () {
@@ -140,15 +110,8 @@ $(function () {
         });
 
         // Close navbar if collapsed.
-        if ($("#nav-collapse").is(":visible")) {
-          $("#nav-expand").collapse("hide");
-        }
+        $("#nav").offcanvas("hide");
       });
-
-      // Expand sections dropdown if collapsed.
-      $("#nav-expand")
-        .on("show.bs.collapse", _openSectionsMenu)
-        .on("shown.bs.collapse", _openSectionsMenu);
     },
 
     chapterExamples: function () {
@@ -171,7 +134,6 @@ $(function () {
   // Apply transforms.
   _.each([
     "headingToHero",
-    "navAffix",
     "heading",
     "images",
     "navSections",

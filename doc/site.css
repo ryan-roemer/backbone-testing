@@ -59,6 +59,38 @@
   top: 0px;
 }
 
+.navmenu {
+  width: 200px;
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+  background-color: #fff;
+}
+
+.nav-item {
+  line-height: 0.5;
+}
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 0px) {
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+
+  }
+}
+
 /* ------------------------------------------------------------------
  * Page
  * --------------------------------------------------------------- */

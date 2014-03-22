@@ -63,6 +63,14 @@ module.exports = function (grunt) {
               "js/**"
             ]
           },
+          // TODO: Exclude Jasny until this is fixed.
+          // See: https://github.com/jasny/bootstrap/issues/192
+          // {
+          //   dest: "<%= vendorPath %>/bootstrap-jasny",
+          //   cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
+          //   expand: true,
+          //   src: ["**"]
+          // },
           {
             dest: "<%= vendorPath %>/backbone.localStorage.min.js",
             src: "<%= bowerPath %>/backbone.localStorage/" +
@@ -247,7 +255,9 @@ module.exports = function (grunt) {
       tmpl);
   });
   grunt.registerTask("build:vendor", [
-    "clean:vendor",
+    // TODO: Exclude Jasny until this is fixed.
+    // See: https://github.com/jasny/bootstrap/issues/192
+    //"clean:vendor",
     "copy:vendor",
     "uglify:vendor"
   ]);
