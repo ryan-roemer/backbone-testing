@@ -48,7 +48,10 @@ $(function () {
           "View Note"
         ],
         bookClass = [
-          "Book Cover"
+          "Book Cover",
+          "Formidable Labs"
+        ],
+        logoClass = [
         ];
 
       // Add special picture classes to known titles.
@@ -58,6 +61,9 @@ $(function () {
         }
         if (_.indexOf(bookClass, $(this).prop("title")) !== -1) {
           $(this).addClass("book");
+        }
+        if (_.indexOf(logoClass, $(this).prop("title")) !== -1) {
+          $(this).addClass("logo");
         }
       });
     },

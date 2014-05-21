@@ -73,6 +73,23 @@ A short description of the book from the [Packt Publishing][packtpub]
 [packtpub]: http://www.packtpub.com/
 [packt]: http://www.packtpub.com/backbonejs-testing/book
 
+## Formidable Labs
+
+Ryan and the team at [Formidable Labs][formidable] help developers
+ranging from startups to Fortunate 500 companies with all aspects of
+Backbone.js web application and test development. At Formidable, we
+lead high-impact training sessions, build out some of the world's
+largest Backbone.js applications, and help get new projects of any
+size off the ground.
+
+[![Formidable Labs](./doc/img/logo/formidable.png "Formidable Labs")][formidable]
+
+Once you finish **[Backbone.js Testing][packt]**, please reach out
+to us -- we'd love to help accelerate your Backbone.js development
+and education.
+
+[formidable]: http://formidablelabs.com
+
 ## Compatibility
 The application and test samples should work for the following browser /
 version combinations:
