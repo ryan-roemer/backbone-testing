@@ -85,7 +85,7 @@ size off the ground.
 [![Formidable Labs](./doc/img/logo/formidable.png)][formidable]
 
 Once you finish **[Backbone.js Testing][packt]**, please reach out
-to us -- we'd love to help accelerate your Backbone.js development
+to us -- we'd love to accelerate your Backbone.js development
 and education.
 
 [formidable]: http://formidablelabs.com
