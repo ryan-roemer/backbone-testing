@@ -76,7 +76,7 @@ A short description of the book from the [Packt Publishing][packtpub]
 ## Formidable Labs
 
 Ryan and the team at [Formidable Labs][formidable] help developers
-ranging from startups to Fortunate 500 companies with all aspects of
+ranging from startups to Fortune 500 companies with all aspects of
 Backbone.js web application and test development. At Formidable, we
 lead high-impact training sessions, build out some of the world's
 largest Backbone.js applications, and help get new projects of any
