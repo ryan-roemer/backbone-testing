@@ -40,7 +40,7 @@ fundamentals of test-driven development for Backbone.js applications. All of
 the code samples are directly used in the book - it is essentially your
 narrative guide to this repository.
 
-[![Book Cover](./doc/img/book/book-cover.jpg "Book Cover")][packt]
+[![Book Cover](./doc/img/book/book-cover.jpg)][packt]
 
 A short description of the book from the [Packt Publishing][packtpub]
 [website][packt]:
@@ -82,7 +82,7 @@ lead high-impact training sessions, build out some of the world's
 largest Backbone.js applications, and help get new projects of any
 size off the ground.
 
-[![Formidable Labs](./doc/img/logo/formidable.png "Formidable Labs")][formidable]
+[![Formidable Labs](./doc/img/logo/formidable.png)][formidable]
 
 Once you finish **[Backbone.js Testing][packt]**, please reach out
 to us -- we'd love to help accelerate your Backbone.js development
@@ -115,18 +115,18 @@ The Notes application home page lists existing notes (by creation date), and
 provides a form field to create a new note with a title. A filter field is
 available in the menu bar to limit the list of displayed notes by title.
 
-![Notes List](./doc/img/notes/notes-list.png "Notes List")
+![Notes List](./doc/img/notes/notes-list.png)
 
 Clicking on the edit icon brings us to the single note view, with a simple
 form editor for the title and text body fields of the note. The body of a
 note is written using [Markdown][markdown] formatting.
 
-![Edit Note](./doc/img/notes/note-edit.png "Edit Note")
+![Edit Note](./doc/img/notes/note-edit.png)
 
 Clicking on the view menu tab switches us to the viewing pane, which renders
 the note's Markdown and produces our displayed note.
 
-![View Note](./doc/img/notes/note-view.png "View Note")
+![View Note](./doc/img/notes/note-view.png)
 
 The Notes application is written using [Bootstrap][bootstrap]'s responsive
 libraries and should render fine on mobile devices, tablets, and pretty much
