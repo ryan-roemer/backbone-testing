@@ -109,16 +109,16 @@ img.logo {
 img.book {
   width: 85%;
   max-width: 300px;
-  margin-right: auto;
   -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
      -moz-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
           box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
 }
 
-
 img.logo {
   width: inherit;
-  margin-right: auto;
+  -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+     -moz-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+          box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
 }
 
 blockquote p {

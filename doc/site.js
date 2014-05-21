@@ -48,10 +48,10 @@ $(function () {
           "View Note"
         ],
         bookClass = [
-          "Book Cover",
-          "Formidable Labs"
+          "Book Cover"
         ],
-        logoClass = [
+        logoClass = [,
+          "Formidable Labs"
         ];
 
       // Add special picture classes to known titles.
