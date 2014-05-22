@@ -94,9 +94,11 @@
 /* ------------------------------------------------------------------
  * Page
  * --------------------------------------------------------------- */
+/* ------------------------------------------------------------------
+ * Page
+ * --------------------------------------------------------------- */
 img.picture,
-img.book,
-img.logo {
+img.book {
   width: 90%;
   max-width: 611px;
   display: block;
@@ -116,9 +118,14 @@ img.book {
 
 img.logo {
   width: inherit;
-  -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
-     -moz-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
-          box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
+  max-width: 150px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 3px 3px 15px rgba(50, 50, 50, 0.5);
+     -moz-box-shadow: 3px 3px 15px rgba(50, 50, 50, 0.5);
+          box-shadow: 3px 3px 15px rgba(50, 50, 50, 0.5);
 }
 
 blockquote p {
