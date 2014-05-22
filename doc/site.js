@@ -49,15 +49,21 @@ $(function () {
         ],
         bookClass = [
           "Book Cover"
+        ],
+        logoClass = [,
+          "Formidable Labs"
         ];
 
       // Add special picture classes to known titles.
       $("img").each(function () {
-        if (_.indexOf(pictureClass, $(this).prop("title")) !== -1) {
+        if (_.indexOf(pictureClass, $(this).prop("alt")) !== -1) {
           $(this).addClass("picture");
         }
-        if (_.indexOf(bookClass, $(this).prop("title")) !== -1) {
+        if (_.indexOf(bookClass, $(this).prop("alt")) !== -1) {
           $(this).addClass("book");
+        }
+        if (_.indexOf(logoClass, $(this).prop("alt")) !== -1) {
+          $(this).addClass("logo");
         }
       });
     },
