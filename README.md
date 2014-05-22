@@ -75,7 +75,7 @@ A short description of the book from the [Packt Publishing][packtpub]
 
 ## Formidable Labs
 
-Ryan and the team at [Formidable Labs][formidable] help developers,
+Ryan and the team at [Formidable Labs][formidable] assist developers,
 from startups to Fortune 500 companies, with all aspects of
 Backbone.js web application and test development. At Formidable, we
 lead high-impact training sessions, build out some of the world's
@@ -216,60 +216,60 @@ separated by number. We also provide a driver page for (nearly) all of
 
 * **[Trying out the test libraries](./chapters/01/test/test.html)**: Some
   first basic unit tests using Mocha, Chai, and SinonJS.
-  * [hello.spec.js](./chapters/01/test/js/spec/hello.spec.js)
+    * [hello.spec.js](./chapters/01/test/js/spec/hello.spec.js)
 
 * **[Test Failures](./chapters/01/test/test-failure.html)**:
   Different types of test failures.
-  * [failure.spec.js](./chapters/01/test/js/spec/failure.spec.js)
+    * [failure.spec.js](./chapters/01/test/js/spec/failure.spec.js)
 
 * **[Test Timing](./chapters/01/test/test-timing.html)**:
   Tests that take different times, which Mocha annotates for "medium"
   and "slow" tests. Also has one test timeout failure.
-  * [timing.spec.js](./chapters/01/test/js/spec/timing.spec.js)
+    * [timing.spec.js](./chapters/01/test/js/spec/timing.spec.js)
 
 ### Chapter 2: Creating a Backbone.js Application Test Plan
 
 * **[Tests](./chapters/02/test/test.html)**:
   Initial simple tests for a Backbone.js application.
-  * [namespace.spec.js](./chapters/02/test/js/spec/namespace.spec.js):
-    Verifies [namespace](./notes/app/js/app/namespace.js)
-    objects are correctly setup.
-  * [models/note.spec.js](./chapters/02/test/js/spec/models/note.spec.js):
-    Tests the application model
-    [`App.Models.Note`](./notes/app/js/app/models/note.js).
+    * [namespace.spec.js](./chapters/02/test/js/spec/namespace.spec.js):
+      Verifies [namespace](./notes/app/js/app/namespace.js)
+      objects are correctly setup.
+    * [models/note.spec.js](./chapters/02/test/js/spec/models/note.spec.js):
+      Tests the application model
+      [`App.Models.Note`](./notes/app/js/app/models/note.js).
 
 ### Chapter 3: Test Assertions, Specs, and Suites
 
 * **[BDD Interface](./chapters/03/test/test-bdd.html)**: Tests using
   [Mocha](http://visionmedia.github.com/mocha/#bdd-interface)
   and [Chai](http://chaijs.com/api/bdd/) **BDD** styles.
-  * [bdd.spec.js](./chapters/03/test/js/spec/bdd.spec.js)
+    * [bdd.spec.js](./chapters/03/test/js/spec/bdd.spec.js)
 
 * **[TDD Interface](./chapters/03/test/test-tdd.html)**: Tests using Mocha
   **[TDD](http://visionmedia.github.com/mocha/#tdd-interface)** and
   Chai [`assert`](http://chaijs.com/api/assert/) styles.
-  * [tdd.js](./chapters/03/test/js/test/tdd.js)
+    * [tdd.js](./chapters/03/test/js/test/tdd.js)
 
 * **[Chai Assertions](./chapters/03/test/test-chai.html)**: Tests using
   a variety of [Chai BDD](http://chaijs.com/api/bdd/) assertions.
-  * [chai-chains.spec.js](./chapters/03/test/js/spec/chai-chains.spec.js):
-  Language chains.
-  * [chai-values.spec.js](./chapters/03/test/js/spec/chai-values.spec.js):
-  Value properties.
-  * [chai-comparisons.spec.js](./chapters/03/test/js/spec/chai-comparisons.spec.js):
-  Comparison functions.
-  * [chai-objects.spec.js](./chapters/03/test/js/spec/chai-objects.spec.js):
-  Object and array assertions.
-  * [chai-errors.spec.js](./chapters/03/test/js/spec/chai-errors.spec.js):
-  Exception handling.
+    * [chai-chains.spec.js](./chapters/03/test/js/spec/chai-chains.spec.js):
+      Language chains.
+    * [chai-values.spec.js](./chapters/03/test/js/spec/chai-values.spec.js):
+      Value properties.
+    * [chai-comparisons.spec.js](./chapters/03/test/js/spec/chai-comparisons.spec.js):
+      Comparison functions.
+    * [chai-objects.spec.js](./chapters/03/test/js/spec/chai-objects.spec.js):
+      Object and array assertions.
+    * [chai-errors.spec.js](./chapters/03/test/js/spec/chai-errors.spec.js):
+      Exception handling.
 
 * **[Mocha `only`](./chapters/03/test/test-only.html)**: Tests using the Mocha
   `only` test modifier to run a single spec.
-  * [mocha-only.spec.js](./chapters/03/test/js/spec/mocha-only.spec.js)
+    * [mocha-only.spec.js](./chapters/03/test/js/spec/mocha-only.spec.js)
 
 * **[Mocha `skip`](./chapters/03/test/test-skip.html)**: Tests using the Mocha
   `skip` test modifier to skip one or more specs.
-  * [mocha-skip.spec.js](./chapters/03/test/js/spec/mocha-skip.spec.js)
+    * [mocha-skip.spec.js](./chapters/03/test/js/spec/mocha-skip.spec.js)
 
 * **[Mocha Pending Tests](./chapters/03/test/test-pending.html)**: A basic
   skeleton suite with empty specs (e.g., no test callback), which are all in
@@ -278,60 +278,60 @@ separated by number. We also provide a driver page for (nearly) all of
   design phanse. The specs can later be implemented in parallel with the
   underlying application components, ensuring that the desired behavior is
   correctly implemented.
-  * [notes-pending.spec.js](./chapters/03/test/js/spec/collections/notes-pending.spec.js)
+    * [notes-pending.spec.js](./chapters/03/test/js/spec/collections/notes-pending.spec.js)
 
 * **[Tests](./chapters/03/test/test.html)**:
   Continue tests for the **[Notes][notes_demo]** Backbone.js application.
-  * [collections/notes.spec.js](./chapters/03/test/js/spec/collections/notes.spec.js):
-    Tests the collection [`App.Collections.Notes`](./notes/app/js/app/collections/notes.js).
-  * [views/note-view.spec.js](./chapters/03/test/js/spec/views/note-view.spec.js):
-    Tests the view [`App.Views.NoteView`](./notes/app/js/app/views/note-view.js),
-    which renders model [Markdown][markdown]
-    data into HTML.
+    * [collections/notes.spec.js](./chapters/03/test/js/spec/collections/notes.spec.js):
+      Tests the collection [`App.Collections.Notes`](./notes/app/js/app/collections/notes.js).
+    * [views/note-view.spec.js](./chapters/03/test/js/spec/views/note-view.spec.js):
+      Tests the view [`App.Views.NoteView`](./notes/app/js/app/views/note-view.js),
+      which renders model [Markdown][markdown]
+      data into HTML.
 
 ### Chapter 4: Test Spies
 
 * **[Sinon.JS Spies](./chapters/04/test/test-sinon.html)**: Various test uses
   for Sinon.JS [spies](http://sinonjs.org/docs/#spies).
-  * [sinon.spec.js](./chapters/04/test/js/spec/sinon.spec.js)
+    * [sinon.spec.js](./chapters/04/test/js/spec/sinon.spec.js)
 
 * **[Tests](./chapters/04/test/test.html)**:
   Tests for the **[Notes][notes_demo]** Backbone.js application that use
   Sinon.JS spies.
-  * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
-    Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
-    view, which mediates events for the single page navigation menu bar.
-  * [views/note.spec.js](./chapters/04/test/js/spec/views/note.spec.js):
-    Tests the [`App.Views.Note`](./notes/app/js/app/views/note.js)
-    view, which wraps all of the other single note views and model.
+    * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
+      Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
+      view, which mediates events for the single page navigation menu bar.
+    * [views/note.spec.js](./chapters/04/test/js/spec/views/note.spec.js):
+      Tests the [`App.Views.Note`](./notes/app/js/app/views/note.js)
+      view, which wraps all of the other single note views and model.
 
 ### Chapter 5: Test Stubs and Mocks
 
 * **[Sinon.JS Stubs](./chapters/05/test/test-stubs.html)**: Tests using
   Sinon.JS [stubs](http://sinonjs.org/docs/#stubs).
-  * [stubs.spec.js](./chapters/05/test/js/spec/stubs.spec.js)
+    * [stubs.spec.js](./chapters/05/test/js/spec/stubs.spec.js)
 
 * **[Sinon.JS Mocks](./chapters/05/test/test-mocks.html)**: Tests using
   Sinon.JS [mocks](http://sinonjs.org/docs/#mocks).
-  * [mocks.spec.js](./chapters/05/test/js/spec/mocks.spec.js)
+    * [mocks.spec.js](./chapters/05/test/js/spec/mocks.spec.js)
 
 * **[Tests](./chapters/05/test/test.html)**:
   Tests for the **[Notes][notes_demo]** Backbone.js application with Sinon.JS
   stubs and mocks.
-  * [views/notes-item.spec.js](./chapters/05/test/js/spec/views/notes-item.spec.js):
-    Tests the [`App.Views.NotesItem`](./notes/app/js/app/views/notes-item.js)
-    view, which displays a table row for a single note in the "all notes"
-    list.
-  * [routers/router.spec.js](./chapters/05/test/js/spec/routers/router.spec.js):
-    Tests an **abbreviated** version of the
-    [`App.Routers.Router`](./chapters/05/test/js/spec/routers/router.js)
-    router, implementing the route matching logic, but omitting the actual
-    view creation and display. The tests that we create a good starting point
-    for testing routers, but please see the Notes application source
-    for the
-    [real `App.Routers.Router` source](./notes/app/js/app/routers/router.js)
-    and [full "routers/router.spec.js"](./notes/test/js/spec/routers/router.spec.js)
-    file.
+    * [views/notes-item.spec.js](./chapters/05/test/js/spec/views/notes-item.spec.js):
+      Tests the [`App.Views.NotesItem`](./notes/app/js/app/views/notes-item.js)
+      view, which displays a table row for a single note in the "all notes"
+      list.
+    * [routers/router.spec.js](./chapters/05/test/js/spec/routers/router.spec.js):
+      Tests an **abbreviated** version of the
+      [`App.Routers.Router`](./chapters/05/test/js/spec/routers/router.js)
+      router, implementing the route matching logic, but omitting the actual
+      view creation and display. The tests that we create a good starting point
+      for testing routers, but please see the Notes application source
+      for the
+      [real `App.Routers.Router` source](./notes/app/js/app/routers/router.js)
+      and [full "routers/router.spec.js"](./notes/test/js/spec/routers/router.spec.js)
+      file.
 
 
 ### Chapter 6: Automated Web Testing
