@@ -407,7 +407,6 @@ Setting all of this up is as simple as adding a Travis configuration file
 
     language: node_js
     node_js:
-      - 0.8
       - 0.10
 
 This instructs Travis to test out the latest Node.js versions for v0.8 and
