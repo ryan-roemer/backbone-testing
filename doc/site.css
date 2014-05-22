@@ -98,17 +98,17 @@
  * Page
  * --------------------------------------------------------------- */
 img.picture,
-img.book {
+img.book,
+img.logo {
+  display: block;
   width: 90%;
   max-width: 611px;
-  display: block;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 img.book {
+  max-width: 150px;
   width: 85%;
   max-width: 300px;
   -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.75);
@@ -117,7 +117,6 @@ img.book {
 }
 
 img.logo {
-  display: block;
   max-width: 150px;
   margin: 24px auto;
   -webkit-box-shadow: 3px 3px 15px rgba(50, 50, 50, 0.5);
