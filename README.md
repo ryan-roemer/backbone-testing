@@ -175,11 +175,16 @@ Once you have these installed, you can change into the root of this repository
 and install all of the project libraries:
 
     $ npm install
+    $ npm run-script build
 
 To run the sample server application, you will need two terminal windows.
 In the first window, start up MongoDB:
 
+    # Linux / Mac
     $ npm run-script mongo-start
+
+    # Windows
+    $ npm run-script mongo-start-win
 
 In the second window, start up the Express server:
 
@@ -349,6 +354,7 @@ engine and/or any local browsers.
 Simply install the Node.js dependencies:
 
     $ npm install
+    $ npm run-script build
 
 which will place an internal PhantomJS binary in
 "./node_modules/.bin/phantomjs" as well as all other necessary libraries.
@@ -602,6 +608,7 @@ For pretty much everything, you will need to install a Node.js environment, and
 the development NPM dependencies:
 
     $ npm install
+    $ npm run-script build
 
 From there, there are various [Grunt][grunt] script helpers for style checking
 and tests:
