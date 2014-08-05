@@ -303,10 +303,10 @@ separated by number. We also provide a driver page for (nearly) all of
 * **[Tests](./chapters/04/test/test.html)**:
   Tests for the **[Notes][notes_demo]** Backbone.js application that use
   Sinon.JS spies.
-    * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
+    * [views/note-nav.spec.js](./notes/test/js/spec/views/note-nav.spec.js):
       Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
       view, which mediates events for the single page navigation menu bar.
-    * [views/note.spec.js](./chapters/04/test/js/spec/views/note.spec.js):
+    * [views/note.spec.js](./notes/test/js/spec/views/note.spec.js):
       Tests the [`App.Views.Note`](./notes/app/js/app/views/note.js)
       view, which wraps all of the other single note views and model.
 
