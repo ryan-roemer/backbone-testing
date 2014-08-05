@@ -287,9 +287,9 @@ separated by number. We also provide a driver page for (nearly) all of
 
 * **[Tests](./chapters/03/test/test.html)**:
   Continue tests for the **[Notes][notes_demo]** Backbone.js application.
-    * [collections/notes.spec.js](./chapters/03/test/js/spec/collections/notes.spec.js):
+    * [collections/notes.spec.js](./notes/test/js/spec/collections/notes.spec.js):
       Tests the collection [`App.Collections.Notes`](./notes/app/js/app/collections/notes.js).
-    * [views/note-view.spec.js](./chapters/03/test/js/spec/views/note-view.spec.js):
+    * [views/note-view.spec.js](./notes/test/js/spec/views/note-view.spec.js):
       Tests the view [`App.Views.NoteView`](./notes/app/js/app/views/note-view.js),
       which renders model [Markdown][markdown]
       data into HTML.
