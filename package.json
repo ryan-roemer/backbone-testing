@@ -66,6 +66,6 @@
     "test-server": "http-server -p 4322",
     "docs": "node_modules/.bin/grunt jade",
     "build": "npm run-script build-tmpl && npm run-script docs",
-    "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js"
+    "build-tmpl": "node dev/build-templates.js > notes/app/js/app/templates/templates.js"
   }
 }
