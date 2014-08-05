@@ -341,7 +341,7 @@ have a Karma test runner implemented) -- like Chrome and Firefox.</p>
 this project. You can run all of the tests using PhantomJS alone in Karma
 with the following command:</p>
 
-<pre><code>$ ./node_modules/.bin/grunt karma:fast</code></pre>
+<pre><code>$ node_modules/.bin/grunt karma:fast</code></pre>
 
 <h4>Development Mode</h4>
 
@@ -349,7 +349,7 @@ with the following command:</p>
 engine running (which we&#39;ve configured to use PhantomJS, Chrome and Firefox)
 with:</p>
 
-<pre><code>$ ./node_modules/.bin/grunt karma:dev</code></pre>
+<pre><code>$ node_modules/.bin/grunt karma:dev</code></pre>
 
 <p>This process then waits for test invocations, which you can do by opening a
 <em>second terminal</em> in the same directory and typing:</p>
@@ -520,27 +520,27 @@ $ npm run-script build</code></pre>
 and tests:</p>
 
 <pre><code># Run style checks for server, client, and both.
-$ ./node_modules/.bin/grunt jshint:server
-$ ./node_modules/.bin/grunt jshint:client
-$ ./node_modules/.bin/grunt jshint
+$ node_modules/.bin/grunt jshint:server
+$ node_modules/.bin/grunt jshint:client
+$ node_modules/.bin/grunt jshint
 
 # Run headless tests for the application, individual chapters, all chapters
 # as one big test, and all of these together.
-$ ./node_modules/.bin/grunt test:app
-$ ./node_modules/.bin/grunt test:rest
-$ ./node_modules/.bin/grunt test:chaps
-$ ./node_modules/.bin/grunt test:chaps-all
-$ ./node_modules/.bin/grunt test
+$ node_modules/.bin/grunt test:app
+$ node_modules/.bin/grunt test:rest
+$ node_modules/.bin/grunt test:chaps
+$ node_modules/.bin/grunt test:chaps-all
+$ node_modules/.bin/grunt test
 
 # Run all style checks and headless tests.
-$ ./node_modules/.bin/grunt check</code></pre>
+$ node_modules/.bin/grunt check</code></pre>
 
 <p>The file &quot;README.md&quot; is transformed from markdown into the HTML page
 &quot;index.html&quot;, and can be compiled once, or watched for changes with the
 following commands.</p>
 
-<pre><code>$ ./node_modules/.bin/grunt jade:docs
-$ ./node_modules/.bin/grunt watch:docs</code></pre>
+<pre><code>$ node_modules/.bin/grunt jade:docs
+$ node_modules/.bin/grunt watch:docs</code></pre>
 
 <h3>Contributions</h3>
 
@@ -549,7 +549,7 @@ most welcome. Please file a GitHub
 <a href="https://github.com/ryan-roemer/backbone-testing/issues">issue</a> or pull request
 for any changes. Pull requests should be able to pass</p>
 
-<pre><code>$ ./node_modules/.bin/grunt check</code></pre>
+<pre><code>$ node_modules/.bin/grunt check</code></pre>
 
 <p>without any errors.</p><h2>History</h2>
 
