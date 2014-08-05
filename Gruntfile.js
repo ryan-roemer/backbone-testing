@@ -12,7 +12,8 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON("package.json"),
 
     bowerPath: "bower_components",
-    vendorPath: "vendor",
+    vendorAppPath: "notes/app/js/lib",
+    vendorTestPath: "notes/test/js/lib",
 
     jade: {
       docs: {
@@ -27,24 +28,20 @@ module.exports = function (grunt) {
     },
 
     clean: {
-      vendor: "<%= vendorPath %>"
+      vendor: [
+        "<%= vendorAppPath %>",
+        "<%= vendorTestPath %>"
+      ]
     },
 
     copy: {
-      vendor: {
+      "vendor-app": {
         files: [
           {
-            dest: "<%= vendorPath %>",
+            dest: "<%= vendorAppPath %>",
             expand: true,
             flatten: true,
             src: [
-              "<%= bowerPath %>/mocha/mocha.js",
-              "<%= bowerPath %>/mocha/mocha.css",
-              "<%= bowerPath %>/chai/chai.js",
-              "<%= bowerPath %>/sinonjs/sinon.js",
-              "<%= bowerPath %>/sinon-chai/lib/sinon-chai.js",
-              "<%= bowerPath %>/blanket/dist/qunit/blanket.js",
-              "<%= bowerPath %>/blanket/dist/qunit/blanket.min.js",
               "<%= bowerPath %>/jquery/dist/jquery.js",
               "<%= bowerPath %>/jquery/dist/jquery.min.js",
               "<%= bowerPath %>/json2/json2.js",
@@ -54,7 +51,7 @@ module.exports = function (grunt) {
             ]
           },
           {
-            dest: "<%= vendorPath %>/bootstrap",
+            dest: "<%= vendorAppPath %>/bootstrap",
             cwd: "<%= bowerPath %>/bootstrap/dist",
             expand: true,
             src: [
@@ -63,40 +60,56 @@ module.exports = function (grunt) {
               "js/**"
             ]
           },
-          // TODO: Exclude Jasny until this is fixed.
-          // See: https://github.com/jasny/bootstrap/issues/192
-          // {
-          //   dest: "<%= vendorPath %>/bootstrap-jasny",
-          //   cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
-          //   expand: true,
-          //   src: ["**"]
-          // },
           {
-            dest: "<%= vendorPath %>/backbone.localStorage.min.js",
+            dest: "<%= vendorAppPath %>/bootstrap-jasny",
+            cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
+            expand: true,
+            src: ["**"]
+          },
+          {
+            dest: "<%= vendorAppPath %>/backbone.localStorage.min.js",
             src: "<%= bowerPath %>/backbone.localStorage/" +
                  "backbone.localStorage-min.js"
           },
           {
-            dest: "<%= vendorPath %>/showdown",
+            dest: "<%= vendorAppPath %>/showdown",
             cwd: "<%= bowerPath %>/showdown/src",
             expand: true,
             src: ["**"]
+          }
+        ]
+      },
+      "vendor-test": {
+        files: [
+          {
+            dest: "<%= vendorTestPath %>",
+            expand: true,
+            flatten: true,
+            src: [
+              "<%= bowerPath %>/mocha/mocha.js",
+              "<%= bowerPath %>/mocha/mocha.css",
+              "<%= bowerPath %>/chai/chai.js",
+              "<%= bowerPath %>/sinonjs/sinon.js",
+              "<%= bowerPath %>/sinon-chai/lib/sinon-chai.js",
+              "<%= bowerPath %>/blanket/dist/qunit/blanket.js",
+              "<%= bowerPath %>/blanket/dist/qunit/blanket.min.js"
+            ]
           }
         ]
       }
     },
 
     uglify: {
-      vendor: {
+      "vendor-app": {
         files: {
-          "<%= vendorPath %>/json2.min.js": [
-            "<%= vendorPath %>/json2.js"
+          "<%= vendorAppPath %>/json2.min.js": [
+            "<%= vendorAppPath %>/json2.js"
           ],
-          "<%= vendorPath %>/underscore.min.js": [
-            "<%= vendorPath %>/underscore.js"
+          "<%= vendorAppPath %>/underscore.min.js": [
+            "<%= vendorAppPath %>/underscore.js"
           ],
-          "<%= vendorPath %>/backbone.min.js": [
-            "<%= vendorPath %>/backbone.js"
+          "<%= vendorAppPath %>/backbone.min.js": [
+            "<%= vendorAppPath %>/backbone.js"
           ]
         }
       }
@@ -255,11 +268,10 @@ module.exports = function (grunt) {
       tmpl);
   });
   grunt.registerTask("build:vendor", [
-    // TODO: Exclude Jasny until this is fixed.
-    // See: https://github.com/jasny/bootstrap/issues/192
-    //"clean:vendor",
-    "copy:vendor",
-    "uglify:vendor"
+    "clean:vendor",
+    "copy:vendor-app",
+    "uglify:vendor-app",
+    "copy:vendor-test"
   ]);
 
   // Wrapper Tasks.
