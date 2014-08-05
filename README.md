@@ -236,10 +236,10 @@ separated by number. We also provide a driver page for (nearly) all of
 
 * **[Tests](./chapters/02/test/test.html)**:
   Initial simple tests for a Backbone.js application.
-    * [namespace.spec.js](./chapters/02/test/js/spec/namespace.spec.js):
+    * [namespace.spec.js](./notes/test/js/spec/namespace.spec.js):
       Verifies [namespace](./notes/app/js/app/namespace.js)
       objects are correctly setup.
-    * [models/note.spec.js](./chapters/02/test/js/spec/models/note.spec.js):
+    * [models/note.spec.js](./notes/test/js/spec/models/note.spec.js):
       Tests the application model
       [`App.Models.Note`](./notes/app/js/app/models/note.js).
 
