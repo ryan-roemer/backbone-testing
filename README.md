@@ -323,7 +323,7 @@ separated by number. We also provide a driver page for (nearly) all of
 * **[Tests](./chapters/05/test/test.html)**:
   Tests for the **[Notes][notes_demo]** Backbone.js application with Sinon.JS
   stubs and mocks.
-    * [views/notes-item.spec.js](./chapters/05/test/js/spec/views/notes-item.spec.js):
+    * [views/notes-item.spec.js](./notes/test/js/spec/views/notes-item.spec.js):
       Tests the [`App.Views.NotesItem`](./notes/app/js/app/views/notes-item.js)
       view, which displays a table row for a single note in the "all notes"
       list.
