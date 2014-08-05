@@ -15,6 +15,9 @@ module.exports = function (grunt) {
     vendorAppPath: "notes/app/js/lib",
     vendorTestPath: "notes/test/js/lib",
 
+    notesPath: "notes",
+    notesRestPath: "notes-rest",
+
     jade: {
       docs: {
         options: {
@@ -31,6 +34,13 @@ module.exports = function (grunt) {
       vendor: [
         "<%= vendorAppPath %>",
         "<%= vendorTestPath %>"
+      ],
+      "notes-rest": [
+        "<%= notesRestPath %>/app/css",
+        "<%= notesRestPath %>/app/js/app",
+        "<%= notesRestPath %>/app/js/lib",
+        "<%= notesRestPath %>/test/js/lib",
+        "<%= notesRestPath %>/test/js/spec"
       ]
     },
 
@@ -80,19 +90,31 @@ module.exports = function (grunt) {
         ]
       },
       "vendor-test": {
+        dest: "<%= vendorTestPath %>",
+        expand: true,
+        flatten: true,
+        src: [
+          "<%= bowerPath %>/mocha/mocha.js",
+          "<%= bowerPath %>/mocha/mocha.css",
+          "<%= bowerPath %>/chai/chai.js",
+          "<%= bowerPath %>/sinonjs/sinon.js",
+          "<%= bowerPath %>/sinon-chai/lib/sinon-chai.js",
+          "<%= bowerPath %>/blanket/dist/qunit/blanket.js",
+          "<%= bowerPath %>/blanket/dist/qunit/blanket.min.js"
+        ]
+      },
+      "notes-rest": {
         files: [
           {
-            dest: "<%= vendorTestPath %>",
+            dest: "<%= notesRestPath %>",
             expand: true,
-            flatten: true,
+            cwd: "<%= notesPath %>",
             src: [
-              "<%= bowerPath %>/mocha/mocha.js",
-              "<%= bowerPath %>/mocha/mocha.css",
-              "<%= bowerPath %>/chai/chai.js",
-              "<%= bowerPath %>/sinonjs/sinon.js",
-              "<%= bowerPath %>/sinon-chai/lib/sinon-chai.js",
-              "<%= bowerPath %>/blanket/dist/qunit/blanket.js",
-              "<%= bowerPath %>/blanket/dist/qunit/blanket.min.js"
+              "app/css/**",
+              "app/js/app/**",
+              "app/js/lib/**",
+              "test/js/lib/**",
+              "test/js/spec/**"
             ]
           }
         ]
@@ -273,6 +295,10 @@ module.exports = function (grunt) {
     "uglify:vendor-app",
     "copy:vendor-test"
   ]);
+  grunt.registerTask("build:rest", [
+    "clean:notes-rest",
+    "copy:notes-rest"
+  ]);
 
   // Wrapper Tasks.
   grunt.registerTask("test:app",        ["mocha_phantomjs:app"]);
@@ -283,6 +309,7 @@ module.exports = function (grunt) {
   grunt.registerTask("check",           ["jshint", "test"]);
   grunt.registerTask("check:fast",      ["jshint", "karma:fast"]);
 
-  grunt.registerTask("build",   ["build:tmpl", "jade:docs", "build:vendor"]);
+  grunt.registerTask("build",   ["build:tmpl", "jade:docs", "build:vendor",
+                                 "build:rest"]);
   grunt.registerTask("default", ["build", "check"]);
 };
