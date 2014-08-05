@@ -48,12 +48,13 @@
     "node": ">0.8.x"
   },
   "scripts": {
+    "start": "nodemon notes-rest/server.js",
+    "test": "node_modules/.bin/grunt check",
     "mongo-wipe": "rm -rf mongodb_data && mkdir mongodb_data",
     "mongo-start": "mkdir -p mongodb_data && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
     "mongo-start-win": "IF not exist mongodb_data ( mkdir mongodb_data ) ELSE ( echo '' ) && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
     "mongo-pids": "ps ax | egrep -v 'sh -c|grep' | grep 'mongod --port=27027' | egrep -o '^[0-9]+' || echo None.",
     "check": "node_modules/.bin/grunt check",
-    "test": "node_modules/.bin/grunt check",
     "test-server": "http-server -p 4322",
     "todo": "grep -Rn 'TODO' README.md notes-rest/server.js notes/test/js/spec notes/app/js/app notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
     "release": "node_modules/.bin/grunt build && node_modules/.bin/grunt check"
