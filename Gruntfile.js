@@ -308,8 +308,8 @@ module.exports = function (grunt) {
   grunt.registerTask("test",            ["mocha_phantomjs", "karma:fast"]);
   grunt.registerTask("check",           ["jshint", "test"]);
   grunt.registerTask("check:fast",      ["jshint", "karma:fast"]);
+  grunt.registerTask("default",         ["check"]);
 
   grunt.registerTask("build",   ["build:tmpl", "jade:docs", "build:vendor",
                                  "build:rest"]);
-  grunt.registerTask("default", ["build", "check"]);
 };

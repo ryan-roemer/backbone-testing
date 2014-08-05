@@ -633,6 +633,29 @@ following commands.
     $ node_modules/.bin/grunt jade:docs
     $ node_modules/.bin/grunt watch:docs
 
+### Vendor Libs, Syncing
+We internally use bower to get / upgrade our vendor libraries. To update these,
+do the following:
+
+    $ node_modules/.bin/bower install
+    $ node_modules/.bin/grunt build:vendor
+
+We internall synchronize the `notes` application and test files to `notes-rest`,
+overwriting the latter. To do this:
+
+    $ node_modules/.bin/grunt build:notes-rest
+
+**Note**: This **overwrites** files in `notes-rest`, so don't invoke this if
+you intend to change those files!
+
+Finally, we have a lot of other builds (templates, docs, etc), that are all
+aggregated as part of:
+
+    $ node_modules/.bin/grunt build
+
+in addition to the tasks described above.
+
+
 ### Contributions
 Bugs, issues and fixes for any of the application or test code examples are
 most welcome. Please file a GitHub

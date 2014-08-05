@@ -539,6 +539,29 @@ following commands.</p>
 <pre><code>$ node_modules/.bin/grunt jade:docs
 $ node_modules/.bin/grunt watch:docs</code></pre>
 
+<h3>Vendor Libs, Syncing</h3>
+
+<p>We internally use bower to get / upgrade our vendor libraries. To update these,
+do the following:</p>
+
+<pre><code>$ node_modules/.bin/bower install
+$ node_modules/.bin/grunt build:vendor</code></pre>
+
+<p>We internall synchronize the <code>notes</code> application and test files to <code>notes-rest</code>,
+overwriting the latter. To do this:</p>
+
+<pre><code>$ node_modules/.bin/grunt build:notes-rest</code></pre>
+
+<p><strong>Note</strong>: This <strong>overwrites</strong> files in <code>notes-rest</code>, so don&#39;t invoke this if
+you intend to change those files!</p>
+
+<p>Finally, we have a lot of other builds (templates, docs, etc), that are all
+aggregated as part of:</p>
+
+<pre><code>$ node_modules/.bin/grunt build</code></pre>
+
+<p>in addition to the tasks described above.</p>
+
 <h3>Contributions</h3>
 
 <p>Bugs, issues and fixes for any of the application or test code examples are
@@ -552,7 +575,7 @@ for any changes. Pull requests should be able to pass</p>
 
 <h3>Current</h3>
 
-<ul><li><strong>Docs</strong>: Added Jasny Bootstrap for offcanvas menu.</li></ul>
+<ul><li><strong>Windows</strong>: Implements full Windows compatibility.</li><li><strong>Docs</strong>: Added Jasny Bootstrap for offcanvas menu.</li></ul>
 
 <h3>v0.0.7</h3>
 
