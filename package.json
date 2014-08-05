@@ -52,7 +52,7 @@
     "start": "nodemon notes-rest/server.js",
     "mongo-wipe": "rm -rf mongodb_data && mkdir mongodb_data",
     "mongo-start": "mkdir -p mongodb_data && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
-    "mongo-start-win": "IF not exist mongodb_data ( mkdir mongodb_data ) ELSE ( echo "" ) && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
+    "mongo-start-win": "IF not exist mongodb_data ( mkdir mongodb_data ) ELSE ( echo '' ) && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
     "mongo-pids": "ps ax | egrep -v 'sh -c|grep' | grep 'mongod --port=27027' | egrep -o '^[0-9]+' || echo None.",
     "todo": "grep -Rn 'TODO' README.md notes-rest/server.js notes/test/js/spec notes/app/js/app notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
     "check": "node_modules/.bin/grunt check",
