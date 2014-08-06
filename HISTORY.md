@@ -1,6 +1,6 @@
 ## History
 
-### Current
+### v0.0.8
 * **Windows**: Implements full Windows compatibility.
 * **Docs**: Added Jasny Bootstrap for offcanvas menu.
 
