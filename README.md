@@ -177,6 +177,13 @@ and install all of the project libraries:
     $ npm install
 
 To run the sample server application, you will need two terminal windows.
+The binary `mongod` *must* be available from the shell, so may need to
+augment your `PATH` variable. For example, on Windows, the following was
+needed for some installations:
+
+    # May need to run console as Administator for just this command.
+    $ setx PATH "%PATH%;C:\Program Files\MongoDB 2.6 Standard\bin" /M
+
 In the first window, start up MongoDB:
 
     # Linux / Mac
