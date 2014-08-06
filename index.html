@@ -18,9 +18,9 @@
     <meta name="description" content="Apps, suites, and examples for Backbone.js Testing.">
     <meta name="keywords" content="backbone.js testing, backbone.js, backbone, javascript, underscore.js, jquery, mocha, chai, sinon, sinon.js, testing, unit test, spies, mocks, stubs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="vendor/bootstrap-jasny/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="notes/app/js/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="notes/app/js/lib/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="notes/app/js/lib/bootstrap-jasny/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="doc/site.css">
   </head>
   <body>
@@ -185,9 +185,20 @@ and install all of the project libraries:</p>
 <pre><code>$ npm install</code></pre>
 
 <p>To run the sample server application, you will need two terminal windows.
-In the first window, start up MongoDB:</p>
+The binary <code>mongod</code> <em>must</em> be available from the shell, so may need to
+augment your <code>PATH</code> variable. For example, on Windows, the following was
+needed for some installations:</p>
 
-<pre><code>$ npm run-script mongo-start</code></pre>
+<pre><code># May need to run console as Administator for just this command.
+$ setx PATH &quot;%PATH%;C:\Program Files\MongoDB 2.6 Standard\bin&quot; /M</code></pre>
+
+<p>In the first window, start up MongoDB:</p>
+
+<pre><code># Linux / Mac
+$ npm run-script mongo-start
+
+# Windows (with `mongod` available from `PATH`)
+$ npm run-script mongo-start-win</code></pre>
 
 <p>In the second window, start up the Express server:</p>
 
@@ -204,7 +215,7 @@ console environment variables:</p>
 
 <ul><li><code>MONGO_ADDR</code>: MongoDB host address (default <code>127.0.0.1</code>).</li><li><code>MONGO_PORT</code>: MongoDB port (default <code>27027</code>).</li><li><code>ADDR</code>: Express server host address (default <code>127.0.0.1</code>).</li><li><code>PORT</code>: Express server port (default <code>4321</code>).</li></ul>
 
-<p>For example:</p>
+<p>For example, on a Mac:</p>
 
 <pre><code>$ export PORT=4323; npm start</code></pre>
 
@@ -227,9 +238,9 @@ and &quot;slow&quot; tests. Also has one test timeout failure.</p><ul><li><a hre
 <h3>Chapter 2: Creating a Backbone.js Application Test Plan</h3>
 
 <ul><li><strong><a href="./chapters/02/test/test.html">Tests</a></strong>:
-Initial simple tests for a Backbone.js application.<ul><li><a href="./chapters/02/test/js/spec/namespace.spec.js">namespace.spec.js</a>:
+Initial simple tests for a Backbone.js application.<ul><li><a href="./notes/test/js/spec/namespace.spec.js">namespace.spec.js</a>:
 Verifies <a href="./notes/app/js/app/namespace.js">namespace</a>
-objects are correctly setup.</li><li><a href="./chapters/02/test/js/spec/models/note.spec.js">models/note.spec.js</a>:
+objects are correctly setup.</li><li><a href="./notes/test/js/spec/models/note.spec.js">models/note.spec.js</a>:
 Tests the application model
 <a href="./notes/app/js/app/models/note.js"><code>App.Models.Note</code></a>.</li></ul></li></ul>
 
@@ -254,8 +265,8 @@ declare specs describing behavior without functions during the initial
 design phanse. The specs can later be implemented in parallel with the
 underlying application components, ensuring that the desired behavior is
 correctly implemented.</p><ul><li><p><a href="./chapters/03/test/js/spec/collections/notes-pending.spec.js">notes-pending.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/03/test/test.html">Tests</a></strong>:
-Continue tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application.</p><ul><li><a href="./chapters/03/test/js/spec/collections/notes.spec.js">collections/notes.spec.js</a>:
-Tests the collection <a href="./notes/app/js/app/collections/notes.js"><code>App.Collections.Notes</code></a>.</li><li><a href="./chapters/03/test/js/spec/views/note-view.spec.js">views/note-view.spec.js</a>:
+Continue tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application.</p><ul><li><a href="./notes/test/js/spec/collections/notes.spec.js">collections/notes.spec.js</a>:
+Tests the collection <a href="./notes/app/js/app/collections/notes.js"><code>App.Collections.Notes</code></a>.</li><li><a href="./notes/test/js/spec/views/note-view.spec.js">views/note-view.spec.js</a>:
 Tests the view <a href="./notes/app/js/app/views/note-view.js"><code>App.Views.NoteView</code></a>,
 which renders model <a href="http://daringfireball.net/projects/markdown/">Markdown</a>
 data into HTML.</li></ul></li></ul>
@@ -265,9 +276,9 @@ data into HTML.</li></ul></li></ul>
 <ul><li><p><strong><a href="./chapters/04/test/test-sinon.html">Sinon.JS Spies</a></strong>: Various test uses
 for Sinon.JS <a href="http://sinonjs.org/docs/#spies">spies</a>.</p><ul><li><p><a href="./chapters/04/test/js/spec/sinon.spec.js">sinon.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/04/test/test.html">Tests</a></strong>:
 Tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application that use
-Sinon.JS spies.</p><ul><li><a href="./chapters/04/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
+Sinon.JS spies.</p><ul><li><a href="./notes/test/js/spec/views/note-nav.spec.js">views/note-nav.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/note-nav.js"><code>App.Views.NoteNav</code></a>
-view, which mediates events for the single page navigation menu bar.</li><li><a href="./chapters/04/test/js/spec/views/note.spec.js">views/note.spec.js</a>:
+view, which mediates events for the single page navigation menu bar.</li><li><a href="./notes/test/js/spec/views/note.spec.js">views/note.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/note.js"><code>App.Views.Note</code></a>
 view, which wraps all of the other single note views and model.</li></ul></li></ul>
 
@@ -277,7 +288,7 @@ view, which wraps all of the other single note views and model.</li></ul></li></
 Sinon.JS <a href="http://sinonjs.org/docs/#stubs">stubs</a>.</p><ul><li><p><a href="./chapters/05/test/js/spec/stubs.spec.js">stubs.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/05/test/test-mocks.html">Sinon.JS Mocks</a></strong>: Tests using
 Sinon.JS <a href="http://sinonjs.org/docs/#mocks">mocks</a>.</p><ul><li><p><a href="./chapters/05/test/js/spec/mocks.spec.js">mocks.spec.js</a></p></li></ul></li><li><p><strong><a href="./chapters/05/test/test.html">Tests</a></strong>:
 Tests for the <strong><a href="./notes/app/index.html">Notes</a></strong> Backbone.js application with Sinon.JS
-stubs and mocks.</p><ul><li><a href="./chapters/05/test/js/spec/views/notes-item.spec.js">views/notes-item.spec.js</a>:
+stubs and mocks.</p><ul><li><a href="./notes/test/js/spec/views/notes-item.spec.js">views/notes-item.spec.js</a>:
 Tests the <a href="./notes/app/js/app/views/notes-item.js"><code>App.Views.NotesItem</code></a>
 view, which displays a table row for a single note in the &quot;all notes&quot;
 list.</li><li><a href="./chapters/05/test/js/spec/routers/router.spec.js">routers/router.spec.js</a>:
@@ -335,7 +346,7 @@ have a Karma test runner implemented) -- like Chrome and Firefox.</p>
 this project. You can run all of the tests using PhantomJS alone in Karma
 with the following command:</p>
 
-<pre><code>$ ./node_modules/.bin/grunt karma:fast</code></pre>
+<pre><code>$ node_modules/.bin/grunt karma:fast</code></pre>
 
 <h4>Development Mode</h4>
 
@@ -343,7 +354,7 @@ with the following command:</p>
 engine running (which we&#39;ve configured to use PhantomJS, Chrome and Firefox)
 with:</p>
 
-<pre><code>$ ./node_modules/.bin/grunt karma:dev</code></pre>
+<pre><code>$ node_modules/.bin/grunt karma:dev</code></pre>
 
 <p>This process then waits for test invocations, which you can do by opening a
 <em>second terminal</em> in the same directory and typing:</p>
@@ -513,27 +524,50 @@ the development NPM dependencies:</p>
 and tests:</p>
 
 <pre><code># Run style checks for server, client, and both.
-$ ./node_modules/.bin/grunt jshint:server
-$ ./node_modules/.bin/grunt jshint:client
-$ ./node_modules/.bin/grunt jshint
+$ node_modules/.bin/grunt jshint:server
+$ node_modules/.bin/grunt jshint:client
+$ node_modules/.bin/grunt jshint
 
 # Run headless tests for the application, individual chapters, all chapters
 # as one big test, and all of these together.
-$ ./node_modules/.bin/grunt test:app
-$ ./node_modules/.bin/grunt test:rest
-$ ./node_modules/.bin/grunt test:chaps
-$ ./node_modules/.bin/grunt test:chaps-all
-$ ./node_modules/.bin/grunt test
+$ node_modules/.bin/grunt test:app
+$ node_modules/.bin/grunt test:rest
+$ node_modules/.bin/grunt test:chaps
+$ node_modules/.bin/grunt test:chaps-all
+$ node_modules/.bin/grunt test
 
 # Run all style checks and headless tests.
-$ ./node_modules/.bin/grunt check</code></pre>
+$ node_modules/.bin/grunt check</code></pre>
 
 <p>The file &quot;README.md&quot; is transformed from markdown into the HTML page
 &quot;index.html&quot;, and can be compiled once, or watched for changes with the
 following commands.</p>
 
-<pre><code>$ ./node_modules/.bin/grunt jade:docs
-$ ./node_modules/.bin/grunt watch:docs</code></pre>
+<pre><code>$ node_modules/.bin/grunt jade:docs
+$ node_modules/.bin/grunt watch:docs</code></pre>
+
+<h3>Vendor Libs, Syncing</h3>
+
+<p>We internally use bower to get / upgrade our vendor libraries. To update these,
+do the following:</p>
+
+<pre><code>$ node_modules/.bin/bower install
+$ node_modules/.bin/grunt build:vendor</code></pre>
+
+<p>We internall synchronize the <code>notes</code> application and test files to <code>notes-rest</code>,
+overwriting the latter. To do this:</p>
+
+<pre><code>$ node_modules/.bin/grunt build:notes-rest</code></pre>
+
+<p><strong>Note</strong>: This <strong>overwrites</strong> files in <code>notes-rest</code>, so don&#39;t invoke this if
+you intend to change those files!</p>
+
+<p>Finally, we have a lot of other builds (templates, docs, etc), that are all
+aggregated as part of:</p>
+
+<pre><code>$ node_modules/.bin/grunt build</code></pre>
+
+<p>in addition to the tasks described above.</p>
 
 <h3>Contributions</h3>
 
@@ -542,13 +576,13 @@ most welcome. Please file a GitHub
 <a href="https://github.com/ryan-roemer/backbone-testing/issues">issue</a> or pull request
 for any changes. Pull requests should be able to pass</p>
 
-<pre><code>$ ./node_modules/.bin/grunt check</code></pre>
+<pre><code>$ node_modules/.bin/grunt check</code></pre>
 
 <p>without any errors.</p><h2>History</h2>
 
 <h3>Current</h3>
 
-<ul><li><strong>Docs</strong>: Added Jasny Bootstrap for offcanvas menu.</li></ul>
+<ul><li><strong>Windows</strong>: Implements full Windows compatibility.</li><li><strong>Docs</strong>: Added Jasny Bootstrap for offcanvas menu.</li></ul>
 
 <h3>v0.0.7</h3>
 
@@ -591,10 +625,10 @@ the book remains correct - only the code sample has been updated.
         <li class="nav-item"><a></a></li>
       </div>
     </div>
-    <script src="vendor/jquery.min.js"></script>
-    <script src="vendor/underscore.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/bootstrap-jasny/js/jasny-bootstrap.min.js"></script>
+    <script src="notes/app/js/lib/jquery.min.js"></script>
+    <script src="notes/app/js/lib/underscore.min.js"></script>
+    <script src="notes/app/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="notes/app/js/lib/bootstrap-jasny/js/jasny-bootstrap.min.js"></script>
     <script src="doc/site.js"></script>
     <script>
       var _gaq = _gaq || [];

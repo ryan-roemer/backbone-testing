@@ -48,24 +48,15 @@
     "node": ">0.8.x"
   },
   "scripts": {
-    "everything": "npm run-script check && npm run-script build",
     "start": "nodemon notes-rest/server.js",
-    "mongo-wipe": "rm -rf ./mongodb_data && mkdir ./mongodb_data",
-    "mongo-start": "mkdir -p ./mongodb_data && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=./mongodb_data --logpath=./mongodb_data/mongodb.log",
+    "test": "node_modules/.bin/grunt check",
+    "mongo-wipe": "rm -rf mongodb_data && mkdir mongodb_data",
+    "mongo-start": "mkdir -p mongodb_data && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
+    "mongo-start-win": "IF not exist mongodb_data ( mkdir mongodb_data ) ELSE ( echo '' ) && mongod --port=27027 --bind_ip=127.0.0.1 --dbpath=mongodb_data --logpath=mongodb_data/mongodb.log",
     "mongo-pids": "ps ax | egrep -v 'sh -c|grep' | grep 'mongod --port=27027' | egrep -o '^[0-9]+' || echo None.",
-    "todo": "grep -Rn 'TODO' README.md notes-rest/server.js notes/test/js/spec notes/app/js/app notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
-    "check": "./node_modules/.bin/grunt check",
-    "style": "./node_modules/.bin/grunt jshint",
-    "style-server": "./node_modules/.bin/grunt jshint:server",
-    "style-client": "./node_modules/.bin/grunt jshint:client",
-    "test": "./node_modules/.bin/grunt test",
-    "test-app": "./node_modules/.bin/grunt test:app",
-    "test-chaps": "./node_modules/.bin/grunt test:chaps",
-    "test-chaps-all": "./node_modules/.bin/grunt test:chaps-all",
-    "test-rest": "./node_modules/.bin/grunt test:rest",
+    "check": "node_modules/.bin/grunt check",
     "test-server": "http-server -p 4322",
-    "docs": "./node_modules/.bin/grunt jade",
-    "build": "npm run-script build-tmpl && npm run-script docs",
-    "build-tmpl": "./dev/build-templates.js > notes/app/js/app/templates/templates.js"
+    "todo": "grep -Rn 'TODO' README.md notes-rest/server.js notes/test/js/spec notes/app/js/app notes-rest/app/js/app-rest chapters/*/test/js/spec doc",
+    "release": "node_modules/.bin/grunt build && node_modules/.bin/grunt check"
   }
 }

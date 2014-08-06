@@ -1,1 +1,0 @@
-../../../../../../notes/test/js/spec/views/note-view.spec.js

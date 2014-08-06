@@ -177,9 +177,20 @@ and install all of the project libraries:
     $ npm install
 
 To run the sample server application, you will need two terminal windows.
+The binary `mongod` *must* be available from the shell, so may need to
+augment your `PATH` variable. For example, on Windows, the following was
+needed for some installations:
+
+    # May need to run console as Administator for just this command.
+    $ setx PATH "%PATH%;C:\Program Files\MongoDB 2.6 Standard\bin" /M
+
 In the first window, start up MongoDB:
 
+    # Linux / Mac
     $ npm run-script mongo-start
+
+    # Windows (with `mongod` available from `PATH`)
+    $ npm run-script mongo-start-win
 
 In the second window, start up the Express server:
 
@@ -200,7 +211,7 @@ console environment variables:
 * `ADDR`: Express server host address (default `127.0.0.1`).
 * `PORT`: Express server port (default `4321`).
 
-For example:
+For example, on a Mac:
 
     $ export PORT=4323; npm start
 
@@ -231,10 +242,10 @@ separated by number. We also provide a driver page for (nearly) all of
 
 * **[Tests](./chapters/02/test/test.html)**:
   Initial simple tests for a Backbone.js application.
-    * [namespace.spec.js](./chapters/02/test/js/spec/namespace.spec.js):
+    * [namespace.spec.js](./notes/test/js/spec/namespace.spec.js):
       Verifies [namespace](./notes/app/js/app/namespace.js)
       objects are correctly setup.
-    * [models/note.spec.js](./chapters/02/test/js/spec/models/note.spec.js):
+    * [models/note.spec.js](./notes/test/js/spec/models/note.spec.js):
       Tests the application model
       [`App.Models.Note`](./notes/app/js/app/models/note.js).
 
@@ -282,9 +293,9 @@ separated by number. We also provide a driver page for (nearly) all of
 
 * **[Tests](./chapters/03/test/test.html)**:
   Continue tests for the **[Notes][notes_demo]** Backbone.js application.
-    * [collections/notes.spec.js](./chapters/03/test/js/spec/collections/notes.spec.js):
+    * [collections/notes.spec.js](./notes/test/js/spec/collections/notes.spec.js):
       Tests the collection [`App.Collections.Notes`](./notes/app/js/app/collections/notes.js).
-    * [views/note-view.spec.js](./chapters/03/test/js/spec/views/note-view.spec.js):
+    * [views/note-view.spec.js](./notes/test/js/spec/views/note-view.spec.js):
       Tests the view [`App.Views.NoteView`](./notes/app/js/app/views/note-view.js),
       which renders model [Markdown][markdown]
       data into HTML.
@@ -298,10 +309,10 @@ separated by number. We also provide a driver page for (nearly) all of
 * **[Tests](./chapters/04/test/test.html)**:
   Tests for the **[Notes][notes_demo]** Backbone.js application that use
   Sinon.JS spies.
-    * [views/note-nav.spec.js](./chapters/04/test/js/spec/views/note-nav.spec.js):
+    * [views/note-nav.spec.js](./notes/test/js/spec/views/note-nav.spec.js):
       Tests the [`App.Views.NoteNav`](./notes/app/js/app/views/note-nav.js)
       view, which mediates events for the single page navigation menu bar.
-    * [views/note.spec.js](./chapters/04/test/js/spec/views/note.spec.js):
+    * [views/note.spec.js](./notes/test/js/spec/views/note.spec.js):
       Tests the [`App.Views.Note`](./notes/app/js/app/views/note.js)
       view, which wraps all of the other single note views and model.
 
@@ -318,7 +329,7 @@ separated by number. We also provide a driver page for (nearly) all of
 * **[Tests](./chapters/05/test/test.html)**:
   Tests for the **[Notes][notes_demo]** Backbone.js application with Sinon.JS
   stubs and mocks.
-    * [views/notes-item.spec.js](./chapters/05/test/js/spec/views/notes-item.spec.js):
+    * [views/notes-item.spec.js](./notes/test/js/spec/views/notes-item.spec.js):
       Tests the [`App.Views.NotesItem`](./notes/app/js/app/views/notes-item.js)
       view, which displays a table row for a single note in the "all notes"
       list.
@@ -374,14 +385,14 @@ We use a Grunt plugin `grunt-karma` to help configure Karma for the tests in
 this project. You can run all of the tests using PhantomJS alone in Karma
 with the following command:
 
-    $ ./node_modules/.bin/grunt karma:fast
+    $ node_modules/.bin/grunt karma:fast
 
 #### Development Mode
 Alternately, you can switch to "development mode" which keeps the Karma test
 engine running (which we've configured to use PhantomJS, Chrome and Firefox)
 with:
 
-    $ ./node_modules/.bin/grunt karma:dev
+    $ node_modules/.bin/grunt karma:dev
 
 This process then waits for test invocations, which you can do by opening a
 *second terminal* in the same directory and typing:
@@ -607,27 +618,50 @@ From there, there are various [Grunt][grunt] script helpers for style checking
 and tests:
 
     # Run style checks for server, client, and both.
-    $ ./node_modules/.bin/grunt jshint:server
-    $ ./node_modules/.bin/grunt jshint:client
-    $ ./node_modules/.bin/grunt jshint
+    $ node_modules/.bin/grunt jshint:server
+    $ node_modules/.bin/grunt jshint:client
+    $ node_modules/.bin/grunt jshint
 
     # Run headless tests for the application, individual chapters, all chapters
     # as one big test, and all of these together.
-    $ ./node_modules/.bin/grunt test:app
-    $ ./node_modules/.bin/grunt test:rest
-    $ ./node_modules/.bin/grunt test:chaps
-    $ ./node_modules/.bin/grunt test:chaps-all
-    $ ./node_modules/.bin/grunt test
+    $ node_modules/.bin/grunt test:app
+    $ node_modules/.bin/grunt test:rest
+    $ node_modules/.bin/grunt test:chaps
+    $ node_modules/.bin/grunt test:chaps-all
+    $ node_modules/.bin/grunt test
 
     # Run all style checks and headless tests.
-    $ ./node_modules/.bin/grunt check
+    $ node_modules/.bin/grunt check
 
 The file "README.md" is transformed from markdown into the HTML page
 "index.html", and can be compiled once, or watched for changes with the
 following commands.
 
-    $ ./node_modules/.bin/grunt jade:docs
-    $ ./node_modules/.bin/grunt watch:docs
+    $ node_modules/.bin/grunt jade:docs
+    $ node_modules/.bin/grunt watch:docs
+
+### Vendor Libs, Syncing
+We internally use bower to get / upgrade our vendor libraries. To update these,
+do the following:
+
+    $ node_modules/.bin/bower install
+    $ node_modules/.bin/grunt build:vendor
+
+We internall synchronize the `notes` application and test files to `notes-rest`,
+overwriting the latter. To do this:
+
+    $ node_modules/.bin/grunt build:notes-rest
+
+**Note**: This **overwrites** files in `notes-rest`, so don't invoke this if
+you intend to change those files!
+
+Finally, we have a lot of other builds (templates, docs, etc), that are all
+aggregated as part of:
+
+    $ node_modules/.bin/grunt build
+
+in addition to the tasks described above.
+
 
 ### Contributions
 Bugs, issues and fixes for any of the application or test code examples are
@@ -635,6 +669,6 @@ most welcome. Please file a GitHub
 [issue](https://github.com/ryan-roemer/backbone-testing/issues) or pull request
 for any changes. Pull requests should be able to pass
 
-    $ ./node_modules/.bin/grunt check
+    $ node_modules/.bin/grunt check
 
 without any errors.

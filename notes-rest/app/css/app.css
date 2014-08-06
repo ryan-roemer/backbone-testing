@@ -1,0 +1,156 @@
+/* Body */
+body {
+  min-width: 320px;
+}
+
+/* Nav bar */
+#note-nav a span {
+  opacity: 0.85;
+}
+
+/* (Sort-of) iPhone Portrait (usually 320px). */
+@media (max-width: 390px) {
+  .navbar-search .search-query {
+    width: 110px;
+  }
+  .hidden-phone-portrait {
+    display: none !important;
+  }
+}
+
+/* Notes View - Table Listing of Notes */
+table#notes-list {
+  width: 100%;
+}
+table#notes-list td {
+  padding: 0.5em;
+  vertical-align: middle;
+  border-right: none;
+  border-left: none;
+}
+table#notes-list td .note-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #3a3a3a;
+  cursor: pointer;
+}
+table#notes-list td.note-action {
+  width: 95px;
+}
+
+/* From: http://stackoverflow.com/questions/18729638 */
+.table-curved {
+  border-collapse: separate;
+}
+.table-curved {
+  border: solid #dddddd 1px;
+  border-radius: 6px;
+}
+.table-curved td, .table-curved th {
+  border-left: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.table-curved th,
+table#notes-list tr.notes-new td {
+  border-top: none;
+}
+.table-curved th:first-child {
+  border-radius: 6px 0 0 0;
+}
+.table-curved th:last-child {
+  border-radius: 0 6px 0 0;
+}
+.table-curved th:only-child{
+  border-radius: 6px 6px 0 0;
+}
+.table-curved tr:last-child td:first-child {
+  border-radius: 0 0 0 6px;
+}
+.table-curved tr:last-child td:last-child {
+  border-radius: 0 0 6px 0;
+}
+
+/* Notes View - "Add new note" input. */
+input#note-new-input {
+  width: 100%;
+  border: none;
+  background: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+input#note-new-input::-webkit-input-placeholder {
+  font-style: italic;
+}
+input#note-new-input:-moz-placeholder {
+  font-style: italic;
+  color: #a9a9a9;
+}
+
+input#input-title {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+textarea#input-text {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+/*
+ * Copy of navbar-form in non-responsive form.
+ */
+.navbar-form-nonresp {
+  padding-top: 8px;
+  padding-right: 15px;
+}
+.navbar-form-nonresp .form-group {
+  margin-bottom: 0px;
+}
+
+/*
+ * Non-responsive Navbar
+ *
+ * From: http://getbootstrap.com/examples/non-responsive/non-responsive.css
+ */
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+.navbar-toggle {
+  display: none;
+}
+.navbar-collapse {
+  border-top: 0;
+}
+
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding: 15px;
+}
+
+/* Redeclare since we override the float above */
+.navbar-nav.navbar-right {
+  float: right;
+}
