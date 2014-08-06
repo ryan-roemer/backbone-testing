@@ -189,7 +189,7 @@ In the first window, start up MongoDB:
     # Linux / Mac
     $ npm run-script mongo-start
 
-    # Windows
+    # Windows (with `mongod` available from `PATH`)
     $ npm run-script mongo-start-win
 
 In the second window, start up the Express server:
@@ -211,7 +211,7 @@ console environment variables:
 * `ADDR`: Express server host address (default `127.0.0.1`).
 * `PORT`: Express server port (default `4321`).
 
-For example:
+For example, on a Mac:
 
     $ export PORT=4323; npm start
 

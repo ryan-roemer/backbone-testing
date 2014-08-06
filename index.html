@@ -185,12 +185,19 @@ and install all of the project libraries:</p>
 <pre><code>$ npm install</code></pre>
 
 <p>To run the sample server application, you will need two terminal windows.
-In the first window, start up MongoDB:</p>
+The binary <code>mongod</code> <em>must</em> be available from the shell, so may need to
+augment your <code>PATH</code> variable. For example, on Windows, the following was
+needed for some installations:</p>
+
+<pre><code># May need to run console as Administator for just this command.
+$ setx PATH &quot;%PATH%;C:\Program Files\MongoDB 2.6 Standard\bin&quot; /M</code></pre>
+
+<p>In the first window, start up MongoDB:</p>
 
 <pre><code># Linux / Mac
 $ npm run-script mongo-start
 
-# Windows
+# Windows (with `mongod` available from `PATH`)
 $ npm run-script mongo-start-win</code></pre>
 
 <p>In the second window, start up the Express server:</p>
@@ -208,7 +215,7 @@ console environment variables:</p>
 
 <ul><li><code>MONGO_ADDR</code>: MongoDB host address (default <code>127.0.0.1</code>).</li><li><code>MONGO_PORT</code>: MongoDB port (default <code>27027</code>).</li><li><code>ADDR</code>: Express server host address (default <code>127.0.0.1</code>).</li><li><code>PORT</code>: Express server port (default <code>4321</code>).</li></ul>
 
-<p>For example:</p>
+<p>For example, on a Mac:</p>
 
 <pre><code>$ export PORT=4323; npm start</code></pre>
 
