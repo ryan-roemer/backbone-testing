@@ -181,6 +181,7 @@ module.exports = function (grunt) {
     karma: {
       options: {
         frameworks: ["mocha"],
+        reporters: ["mocha"],
         runnerPort: 9999,
         files: [
           // Test Libraries
@@ -231,23 +232,19 @@ module.exports = function (grunt) {
       },
       fast: {
         singleRun: true,
-        browsers: ["PhantomJS"],
-        reporters: "mocha"
+        browsers: ["PhantomJS"]
       },
       ci: {
         singleRun: true,
-        browsers: ["PhantomJS", "Firefox"],
-        reporters: "mocha"
+        browsers: ["PhantomJS", "Firefox"]
       },
       all: {
         singleRun: true,
-        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"],
-        reporters: "mocha"
+        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"]
       },
       dev: {
         // Invoke with `karma run` in another terminal.
-        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"],
-        reporters: "mocha"
+        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"]
       }
     },
 
