@@ -8,10 +8,12 @@ var buildTmpl = require("./dev/build-templates");
 // See: https://github.com/browserstack/api
 var BS_ENVS = {
   // Already tested in Travis.
-  // bs_firefox: {
-  //   base: "BrowserStack",
-  //   browser: "firefox"
-  // },
+  bs_firefox: {
+    base: "BrowserStack",
+    browser: "firefox",
+    os: "Windows",
+    os_version: "7"
+  }
   // TODO: ENABLE.
   // bs_chrome: {
   //   base: "BrowserStack",
@@ -37,13 +39,13 @@ var BS_ENVS = {
   //   os: "Windows",
   //   os_version: "7"
   // },
-  bs_ie_11: {
-    base: "BrowserStack",
-    browser: "ie",
-    browser_version: 11.0,
-    os: "Windows",
-    os_version: "7"
-  }
+  // bs_ie_11: {
+  //   base: "BrowserStack",
+  //   browser: "ie",
+  //   browser_version: 11.0,
+  //   os: "Windows",
+  //   os_version: "7"
+  // }
 };
 
 // SauceLabs tag.
