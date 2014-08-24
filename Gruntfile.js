@@ -1,5 +1,58 @@
 var buildTmpl = require("./dev/build-templates");
 
+
+// ----------------------------------------------------------------------------
+// Globals
+// ----------------------------------------------------------------------------
+// Browserstack.
+// See: https://github.com/browserstack/api
+var BS_ENVS = {
+  // Already tested in Travis.
+  // bs_firefox: {
+  //   base: "BrowserStack",
+  //   browser: "firefox"
+  // },
+  // TODO: ENABLE.
+  // bs_chrome: {
+  //   base: "BrowserStack",
+  //   browser: "chrome"
+  // },
+  // bs_safari: {
+  //   base: "BrowserStack",
+  //   browser: "safari",
+  //   os: "OS X"
+  //   os_version: "Lion"
+  // },
+  // bs_ie_9: {
+  //   base: "BrowserStack",
+  //   browser: "internet explorer",
+  //   browser_version: 9.0,
+  //   os: "Windows",
+  //   os_version: "7"
+  // },
+  // bs_ie_10: {
+  //   base: "BrowserStack",
+  //   browser: "internet explorer",
+  //   browser_version: 10.0,
+  //   os: "Windows",
+  //   os_version: "7"
+  // },
+  bs_ie_11: {
+    base: "BrowserStack",
+    browser: "ie",
+    browser_version: 11.0,
+    os: "Windows",
+    os_version: "7"
+  }
+};
+
+// SauceLabs tag.
+var BS_BRANCH = process.env.TRAVIS_BRANCH || "local";
+var BS_TAG = process.env.BROWSER_STACK_USERNAME + "@" + BS_BRANCH;
+
+// ----------------------------------------------------------------------------
+// Configuration
+// ----------------------------------------------------------------------------
 module.exports = function (grunt) {
 
   // Strip comments from JsHint JSON files.
@@ -245,6 +298,14 @@ module.exports = function (grunt) {
       dev: {
         // Invoke with `karma run` in another terminal.
         browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"]
+      },
+      bs: {
+        project: "Backbone.js Testing",
+        name: "Karma JS tests",
+        build: BS_TAG,
+        captureTimeout: 0, // Pass through to BS.
+        customLaunchers: BS_ENVS,
+        browsers: Object.keys(BS_ENVS)
       }
     },
 
