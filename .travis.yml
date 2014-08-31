@@ -2,10 +2,6 @@ language: node_js
 node_js:
   - 0.10
 
-before_install:
-  # http://blog.npmjs.org/post/78085451721/npms-self-signed-certificate-is-no-more
-  - npm config set ca ""
-
 before_script:
   # For Firefox support.
   - export DISPLAY=:99.0
@@ -15,3 +11,9 @@ script:
   - npm run-script check
   - node_modules/.bin/mocha-phantomjs notes/test/test.html
   - node_modules/.bin/grunt karma:ci
+  - node_modules/.bin/grunt karma:sauce
+
+env:
+  global:
+    - secure: UDRdz65BGkiFPrTNbMUBaphFD9LJPB2bBOJ5fazgkZqms1VFA6tApPnYHnGrC3YUttW9GJPx2Y937HDZBDzv3CkglqZXo4wx+bBs3O/3LYvGu9jp3hCIpeG5AzqIs1hQvITB8YKtltBpFOptte6UHNkZlNeQl8X1THvT9dxFdCA=
+    - secure: W07zukbZKgNJMNaWUDDtScwAOScqpJfe7tBlh2GFBhVXwmzYKsVB+4qdl9JLFnWvDaHgU8U65M6GueqInjm8dz9rgsn9m5rXDQhx8KfhiRLHZq4tYE9UKBKW+cDK0s4qArUeUwTwi/UtGpfZHKlBrJohueC+dWAjVbNBWmMGQjY=
