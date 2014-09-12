@@ -1,5 +1,8 @@
 ## History
 
+### Current
+* **Sauce Labs**: Add Sauce Labs integration via Karma and Travis CI.
+
 ### v0.0.8
 * **Windows**: Implements full Windows compatibility.
 * **Docs**: Added Jasny Bootstrap for offcanvas menu.
