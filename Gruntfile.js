@@ -48,7 +48,7 @@ var BS_ENVS = {
   // }
 };
 
-// SauceLabs tag.
+// BrowserStack tag.
 var BS_BRANCH = process.env.TRAVIS_BRANCH || "local";
 var BS_TAG = process.env.BROWSER_STACK_USERNAME + "@" + BS_BRANCH;
 
