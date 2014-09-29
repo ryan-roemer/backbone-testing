@@ -1,6 +1,7 @@
 ## History
 
 ### Current
+* **BrowserStack**: Add BrowserStack integration via Karma and Travis CI.
 * **Sauce Labs**: Add Sauce Labs integration via Karma and Travis CI.
 
 ### v0.0.8
