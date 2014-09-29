@@ -363,6 +363,9 @@ module.exports = function (grunt) {
           name: BROWSER_STACK_TAG,
           build: BUILD
         },
+        browserDisconnectTimeout: 0, // Pass through to BS.
+        browserDisconnectTolerance: 1, // default 0
+        browserNoActivityTimeout: 0, // Pass through to BS.
         captureTimeout: 0, // Pass through to BS.
         customLaunchers: BS_ENVS,
         browsers: Object.keys(BS_ENVS)
@@ -378,7 +381,12 @@ module.exports = function (grunt) {
         // Timeouts: Allow "n" minutes before saying "good enough". See also:
         // https://github.com/angular/angular.js/blob/master/
         //         karma-shared.conf.js
-        captureTimeout: 0, // Pass through to SL.
+        // http://oligofren.wordpress.com/2014/05/27/
+        //        running-karma-tests-on-browserstack/
+        browserDisconnectTimeout: 0, // Pass through to BS.
+        browserDisconnectTolerance: 1, // default 0
+        browserNoActivityTimeout: 0, // Pass through to BS.
+        captureTimeout: 0, // Pass through to BS.
         customLaunchers: SAUCE_ENVS,
         browsers: Object.keys(SAUCE_ENVS)
       }
