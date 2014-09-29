@@ -578,7 +578,7 @@ as follows:
   the [Apache v2.0](https://github.com/twitter/bootstrap/blob/master/LICENSE)
   license.
 
-* [Jasny Bootstrap][bootstrap-jasny] is Copyright Twitter, Inc. and Jasny BV
+* [Jasny Bootstrap][jasny-bootstrap] is Copyright Twitter, Inc. and Jasny BV
   and licensed under the
   [Apache v2.0](https://github.com/jasny/bootstrap/blob/master/LICENSE)
   license.
@@ -595,7 +595,7 @@ as follows:
   license.
 
 [bootstrap]: https://github.com/twitter/bootstrap
-[bootstrap-jasny]: https://github.com/jasny/bootstrap/
+[jasny-bootstrap]: https://github.com/jasny/bootstrap/
 [jquery]: https://github.com/jquery/jquery
 [json_js]: https://github.com/douglascrockford/JSON-js
 [grunt]: http://gruntjs.com/

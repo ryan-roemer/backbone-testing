@@ -181,8 +181,8 @@ module.exports = function (grunt) {
             ]
           },
           {
-            dest: "<%= vendorAppPath %>/bootstrap-jasny",
-            cwd: "<%= bowerPath %>/bootstrap-jasny/dist",
+            dest: "<%= vendorAppPath %>/jasny-bootstrap",
+            cwd: "<%= bowerPath %>/jasny-bootstrap/dist",
             expand: true,
             src: ["**"]
           },
