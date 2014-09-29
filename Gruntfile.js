@@ -25,19 +25,21 @@ var BS_ENVS = {
     os: "OS X",
     os_version: "Lion"
   },
-  bs_safari: {
-    base: "BrowserStack",
-    browser: "safari",
-    os: "OS X",
-    os_version: "Lion"
-  },
-  bs_ie_9: {
-    base: "BrowserStack",
-    browser: "ie",
-    browser_version: "9.0",
-    os: "Windows",
-    os_version: "7"
-  },
+  // Hone down ones to run so we don't timeout.
+  // In future, parallelize these and SauceLabs builds.
+  // bs_safari: {
+  //   base: "BrowserStack",
+  //   browser: "safari",
+  //   os: "OS X",
+  //   os_version: "Lion"
+  // },
+  // bs_ie_9: {
+  //   base: "BrowserStack",
+  //   browser: "ie",
+  //   browser_version: "9.0",
+  //   os: "Windows",
+  //   os_version: "7"
+  // },
   bs_ie_10: {
     base: "BrowserStack",
     browser: "ie",
