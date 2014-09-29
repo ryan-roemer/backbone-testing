@@ -4,6 +4,11 @@ var buildTmpl = require("./dev/build-templates");
 // ----------------------------------------------------------------------------
 // Globals
 // ----------------------------------------------------------------------------
+// Build
+var BUILD = process.env.TRAVIS_BUILD_NUMBER ?
+  process.env.TRAVIS_BUILD_NUMBER + "@" + process.env.TRAVIS_COMMIT :
+  "local";
+
 // Browserstack.
 // See: https://github.com/browserstack/api
 var BS_ENVS = {
@@ -48,9 +53,10 @@ var BS_ENVS = {
   // }
 };
 
-// BrowserStack tag.
-var BS_BRANCH = process.env.TRAVIS_BRANCH || "local";
-var BS_TAG = process.env.BROWSER_STACK_USERNAME + "@" + BS_BRANCH;
+// Browser Stack
+var BROWSER_STACK_BRANCH = process.env.TRAVIS_BRANCH || "local";
+var BROWSER_STACK_TAG = process.env.BROWSER_STACK_USERNAME + "@" +
+  BROWSER_STACK_BRANCH;
 
 // ----------------------------------------------------------------------------
 // Globals
@@ -91,7 +97,7 @@ var SAUCE_ENVS = {
   }
 };
 
-// SauceLabs tag.
+// Sauce
 var SAUCE_BRANCH = process.env.TRAVIS_BRANCH || "local";
 var SAUCE_TAG = process.env.SAUCE_USERNAME + "@" + SAUCE_BRANCH;
 
@@ -349,8 +355,8 @@ module.exports = function (grunt) {
       },
       bs: {
         project: "Backbone.js Testing",
-        name: "Karma JS tests",
-        build: BS_TAG,
+        name: BROWSER_STACK_TAG,
+        build: BUILD,
         captureTimeout: 0, // Pass through to BS.
         customLaunchers: BS_ENVS,
         browsers: Object.keys(BS_ENVS)
