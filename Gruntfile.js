@@ -354,9 +354,12 @@ module.exports = function (grunt) {
         browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"]
       },
       bs: {
-        project: "Backbone.js Testing",
-        name: BROWSER_STACK_TAG,
-        build: BUILD,
+        singleRun: true,
+        browserStack: {
+          project: "Backbone.js Testing",
+          name: BROWSER_STACK_TAG,
+          build: BUILD
+        },
         captureTimeout: 0, // Pass through to BS.
         customLaunchers: BS_ENVS,
         browsers: Object.keys(BS_ENVS)
