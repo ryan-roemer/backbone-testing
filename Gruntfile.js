@@ -11,46 +11,47 @@ var BUILD = process.env.TRAVIS_BUILD_NUMBER ?
 
 // Browserstack.
 // See: https://github.com/browserstack/api
+// See: https://www.browserstack.com/list-of-browsers-and-platforms
 var BS_ENVS = {
-  // Already tested in Travis.
   bs_firefox: {
     base: "BrowserStack",
     browser: "firefox",
     os: "Windows",
     os_version: "7"
+  },
+  bs_chrome: {
+    base: "BrowserStack",
+    browser: "chrome",
+    os: "OS X",
+    os_version: "Lion"
+  },
+  bs_safari: {
+    base: "BrowserStack",
+    browser: "safari",
+    os: "OS X",
+    os_version: "Lion"
+  },
+  bs_ie_9: {
+    base: "BrowserStack",
+    browser: "ie",
+    browser_version: "9.0",
+    os: "Windows",
+    os_version: "7"
+  },
+  bs_ie_10: {
+    base: "BrowserStack",
+    browser: "ie",
+    browser_version: "10.0",
+    os: "Windows",
+    os_version: "7"
+  },
+  bs_ie_11: {
+    base: "BrowserStack",
+    browser: "ie",
+    browser_version: "11.0",
+    os: "Windows",
+    os_version: "7"
   }
-  // TODO: ENABLE.
-  // bs_chrome: {
-  //   base: "BrowserStack",
-  //   browser: "chrome"
-  // },
-  // bs_safari: {
-  //   base: "BrowserStack",
-  //   browser: "safari",
-  //   os: "OS X"
-  //   os_version: "Lion"
-  // },
-  // bs_ie_9: {
-  //   base: "BrowserStack",
-  //   browser: "internet explorer",
-  //   browser_version: 9.0,
-  //   os: "Windows",
-  //   os_version: "7"
-  // },
-  // bs_ie_10: {
-  //   base: "BrowserStack",
-  //   browser: "internet explorer",
-  //   browser_version: 10.0,
-  //   os: "Windows",
-  //   os_version: "7"
-  // },
-  // bs_ie_11: {
-  //   base: "BrowserStack",
-  //   browser: "ie",
-  //   browser_version: 11.0,
-  //   os: "Windows",
-  //   os_version: "7"
-  // }
 };
 
 // Browser Stack

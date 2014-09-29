@@ -7,13 +7,16 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
+env:
+  global:
+    - secure: UDRdz65BGkiFPrTNbMUBaphFD9LJPB2bBOJ5fazgkZqms1VFA6tApPnYHnGrC3YUttW9GJPx2Y937HDZBDzv3CkglqZXo4wx+bBs3O/3LYvGu9jp3hCIpeG5AzqIs1hQvITB8YKtltBpFOptte6UHNkZlNeQl8X1THvT9dxFdCA=
+    - secure: W07zukbZKgNJMNaWUDDtScwAOScqpJfe7tBlh2GFBhVXwmzYKsVB+4qdl9JLFnWvDaHgU8U65M6GueqInjm8dz9rgsn9m5rXDQhx8KfhiRLHZq4tYE9UKBKW+cDK0s4qArUeUwTwi/UtGpfZHKlBrJohueC+dWAjVbNBWmMGQjY=
+    - secure: IT8jMoDJL1QysO4+UT5C1bUPWm6nxjicCCrN21N2/o8OcxZZEGYD/52/y9jWzClAjSmnenVOf+mT8kTvQHOfp95nL2EUPmHVtngzbuqrncRt+zQSIme255XUTksdR1tPI8fZ3nfMW+iZaPA09kLphB8Q7nbarOM6dXZdwaSydPM=
+    - secure: FiticJKWOlcxW4ze9h2sfRjY7RYAgnws87KMzCPEOrduAvpJFqCoGIsnHa7ZAL8LgLSiZOAl68R7lL4R6/lP9BHomqLTygj80ir4ix4HVf1ejIsbOUHxRxu/W+XbiTe5CPphrQhdOydISs2942mey/QtM+2l1w+V7mEGqdVg6s4=
+
 script:
   - npm run-script check
   - node_modules/.bin/mocha-phantomjs notes/test/test.html
   - node_modules/.bin/grunt karma:ci
   - node_modules/.bin/grunt karma:sauce
-
-env:
-  global:
-    - secure: UDRdz65BGkiFPrTNbMUBaphFD9LJPB2bBOJ5fazgkZqms1VFA6tApPnYHnGrC3YUttW9GJPx2Y937HDZBDzv3CkglqZXo4wx+bBs3O/3LYvGu9jp3hCIpeG5AzqIs1hQvITB8YKtltBpFOptte6UHNkZlNeQl8X1THvT9dxFdCA=
-    - secure: W07zukbZKgNJMNaWUDDtScwAOScqpJfe7tBlh2GFBhVXwmzYKsVB+4qdl9JLFnWvDaHgU8U65M6GueqInjm8dz9rgsn9m5rXDQhx8KfhiRLHZq4tYE9UKBKW+cDK0s4qArUeUwTwi/UtGpfZHKlBrJohueC+dWAjVbNBWmMGQjY=
+  - node_modules/.bin/grunt karma:bs
