@@ -1,5 +1,66 @@
 var buildTmpl = require("./dev/build-templates");
 
+
+// ----------------------------------------------------------------------------
+// Globals
+// ----------------------------------------------------------------------------
+// Build
+var BUILD = process.env.TRAVIS_BUILD_NUMBER ?
+  process.env.TRAVIS_BUILD_NUMBER + "@" + process.env.TRAVIS_COMMIT :
+  "local";
+
+// Browserstack.
+// See: https://github.com/browserstack/api
+// See: https://www.browserstack.com/list-of-browsers-and-platforms
+var BS_ENVS = {
+  bs_firefox: {
+    base: "BrowserStack",
+    browser: "firefox",
+    os: "Windows",
+    os_version: "7"
+  },
+  bs_chrome: {
+    base: "BrowserStack",
+    browser: "chrome",
+    os: "OS X",
+    os_version: "Lion"
+  },
+  // Hone down ones to run so we don't timeout.
+  // In future, parallelize these and SauceLabs builds.
+  // bs_safari: {
+  //   base: "BrowserStack",
+  //   browser: "safari",
+  //   os: "OS X",
+  //   os_version: "Lion"
+  // },
+  // bs_ie_9: {
+  //   base: "BrowserStack",
+  //   browser: "ie",
+  //   browser_version: "9.0",
+  //   os: "Windows",
+  //   os_version: "7"
+  // },
+  bs_ie_10: {
+    base: "BrowserStack",
+    browser: "ie",
+    browser_version: "10.0",
+    os: "Windows",
+    os_version: "7"
+  },
+  bs_ie_11: {
+    base: "BrowserStack",
+    browser: "ie",
+    browser_version: "11.0",
+    os: "Windows",
+    os_version: "7"
+  }
+};
+
+// Browser Stack
+var BROWSER_STACK_BRANCH = process.env.TRAVIS_BRANCH || "local";
+var BROWSER_STACK_TAG = process.env.BROWSER_STACK_USERNAME + "@" +
+  BROWSER_STACK_BRANCH;
+
 // ----------------------------------------------------------------------------
 // Globals
 // ----------------------------------------------------------------------------
@@ -39,7 +100,7 @@ var SAUCE_ENVS = {
   }
 };
 
-// SauceLabs tag.
+// Sauce
 var SAUCE_BRANCH = process.env.TRAVIS_BRANCH || "local";
 var SAUCE_TAG = process.env.SAUCE_USERNAME + "@" + SAUCE_BRANCH;
 
@@ -230,6 +291,7 @@ module.exports = function (grunt) {
     karma: {
       options: {
         frameworks: ["mocha"],
+        reporters: ["mocha"],
         runnerPort: 9999,
         files: [
           // Test Libraries
@@ -280,23 +342,33 @@ module.exports = function (grunt) {
       },
       fast: {
         singleRun: true,
-        browsers: ["PhantomJS"],
-        reporters: ["mocha"]
+        browsers: ["PhantomJS"]
       },
       ci: {
         singleRun: true,
-        browsers: ["PhantomJS", "Firefox"],
-        reporters: ["mocha"]
+        browsers: ["PhantomJS", "Firefox"]
       },
       all: {
         singleRun: true,
-        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"],
-        reporters: ["mocha"]
+        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"]
       },
       dev: {
         // Invoke with `karma run` in another terminal.
-        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"],
-        reporters: ["mocha"]
+        browsers: ["PhantomJS", "Chrome", "Firefox", "Safari"]
+      },
+      bs: {
+        singleRun: true,
+        browserStack: {
+          project: "Backbone.js Testing",
+          name: BROWSER_STACK_TAG,
+          build: BUILD
+        },
+        browserDisconnectTimeout: 0, // Pass through to BS.
+        browserDisconnectTolerance: 1, // default 0
+        browserNoActivityTimeout: 0, // Pass through to BS.
+        captureTimeout: 0, // Pass through to BS.
+        customLaunchers: BS_ENVS,
+        browsers: Object.keys(BS_ENVS)
       },
       sauce: {
         singleRun: true,
@@ -309,7 +381,12 @@ module.exports = function (grunt) {
         // Timeouts: Allow "n" minutes before saying "good enough". See also:
         // https://github.com/angular/angular.js/blob/master/
         //         karma-shared.conf.js
-        captureTimeout: 0, // Pass through to SL.
+        // http://oligofren.wordpress.com/2014/05/27/
+        //        running-karma-tests-on-browserstack/
+        browserDisconnectTimeout: 0, // Pass through to BS.
+        browserDisconnectTolerance: 1, // default 0
+        browserNoActivityTimeout: 0, // Pass through to BS.
+        captureTimeout: 0, // Pass through to BS.
         customLaunchers: SAUCE_ENVS,
         browsers: Object.keys(SAUCE_ENVS)
       }

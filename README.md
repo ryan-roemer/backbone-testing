@@ -429,7 +429,8 @@ Our actual "[.travis.yml](./.travis.yml)" file runs different commands than
 the default `npm test` to add things like style checking. But, the overall
 Travis configuration is essentially the same.
 
-We also do multi-browser testing of the frontend code using [Sauce Labs][sauce].
+We also do multi-browser testing of the frontend code thanks to generous
+donations of VM time from [Sauce Labs][sauce] and [BrowserStack][bs].
 Here's our [build matrix][sauce_site]:
 
 [![Sauce Test Status][sauce_img]][sauce_site]
@@ -441,6 +442,7 @@ Here's our [build matrix][sauce_site]:
 [sauce]: https://saucelabs.com
 [sauce_img]: https://saucelabs.com/browser-matrix/backbone-testing.svg
 [sauce_site]: https://saucelabs.com/u/backbone-testing
+[bs]: https://www.browserstack.com
 
 ## Additional Tools
 There are many additional testing libraries and plugins specifically suited
