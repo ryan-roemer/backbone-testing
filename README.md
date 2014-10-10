@@ -409,9 +409,12 @@ this project and when it detects the code has changed, launches new builds
 and invokes the PhantomJS tests above.
 
 Travis even provides a convenient image status indicator, that we display
-below, so that we can display the *always current* build status of our code:
+below, so that we can display the *always current* build status of our code.
+Additionally, we run our Karma tests through a coverage reporter that uploads
+to [Coveralls][cov], so we have a coverage report as well:
 
 [![Build Status][trav_img]][trav_site]
+[![Coverage Status][cov_img]][cov_site]
 
 Setting all of this up is as simple as adding a Travis configuration file
 ".travis.yml" as follows:
@@ -436,9 +439,12 @@ Here's our [build matrix][sauce_site]:
 [![Sauce Test Status][sauce_img]][sauce_site]
 
 [trav]: https://travis-ci.org/
-[trav_img]: https://travis-ci.org/ryan-roemer/backbone-testing.png
+[trav_img]: https://travis-ci.org/ryan-roemer/backbone-testing.svg
 [trav_site]: https://travis-ci.org/ryan-roemer/backbone-testing
 [trav_cfg]: ./.travis.yml
+[cov]: https://coveralls.io
+[cov_img]: https://img.shields.io/coveralls/ryan-roemer/backbone-testing.svg
+[cov_site]: https://coveralls.io/r/ryan-roemer/backbone-testing
 [sauce]: https://saucelabs.com
 [sauce_img]: https://saucelabs.com/browser-matrix/backbone-testing.svg
 [sauce_site]: https://saucelabs.com/u/backbone-testing
