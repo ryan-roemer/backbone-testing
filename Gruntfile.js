@@ -346,7 +346,15 @@ module.exports = function (grunt) {
       },
       ci: {
         singleRun: true,
-        browsers: ["PhantomJS", "Firefox"]
+        browsers: ["PhantomJS", "Firefox"],
+        reporters: ["mocha", "coverage", "coveralls"],
+        preprocessors: {
+          "notes/app/js/app/**/*.js": ["coverage"]
+        },
+        coverageReporter: {
+          type: "lcov",
+          dir: "coverage/"
+        }
       },
       all: {
         singleRun: true,
