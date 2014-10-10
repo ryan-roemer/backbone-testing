@@ -20,6 +20,6 @@ env:
     - BB_TESTING_KARMA=bs
 
 script:
-  - 'if [ "$BB_TESTING_CHECK" ]; then npm run-script check; else true; fi'
-  - 'if [ "$BB_TESTING_CHECK" ]; then node_modules/.bin/mocha-phantomjs notes/test/test.html; else true; fi'
+  - 'if [ "$BB_TESTING_CHECK" ]; then npm run-script check; fi'
+  - 'if [ "$BB_TESTING_CHECK" ]; then node_modules/.bin/mocha-phantomjs notes/test/test.html; fi'
   - '[ "$BB_TESTING_CHECK" ] || node_modules/.bin/grunt karma:$BB_TESTING_KARMA'

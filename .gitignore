@@ -11,3 +11,4 @@ mongodb_data
 mongodb_data_test
 
 local
+coverage
