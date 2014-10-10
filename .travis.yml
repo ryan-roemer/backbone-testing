@@ -21,5 +21,5 @@ env:
 
 script:
   - '[ "$BB_TESTING_CHECK" ] && npm run-script check || false'
-  - '[ "$BB_TESTING_CHECK" ] && then node_modules/.bin/mocha-phantomjs notes/test/test.html || false'
+  - '[ "$BB_TESTING_CHECK" ] && node_modules/.bin/mocha-phantomjs notes/test/test.html || false'
   - '[ "$BB_TESTING_CHECK" ] || node_modules/.bin/grunt karma:$BB_TESTING_KARMA'
