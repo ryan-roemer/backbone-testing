@@ -16,7 +16,7 @@ describe("App.Views.Note", function () {
     // App.Views.Note fixture.
     this.$fixture = $(
       "<div id='note-fixture'>" +
-        "<div id='#note-pane-view-content'></div>" +
+        "<div id='note-pane-view-content'></div>" +
       "</div>"
     );
 
