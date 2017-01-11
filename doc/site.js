@@ -50,7 +50,7 @@ $(function () {
         bookClass = [
           "Book Cover"
         ],
-        logoClass = [,
+        logoClass = [
           "Formidable Labs"
         ];
 
