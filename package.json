@@ -9,8 +9,8 @@
     "url": "git://github.com/ryan-roemer/backbone-testing/"
   },
   "dependencies": {
-    "express": "3.2.5",
-    "mongoose": "3.6.11"
+    "express": "4.14.0",
+    "mongoose": "4.3.6"
   },
   "devDependencies": {
     "bower": "1.2.7",
