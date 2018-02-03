@@ -20,7 +20,7 @@ The core set of Backbone.js application technologies we cover includes:
 We write a test infrastructure built on the following (fantastic) test
 libraries.
 
-* **[Mocha](http://visionmedia.github.com/mocha/)**
+* **[Mocha](http://mochajs.org/)**
 * **[Chai](http://chaijs.com/)**
 * **[Sinon.JS](http://sinonjs.org/)**
 
@@ -252,12 +252,12 @@ separated by number. We also provide a driver page for (nearly) all of
 ### Chapter 3: Test Assertions, Specs, and Suites
 
 * **[BDD Interface](./chapters/03/test/test-bdd.html)**: Tests using
-  [Mocha](http://visionmedia.github.com/mocha/#bdd-interface)
+  [Mocha](https://mochajs.org/#bdd)
   and [Chai](http://chaijs.com/api/bdd/) **BDD** styles.
     * [bdd.spec.js](./chapters/03/test/js/spec/bdd.spec.js)
 
 * **[TDD Interface](./chapters/03/test/test-tdd.html)**: Tests using Mocha
-  **[TDD](http://visionmedia.github.com/mocha/#tdd-interface)** and
+  **[TDD](https://mochajs.org/#tdd)** and
   Chai [`assert`](http://chaijs.com/api/assert/) styles.
     * [tdd.js](./chapters/03/test/js/test/tdd.js)
 
@@ -538,7 +538,7 @@ Mocha v1.12.0+ and Mocha-PhantomJS v3.1.0+.
 For this historically minded, the evolution of this issue is documented in the
 following tickets:
 
-* [Mocha #770](https://github.com/visionmedia/mocha/issues/770)
+* [Mocha #770](https://github.com/mochajs/mocha/issues/770)
 * [Mocha-PhantomJS #58](https://github.com/metaskills/mocha-phantomjs/issues/58)
 
 **[Backbone.js Testing][packt]** shipped with Mocha v1.9.0 and Mocha-PhantomJS
@@ -567,7 +567,7 @@ as follows:
 * [JSON][json_js] is Public Domain software created by Douglas Crockford.
 
 * [Mocha][mocha] is Copyright TJ Holowaychuk and licensed under the
-  [MIT](https://github.com/visionmedia/mocha/blob/master/LICENSE) license.
+  [MIT](https://github.com/mochajs/mocha/blob/master/LICENSE) license.
 
 * [Chai][chai] is Copyright Jake Luer and licensed under the
   [BSD](https://github.com/cjohansen/Sinon.JS/blob/master/LICENSE) license.
@@ -605,7 +605,7 @@ as follows:
 [jquery]: https://github.com/jquery/jquery
 [json_js]: https://github.com/douglascrockford/JSON-js
 [grunt]: http://gruntjs.com/
-[mocha]: https://github.com/visionmedia/mocha
+[mocha]: http://mochajs.org/
 [mocha-phantom]: https://github.com/metaskills/mocha-phantomjs
 [phantom]: http://phantomjs.org/
 [karma]: http://karma-runner.github.io/
